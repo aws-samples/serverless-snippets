@@ -1,0 +1,28 @@
+{
+  "title": "Find the number of log entries withAWS CloudTrail",
+  "description": "Find the number of log entries for each service, event type, and AWS Region.",
+  "type": "CloudWatch Logs Insights",
+  "services": ["cloudtrail"],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["Cloudwatch Log Insight snippet that helps identify the number of log entries for each service, event type and AWS Region using CloudTrail"]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-cloudtrail-number-of-entries-for-service-event-region",
+      "snippetDir": "/",
+      "snippetFile": "snippet.txt",
+      "snippetLanguage": ""
+    }
+  },
+  "authors": [
+    {
+      "headline": "Presented by David Boyne",
+      "name": "David Boyne",
+      "image": "https://pbs.twimg.com/profile_images/1262283153563140096/DYRDqKg6_400x400.png",
+      "bio": "Serverless Developer Advocate at AWS",
+      "linkedin": "",
+      "twitter": "boyney123"
+    }
+  ]
+}

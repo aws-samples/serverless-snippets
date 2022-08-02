@@ -1,0 +1,2 @@
+filter @message like /Process exited/
+| stats count() by bin(30m)

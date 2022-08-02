@@ -1,0 +1,3 @@
+filter @type = "REPORT" |
+parse @message /Init Duration: (?<init>\S+)/ |
+stats count() as TotalInvocations, count(init) as TotalColdStarts

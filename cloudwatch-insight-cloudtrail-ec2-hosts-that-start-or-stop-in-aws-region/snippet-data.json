@@ -1,0 +1,28 @@
+{
+  "title": "EC2 hosts that started or stopped in an AWS Region with AWS CloudTrail",
+  "description": "Find the Amazon EC2 hosts that were started or stopped in a given AWS Region.",
+  "type": "CloudWatch Logs Insights",
+  "services": ["cloudtrail"],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["Cloudwatch Log Insight snippet that helps identify EC2 hosts that have started or stopped for a given AWS Region using CloudTrail"]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-cloudtrail-ec2-hosts-that-start-or-stop-in-aws-region",
+      "snippetDir": "/",
+      "snippetFile": "snippet.txt",
+      "snippetLanguage": ""
+    }
+  },
+  "authors": [
+    {
+      "headline": "Presented by David Boyne",
+      "name": "David Boyne",
+      "image": "https://pbs.twimg.com/profile_images/1262283153563140096/DYRDqKg6_400x400.png",
+      "bio": "Serverless Developer Advocate at AWS",
+      "linkedin": "",
+      "twitter": "boyney123"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Lambda latency report",
+  "description": "Create a latency report for your Lambda functions",
+  "type": "CloudWatch Logs Insights",
+  "services": ["lambda"],
+  "tags": [
+    "Latency"
+  ],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["Cloudwatch Log Insight snippet that creates a latency report for your Lambda functions."]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-exception-per-hour",
+      "snippetDir": "/",
+      "snippetFile": "snippet.txt",
+      "snippetLanguage": ""
+    }
+  },
+  "authors": [
+    {
+      "headline": "Presented by David Boyne",
+      "name": "David Boyne",
+      "image": "https://pbs.twimg.com/profile_images/1262283153563140096/DYRDqKg6_400x400.png",
+      "bio": "Serverless Developer Advocate at AWS",
+      "linkedin": "",
+      "twitter": "boyney123"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+filter @type = "REPORT"
+| fields @requestId, @billedDuration
+| sort by @billedDuration desc
+| limit 100

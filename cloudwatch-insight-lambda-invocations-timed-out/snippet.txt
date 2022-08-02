@@ -1,0 +1,2 @@
+filter @message like /Task timed out/
+| stats count() by bin(30m)

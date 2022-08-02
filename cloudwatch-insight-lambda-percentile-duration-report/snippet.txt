@@ -1,0 +1,7 @@
+filter @type = "REPORT"
+| stats
+    avg(@billedDuration) as Average,
+    percentile(@billedDuration, 99) as NinetyNinth,
+    percentile(@billedDuration, 95) as NinetyFifth,
+    percentile(@billedDuration, 90) as Ninetieth
+    by bin(30m)

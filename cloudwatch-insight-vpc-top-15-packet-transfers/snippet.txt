@@ -1,0 +1,3 @@
+stats sum(packets) as packetsTransferred by srcAddr, dstAddr
+    | sort packetsTransferred  desc
+    | limit 15

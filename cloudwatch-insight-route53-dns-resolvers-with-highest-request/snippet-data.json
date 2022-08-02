@@ -1,0 +1,28 @@
+{
+  "title": "Route 53 resolvers with high requests",
+  "description": "Find the 10 DNS resolvers with the highest number of requests",
+  "type": "CloudWatch Logs Insights",
+  "services": ["route53"],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["Cloudwatch Log Insight snippet that helps identify DNS resolvers with the highest number of requests"]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-route53-dns-resolvers-with-highest-request",
+      "snippetDir": "/",
+      "snippetFile": "snippet.txt",
+      "snippetLanguage": ""
+    }
+  },
+  "authors": [
+    {
+      "headline": "Presented by David Boyne",
+      "name": "David Boyne",
+      "image": "https://pbs.twimg.com/profile_images/1262283153563140096/DYRDqKg6_400x400.png",
+      "bio": "Serverless Developer Advocate at AWS",
+      "linkedin": "",
+      "twitter": "boyney123"
+    }
+  ]
+}

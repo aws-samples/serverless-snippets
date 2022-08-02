@@ -1,0 +1,28 @@
+{
+  "title": "Invocations where Lambda timed out",
+  "description": "Returns the number of invocations where Lambda timed out",
+  "type": "CloudWatch Logs Insights",
+  "services": ["lambda"],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["Cloudwatch Log Insight snippet that returns the number of invocations where Lambda timed out"]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-lambda-invocations-timed-out",
+      "snippetDir": "/",
+      "snippetFile": "snippet.txt",
+      "snippetLanguage": ""
+    }
+  },
+  "authors": [
+    {
+      "headline": "Presented by David Boyne",
+      "name": "David Boyne",
+      "image": "https://pbs.twimg.com/profile_images/1262283153563140096/DYRDqKg6_400x400.png",
+      "bio": "Serverless Developer Advocate at AWS",
+      "linkedin": "",
+      "twitter": "boyney123"
+    }
+  ]
+}

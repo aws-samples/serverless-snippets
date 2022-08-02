@@ -1,0 +1,5 @@
+filter @type="REPORT"
+| stats avg(@maxMemoryUsed/1024/1024) as mean_MemoryUsed,
+    min(@maxMemoryUsed/1024/1024) as min_MemoryUsed,
+    max(@maxMemoryUsed/1024/1024) as max_MemoryUsed,
+    percentile(@maxMemoryUsed/1024/1024, 95) as Percentile95

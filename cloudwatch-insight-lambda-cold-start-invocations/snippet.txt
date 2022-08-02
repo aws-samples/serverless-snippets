@@ -1,0 +1,5 @@
+	
+filter @type = "REPORT"
+| stats sum(strcontains(@message, "Init Duration"))/count(*) * 100 as
+  coldStartPct, avg(@duration)
+  by bin(5m)

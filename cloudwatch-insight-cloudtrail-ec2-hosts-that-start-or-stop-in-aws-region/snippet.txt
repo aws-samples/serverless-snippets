@@ -1,0 +1,1 @@
+filter (eventName="StartInstances" or eventName="StopInstances") and awsRegion="us-east-2"

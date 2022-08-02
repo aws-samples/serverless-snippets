@@ -1,0 +1,8 @@
+filter @type = "REPORT"
+| stats
+    max(@maxMemoryUsed / 1024 / 1024) as maxMemMB,
+    avg(@maxMemoryUsed / 1024 / 1024) as avgMemMB,
+    min(@maxMemoryUsed / 1024 / 1024) as minMemMB,
+    (avg(@maxMemoryUsed / 1024 / 1024) / max(@memorySize / 1024 / 1024)) * 100 as avgMemUsedPct,
+    avg(@billedDuration) as avgDurationMS
+    by bin(30m)

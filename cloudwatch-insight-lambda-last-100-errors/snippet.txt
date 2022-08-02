@@ -1,0 +1,4 @@
+ fields Timestamp, LogLevel, Message
+ | filter LogLevel == "ERR"
+ | sort @timestamp desc
+ | limit 100

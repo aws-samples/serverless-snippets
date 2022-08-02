@@ -1,0 +1,28 @@
+{
+  "title": "[[title]]",
+  "description": "[[description]]",
+  "type": "CloudWatch Logs Insights",
+  "services": ["[[services]]"],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["[[detail]]"]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/[[snippet]]",
+      "snippetDir": "/",
+      "snippetFile": "snippet.txt",
+      "snippetLanguage": ""
+    }
+  },
+  "authors": [
+    {
+      "headline": "Presented by David Boyne",
+      "name": "David Boyne",
+      "image": "https://pbs.twimg.com/profile_images/1262283153563140096/DYRDqKg6_400x400.png",
+      "bio": "Serverless Developer Advocate at AWS",
+      "linkedin": "",
+      "twitter": "boyney123"
+    }
+  ]
+}

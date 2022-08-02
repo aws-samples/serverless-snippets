@@ -1,0 +1,31 @@
+{
+  "title": "[[your title]]",
+  "description": "[[ your description ]]",
+  "type": "CloudWatch Logs Insights",
+  "services": ["lambda"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "[[description of how the snippet works]]"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-exception-per-hour",
+      "snippetDir": "/",
+      "snippetFile": "snippet.txt",
+      "snippetLanguage": "" // DELETE comment -> Pick snippetLanguage from https://prismjs.com/#languages-list
+    }
+  },
+  "authors": [
+    {
+      "headline": "Presented by [[your name]]",
+      "name": "[[your name]]",
+      "image": "link-to-your-photo.jpg",
+      "bio": "Your bio",
+      "linkedin": "linked-in-ID",
+      "twitter": "twitter-handle"
+    }
+  ],
+  "service": []
+}

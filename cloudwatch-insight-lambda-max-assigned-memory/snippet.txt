@@ -1,0 +1,4 @@
+filter @type = "REPORT" and @maxMemoryUsed=@memorySize
+| stats
+    count_distinct(@requestId)
+    by bin(30m)

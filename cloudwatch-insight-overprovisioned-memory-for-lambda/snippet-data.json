@@ -1,0 +1,31 @@
+{
+  "title": "Determine the amount of overprovisioned memory.",
+  "description": "Show the amount of overprovisioned memory for Lambda",
+  "type": "CloudWatch Logs Insights",
+  "services": ["lambda"],
+  "tags": [
+    "Memory"
+  ],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["Cloudwatch Log Insight snippet that shows overprovisioned memory for Lambda"]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-overprovisioned-memory-for-lambda",
+      "snippetDir": "/",
+      "snippetFile": "snippet.txt",
+      "snippetLanguage": ""
+    }
+  },
+  "authors": [
+    {
+      "headline": "Presented by David Boyne",
+      "name": "David Boyne",
+      "image": "https://pbs.twimg.com/profile_images/1262283153563140096/DYRDqKg6_400x400.png",
+      "bio": "Serverless Developer Advocate at AWS",
+      "linkedin": "",
+      "twitter": "boyney123"
+    }
+  ]
+}

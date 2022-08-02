@@ -1,0 +1,2 @@
+filter @type = "REPORT" |
+    stats avg(@duration), max(@duration), min(@duration) by bin(5m)

@@ -1,0 +1,6 @@
+filter @type = "REPORT"
+| stats max(@memorySize / 1000 / 1000) as provisonedMemoryMB,
+  min(@maxMemoryUsed / 1000 / 1024) as smallestMemoryRequestMB,
+  avg(@maxMemoryUsed / 1024 / 1024) as avgMemoryUsedMB,
+  max(@maxMemoryUsed / 1024 / 1024) as maxMemoryUsedMB,
+  provisonedMemoryMB - maxMemoryUsedMB as overProvisionedMB

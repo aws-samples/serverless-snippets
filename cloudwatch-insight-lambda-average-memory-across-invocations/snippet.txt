@@ -1,0 +1,3 @@
+avgMemoryUsedPERC,
+    avg(@billedDuration) as avgDurationMS
+    by bin(5m)

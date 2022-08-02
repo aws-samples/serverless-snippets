@@ -1,0 +1,2 @@
+filter eventName="CreateUser"
+    | fields awsRegion, requestParameters.userName, responseElements.user.arn

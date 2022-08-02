@@ -1,0 +1,4 @@
+filter isIpv4InSubnet(srcAddr, "192.0.2.0/24")
+    | stats sum(bytes) as bytesTransferred by dstAddr
+    | sort bytesTransferred desc
+    | limit 15

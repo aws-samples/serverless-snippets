@@ -1,0 +1,1 @@
+fields @message | filter @message not like /Exception/
