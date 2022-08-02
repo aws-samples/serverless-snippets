@@ -2,6 +2,8 @@
 
 This repo contains serverless snippets that you can copy to help develop your own projects.
 
+These snippets are hosted on [Serverless Land](https://serverlessland.com/snippets).
+
 The snippet types include:
 
 - CloudWatch Logs Insights 
