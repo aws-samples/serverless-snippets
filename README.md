@@ -1,12 +1,23 @@
-# AWS serverless snippets
+<div align="center">
 
-This repo contains serverless snippets that you can copy to help develop your own projects.
+<h1>⚡️ Serverless Snippets</h1>
+<p>Discover, Explore and Share Serverless Snippets.</>
+
+<hr />
+
+<img alt="header" src="./snippets.png" />
+
+  <h3>Features: Discover and explore reuseable code samples, Filter snippets, 1 click deploy, Supports any programming language, and much more...</h3>
+
+ [View Snippets](https://serverlessland.com/snippets)
+
+</div>
+
+<hr/>
+
+This repo contains Serverless Snippets that you can copy to help develop your own projects.
 
 These snippets are hosted on [Serverless Land](https://serverlessland.com/snippets).
-
-The snippet types include:
-
-- CloudWatch Logs Insights 
 
 _We accept other types of code snippets you may find useful for others_
 
