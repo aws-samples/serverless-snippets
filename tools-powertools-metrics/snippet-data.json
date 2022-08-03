@@ -1,0 +1,65 @@
+{
+  "title": "Standarise custom metrics with Powertools",
+  "description": "Standarise custom metrics with Powertools",
+  "type": "Tools",
+  "services": ["lambda"],
+  "tags": [],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["Metrics creates custom metrics asynchronously by logging metrics to standard output following Amazon CloudWatch Embedded Metric Format (EMF)."]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/tools-powertools-metrics"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Runtimes",
+      "codeTabs": [
+        {
+          "id": "Node",
+          "title": "Using Powertools Metrics with TypeScript:",
+          "snippets": [
+            {
+              "title": "Install the library in your project:",
+              "code": "npm install @aws-lambda-powertools/metrics",
+              "language": "bash"
+            },
+            {
+              "description": "The Metrics utility must always be instantiated outside of the Lambda handler. In doing this, subsequent invocations processed by the same instance of your function can reuse these resources. This saves cost by reducing function run time. In addition, Metrics can track cold start and emit the appropriate metrics.",
+              "snippetPath": "powertools-metrics.ts",
+              "language": "js"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resources": {
+    "bullets": [
+      {
+        "text": "Metrics Homepage",
+        "link": "https://awslabs.github.io/aws-lambda-powertools-typescript/latest/core/metrics/"
+      },
+      {
+        "text": "AWS Lambda PowerTools Repository",
+        "link": "https://github.com/awslabs/aws-lambda-powertools-typescript/tree/main/examples"
+      },
+      {
+        "text": "Watch Serverless Office Hours: AWS Lambda - Lambda Powertools",
+        "link": "https://www.youtube.com/watch?v=tr7DZxn3qag&t=2038s"
+      }
+    ]
+  },
+  "authors": [
+    {
+      "headline": "Presented by David Boyne",
+      "name": "David Boyne",
+      "image": "https://pbs.twimg.com/profile_images/1262283153563140096/DYRDqKg6_400x400.png",
+      "bio": "Serverless Developer Advocate at AWS",
+      "linkedin": "",
+      "twitter": "boyney123"
+    }
+  ]
+}

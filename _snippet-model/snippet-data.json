@@ -3,6 +3,8 @@
   "description": "[[ your description ]]",
   "type": "CloudWatch Logs Insights",
   "services": ["lambda"],
+  "tags": [],
+  "languages": [],
   "introBox": {
     "headline": "How it works",
     "text": [
@@ -11,12 +13,16 @@
   },
   "gitHub": {
     "template": {
-      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-exception-per-hour",
-      "snippetDir": "/",
-      "snippetFile": "snippet.txt",
-      "snippetLanguage": "" // DELETE comment -> Pick snippetLanguage from https://prismjs.com/#languages-list
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-exception-per-hour"
     }
   },
+  "snippets": [
+    {
+      "title": "Copy the code into CloudWatch Logs Insights",
+      "snippetPath": "snippet.txt",
+      "language": "css" // use css for cloudwatch (looks good), or find your language from https://prismjs.com/#languages-list
+    }
+  ],
   "authors": [
     {
       "headline": "Presented by [[your name]]",
@@ -26,6 +32,5 @@
       "linkedin": "linked-in-ID",
       "twitter": "twitter-handle"
     }
-  ],
-  "service": []
+  ]
 }

@@ -9,12 +9,16 @@
   },
   "gitHub": {
     "template": {
-      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-cloudtrail-ec2-hosts-that-start-or-stop-in-aws-region",
-      "snippetDir": "/",
-      "snippetFile": "snippet.txt",
-      "snippetLanguage": ""
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-cloudtrail-find-newly-created-users"
     }
   },
+  "snippets": [
+    {
+      "title": "Copy the code into CloudWatch Logs Insights",
+      "snippetPath": "snippet.txt",
+      "language": "css"
+    }
+  ],
   "authors": [
     {
       "headline": "Presented by David Boyne",

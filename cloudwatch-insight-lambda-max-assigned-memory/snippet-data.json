@@ -9,12 +9,15 @@
   },
   "gitHub": {
     "template": {
-      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-lambda-max-assigned-memory",
-      "snippetDir": "/",
-      "snippetFile": "snippet.txt",
-      "snippetLanguage": ""
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-lambda-max-assigned-memory"
     }
   },
+  "snippets": [
+    {
+      "snippetPath": "snippet.txt",
+      "language": "css"
+    }
+  ],
   "authors": [
     {
       "headline": "Presented by David Boyne",

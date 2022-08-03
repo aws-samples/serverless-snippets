@@ -9,12 +9,15 @@
   },
   "gitHub": {
     "template": {
-      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-route53-dns-resolvers-with-highest-request",
-      "snippetDir": "/",
-      "snippetFile": "snippet.txt",
-      "snippetLanguage": ""
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-route53-dns-resolvers-with-highest-request"
     }
   },
+  "snippets": [
+    {
+      "snippetPath": "snippet.txt",
+      "language": "css"
+    }
+  ],
   "authors": [
     {
       "headline": "Presented by David Boyne",
