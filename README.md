@@ -1,40 +1,46 @@
-# AWS serverless snippets
+<div align="center">
 
-This repo contains serverless snippets that you can copy to help develop your own projects.
+<h1>⚡️ Serverless Snippets</h1>
+<p>Discover, Explore and Share Serverless Snippets.</>
+
+<hr />
+
+<img alt="header" src="./snippets.png" />
+
+  <h3>Features: Discover and explore reuseable code samples, Filter snippets, 1 click deploy, Supports any programming language, and much more...</h3>
+
+ [View Snippets](https://serverlessland.com/snippets)
+
+</div>
+
+<hr/>
+
+This repo contains Serverless Snippets that you can copy to help develop your own projects.
 
 These snippets are hosted on [Serverless Land](https://serverlessland.com/snippets).
 
-The snippet types include:
+## Why Serverless Snippets was created?
 
-- CloudWatch Logs Insights 
+Across the community and internet there are hundreds of examples of how to use AWS Services with code, tutorials and examples. Often developers are repeating small tasks going back to previous local code snippets and reusing them. 
 
-_We accept other types of code snippets you may find useful for others_
+This section of ServerlessLand.com was designed to help engineers share their useful snippets with each other and create a collection of useful code examples, tools and small pieces of code that others may find interesting or useful.
+
+With Serverless Snippets engineers can find, explore and filter snippets, and as contributions grow we hope Severless Snippets can simplify your development experince.
+
+---
+
+## How can you contribute?
+
+Serverless Snippets is designed to help the community find and explore code and tools. We welcome contributions to the Snippet list. You can add simple snippets, multi stage snippets (instructions), or tabbed snippets (think snippets supporting multiple run times).
 
 - Learn more about these snippets at https://serverlessland.com/snippets.
-- To learn more about submitting a snippet, read the [publishing guidelines page](https://github.com/aws-samples/serverless-snippets/blob/main/PUBLISHING.md).
+- To learn more about submitting a snippet, read the [adding snippet guide](https://github.com/aws-samples/serverless-snippets/blob/main/ADDING_SNIPPET.md).
+
+
+---
 
 Important: this application could use various AWS services and there are costs associated with these services after the Free Tier usage - please see the [AWS Pricing page](https://aws.amazon.com/pricing/) for details. You are responsible for any AWS costs incurred. No warranty is implied in this example.
 
-## Requirements
-
-* AWS CLI already configured with Administrator permission
-* [NodeJS 14.x installed](https://nodejs.org/en/download/)
-
-## Deployment Instructions
-
-1. [Create an AWS account](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html) if you do not already have one and login.
-
-1. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [install the AWS Serverless Application Model CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html) on your local machine.
-
-1. Create a new directory and navigate to that directory in a terminal.
-
-1. Clone this repo:
-
-```
-git clone https://github.com/aws-samples/serverless-snippets
-```
-
-Each subdirectory contains the snippet code shown on the website.
 
 ----
 Copyright 2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
