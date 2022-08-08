@@ -78,7 +78,7 @@ Tabbed Snippets are a great way to provide multiple snippets in a tabbed context
       "title": "Runtimes",
       "codeTabs": [
         {
-          "id": "Node",
+          "id": "Node.js",
           "title": "Usage Example with Node:",
           "description": "Consuming an S3 event with Lambda using JavaScript.",
           "snippets": [

@@ -18,7 +18,7 @@
       "title": "Runtimes",
       "codeTabs": [
         {
-          "id": "Node",
+          "id": "Node.js",
           "title": "Using Powertools Metrics with TypeScript:",
           "snippets": [
             {
