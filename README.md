@@ -23,7 +23,7 @@ These snippets are hosted on [Serverless Land](https://serverlessland.com/snippe
 
 Across the community and internet there are hundreds of examples of how to use AWS Services with code, tutorials and examples. Often developers are repeating small tasks going back to previous local code snippets and reusing them. 
 
-This page on serverlessLand.com was designed to help engineers share their useful snippets with each other and create a collection of useful code examples, tools and small pieces of code that others may find interesting or useful.
+This page on https://serverlessland.com was designed to help engineers share their useful snippets with each other and create a collection of useful code examples, tools and small pieces of code that others may find interesting or useful.
 
 With Serverless Snippets engineers can find, explore and filter snippets, and as contributions grow we hope Severless Snippets can simplify your development experince.
 
