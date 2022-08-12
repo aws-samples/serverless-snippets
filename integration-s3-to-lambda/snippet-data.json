@@ -3,7 +3,7 @@
   "description": "Using an Amazon S3 trigger to invoke a Lambda function",
   "type": "Integration",
   "services": ["lambda", "s3"],
-  "languages": ["TypeScript", "Python"],
+  "languages": ["TypeScript", "Python", "C#"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -41,6 +41,17 @@
               "language": "py"
             }
           ]
+        },
+        {
+          "id": ".NET",
+          "title": "Usage Example with .NET:",
+          "description": "Consuming an S3 event with Lambda using .NET.",
+          "snippets": [
+            {
+              "snippetPath": "example.cs",
+              "language": "cs"
+            }
+          ]
         }
       ]
     }
@@ -61,6 +72,14 @@
       "bio": "Serverless Developer Advocate at AWS",
       "linkedin": "",
       "twitter": "boyney123"
+    },
+    {
+      "headline": "Chuck Boyer",
+      "name": "Chuck Boyer",
+      "image": "https://www.gravatar.com/avatar/882a6e75af62fa53abf7e11951792d3c?s=240&d=mp",
+      "bio": "Enterprise Architect",
+      "linkedin": "https://www.linkedin.com/in/chuckboyer/",
+      "twitter": "boyersnet"
     }
   ]
 }
