@@ -41,6 +41,17 @@
               "language": "py"
             }
           ]
+        },
+        {
+          "id": ".NET",
+          "title": "Usage Example with .NET:",
+          "description": "Consuming an S3 event with Lambda using .NET.",
+          "snippets": [
+            {
+              "snippetPath": "Function.cs",
+              "language": "dotnet"
+            }
+          ]
         }
       ]
     }
