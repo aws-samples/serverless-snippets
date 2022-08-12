@@ -33,6 +33,22 @@
               "language": "js"
             }
           ]
+        },
+		{
+          "id": ".NET",
+          "title": "Using Powertools Logging with .NET:",
+          "snippets": [
+            {
+              "title": "Install the library in your project:",
+              "code": "dotnet add package AWS.Lambda.Powertools.Logging --prerelease",
+              "language": "bash"
+            },
+            {
+              "description": "The Logging functionality requires an environment variables to be set; POWERTOOLS_SERVICE_NAME.",
+              "snippetPath": "Function.cs",
+              "language": "dotnet"
+            }
+          ]
         }
       ]
     }

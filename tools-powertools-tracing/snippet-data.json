@@ -28,7 +28,7 @@
             },
             {
               "description": "The Logging functionality requires an environment variables to be set; POWERTOOLS_SERVICE_NAME.",
-              "snippetPath": "Powertools.Tracing/Function.cs",
+              "snippetPath": "Function.cs",
               "language": "dotnet"
             }
           ]

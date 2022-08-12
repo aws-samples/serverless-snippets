@@ -32,6 +32,22 @@
               "language": "js"
             }
           ]
+        },
+		{
+          "id": ".NET",
+          "title": "Using Powertools Metrics with .NET:",
+          "snippets": [
+            {
+              "title": "Install the library in your project:",
+              "code": "dotnet add package AWS.Lambda.Powertools.Metrics --prerelease",
+              "language": "bash"
+            },
+            {
+              "description": "The Metrics functionality requires two environment variables to be set; POWERTOOLS_SERVICE_NAME and POWERTOOLS_METRICS_NAMESPACE.",
+              "snippetPath": "Function.cs",
+              "language": "dotnet"
+            }
+          ]
         }
       ]
     }
