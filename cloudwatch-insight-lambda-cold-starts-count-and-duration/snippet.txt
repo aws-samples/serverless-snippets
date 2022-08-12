@@ -1,0 +1,4 @@
+filter @type="REPORT"
+| filter @message like /(?i)(Init Duration)/
+| parse @message /^REPORT.*Init Duration: (?<initDuration>.*) ms.*/
+| stats count() as coldStarts, avg(initDuration), min(initDuration), max(initDuration) by bin(5m)

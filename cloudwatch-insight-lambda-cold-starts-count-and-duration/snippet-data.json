@@ -1,0 +1,31 @@
+{
+  "title": "Lambda cold starts count and init duration",
+  "description": "Cloudwatch Log Insight snippet that returns the number of cold starts and init duration.",
+  "type": "CloudWatch Logs Insights",
+  "services": ["lambda"],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["Uses CloudWatch Insights to query a given log group and returns the number of Lambda cold starts and the init duration bucketed by 5 minutes."]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-lambda-cold-starts-count-and-duration"
+    }
+  },
+  "snippets": [
+    {
+      "snippetPath": "snippet.txt",
+      "language": "css"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Maciej Radzikowski",
+      "name": "Maciej Radzikowski",
+      "image": "https://s.gravatar.com/avatar/6e0a003112cf85b065576cdde29e0956?s=200",
+      "bio": "Software Developer and Architect, doing serverless on AWS and blogging about it.",
+      "linkedin": "mradzikowski",
+      "twitter": "radzikowski_m"
+    }
+  ]
+}
