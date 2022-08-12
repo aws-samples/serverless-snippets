@@ -1,17 +1,16 @@
 # Powertools Logger
 
-This snippet is CloudWatch Insight code snippet will return all logs that are not execptions.
+This snippet is an example of using Lambda Powertools for .NET to create metrics in Amazon CloudWatch. Lambda Powertools metrics uses the CloudWatch Embedded Metrics Format (EMF) behind the scenes.
 
-Learn more about this snippet at Serverless Land Snippets: https://serverlessland.com/snippets/cloudwatch-logs-that-are-not-exceptions
+Learn more about this snippet at Serverless Land Snippets: https://serverlessland.com/snippets/tools-powertools-metrics-dotnet
 
 Important: this application could use various AWS services and there are costs associated with these services after the Free Tier usage - please see the [AWS Pricing page](https://aws.amazon.com/pricing/) for details. You are responsible for any AWS costs incurred. No warranty is implied in this example.
 
-
 ## How it works
 
-Uses CloudWatch Insights to query a given log group and returns the number of execptions for a given log group.
+Uses Lambda Powertools for .NET to create structured logs from your application.
 
-[Follow the instructions on the snippet page](https://serverlessland.com/snippets/cloudwatch-insight-exception-per-hour) to run in your AWS account.
+[Follow the instructions on the snippet page](https://serverlessland.com/snippets/tools-powertools-metricsd-dotnet) to run in your AWS account.
 
 
 ## Cleanup
