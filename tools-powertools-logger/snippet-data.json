@@ -73,6 +73,14 @@
       "bio": "Serverless Developer Advocate at AWS",
       "linkedin": "",
       "twitter": "boyney123"
+    },
+    {
+      "headline": ".NET Examples Presented by James Eastham",
+      "name": "James Eastham",
+      "image": "https://pbs.twimg.com/profile_images/1468336284863184897/vSu-7ObO_400x400.jpg",
+      "bio": "Cloud Infrastructure Architect at AWS",
+      "linkedin": "james-eastham",
+      "twitter": "plantpowerjames"
     }
   ]
 }
