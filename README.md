@@ -39,6 +39,19 @@ Serverless Snippets is designed to help the community find and explore code and 
 
 ---
 
+## Linking Snippets Directly into the AWS Console.
+
+Thanks to [https://twitter.com/lajacobsson](https://twitter.com/lajacobsson) it is possible to enable the CloudWatch Insights Queries directly into your AWS console and have them update every 12 hours.
+
+Check the project [https://github.com/ljacobsson/cw-logs-insights-snippets](https://github.com/ljacobsson/cw-logs-insights-snippets) to get started.
+
+<img width="1277" alt="image" src="https://user-images.githubusercontent.com/3268013/184601436-61ceb2e0-a128-4490-abc8-6e9ffd5577ca.png">
+
+
+
+
+---
+
 Important: this application could use various AWS services and there are costs associated with these services after the Free Tier usage - please see the [AWS Pricing page](https://aws.amazon.com/pricing/) for details. You are responsible for any AWS costs incurred. No warranty is implied in this example.
 
 
