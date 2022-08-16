@@ -1,0 +1,16 @@
+exports.handler = async (event) => {
+    const coinToss = Math.random()*100
+    const failureRate = process.env.CHANCE_OF_FAILURE || 50
+
+    console.log({coinToss, failureRate})
+
+    if ( coinToss < failureRate) {
+      console.error('Error')
+      throw Error("There was an error")
+    } else {
+      return {
+        statusCode: 200,
+        body: JSON.stringify('Hello from Lambda!'),
+      }
+    }
+}
