@@ -26,6 +26,13 @@
       "bio": "Software Developer and Architect, doing serverless on AWS and blogging about it.",
       "linkedin": "mradzikowski",
       "twitter": "radzikowski_m"
+    },
+    {
+      "headline": "Contributed to by Christopher Osborn",
+      "name": "Christopher Osborn",
+      "image": "http://s.gravatar.com/avatar/7e346e10164f82dbc6dc366d8733200c?s=256",
+      "bio": "Software Engineer with a focus on serverless technologies.",
+      "twitter": "chrisoverzero"
     }
   ]
 }
