@@ -1,0 +1,35 @@
+{
+  "title": "Lambda function with % chance of throwing an error",
+  "description": "The function throws an error based on a % chance provided by an environment variable.",
+  "type": "Integration",
+  "services": ["lambda"],
+  "tags": ["Testing"],
+  "languages": ["Node.js"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This snippet creates a Lambda function in Node.js that has a percentage chance of throwing an error. The code uses a Lambda environment variable called CHANCE_OF_FAILURE, which is a value between 0 and 100. If this environment variable is not present, it defaults to 50 (a 50% chance of throwing an error).",
+      "This function can be useful for testing failure modes and retry behaviors when consuming events from upstream services."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-throwing-errors"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Copy the code into Lambda",
+      "snippetPath": "snippet.txt",
+      "language": "js"
+    }
+  ],
+  "authors": {
+    "headline": "Presented by James Beswick",
+    "name": "James Beswick",
+    "imageURL": "https://pbs.twimg.com/profile_images/1165718285754753025/OrGcUHER_400x400.jpg",
+    "twitter": "jbesw",
+    "linkedin": "jamesbeswick",
+    "bio": "Senior Manager, AWS Serverless Developer Advocacy."
+  }
+}
