@@ -11,7 +11,7 @@ To submit a template to the Serverless Snippets Collection, submit an issue with
 
 **To learn more about submitting a pattern, read the [publishing guidelines page](https://github.com/aws-samples/serverless-snippets/blob/main/PUBLISHING.md). and [added a new snippet guide](https://github.com/aws-samples/serverless-snippets/blob/main/ADDING_SNIPPET.md).**
 
-1. Use the model template located at https://github.com/aws-samples/serverless-snippets/tree/main/_snippet-model to set up a README, snipet-data.json (metadata) and your snippet code (snippet.txt).
+1. Use the model template located at https://github.com/aws-samples/serverless-snippets/tree/main/_snippet-model to set up snipet-data.json (metadata) and your snippet code (snippet.txt).
 
 If you want multiple code examples in your snippet or support tabbed code examples (multi runtimes for example) then follow the guide for [added a new snippet](https://github.com/aws-samples/serverless-snippets/blob/main/ADDING_SNIPPET.md).
 

@@ -14,7 +14,7 @@ Serverless Snippets currently supports `CloudWatch Logs Insights`, `Integration`
 
 ![Single Snippet Example](/images/single-snippet.png)
 
-Every snippet has the `snippet-data.json` file. This file is the heart of your snippet. If you want to add a simple snippet, you can do this by copying the `_snippet-model` folder, renaming it to your snippet and filling out the `README.md`, `snippet-data.json` and `snippet.txt` file.
+Every snippet has the `snippet-data.json` file. This file is the heart of your snippet. If you want to add a simple snippet, you can do this by copying the `_snippet-model` folder, renaming it to your snippet and filling out the `snippet-data.json` and `snippet.txt` file.
 
 You can use https://prismjs.com/#languages-list to pick your snippet language.
 
