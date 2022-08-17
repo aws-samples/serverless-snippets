@@ -72,12 +72,6 @@ Push your code to the remote repos and [create a pull request](https://docs.gith
 
     1. Add a description of the changes.
     1. Click "Create pull request".
-1. Submit a [new issue](https://github.com/aws-samples/serverless-snippets/issues/new?assignees=dboyne&labels=&template=new-serverless-snippet-submission.md&title=New+snippet+submission) to provide the additional details that will be used to build the serverless snippet web page on ServerlessLand.com.
-    1. Provide responses to each section (eg: Description, Language, Framework, etc.)
-    1. Add a link to the pull request in the "GitHub PR for template" section. If you type a hashtag (#), it will display a list of the current pull requests to select from.
-    1. Consider adding a few links to AWS documentation in the "Additional resources" section to provide more information about your serverless snippet.
-    1. Be sure to provide your information in the "Author bio" section.
-    1. Click "Submit new issue".
 
 ## Sync Repos
 
