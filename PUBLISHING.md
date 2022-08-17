@@ -91,9 +91,3 @@ Delete any unnecessary local and origin branches.
 1. Delete any unnecessary local branches: `git branch -d {branch-name}`
 1. Delete any unnecessary remote origin branches: `git push origin --delete {branch-name}`
 
-## Helpful Tips
-
-1. When creating a README file for your serverless snippet, place example code and commands within a `code block`.
-
-
-## Example Snippets
