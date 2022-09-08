@@ -1,0 +1,37 @@
+{
+  "title": "Last 10 requests",
+  "description": "Get last 10 requests in your API Gateway access log group.",
+  "type": "CloudWatch Logs Insights",
+  "services": ["apigw"],
+  "tags": ["Logs", "API Gateway"],
+  "languages": [],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "CloudWatch Log Insight snippet that returns latest 10 API Gateway requests in your API Gateway access log group.",
+      "See snippet GitHub repository for the logging setup instructions."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-apigw-last-10-requests"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Copy the code into CloudWatch Logs Insights",
+      "snippetPath": "snippet.txt",
+      "language": "css" // use css for cloudwatch (looks good), or find your language from https://prismjs.com/#languages-list
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Giedrius Praspaliauskas",
+      "name": "Giedrius Praspaliauskas",
+      "image": "",
+      "bio": "Giedrius is a senior solutions architect focusing on serverless at Amazon Web Services.",
+      "linkedin": "https://www.linkedin.com/in/gpraspaliauskas/",
+      "twitter": ""
+    }
+  ]
+}

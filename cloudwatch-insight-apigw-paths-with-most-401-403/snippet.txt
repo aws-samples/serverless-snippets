@@ -1,0 +1,3 @@
+stats count(*) as accessDeniedCount by status, path, httpMethod
+| filter status=403 or status=401
+| limit 10

@@ -1,0 +1,3 @@
+fields @timestamp, status, ip, path, httpMethod, responseLatency
+| sort responseLatency desc
+| limit 10

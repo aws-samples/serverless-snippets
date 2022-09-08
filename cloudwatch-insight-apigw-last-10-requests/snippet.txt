@@ -1,0 +1,3 @@
+fields @timestamp, status, ip, path, httpMethod
+| sort @timestamp desc
+| limit 10

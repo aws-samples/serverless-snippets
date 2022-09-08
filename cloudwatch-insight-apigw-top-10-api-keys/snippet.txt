@@ -1,0 +1,3 @@
+stats count(*) as requestCount by apiKey
+| sort requestCount desc
+| limit 10

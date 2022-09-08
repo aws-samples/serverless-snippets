@@ -1,0 +1,37 @@
+{
+  "title": "Integration latency report",
+  "description": "Create API Gateway integration latency report for your API Gateway access log group.",
+  "type": "CloudWatch Logs Insights",
+  "services": ["apigw"],
+  "tags": ["Logs", "API Gateway"],
+  "languages": [],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "Cloudwatch Log Insight snippet that returns API Gateway integration latency statistics in 1 minute intervals in your API Gateway access log group.",
+      "See snippet GitHub repository for the logging setup instructions."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-apigw-integration-latency"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Copy the code into CloudWatch Logs Insights",
+      "snippetPath": "snippet.txt",
+      "language": "css" // use css for cloudwatch (looks good), or find your language from https://prismjs.com/#languages-list
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Giedrius Praspaliauskas",
+      "name": "Giedrius Praspaliauskas",
+      "image": "",
+      "bio": "Giedrius is a senior solutions architect focusing on serverless at Amazon Web Services.",
+      "linkedin": "https://www.linkedin.com/in/gpraspaliauskas/",
+      "twitter": ""
+    }
+  ]
+}
