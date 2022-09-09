@@ -1,0 +1,1 @@
+aws cloudformation list-stack-resources --stack-name (stack id) --query "StackResourceSummaries[?ResourceType=='AWS::Lambda::Function'].{LogicalResourceId: LogicalResourceId, PhysicalResourceId: PhysicalResourceId, LastUpdate: LastUpdatedTimestamp}"
