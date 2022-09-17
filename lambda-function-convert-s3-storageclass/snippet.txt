@@ -1,0 +1,42 @@
+import json
+import boto3
+import urllib.parse
+
+s3 = boto3.client('s3')
+
+# Below Lambda function will convert any storage class to defined destination storage class
+
+# Specify target object bucket and key to convert its current storage class
+bucket = 'bucketName'
+key = urllib.parse.unquote_plus('folder1/folder2/filename.jpg', encoding='utf-8')
+
+dest_StorageClass = 'INTELLIGENT_TIERING'
+# other possible values -> DEEP_ARCHIVE, GLACIER, GLACIER_IR, ONEZONE_IA, OUTPOSTS, REDUCED_REDUNDANCY, STANDARD, STANDARD_IA,
+
+def lambda_handler(event, context):
+
+    # Get the object bucket and key from the S3 event to convert its current storage class
+    # bucket = event['Records'][0]['s3']['bucket']['name']
+    # key = urllib.parse.unquote_plus(event['Records'][0]['s3']['object']['key'], encoding='utf-8')
+
+    copy_source = {
+        'Bucket': bucket,
+        'Key': key
+    }
+
+    try:
+        s3.copy(
+            copy_source, bucket, key,
+            ExtraArgs={
+                'StorageClass': 'INTELLIGENT_TIERING',
+                'MetadataDirective': 'COPY'
+            }
+        )
+        return {
+            'statusCode': 200,
+            'body': json.dumps(f'Success: object "{key}" from bucket "{bucket}" is converted to destination storage class "{dest_StorageClass}" ')
+        }
+    except Exception as e:
+        print(e)
+        print(f'Error: while copying the object "{key}" from bucket "{bucket}" to destination storage class "{dest_StorageClass}" ')
+        raise e
