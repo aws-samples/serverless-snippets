@@ -1,0 +1,36 @@
+{
+  "title": "Lambda function to convert S3 storage class",
+  "description": "This function will help to convert your existing S3 storage class to the defined destination storage class.",
+  "type": "Integration",
+  "services": ["lambda"],
+  "tags": ["S3"],
+  "languages": ["Python"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This snipped creates a Lambda function in Python helps to convert your existing S3 storage class to the defined destination storage class."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-convert-s3-storageclass"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Copy the code into Lambda",
+      "snippetPath": "snippet.txt",
+      "language": "py"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Arun Thangavel",
+      "name": "Arun Thangavel",
+      "image": "https://avatars.githubusercontent.com/u/4443455?s=400&u=d78480fcb9f02a5405951fc1360940884bf9a0f7&v=4",
+      "bio": "Solutions Architect, Worldwide Public Sector at AWS",
+      "linkedin": "thangavelarun",
+      "twitter": "arunt4ever"
+    }
+  ]
+}
