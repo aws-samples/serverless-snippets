@@ -1,0 +1,3 @@
+aws cloudformation list-stacks
+or
+aws cloudformation list-stacks  --query "StackSummaries[*].{StackId: StackId, StackName: StackName}"

@@ -1,0 +1,33 @@
+{
+  "title": "List CloudFormation Stacks",
+  "description": "An AWS CLI command to list all CloudFormation Stacks and a query to show how to only show StackId and StackName",
+  "type": "AWS CLI",
+  "services": ["CloudFormation"],
+  "languages": ["aws cli"],
+  "tags": ["debugging"],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["An AWS CLI command that retrieves all the stacks from CloudFormation and outputs them. The optional query parameter limits the output of the command so that only the StackIs and the StackName are returned."]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/aws-cli-get-cloudformation-stacks"
+    }
+  },
+  "snippets": [
+    {
+      "snippetPath": "snippet.txt",
+      "language": "aws cli"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Hopefully something useful from Paul Johnston",
+      "name": "Paul Johnston",
+      "image": "https://pbs.twimg.com/profile_images/1489994130004533259/gz6LI1oW_400x400.jpg",
+      "bio": "CTO, Consultant, Interim and Strategist (and ex-Serverless Developer Advocate at AWS)",
+      "linkedin": "https://www.linkedin.com/in/padajo/",
+      "twitter": "PaulDJohnston"
+    }
+  ]
+}

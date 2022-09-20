@@ -1,0 +1,33 @@
+{
+  "title": "Get Lambda Functions in a CloudFormation Stack",
+  "description": "An AWS CLI command to retrieve all AWS Lambda function resources in a named CloudFormation Stack",
+  "type": "AWS CLI",
+  "services": ["lambda", "CloudFormation"],
+  "languages": ["aws cli"],
+  "tags": ["debugging"],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["AWS CLI command that retrieves all the resources in a CloudFormation stack and queries the returned data for ResourceType of 'AWS::Lambda::Function'"]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/aws-cli-get-functions-in-cloudformation-stack"
+    }
+  },
+  "snippets": [
+    {
+      "snippetPath": "snippet.txt",
+      "language": "aws cli"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Hopefully something useful from Paul Johnston",
+      "name": "Paul Johnston",
+      "image": "https://pbs.twimg.com/profile_images/1489994130004533259/gz6LI1oW_400x400.jpg",
+      "bio": "CTO, Consultant, Interim and Strategist (and ex-Serverless Developer Advocate at AWS)",
+      "linkedin": "https://www.linkedin.com/in/padajo/",
+      "twitter": "PaulDJohnston"
+    }
+  ]
+}
