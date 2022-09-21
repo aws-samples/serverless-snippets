@@ -1,0 +1,37 @@
+{
+  "title": "Lambda function to retrieve deleted S3 versioned objects",
+  "description": "This function will help to retrieve the S3 objects that's deleted in a versioning-enabled bucket.",
+  "type": "Integration",
+  "services": ["lambda"],
+  "tags": ["S3"],
+  "languages": ["Python"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This snipped creates a Lambda function in Python helps to retrieve an S3 object that was deleted in a versioning-enabled bucket.",
+      "This function will only retrieve S3 Objects which has Delete Marker as Latest Version."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-retrieve-deleted-s3-versioned-objects"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Copy the code into Lambda",
+      "snippetPath": "snippet.txt",
+      "language": "py"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Arun Thangavel",
+      "name": "Arun Thangavel",
+      "image": "https://avatars.githubusercontent.com/u/4443455?s=400&u=d78480fcb9f02a5405951fc1360940884bf9a0f7&v=4",
+      "bio": "Solutions Architect, Worldwide Public Sector at AWS",
+      "linkedin": "thangavelarun",
+      "twitter": "arunt4ever"
+    }
+  ]
+}
