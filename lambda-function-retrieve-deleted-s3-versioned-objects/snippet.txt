@@ -7,13 +7,13 @@ s3 = boto3.client('s3')
 # Note: This function will only retrieve S3 Objects which has Delete Marker as Latest Version
 
 # Specify the S3 Bucket Name
-bucket = 'arun-oregon-store'
+bucket = 'bucket-name'
 
 # Specify the prefix to limit the search to the key name prefix
 # Example with Prefix Value: prefixValue = 'folder1/folder2/filename.jpg'
 # Or leave it empty with quotes to restore the whole S3 Bucket
 # Example with Empty Value: prefixValue = ''
-prefixValue = ''
+prefixValue = 'folder1/folder2/filename.jpg'
 prefixStr = f'with prefix value "{prefixValue}"' if len(prefixValue) > 0 else f''
 
 
