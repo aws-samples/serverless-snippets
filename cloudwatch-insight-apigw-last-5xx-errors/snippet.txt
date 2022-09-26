@@ -1,0 +1,4 @@
+fields @timestamp, status, ip, path, httpMethod
+| filter status>=500 and status<=599
+| sort @timestamp desc
+| limit 10

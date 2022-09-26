@@ -1,0 +1,3 @@
+filter status=200
+| stats avg(integrationLatency), max(integrationLatency), 
+min(integrationLatency) by bin(1m)

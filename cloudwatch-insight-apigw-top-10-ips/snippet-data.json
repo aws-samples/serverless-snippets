@@ -1,0 +1,37 @@
+{
+  "title": "Most active IPs",
+  "description": "Get list of most active IPs in your API Gateway access log group",
+  "type": "CloudWatch Logs Insights",
+  "services": ["apigw"],
+  "tags": ["Logs", "API Gateway"],
+  "languages": [],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "CloudWatch Log Insight snippet that returns top 10 IPs where most requests originated from.",
+      "See snippet GitHub repository for the logging setup instructions."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-apigw-top-10-ips"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Copy the code into CloudWatch Logs Insights",
+      "snippetPath": "snippet.txt",
+      "language": "css" // use css for cloudwatch (looks good), or find your language from https://prismjs.com/#languages-list
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Giedrius Praspaliauskas",
+      "name": "Giedrius Praspaliauskas",
+      "image": "",
+      "bio": "Giedrius is a senior solutions architect focusing on serverless at Amazon Web Services.",
+      "linkedin": "https://www.linkedin.com/in/gpraspaliauskas/",
+      "twitter": ""
+    }
+  ]
+}

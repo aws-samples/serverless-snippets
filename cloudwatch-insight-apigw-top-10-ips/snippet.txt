@@ -1,0 +1,3 @@
+stats count(*) as requestCount by ip
+| sort requestCount desc
+| limit 10

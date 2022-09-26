@@ -1,0 +1,3 @@
+stats count(*) as errorCount by status, path, httpMethod
+| filter status>=500 and status<=599
+| limit 10

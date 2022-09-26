@@ -1,0 +1,3 @@
+stats count(*) as requestCount by path
+| sort requestCount desc
+| limit 10
