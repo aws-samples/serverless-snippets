@@ -1,0 +1,66 @@
+import json
+import boto3
+
+s3 = boto3.client('s3')
+
+# Below Lambda function will help to retrieve S3 objects that was deleted in a versioning-enabled bucket.
+# Note: This function will only retrieve S3 Objects which has Delete Marker as Latest Version
+
+# Specify the S3 Bucket Name
+bucket = 'bucket-name'
+
+# Specify the prefix to limit the search to the key name prefix
+# Example with Prefix Value: prefixValue = 'folder1/folder2/filename.jpg'
+# Or leave it empty with quotes to restore the whole S3 Bucket
+# Example with Empty Value: prefixValue = ''
+prefixValue = 'folder1/folder2/filename.jpg'
+prefixStr = f'with prefix value "{prefixValue}"' if len(prefixValue) > 0 else f''
+
+
+def lambda_handler(event, context):
+    # Get the bucket name and prefix from the S3 event
+    # bucket = event['Records'][0]['s3']['bucket']['name']
+    # prefixValue = event['Records'][0]['s3']['object']['key']
+
+    try:
+        versions = s3.list_object_versions(Bucket=bucket, Prefix=prefixValue)
+        objectWithLatestDeleteMarker = []
+        if 'DeleteMarkers' in versions:
+            for version in versions['DeleteMarkers']:
+                if version['IsLatest']:
+                    objectWithLatestDeleteMarker.append({
+                        'Key': version['Key'],
+                        'VersionId': version['VersionId']
+                    })
+
+            if len(objectWithLatestDeleteMarker) > 0:
+                # Performs Single Delete Request with all the identified S3 Objects with latest DeleteMarker; Max 1000 Objects per request.
+                s3.delete_objects(
+                    Bucket=bucket,
+                    Delete={
+                        'Objects': objectWithLatestDeleteMarker,
+                        'Quiet': True
+                    }
+                )
+                return {
+                    'statusCode': 200,
+                    'body': json.dumps(
+                        f'Success: retrieved "{len(objectWithLatestDeleteMarker)}" S3 object(s) from bucket "{bucket}" {prefixStr}')
+                }
+            else:
+                return {
+                    'statusCode': 200,
+                    'body': json.dumps(
+                        f'There is no S3 object(s) with Delete Marker as Latest Version in your bucket "{bucket}" {prefixStr}')
+                }
+        else:
+            return {
+                'statusCode': 200,
+                'body': json.dumps(
+                    f'There is no S3 object(s) with Delete Marker as Latest Version in your bucket "{bucket}" {prefixStr}')
+            }
+    except Exception as e:
+        print(e)
+        print(
+            f'Error: while retrieving the S3 object(s) from bucket "{bucket}" {prefixStr}')
+        raise e
