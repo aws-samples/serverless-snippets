@@ -1,0 +1,42 @@
+{
+  "title": "Tail CloudWatch log group",
+  "description": "An AWS CLI command to tail a CloudWatch log group",
+  "type": "AWS CLI",
+  "services": [""],
+  "languages": ["bash"],
+  "tags": ["debugging"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "An AWS CLI command that tails a CloudWatch log group. Use to help debugging and get live logs into your terminal."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/aws-cli-tail-clogwatch-loggroup"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Tail CloudWatch log group into your terminal",
+      "description": "Run the command inside your terminal to tail a log group and get real time updates. You will need AWS CLI v2.",
+      "code": "aws logs tail {LogGroupName} --follow --format json",
+      "language": "bash"
+    },
+    {
+      "title": "Example output of watching an Amazon EventBridge CloudWatch log group",
+      "snippetPath": "example.txt",
+      "language": "bash"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by David Boyne",
+      "name": "David Boyne",
+      "image": "https://pbs.twimg.com/profile_images/1262283153563140096/DYRDqKg6_400x400.png",
+      "bio": "Serverless Developer Advocate at AWS",
+      "linkedin": "",
+      "twitter": "boyney123"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+2022-10-05T08:32:51+00:00 f525e7be-c42d-3f0d-a7c4-6a51d01da714
+{
+    "version": "0",
+    "id": "daf8f653-560e-df19-c0d7-441cb55c414a",
+    "detail-type": "UserCreated",
+    "source": "com.mycompany.myapp",
+    "account": "123456789123",
+    "time": "2022-10-05T08:32:51Z",
+    "region": "us-west-2",
+    "resources": [
+        "resource1",
+        "resource2"
+    ],
+    "detail": {
+        "key1": "value1",
+        "key2": "value2"
+    }
+}
+2022-10-05T08:33:05+00:00 c996a3cc-dd68-3aef-9fbb-6a2c7f8e4472
+{
+    "version": "0",
+    "id": "3b256c05-8879-e7f5-94be-ce3bc7af68f4",
+    "detail-type": "UserCreated",
+    "source": "com.mycompany.myapp",
+    "account": "123456789123",
+    "time": "2022-10-05T08:33:05Z",
+    "region": "us-west-2",
+    "resources": [
+        "resource1",
+        "resource2"
+    ],
+    "detail": {
+        "key1": "value1",
+        "key2": "value2"
+    }
+}
