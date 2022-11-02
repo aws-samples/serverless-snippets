@@ -1,0 +1,36 @@
+{
+  "title": "VTL - Typeahead",
+  "description": "Direct integration search on DynamoDB",
+  "type": "Integration",
+  "services": ["apigw", "dynamodb"],
+  "tags": [],
+  "languages": ["vtl"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "The snippet demonstrates how to do a search against a GSI and filter the results by text containing a specific string"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/apigateway-dynamodb-typeahead"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Direct integration typeahead",
+      "snippetPath": "snippet.txt",
+      "language": "vtl"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Eric Johnson",
+      "name": "Eric Johnson",
+      "image": "https://s12d.com/ej-icon",
+      "bio": "Eric Johnson is a Principal Developer Advocate for Serverless Applications at Amazon Web Services and is based in Northern Colorado. Eric is a fanatic about serverless and enjoys helping developers understand how serverless technologies introduces a major paradigm shift in how they approach building and running applications at massive scale with minimal administration overhead. Prior to this, Eric has worked as a developer, solutions architect and AWS Evangelist for an AWS partner company.",
+      "linkedin": "singledigit",
+      "twitter": "edjgeek"
+    }
+  ]
+}
