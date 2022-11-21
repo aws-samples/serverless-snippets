@@ -1,0 +1,34 @@
+{
+  "title": "Events over time grouped by detail-type",
+  "description": "Get the number of EventBridge events grouped by detail-type",
+  "type": "CloudWatch Logs Insights",
+  "services": [],
+  "tags": [
+    ""
+  ],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["Cloudwatch Log Insight snippet that counts the number of EventBridge events and groups by detail-type"]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-count"
+    }
+  },
+  "snippets": [
+    {
+      "snippetPath": "snippet.txt",
+      "language": "css"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by David Boyne",
+      "name": "David Boyne",
+      "image": "https://pbs.twimg.com/profile_images/1262283153563140096/DYRDqKg6_400x400.png",
+      "bio": "Serverless Developer Advocate at AWS",
+      "linkedin": "",
+      "twitter": "boyney123"
+    }
+  ]
+}

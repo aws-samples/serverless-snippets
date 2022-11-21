@@ -1,0 +1,3 @@
+fields @timestamp, @message
+| stats count(*) as numberOfEvents by `detail-type`
+| sort numberOfEvents desc
