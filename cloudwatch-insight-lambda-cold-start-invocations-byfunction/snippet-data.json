@@ -1,0 +1,35 @@
+module.exports = {
+    "title": "Measures the cold starts in total invocation including function and and memory size",
+    "description": "Measures the cold starts in total invocation including function and and memory size",
+    "type": "CloudWatch Logs Insights",
+    "services": [
+        "lambda"
+    ],
+    "introBox": {
+        "headline": "How it works",
+        "text": [
+            "Cloudwatch Log Insights snippet that measures the cold starts in total invocation including function and and memory size"
+        ]
+    },
+    "gitHub": {
+        "template": {
+            "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-lambda-cold-start-invocations-byfunction"
+        }
+    },
+    "snippets": [
+        {
+            "language": "css",
+            "code": "filter @type = \"REPORT\" and @message like /(?i)(Init Duration)/\n|parse @message /^REPORT.*Init Duration: (?<initDuration>.*) ms.*/\n| parse @log /^.*\/aws\/lambda\/(?<functionName>.*)/\n| fields @memorySize / 1000000 as memorySize\n| stats count() as coldStarts, avg(initDuration) as avgInitDuration, max(initDuration) as maxInitDuration\nby functionName, memorySize\n"
+        }
+    ],
+    "authors": [
+        {
+            "headline": "Contributed by Julian Wood",
+            "name": "Julian Wood",
+            "image": "/assets/images/resources/jrwood.jpg",
+            "bio": "Serverless Developer Advocate at AWS. Julian Wood helps developers and builders learn about and love how serverless technologies can transform the way they build and run applications. ",
+            "linkedin": "woodjulian",
+            "twitter": "julian_wood"
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+filter @type = "REPORT"
+| stats sum(ispresent(@initDuration))/count() * 100 as
+  coldStartPct, avg(@duration)
+  by bin(5m)
