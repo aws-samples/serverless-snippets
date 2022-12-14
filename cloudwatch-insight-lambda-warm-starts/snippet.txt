@@ -1,0 +1,7 @@
+filter @type = "REPORT" and @message not like /(?i)(Init Duration)/
+| stats
+  avg(@duration) as Average,
+  pct(@duration, 99) as NinetyNinth,
+  pct(@duration, 95) as NinetyFifth,
+  pct(@duration, 90) as Ninetieth
+by bin(1m)
