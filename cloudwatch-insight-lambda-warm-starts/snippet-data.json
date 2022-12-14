@@ -1,0 +1,31 @@
+{
+  "title": "Measures the warm starts in total invocations",
+  "description": "Returns the percentage of warm starts in total invocations.",
+  "type": "CloudWatch Logs Insights",
+  "services": ["lambda"],
+  "introBox": {
+    "headline": "How it works",
+    "text": ["Cloudwatch Log Insight snippet that returns a report for the percentage of warm starts"]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-lambda-warm-starts"
+    }
+  },
+  "snippets": [
+    {
+      "snippetPath": "snippet.txt",
+      "language": "css"
+    }
+  ],
+  "authors": [
+    {
+        "headline": "Contributed by Julian Wood",
+        "name": "Julian Wood",
+        "image": "/assets/images/resources/jrwood.jpg",
+        "bio": "Serverless Developer Advocate at AWS. Julian Wood helps developers and builders learn about and love how serverless technologies can transform the way they build and run applications. ",
+        "linkedin": "woodjulian",
+        "twitter": "julian_wood"
+    }
+]  
+}
