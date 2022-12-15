@@ -1,0 +1,35 @@
+module.exports = {
+    "title": "List CloudFormation Outputs",
+    "description": "An AWS CLI command to list all the CloudFormation outputs of a particular stack.",
+    "type": "AWS CLI",
+    "services": [
+        "CloudFormation"
+    ],
+    "introBox": {
+        "headline": "How it works",
+        "text": [
+            "An AWS CLI command that retrieves the outputs from a CloudFormation stack. Replace <stack-name> with the name of your stack."
+        ]
+    },
+    "gitHub": {
+        "template": {
+            "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/aws-cli-get-cloudformation-outputs"
+        }
+    },
+    "snippets": [
+        {
+            "language": "aws cli",
+            "code": "aws cli"
+        }
+    ],
+    "authors": [
+        {
+            "headline": "Contributed by Julian Wood",
+            "name": "Julian Wood",
+            "image": "/assets/images/resources/jrwood.jpg",
+            "bio": "Serverless Developer Advocate at AWS. Julian Wood helps developers and builders learn about and love how serverless technologies can transform the way they build and run applications. ",
+            "linkedin": "woodjulian",
+            "twitter": "julian_wood"
+        }
+    ]
+}
