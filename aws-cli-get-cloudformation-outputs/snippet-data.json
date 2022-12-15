@@ -1,14 +1,20 @@
 module.exports = {
-    "title": "List CloudFormation Outputs",
-    "description": "An AWS CLI command to list all the CloudFormation outputs of a particular stack.",
+    "title": "List all of specific CloudFormation Stack Outputs",
+    "description": "An AWS CLI command to list all or a specific CloudFormation output(s) of a particular stack",
     "type": "AWS CLI",
     "services": [
         "CloudFormation"
     ],
+    "languages": [
+        "aws cli"
+    ],
+    "tags": [
+        "debugging"
+    ],
     "introBox": {
         "headline": "How it works",
         "text": [
-            "An AWS CLI command that retrieves the outputs from a CloudFormation stack. Replace <stack-name> with the name of your stack."
+            "An AWS CLI command that retrieves all or a specific output(s) from a CloudFormation stack."
         ]
     },
     "gitHub": {
@@ -18,8 +24,31 @@ module.exports = {
     },
     "snippets": [
         {
-            "language": "aws cli",
-            "code": "aws cli"
+            "title": "Locations",
+            "codeTabs": [
+                {
+                    "id": "All outputs",
+                    "title": "List CloudFormation Outputs",
+                    "description": "List all the CloudFormation outputs of a particular stack.\nReplace <stack-name> with the name of your stack.",
+                    "snippets": [
+                        {
+                            "language": "bash",
+                            "code": "aws cloudformation describe-stacks --stack-name <stack-name> --query \"Stacks[*].Outputs[*].{OutputKey: OutputKey, OutputValue: OutputValue, Description: Description}\""
+                        }
+                    ]
+                },
+                {
+                    "id": "Specific output",
+                    "title": "List a specific CloudFormation Output",
+                    "description": "List a specific CloudFormation output of a particular stack.\nReplace <stack-name> with the name of your stack and <resource-name> with the resource name.",
+                    "snippets": [
+                        {
+                            "language": "bash",
+                            "code": "aws cloudformation describe-stacks --stack-name  <stack-name> --query \"Stacks[*].Outputs[?OutputKey=='<resource-name>'].OutputValue\" --output text"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "authors": [
