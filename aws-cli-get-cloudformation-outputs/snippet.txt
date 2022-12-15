@@ -1,0 +1,1 @@
+aws cloudformation describe-stacks --stack-name <stack-name> --query "Stacks[*].Outputs[*].{OutputKey: OutputKey, OutputValue: OutputValue, Description: Description}"
