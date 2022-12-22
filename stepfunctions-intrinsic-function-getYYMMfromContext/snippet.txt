@@ -1,0 +1,21 @@
+{
+	"StartAt": "SimpleTask",
+	"States": {
+		"SimpleTask": {
+			"Type": "Task",
+			"Resource": "arn:aws:states:::dynamodb:putItem",
+			"Parameters": {
+				"TableName": "${TableName}",
+				"Item": {
+					"YYMM": {
+						"S.$": "States.Format('{}{}', States.ArrayGetItem(States.StringSplit(States.ArrayGetItem(States.StringSplit($$.State.EnteredTime, 'T'), 0), '-'), 0),States.ArrayGetItem(States.StringSplit(States.ArrayGetItem(States.StringSplit($$.State.EnteredTime, 'T'), 0), '-'), 1))"
+					},
+					"id": {
+						"S.$": "$$.State.EnteredTime"
+					}
+				}
+			},
+			"End": true
+		}
+	}
+}
