@@ -1,0 +1,31 @@
+{
+	"title": "Get YYMM format from the EnteredTime context object in Step Function",
+	"description": "Using intrinsic functions get an item formatted YYMM from the context object EnteredTime from a Step Function state machine. In this way you don't need to use a Lambda function to get that item",
+	"type": "Step Function intrinsic function",
+	"services": ["step function"],
+	"tags": [],
+	"languages": [],
+	"introBox": {
+		"headline": "How it works",
+		"text": [
+			"Using Step Function intrinsic functions you can get from the context object EnteredTime an item formatted like YYMM. This way you don't need to use a lambda function to produce that. This is using many nested functions to parse the EnteredTime variable that looks like this: 2019-03-26T20:14:13.192Z. First it splits it using the T and then it gets the first two element from the first array."
+		]
+	},
+	"gitHub": {
+		"template": {
+			"repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/stepfunctions-intrinsic-function-getYYMMfromContext"
+		}
+	},
+	"snippets": [
+		{
+			"title": "Use intrinsic functions to get an item formatted YYMM from the context object EnteredTime",
+			"snippetPath": "snippet.txt",
+			"language": "json"
+		}
+	],
+	"authors": [
+		{
+			"name": "Marcia Villalba"
+		}
+	]
+}
