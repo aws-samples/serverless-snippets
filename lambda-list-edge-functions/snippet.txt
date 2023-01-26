@@ -1,0 +1,1 @@
+aws lambda list-functions --master-region us-east-1 --function-version ALL
