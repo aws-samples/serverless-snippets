@@ -1,0 +1,46 @@
+{
+  "title": "This function deserializes Kafka events using schema in AWS Glue Schema Registry",
+  "description": "AWS Lambda function that deserializes events in a Kafka topic using Avro schema in AWS Glue Schema Registry.",
+  "type": "Integration",
+  "services": ["lambda"],
+  "tags": [],
+  "languages": [],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This code example shows how an AWS Lambda function can get invoked by Event Source Mapping to a Kafka topic. It downloads the corresponding schema from AWS Glue Schema Registry by looking up the schema version (by which the record has been serialized). The deserializes record is stored in JSON format in Amazon S3."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-kafka-consumer-glue-schema-registry"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Runtimes",
+      "codeTabs": [
+        {
+          "id": "Python",
+          "title": "Copy the code into your lambda function",
+          "description": "Follow the AWS Lambda instructions for packaging with dependencies, and uploading in .zip format.",
+          "snippets": [
+            {
+              "snippetPath": "example.py",
+              "language": "py"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Ali Alemi",
+      "name": "Ali Alemi",
+      "image": "https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2022/09/27/BDB-2199-alialem.jpg",
+      "bio": "Ali Alemi is a Streaming Specialist Solutions Architect at AWS. Ali advises AWS customers with architectural best practices and helps them design real-time analytics data systems that are reliable, secure, efficient, and cost-effective. He works backward from customers’ use cases and designs data solutions to solve their business problems. Prior to joining AWS, Ali supported several public sector customers and AWS consulting partners in their application modernization journey and migration to the cloud.",
+      "linkedin": "ali-alemi-11869b53"
+    }
+  ]
+}
