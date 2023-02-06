@@ -1,0 +1,35 @@
+{
+  "title": "lambda-list-edge-functions-from-region",
+  "description": "Using CLI to list Lambda@Edge functions replicated from a particular region",
+  "type": "Integration",
+  "services": ["lambda"],
+  "tags": [],
+  "languages": ["aws cli"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "[This AWS CLI command will list only the Lambda@Edge function replicated from the master region that is configured in cli]"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-edge-list-functions"
+    }
+  },
+  "snippets": [
+    {
+      "title": "List the Lambda@Edge functions",
+      "snippetPath": "snippet.txt",
+      "language": "aws cli"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Surya Dulla",
+      "name": "Surya Dulla",
+      "image": "https://media.licdn.com/dms/image/C4E03AQGAY8pmzboeow/profile-displayphoto-shrink_200_200/0/1562613473789?e=1681344000&v=beta&t=fOrFY98O69OLXLz5vjTsA3UWISAwJ37MeN_As6EP3gU",
+      "bio": "DevOps Engineer at AWS, Advocate for Cloud technology",
+      "linkedin": "surya-tejaswi-dulla-54b0b188",
+    }
+  ]
+}
