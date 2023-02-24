@@ -30,7 +30,7 @@ async fn function_handler(
     tracing::info!(records = ?evt.payload.records.len(), "Received request from SQS");
 
     if evt.payload.records.len() == 0 {
-        tracing::info!("Empy S3 event received");
+        tracing::info!("Empty S3 event received");
     }
 
     let bucket = evt.payload.records[0].s3.bucket.name.as_ref().expect("Bucket name to exist");
