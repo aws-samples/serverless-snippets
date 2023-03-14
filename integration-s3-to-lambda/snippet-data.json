@@ -63,7 +63,18 @@
               "language": "rust"
             }
           ]
-        }
+        },
+        {
+          "id": "Java",
+          "title": "Usage Example with Java:",
+          "description": "Consuming an S3 event with Lambda using Java.",
+          "snippets": [
+            {
+              "snippetPath": "Handler.java",
+              "language": "java"
+            }
+          ]
+        },
       ]
     }
   ],
@@ -91,6 +102,14 @@
       "bio": "Cloud Infrastructure Architect at AWS",
       "linkedin": "james-eastham",
       "twitter": "plantpowerjames"
+    },
+    {
+      "headline": "Java Examples Presented by Rahul Popat",
+      "name": "Rahul Popat",
+      "image": "https://internal-cdn.amazon.com/badgephotos.amazon.com/?Region=master&FullsizeImage=Yes&uid=poprahul",
+      "bio": "Senior Specialist Solutions Architect at AWS",
+      "linkedin": "https://www.linkedin.com/in/rahulpopat",
+      "twitter": ""
     }
   ]
 }
