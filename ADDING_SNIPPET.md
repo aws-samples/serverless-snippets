@@ -146,7 +146,9 @@ Tabbed Snippets are a great way to provide multiple snippets in a tabbed context
 
 # I want to add a new runtime to an existing snippet
 
-To add a new runtime to an existing snippet, find the snippet you want to add the runtime too and you will need to do two things:
+To add a new runtime to an existing snippet, find the snippet you want to add the runtime too and follow these instructions:
 
-1. Add your new file into the snippet folder ([example can be seen here](https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda)
-2. Add your snippet in the `snippet-data.json` file ([example can be seen here](https://github.com/aws-samples/serverless-snippets/blob/main/integration-s3-to-lambda/snippet-data.json#L22))
+1. Fork the repo
+1. Add your new file into the snippet folder ([examples can be seen here](https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda))
+1. Add your snippet in the `snippet-data.json` file ([example can be seen here](https://github.com/aws-samples/serverless-snippets/blob/main/integration-s3-to-lambda/snippet-data.json#L22))
+3. Make the pull request which the DA team will review.
