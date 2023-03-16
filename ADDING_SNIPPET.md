@@ -2,9 +2,15 @@
 
 Serverless Snippets has been designed to encourage the community to share reuseable code and tools which each other, allowing other developers to discover, find and share code snippets.
 
-This short guide will walk you through how to add a new snippet, and the API for the snippet configuration files.
+Please pick what you want to do:
+
+1. [I want to add a new snippet](#i-want-to-add-a-new-snippet)
+2. [I want to add a new runtime to an existing snippet](#i-want-to-add-a-new-runtime-to-an-existing-snippet)
 
 
+---
+
+# I want to add a new snippet
 
 ## Understanding Snippets and Types
 
@@ -136,3 +142,11 @@ Tabbed Snippets are a great way to provide multiple snippets in a tabbed context
 | language  | string (optional) | Used to render your code with the correct language. If using cloudformation we recommened using the language `css` as it renders the best.
 | codeTabs  | CodeTab (optional) | Use this field to render tabs in your snippet, you can use this to help you render and support multiple runtime code examples (For example) 
 
+---
+
+# I want to add a new runtime to an existing snippet
+
+To add a new runtime to an existing snippet, find the snippet you want to add the runtime too and you will need to do two things:
+
+1. Add your new file into the snippet folder ([example can be seen here](https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda)
+2. Add your snippet in the `snippet-data.json` file ([example can be seen here](https://github.com/aws-samples/serverless-snippets/blob/main/integration-s3-to-lambda/snippet-data.json#L22))
