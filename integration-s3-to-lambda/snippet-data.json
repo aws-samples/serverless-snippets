@@ -32,6 +32,17 @@
           ]
         },
         {
+          "id": "TypeScript",
+          "title": "Usage Example with TypeScript:",
+          "description": "Consuming an S3 event with Lambda using TypeScript.",
+          "snippets": [
+            {
+              "snippetPath": "example.ts",
+              "language": "ts"
+            }
+          ]
+        },
+        {
           "id": "Python",
           "title": "Usage Example with Python:",
           "description": "Consuming an S3 event with Lambda using Python.",
@@ -120,6 +131,14 @@
       "bio": "Senior Specialist Solutions Architect at AWS",
       "linkedin": "https://www.linkedin.com/in/rahulpopat",
       "twitter": ""
+    },
+    {
+      "headline": "TypeScript Examples Presented by Brian Krygsman",
+      "name": "Brian Krygsman",
+      "bio": "Senior Solutions Architect at AWS",
+      "image": "https://avatars.githubusercontent.com/u/3408210?v=4",
+      "linkedin": "brian-krygsman",
+      "twitter": "brnkrygs"
     }
   ]
 }
