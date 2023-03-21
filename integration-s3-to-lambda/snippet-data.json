@@ -75,6 +75,17 @@
             }
           ]
         },
+        {
+          "id": "Go",
+          "title": "Usage Example with Go:",
+          "description": "Consuming an S3 event with Lambda using Go.",
+          "snippets": [
+            {
+              "snippetPath": "main.go",
+              "language": "go"
+            }
+          ]
+        }
       ]
     }
   ],
