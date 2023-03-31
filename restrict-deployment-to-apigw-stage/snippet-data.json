@@ -19,7 +19,7 @@
   "snippets": [
     {
       "title": "Limit stage deployment to authorized user",
-      "snippetPath": "snippet.json",
+      "snippetPath": "snippet.txt",
       "language": "json"
     }
   ],
