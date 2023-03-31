@@ -1,0 +1,30 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "apigateway:POST",
+            "Resource": [
+                "arn:aws:apigateway:us-east-1::/restapis/<api-id>/deployments",
+                "arn:aws:apigateway:us-east-1::/restapis/<api-id>/stages/dev"
+            ],
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "apigateway:Request/StageName": "dev"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": "apigateway:GET",
+            "Resource": [
+                "arn:aws:apigateway:*::/clientcertificates",
+                "arn:aws:apigateway:*::/restapis",
+                "arn:aws:apigateway:*::/restapis/*",
+                "arn:aws:apigateway:us-east-1::/account"
+            ]
+        }
+    ]
+}
