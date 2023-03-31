@@ -1,0 +1,35 @@
+{
+  "title": "Private API Gateway resource policy to allow invoke for both an IAM role & from a VPCE ",
+  "description": "Using this resource policy a private API Gateway can be restricted to be invoked by both an IAM role and a VPC endpoint. ",
+  "type": "Integration",
+  "services": ["apigw"],
+  "tags": [],
+  "languages": ["json"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "The resource policy allows to invoke a Private API only using a particular IAM role and from VPC endpoint"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/privateapi-resource-policy-both-iamrole-and-vpce"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Limit API invoke using both IAM Role and VPCE",
+      "snippetPath": "snippet.txt",
+      "language": "json"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Abhishek Agawane",
+      "name": "Abhishek Agawane",
+      "image": "https://drive.google.com/file/d/1E-5koDaKEaMUtOctX32I9TLwfh3kgpAq/view?usp=drivesdk",
+      "bio": "Abhishek is a Cloud Support Engineer at AWS who focuses on serverless and is passionate about Cloud",
+      "linkedin": "https://www.linkedin.com/in/agawabhi/"
+    }
+  ]
+}
