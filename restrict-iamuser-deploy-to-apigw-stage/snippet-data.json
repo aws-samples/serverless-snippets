@@ -2,7 +2,7 @@
   "title": "IAM Policy to restrict deployment to particular API stage",
   "description": "Using this policy a user access can be restricted to deploy API only to particular stage/s",
   "type": "Integration",
-  "services": ["apigw", "dynamodb"],
+  "services": ["apigw", "iam"],
   "tags": [],
   "languages": ["json"],
   "introBox": {
