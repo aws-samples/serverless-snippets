@@ -1,0 +1,5 @@
+aws apigatewayv2 update-integration \
+    --api-id $API 
+    --integration-id $INTEGRATION_ID 
+    --request-parameters {\"remove:header.custom_headerA\":\"\'\'\"} \
+    --response-parameters {\"200\":{\"remove:header.headerB\":\"\'\'\"}}
