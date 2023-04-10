@@ -49,6 +49,22 @@
               "language": "dotnet"
             }
           ]
+        },
+        {
+          "id": "Java",
+          "title": "Using Powertools Logging with Java:",
+          "snippets": [
+            {
+              "title": "Add maven dependancy in your project:",
+              "code": "Add maven or gradle dependencies to your project as mentioned here - https://awslabs.github.io/aws-lambda-powertools-java",
+              "language": "java"
+            },
+            {
+              "description": "Lambda Powertools logging provides an opinionated logger with output structured as JSON.",
+              "snippetPath": "LoggingHandler.java",
+              "language": "java"
+            }
+          ]
         }
       ]
     }
@@ -62,6 +78,10 @@
       {
         "text": "Watch Serverless Office Hours: AWS Lambda - Lambda Powertools",
         "link": "https://www.youtube.com/watch?v=tr7DZxn3qag&t=2038s"
+      },
+      {
+        "text": "AWS Lambda PowerTools Homepage",
+        "link": "https://awslabs.github.io/aws-lambda-powertools-java"
       }
     ]
   },
