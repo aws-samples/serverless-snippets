@@ -55,7 +55,7 @@
           "title": "Using Powertools Logging with Java:",
           "snippets": [
             {
-              "title": "Add maven dependancy in your project:",
+              "title": "Add maven or gradle dependencies to your project:",
               "code": "Add maven or gradle dependencies to your project as mentioned here - https://awslabs.github.io/aws-lambda-powertools-java",
               "language": "java"
             },

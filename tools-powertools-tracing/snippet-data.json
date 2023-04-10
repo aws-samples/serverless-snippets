@@ -19,7 +19,7 @@
       "codeTabs": [
         {
           "id": ".NET",
-          "title": "Using Powertools Logging with .NET:",
+          "title": "Using Powertools Tracing with .NET:",
           "snippets": [
             {
               "title": "Install the library in your project:",
@@ -30,6 +30,22 @@
               "description": "The Logging functionality requires an environment variables to be set; POWERTOOLS_SERVICE_NAME.",
               "snippetPath": "Function.cs",
               "language": "dotnet"
+            }
+          ]
+        },
+        {
+          "id": "Java",
+          "title": "Using Powertools Tracing with Java:",
+          "snippets": [
+            {
+              "title": "Add maven or gradle dependencies to your project:",
+              "code": "Add maven or gradle dependencies to your project as mentioned here - https://awslabs.github.io/aws-lambda-powertools-java",
+              "language": "java"
+            },
+            {
+              "description": "Powertools tracing is an opinionated thin wrapper for AWS X-Ray Java SDK a provides functionality to reduce the overhead of performing common tracing tasks.",
+              "snippetPath": "TracingHandler.java",
+              "language": "java"
             }
           ]
         }
@@ -56,6 +72,14 @@
       "bio": "Cloud Infrastructure Architect at AWS",
       "linkedin": "james-eastham",
       "twitter": "plantpowerjames"
+    },
+    {
+      "headline": "Java Examples Presented by Rahul Popat",
+      "name": "Rahul Popat",
+      "bio": "Senior Specialist Solutions Architect at AWS",
+      "image": "https://avatars.githubusercontent.com/u/65962691?v=4",
+      "linkedin": "https://www.linkedin.com/in/rahulpopat",
+      "twitter": ""
     }
   ]
 }

@@ -54,7 +54,7 @@
           "title": "Using Powertools Metrics with Java:",
           "snippets": [
             {
-              "title": "Install the library in your project:",
+              "title": "Add maven or gradle dependencies to your project:",
               "code": "Add maven or gradle dependencies to your project as mentioned here - https://awslabs.github.io/aws-lambda-powertools-java",
               "language": "java"
             },
