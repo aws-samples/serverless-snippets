@@ -1,0 +1,13 @@
+serverless:
+  long: "&Serverless;"
+  short: "&Serverless;"
+  sort: Serverless
+  expanded:
+    long: Serverless Snippets
+    short: Serverless
+  blurb: used for Serverless Development.
+  guide:
+    subtitle: User Guide
+  tags:
+    product_categories: { "Serverless" }
+  version: 1
