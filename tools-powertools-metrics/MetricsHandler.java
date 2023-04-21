@@ -32,7 +32,7 @@ public class MetricsHandler implements RequestHandler<APIGatewayProxyRequestEven
         headers.put("Content-Type", "application/json");
         headers.put("X-Custom-Header", "application/json");
 
-        metricsLogger.putDimensions(DimensionSet.of("environment", "prod"));
+        metricsLogger().putDimensions(DimensionSet.of("environment", "prod"));
         metricsLogger().putMetric("CustomMetric1", 1, Unit.COUNT);
 
         APIGatewayProxyResponseEvent response = new APIGatewayProxyResponseEvent()
