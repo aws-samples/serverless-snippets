@@ -1,0 +1,77 @@
+{
+  "title": "Amazon SQS partial batch response Lambda function",
+  "description": "This snippet demonstrates how to handle an SQS event and implement a partial batch response in a lambda function.",
+  "type": "Integration",
+  "services": ["lambda", "sqs"],
+  "languages": ["Java", "Python", ".NET"],
+  "tags": ["Amazon SQS", "Handling Errors"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "The Lambda function retrieves a source SQS event which may contain messages that cannot be processed. As exceptions are caught processing messages, a list of itemIdentifiers is collected. The collection is returned as batchItemFailures, a JSON serialized list of itemIdentifiers. This sample assumes ReportBatchItemFailures is activated on your lambda function."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Runtimes",
+      "codeTabs": [
+        {
+          "id": "Java",
+          "title": "Usage Example with Java:",
+          "description": "Implementing partial SQS batch responses using Java.",
+          "snippets": [
+            {
+              "snippetPath": "example.java",
+              "language": "java"
+            }
+          ]
+        },
+        {
+          "id": "Python",
+          "title": "Usage Example with Python:",
+          "description": "Implementing partial SQS batch responses using Python.",
+          "snippets": [
+            {
+              "snippetPath": "example.py",
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "id": ".NET",
+          "title": "Usage Example with C#:",
+          "description": "Implementing partial SQS batch responses using C#.",
+          "snippets": [
+            {
+              "snippetPath": "example.cs",
+              "language": "dotnet"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resources": {
+    "bullets": [
+      {
+        "text": "Using Lambda with Amazon SQS",
+        "link": "https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html"
+      }
+    ]
+  },
+  "authors": [
+    {
+      "headline": "Presented by Victor Feinman",
+      "name": "Victor Feinman",
+      "image": "hthttps://avatars.githubusercontent.com/u/14178747?s=400&v=4",
+      "bio": "Sr. Solutions Architect at AWS",
+      "linkedin": "victorfeinman",
+      "twitter": ""
+    }
+  ]
+}
