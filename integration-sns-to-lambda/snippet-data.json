@@ -38,7 +38,7 @@
     "bullets": [
       {
         "text": "Using an Amazon SNS trigger to invoke a Lambda function",
-        "link": "https://docs.aws.amazon.com/lambda/latest/dg/with-sns-create-package.html"
+        "link": "https://docs.aws.amazon.com/lambda/latest/dg/with-sns.html"
       }
     ]
   },
