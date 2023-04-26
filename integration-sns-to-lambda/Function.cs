@@ -19,7 +19,6 @@ public class Function
 
     }
 
-
     /// <summary>
     /// This method is called for every Lambda invocation. This method takes in an SNS event object and can be used 
     /// to respond to SNS messages.
@@ -27,7 +26,7 @@ public class Function
     /// <param name="evnt"></param>
     /// <param name="context"></param>
     /// <returns></returns>
-    public async Task Handler(SNSEvent evnt, ILambdaContext context)
+    public async Task FunctionHandler(SNSEvent evnt, ILambdaContext context)
     {
         foreach (var record in evnt.Records)
         {
@@ -37,9 +36,18 @@ public class Function
 
     private async Task ProcessRecordAsync(SNSEvent.SNSRecord record, ILambdaContext context)
     {
-        context.Logger.LogInformation($"Processed record {record.Sns.Message}");
+        try
+        {
+            context.Logger.LogInformation($"Processed record {record.Sns.Message}");
 
-        // TODO: Do interesting work based on the new message
-        await Task.CompletedTask;
+            // TODO: Do interesting work based on the new message
+            await Task.CompletedTask;
+        }
+        catch (Exception e)
+        {
+            //You can use Dead Letter Queue to handle failures. By configuring a Lambda DLQ.
+            context.Logger.LogError($"An error occurred - {e.Message}");
+            throw;
+        }
     }
 }

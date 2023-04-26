@@ -8,7 +8,7 @@
   "introBox": {
     "headline": "How it works",
     "text": [
-      "The Lambda function retrieves a batch of SQS messages from the event parameter that it receives. The function logs the content of each message."
+      "The Lambda function retrieves a batch of SQS messages from the event parameter that it receives. The function logs the content of each message. When an exception occurs for one or more of the received messages, the handler returns SQSBatchResponse that contains batchItemFailure for failed messages that can be used for message reprocessing or move failed messages to DLQ"
     ]
   },
   "gitHub": {
