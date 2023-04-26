@@ -38,7 +38,7 @@
     "bullets": [
       {
         "text": "Using an Amazon SQS trigger to invoke a Lambda function",
-        "link": "https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example.html"
+        "link": "https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html"
       }
     ]
   },
