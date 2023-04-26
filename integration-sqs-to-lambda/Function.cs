@@ -11,7 +11,7 @@ namespace SqsIntegration;
 public class Function
 {
 
-    private List<BatchItemFailure> _batchItemFailures = new();
+    private readonly List<BatchItemFailure> _batchItemFailures;
 
     /// <summary>
     /// Default constructor. This constructor is used by Lambda to construct the instance. When invoked in a Lambda environment
@@ -20,7 +20,7 @@ public class Function
     /// </summary>
     public Function()
     {
-
+        _batchItemFailures = new List<BatchItemFailure>();
     }
 
 
@@ -33,7 +33,7 @@ public class Function
     /// <returns></returns>
     public async Task<SQSBatchResponse> FunctionHandler(SQSEvent evnt, ILambdaContext context)
     {
-        if (evnt.Records.Count <= 0)
+        if (evnt.Records.Count == 0)
         {
             context.Logger.LogLine("Empty SQS Event received");
             return new SQSBatchResponse();
@@ -42,9 +42,9 @@ public class Function
         foreach (var message in evnt.Records)
         {
             BatchItemFailure? result = await ProcessMessageAsync(message, context);
-            if (result != null)
+            if (result.HasValue)
             {
-                _batchItemFailures.Add(result);
+                _batchItemFailures.Add(result.Value);
             }
         }
 
@@ -57,6 +57,7 @@ public class Function
         {
             context.Logger.LogInformation($"Processed message {message.Body}");
             // TODO: Do interesting work based on the new message
+            await Task.CompletedTask; // Placeholder for actual async work
             return null;
 
         }
