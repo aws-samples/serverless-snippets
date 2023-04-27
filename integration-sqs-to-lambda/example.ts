@@ -1,6 +1,6 @@
 import { SQSEvent, Context, SQSHandler, SQSBatchResponse, SQSBatchItemFailure, SQSRecord } from 'aws-lambda';
 
- export const functionHandler : SQSHandler = async (event: SQSEvent, context: Context) : Promise<SQSBatchResponse> => {
+export const functionHandler : SQSHandler = async (event: SQSEvent, context: Context) : Promise<SQSBatchResponse> => {
     const batchItemFailures : SQSBatchItemFailure[] = [];
     if (event.Records.length == 0){
         console.log('Empty SQS Event received');
@@ -14,7 +14,7 @@ import { SQSEvent, Context, SQSHandler, SQSBatchResponse, SQSBatchItemFailure, S
         }
     }
     return { batchItemFailures };
- };
+};
 
 async function processMessageAsync(message: SQSRecord) : Promise<SQSBatchItemFailure | null> {
     try {
