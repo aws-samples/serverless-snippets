@@ -30,6 +30,17 @@
               "language": "dotnet"
             }
           ]
+        },
+        {
+          "id": "TypeScript",
+          "title": "Usage Example with TypeScript:",
+          "description": "Consuming an SNS event with Lambda using TypeScript.",
+          "snippets": [
+            {
+              "snippetPath": "example.ts",
+              "language": "ts"
+            }
+          ]
         }
       ]
     }
