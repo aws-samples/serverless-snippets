@@ -32,7 +32,7 @@ namespace SqsIntegrationSampleCode
             {
                 await ProcessMessageAsync(message, context);
             }
-
+            
             return "done";
         }
 

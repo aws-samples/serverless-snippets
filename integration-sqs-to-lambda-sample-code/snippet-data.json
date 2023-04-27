@@ -1,6 +1,6 @@
 {
-  "title": "Amazon SQS trigger to invoke a Lambda function code samples",
-  "description": "Using an Amazon SQS trigger to invoke a Lambda function",
+  "title": "Sample Amazon SQS function code",
+  "description": "Sample Amazon SQS function code",
   "type": "Integration",
   "services": ["lambda", "sqs"],
   "languages": [".NET", "TypeScript"],
@@ -13,7 +13,7 @@
   },
   "gitHub": {
     "template": {
-      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda-code-samples"
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda-sample-code"
     }
   },
   "snippets": [
@@ -23,7 +23,7 @@
         {
           "id": ".NET",
           "title": "Usage Example with .NET:",
-          "description": "Consuming an SQS event with Lambda using .NET.",
+          "description": "Sample Amazon SQS function code using .NET.",
           "snippets": [
             {
               "snippetPath": "Function.cs",
@@ -34,7 +34,7 @@
        {
           "id": "TypeScript",
           "title": "Usage Example with TypeScript:",
-          "description": "Consuming an SQS event with Lambda using TypeScript.",
+          "description": "Sample Amazon SQS function code using TypeScript.",
           "snippets": [
             {
               "snippetPath": "example.ts",
@@ -48,8 +48,8 @@
   "resources": {
     "bullets": [
       {
-        "text": "Using an Amazon SQS trigger to invoke a Lambda function",
-        "link": "https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html"
+        "text": "Sample Amazon SQS function code",
+        "link": "https://docs.aws.amazon.com/lambda/latest/dg/with-sqs-create-package.html"
       }
     ]
   },
