@@ -1,0 +1,66 @@
+{
+  "title": "Amazon SQS trigger to invoke a Lambda function",
+  "description": "Using an Amazon SQS trigger to invoke a Lambda function",
+  "type": "Integration",
+  "services": ["lambda", "sqs"],
+  "languages": [".NET"],
+  "tags": [],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "The Lambda function retrieves a batch of SQS messages from the event parameter that it receives. The function logs the content of each message. When an exception occurs for one or more of the received messages, the handler returns SQSBatchResponse that contains batchItemFailure for failed messages that can be used for message reprocessing or move failed messages to DLQ"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Runtimes",
+      "codeTabs": [
+        {
+          "id": ".NET",
+          "title": "Usage Example with .NET:",
+          "description": "Consuming an SQS event with Lambda using .NET.",
+          "snippets": [
+            {
+              "snippetPath": "Function.cs",
+              "language": "dotnet"
+            }
+          ]
+        },
+       {
+          "id": "TypeScript",
+          "title": "Usage Example with TypeScript:",
+          "description": "Consuming an SQS event with Lambda using TypeScript.",
+          "snippets": [
+            {
+              "snippetPath": "example.ts",
+              "language": "ts"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resources": {
+    "bullets": [
+      {
+        "text": "Using an Amazon SQS trigger to invoke a Lambda function",
+        "link": "https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html"
+      }
+    ]
+  },
+  "authors": [
+    {
+      "headline": ".NET Examples Presented by Mohammed Tomeh",
+      "name": "Mohammed Tomeh",
+      "image": "https://pbs.twimg.com/profile_images/1651016809338793988/XUWbJJmv_400x400.jpg",
+      "bio": "Cloud Application Architect at AWS",
+      "linkedin": "mtomeh",
+      "twitter": "mtomeh84"
+    }
+  ]
+}
