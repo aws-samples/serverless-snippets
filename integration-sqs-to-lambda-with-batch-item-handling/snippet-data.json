@@ -13,7 +13,7 @@
   },
   "gitHub": {
     "template": {
-      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda"
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda-with-batch-item-handling"
     }
   },
   "snippets": [
