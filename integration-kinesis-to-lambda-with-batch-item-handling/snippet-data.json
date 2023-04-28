@@ -1,6 +1,6 @@
 {
-  "title": "Sample function code",
-  "description": "Sample function code",
+  "title": "Using AWS Lambda with Amazon Kinesis",
+  "description": "Using AWS Lambda with Amazon Kinesis",
   "type": "Integration",
   "services": ["lambda", "kinesis"],
   "languages": ["Node", "TypeScript", ".NET"],
@@ -8,12 +8,12 @@
   "introBox": {
     "headline": "How it works",
     "text": [
-      "The Lambda function retrieves Kinesis Records from the event parameter that it receives. The function retrieves Kinesis payload, decode from Base64 and log them to cloudwatch. The function reports batchItemFailures with SequenceNumber."
+      "The Lambda function retrieves Kinesis Records from the event parameter that it receives. The function retrieves Kinesis payload, decode from Base64 and log them to cloudwatch. The function reports batchItemFailures with SequenceNumber, in order for this feature to work ReportBatchItemFailures should be enabled in lambda configurations"
     ]
   },
   "gitHub": {
     "template": {
-      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-sample-code"
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda"
     }
   },
   "snippets": [
@@ -59,8 +59,8 @@
   "resources": {
     "bullets": [
       {
-        "text": "Sample function code",
-        "link": "https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis-create-package.html"
+        "text": "Using AWS Lambda with Amazon Kinesis",
+        "link": "https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html"
       }
     ]
   },

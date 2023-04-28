@@ -1,7 +1,7 @@
-import { KinesisStreamEvent, Context, KinesisStreamHandler, KinesisStreamRecordPayload } from 'aws-lambda';
+import { KinesisStreamEvent, Context, KinesisStreamHandler, KinesisStreamRecordPayload, KinesisStreamBatchResponse } from 'aws-lambda';
 import { Buffer } from 'buffer';
 
-export const functionHandler : KinesisStreamHandler = async (event: KinesisStreamEvent, context: Context) : Promise<void> => {
+export const functionHandler : KinesisStreamHandler = async (event: KinesisStreamEvent, context: Context) : Promise<KinesisStreamBatchResponse> => {
     for(const record of event.Records){
         try {
             console.log(`Processed Kinesis Event - EventID: ${record.eventID}`);
@@ -10,10 +10,13 @@ export const functionHandler : KinesisStreamHandler = async (event: KinesisStrea
             // TODO: Do interesting work based on the new data
         } catch (err) {
             console.error(`An error occurred ${err}`);
-            throw err;
+            /* Since we are working with streams, we can return the failed item immediately.
+            Lambda will immediately begin to retry processing from this failed item onwards. */
+            return { batchItemFailures: [{ itemIdentifier: record.kinesis.sequenceNumber }] }; 
         }
-        console.log(`Successfully processed ${event.Records.length} records.`);
     }
+    console.log(`Successfully processed ${event.Records.length} records.`);
+    return { batchItemFailures: []}; 
 };
 
 async function getRecordDataAsync(payload: KinesisStreamRecordPayload) : Promise<string> {

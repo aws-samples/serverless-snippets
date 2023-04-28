@@ -7,13 +7,10 @@ exports.handler = async (event, context) => {
             // TODO: Do interesting work based on the new data
         } catch (err) {
             console.error(`An error occurred ${err}`);
-            /* Since we are working with streams, we can return the failed item immediately.
-            Lambda will immediately begin to retry processing from this failed item onwards. */
-            return { batchItemFailures: [{ itemIdentifier: record.kinesis.sequenceNumber }] }; 
+            throw err;
         }
     }
     console.log(`Successfully processed ${event.Records.length} records.`);
-    return { batchItemFailures: []}; 
 };
 
 async function getRecordDataAsync(payload) {
