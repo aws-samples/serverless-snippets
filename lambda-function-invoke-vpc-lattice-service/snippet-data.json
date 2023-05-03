@@ -21,7 +21,7 @@
       "title": "Runtimes",
       "codeTabs": [
         {
-          "id": "Typescript",
+          "id": "TypeScript",
           "title": "Copy the code into your lambda function",
           "description": "Follow the AWS Lambda instructions for packaging with dependencies, and uploading in .zip format.",
           "snippets": [
