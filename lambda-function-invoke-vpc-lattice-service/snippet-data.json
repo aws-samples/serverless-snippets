@@ -8,7 +8,7 @@
   "introBox": {
     "headline": "How it works",
     "text": [
-      "After retrieving access key and other credentials from enviornment, sign the request for VPC Lattice services. In this snippet, we use the open source axios library to send the request to the service, but other methods for sending HTTP requests are also applicable. Setting the unsigned-payload header is currently required for VPC Lattice."
+      "After retrieving access key and other credentials from environment, sign the request for VPC Lattice services. In this snippet, we use the open source axios library to send the request to the service, but other methods for sending HTTP requests are also applicable. Setting the unsigned-payload header is currently required for VPC Lattice."
     ]
   },
   "gitHub": {
