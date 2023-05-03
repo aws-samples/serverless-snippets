@@ -22,7 +22,7 @@
       "codeTabs": [
         {
           "id": "TypeScript",
-          "title": "Copy the code into your lambda function",
+          "title": "Copy the code into your Lambda function",
           "description": "Follow the AWS Lambda instructions for packaging with dependencies, and uploading in .zip format.",
           "snippets": [
             {
