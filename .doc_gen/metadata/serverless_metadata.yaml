@@ -1,5 +1,5 @@
 # zexi 0.4.3
-serverless_s3_to_lambda:
+serverless_S3_Lambda:
   title: Amazon S3 trigger to invoke a Lambda function
   title_abbrev: Send email
   synopsis: Using an Amazon S3 trigger to invoke a Lambda function
