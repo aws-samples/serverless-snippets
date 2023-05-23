@@ -1,0 +1,14 @@
+{
+	"TableName": "$stageVariables.TableName",
+	"Item": {
+		"partitionKey": {"S": "String Key0"},
+		"attributeNumberSet": {"NS": ["3.14", "42.2", "-19", "7.5"]},
+		"attributeBinarySet": {"BS": ["UmFpbnk=", "U25vd3k=", "U3Vubnk="]},
+		"attributeString": {"S": "2015-12-21T17:42:34Z"},
+		"attributeBinary": {"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"},
+		"attributeBoolean": {"BOOL": true},
+		"attributeNull": {"NULL": true},
+		"attributeStringSet": {"SS": ["Black", "Green", "Red"]},
+		"attributeNumber": {"N": "1437136300"}
+	}
+}

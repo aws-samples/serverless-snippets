@@ -1,0 +1,39 @@
+{
+  "title": "VTL - REST to CRUD",
+  "description": "API Gateway REST to CRUD operations via direct integration with DynamoDB",
+  "type": "Integration",
+  "services": ["apigw", "dynamodb"],
+  "tags": [],
+  "languages": ["vtl"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "These snippets demonstrate Create/POST and Read/GET operations using direct integration between API Gateway and a DynamoDB table.  The snippets use API Gateway mapping templates to transform generic JSON to DynamoDB formatted JSON and back.  The template code should work with any DynamoDB table with attribute types listed in the first snippet."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/apigateway-rest-dynamodb-crud"
+    }
+  },
+  "snippets": [
+    {
+      "title": "DynamoDB Table Item Attributes and Types",
+      "snippetPath": "typemap.txt",
+      "language": "txt"
+    },
+    {
+      "title": "JSON document for Create/POST",
+      "snippetPath": "post-date.json",
+      "language": "json"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Ken Cyr",
+      "name": "Ken Cyr",
+      "image": "https://avatars.githubusercontent.com/u/124748006?v=4",
+      "bio": "Ken Cyr is a Senior Partner Solutions Architect at Amazon Web Services and is based in North Texas. Ken is an inventor and an early adopter of serverless cloud."
+    }
+  ]
+}

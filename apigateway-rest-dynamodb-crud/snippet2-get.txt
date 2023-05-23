@@ -1,0 +1,20 @@
+#set($responseData = $input.path('$.Item'))
+{##
+    #foreach( $mapEntry in $responseData.entrySet() )
+        "$mapEntry.key":##
+        #set($element = $mapEntry.value)
+        #foreach( $key in $element.keySet() )
+            #set($val = $element.get($key))
+            #if($key == "NS")
+                #set($ns = "$val")
+                $ns.replace("""", "")##
+            #elseif(($key == "BS")||($key == "BOOL")||($key == "SS")||($key == "N"))
+                $val##
+            #elseif($key == "NULL")null##
+                ## all string types and anything else
+                #else "$val"##
+            #end
+        #end
+    #if($foreach.hasNext),#end##
+    #end
+}

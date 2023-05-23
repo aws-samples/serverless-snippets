@@ -1,0 +1,9 @@
+partitionKey=S,
+attributeBinary=B,
+attributeBinarySet=BS,
+attributeBoolean=BOOL,
+attributeNull=NULL,
+attributeNumber=N,
+attributeNumberSet=NS,
+attributeString=S,
+attributeStringSet=SS	
