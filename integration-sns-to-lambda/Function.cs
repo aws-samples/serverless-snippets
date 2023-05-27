@@ -15,6 +15,7 @@ public class Function
         {
             await ProcessRecordAsync(record, context);
         }
+        context.Logger.LogInformation("done");
     }
 
     private async Task ProcessRecordAsync(SNSEvent.SNSRecord record, ILambdaContext context)

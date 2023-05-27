@@ -2,6 +2,7 @@ exports.handler = async (event, context) => {
   for (const record of event.Records) {
     await processMessageAsync(record);
   }
+  console.info("done");
 };
 
 async function processMessageAsync(record) {

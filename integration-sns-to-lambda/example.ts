@@ -7,6 +7,7 @@ export const functionHandler: SNSHandler = async (
   for (const record of event.Records) {
     await processMessageAsync(record);
   }
+  console.info("done");
 };
 
 async function processMessageAsync(record: SNSEventRecord): Promise<any> {
