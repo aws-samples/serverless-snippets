@@ -9,13 +9,6 @@ namespace SnsIntegration;
 
 public class Function
 {
-    /// <summary>
-    /// This method is called for every Lambda invocation. This method takes in an SNS event object and can be used 
-    /// to respond to SNS messages.
-    /// </summary>
-    /// <param name="evnt"></param>
-    /// <param name="context"></param>
-    /// <returns></returns>
     public async Task FunctionHandler(SNSEvent evnt, ILambdaContext context)
     {
         foreach (var record in evnt.Records)
@@ -36,7 +29,7 @@ public class Function
         catch (Exception e)
         {
             //You can use Dead Letter Queue to handle failures. By configuring a Lambda DLQ.
-            context.Logger.LogError($"An error occurred - {e.Message}");
+            context.Logger.LogError($"An error occurred");
             throw;
         }
     }
