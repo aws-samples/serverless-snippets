@@ -3,7 +3,7 @@
   "description": "Using an Amazon SQS trigger to invoke a Lambda function",
   "type": "Integration",
   "services": ["lambda", "sqs"],
-  "languages": ["Node", "TypeScript"],
+  "languages": ["Node", "TypeScript", ".NET"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -21,17 +21,17 @@
       "title": "Runtimes",
       "codeTabs": [
         {
-          "id": "Node",
-          "title": "Usage Example with TypeScript:",
-          "description": "Consuming an SQS event with Lambda using Node.",
+          "id": "Node.js",
+          "title": "Usage Example with Node:",
+          "description": "Consuming an SQS event with Lambda using JavaScript.",
           "snippets": [
             {
-              "snippetPath": "example.ts",
-              "language": "ts"
+              "snippetPath": "example.js",
+              "language": "js"
             }
           ]
-       },
-       {
+        },
+        {
           "id": "TypeScript",
           "title": "Usage Example with TypeScript:",
           "description": "Consuming an SQS event with Lambda using TypeScript.",
@@ -39,6 +39,17 @@
             {
               "snippetPath": "example.ts",
               "language": "ts"
+            }
+          ]
+        },
+        {
+          "id": ".NET",
+          "title": "Usage Example with .NET:",
+          "description": "Consuming an SQS event with Lambda using .NET.",
+          "snippets": [
+            {
+              "snippetPath": "Function.cs",
+              "language": "dotnet"
             }
           ]
         }
@@ -64,6 +75,14 @@
     },
     {
       "headline": "TypeScript Examples Presented by Mohammed Tomeh",
+      "name": "Mohammed Tomeh",
+      "image": "https://pbs.twimg.com/profile_images/1651016809338793988/XUWbJJmv_400x400.jpg",
+      "bio": "Cloud Application Architect at AWS",
+      "linkedin": "mtomeh",
+      "twitter": "mtomeh84"
+    },
+    {
+      "headline": ".NET Examples Presented by Mohammed Tomeh",
       "name": "Mohammed Tomeh",
       "image": "https://pbs.twimg.com/profile_images/1651016809338793988/XUWbJJmv_400x400.jpg",
       "bio": "Cloud Application Architect at AWS",
