@@ -7,21 +7,31 @@ using Amazon.Lambda.SQSEvents;
 
 namespace SqsIntegrationSampleCode
 {
-    public async Task<string> FunctionHandler(SQSEvent evnt, ILambdaContext context)
+    public async Task FunctionHandler(SQSEvent evnt, ILambdaContext context)
     {
         foreach (var message in evnt.Records)
         {
             await ProcessMessageAsync(message, context);
         }
 
-        return "done";
+        context.Logger.LogInformation("done");
     }
 
     private async Task ProcessMessageAsync(SQSEvent.SQSMessage message, ILambdaContext context)
     {
-        context.Logger.LogLine($"Processed message {message.Body}");
-        // TODO: Do interesting work based on the new message
-        await Task.CompletedTask;
+        try
+        {
+            context.Logger.LogInformation($"Processed message {message.Body}");
+
+            // TODO: Do interesting work based on the new message
+            await Task.CompletedTask;
+        }
+        catch (Exception e)
+        {
+            //You can use Dead Letter Queue to handle failures. By configuring a Lambda DLQ.
+            context.Logger.LogError($"An error occurred");
+            throw;
+        }
+
     }
-}
 }
