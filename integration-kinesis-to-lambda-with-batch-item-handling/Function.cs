@@ -19,7 +19,7 @@ public class Function
     {
         if (evnt.Records.Count == 0)
         {
-            context.Logger.LogLine("Empty Kinesis Event received");
+            Logger.LogInformation("Empty Kinesis Event received");
             return new StreamsEventResponse();
         }
 
@@ -27,14 +27,14 @@ public class Function
         {
             try
             {
-                context.Logger.LogLine($"Processed Event with EventId: {record.EventId}");
+                Logger.LogInformation($"Processed Event with EventId: {record.EventId}");
                 string data = await GetRecordDataAsync(record.Kinesis, context);
-                context.Logger.LogLine($"Data: {data}");
+                Logger.LogInformation($"Data: {data}");
                 // TODO: Do interesting work based on the new data
             }
             catch (Exception ex)
             {
-                context.Logger.LogError($"An error occurred {ex.Message}");
+                Logger.LogError($"An error occurred {ex.Message}");
                 /* Since we are working with streams, we can return the failed item immediately.
                    Lambda will immediately begin to retry processing from this failed item onwards. */
                 return new StreamsEventResponse
@@ -46,7 +46,7 @@ public class Function
                 };
             }
         }
-        context.Logger.LogLine($"Successfully processed {evnt.Records.Count} records.");
+        Logger.LogInformation($"Successfully processed {evnt.Records.Count} records.");
         return new StreamsEventResponse();
     }
 

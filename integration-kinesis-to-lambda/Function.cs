@@ -17,7 +17,7 @@ public class Function
     {
         if (evnt.Records.Count == 0)
         {
-            context.Logger.LogLine("Empty Kinesis Event received");
+            Logger.LogInformation("Empty Kinesis Event received");
             return;
         }
 
@@ -25,18 +25,18 @@ public class Function
         {
             try
             {
-                context.Logger.LogLine($"Processed Event with EventId: {record.EventId}");
+                Logger.LogInformation($"Processed Event with EventId: {record.EventId}");
                 string data = await GetRecordDataAsync(record.Kinesis, context);
-                context.Logger.LogLine($"Data: {data}");
+                cLogger.LogInformation($"Data: {data}");
                 // TODO: Do interesting work based on the new data
             }
             catch (Exception ex)
             {
-                context.Logger.LogError($"An error occurred {ex.Message}");
+                Logger.LogError($"An error occurred {ex.Message}");
                 throw;
             }
         }
-        context.Logger.LogLine($"Successfully processed {evnt.Records.Count} records.");
+        Logger.LogInformation($"Successfully processed {evnt.Records.Count} records.");
     }
 
     private async Task<string> GetRecordDataAsync(KinesisEvent.Record record, ILambdaContext context)
