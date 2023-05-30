@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.KinesisEvents;
+using AWS.Lambda.Powertools.Logging;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
@@ -9,6 +10,9 @@ namespace KinesisIntegrationSampleCode;
 
 public class Function
 {
+    // Powertools Logger requires an environment variables against your function
+    // POWERTOOLS_SERVICE_NAME
+    [Logging(LogEvent = true)]
     public async Task FunctionHandler(KinesisEvent evnt, ILambdaContext context)
     {
         if (evnt.Records.Count == 0)
