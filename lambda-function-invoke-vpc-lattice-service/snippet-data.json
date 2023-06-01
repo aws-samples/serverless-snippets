@@ -1,0 +1,46 @@
+{
+  "title": "Invoke a VPC Lattice service with AWS Lambda",
+  "description": "This snippet invokes a VPC Lattice service that requires signing using SigV4. Signing requirement is based on the service and/or service network auth policy.",
+  "type": "Integration",
+  "services": ["lambda", "vpc-lattice"],
+  "tags": [],
+  "languages": ["TypeScript"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "After retrieving access key and other credentials from environment, sign the request for VPC Lattice services. In this snippet, we use the open source axios library to send the request to the service, but other methods for sending HTTP requests are also applicable. Setting the unsigned-payload header is currently required for VPC Lattice."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-invoke-vpc-lattice-service"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Runtimes",
+      "codeTabs": [
+        {
+          "id": "TypeScript",
+          "title": "Copy the code into your Lambda function",
+          "description": "Follow the AWS Lambda instructions for packaging with dependencies, and uploading in .zip format.",
+          "snippets": [
+            {
+              "snippetPath": "example.ts",
+              "language": "ts"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Josh Kahn",
+      "name": "Josh Kahn",
+      "image": "/assets/images/resources/contributors/joshhahn.jpg",
+      "bio": "Principal Solution Architect @ AWS.",
+      "twitter": "joshuaakahn"
+    }
+  ]
+}
