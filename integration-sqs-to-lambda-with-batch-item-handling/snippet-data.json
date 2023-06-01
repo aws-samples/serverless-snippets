@@ -23,7 +23,7 @@
         {
           "id": "Node.js",
           "title": "Usage Example with Node:",
-          "description": "Consuming an SQS event with Lambda using JavaScript.",
+          "description": "Consuming an SQS event with Lambda using JavaScript with batch item handling.",
           "snippets": [
             {
               "snippetPath": "example.js",
@@ -34,7 +34,7 @@
         {
           "id": "TypeScript",
           "title": "Usage Example with TypeScript:",
-          "description": "Consuming an SQS event with Lambda using TypeScript.",
+          "description": "Consuming an SQS event with Lambda using TypeScript with batch item handling.",
           "snippets": [
             {
               "snippetPath": "example.ts",
@@ -45,7 +45,7 @@
         {
           "id": ".NET",
           "title": "Usage Example with .NET:",
-          "description": "Consuming an SQS event with Lambda using .NET.",
+          "description": "Consuming an SQS event with Lambda using .NET with batch item handling.",
           "snippets": [
             {
               "snippetPath": "Function.cs",
@@ -66,23 +66,7 @@
   },
   "authors": [
     {
-      "headline": "Node Examples Presented by Mohammed Tomeh",
-      "name": "Mohammed Tomeh",
-      "image": "https://pbs.twimg.com/profile_images/1651016809338793988/XUWbJJmv_400x400.jpg",
-      "bio": "Cloud Application Architect at AWS",
-      "linkedin": "mtomeh",
-      "twitter": "mtomeh84"
-    },
-    {
-      "headline": "TypeScript Examples Presented by Mohammed Tomeh",
-      "name": "Mohammed Tomeh",
-      "image": "https://pbs.twimg.com/profile_images/1651016809338793988/XUWbJJmv_400x400.jpg",
-      "bio": "Cloud Application Architect at AWS",
-      "linkedin": "mtomeh",
-      "twitter": "mtomeh84"
-    },
-    {
-      "headline": ".NET Examples Presented by Mohammed Tomeh",
+      "headline": "Node, TypeScript and .NET Examples Presented by Mohammed Tomeh",
       "name": "Mohammed Tomeh",
       "image": "https://pbs.twimg.com/profile_images/1651016809338793988/XUWbJJmv_400x400.jpg",
       "bio": "Cloud Application Architect at AWS",
