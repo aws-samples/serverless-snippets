@@ -8,7 +8,7 @@
   "introBox": {
     "headline": "How it works",
     "text": [
-      "The Lambda function retrieves Kinesis Records from the event parameter that it receives. The function retrieves Kinesis payload, decode from Base64 and log them to cloudwatch. The function reports batchItemFailures with SequenceNumber."
+      "The Lambda function retrieves Kinesis Records from the event parameter that it receives. The function retrieves Kinesis payload, decode from Base64 and log them to cloudwatch. The function processes Kinesis Records without batch item handling."
     ]
   },
   "gitHub": {
@@ -23,7 +23,7 @@
         {
           "id": "Node.js",
           "title": "Usage Example with Node:",
-          "description": "Consuming Kinesis event with Lambda using JavaScript.",
+          "description": "Consuming Kinesis event with Lambda using JavaScript without batch item handling.",
           "snippets": [
             {
               "snippetPath": "example.js",
@@ -34,7 +34,7 @@
         {
           "id": "TypeScript",
           "title": "Usage Example with TypeScript:",
-          "description": "Consuming Kinesis event with Lambda using TypeScript.",
+          "description": "Consuming Kinesis event with Lambda using TypeScript without batch item handling.",
           "snippets": [
             {
               "snippetPath": "example.ts",
@@ -45,7 +45,7 @@
         {
           "id": ".NET",
           "title": "Usage Example with .NET:",
-          "description": "Consuming Kinesis event with Lambda using .NET.",
+          "description": "Consuming Kinesis event with Lambda using .NET without batch item handling.",
           "snippets": [
             {
               "snippetPath": "Function.cs",

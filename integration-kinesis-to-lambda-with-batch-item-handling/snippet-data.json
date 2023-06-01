@@ -23,7 +23,7 @@
         {
           "id": "Node.js",
           "title": "Usage Example with Node:",
-          "description": "Consuming Kinesis event with Lambda using JavaScript.",
+          "description": "Consuming Kinesis event with Lambda using JavaScript with batch item handling.",
           "snippets": [
             {
               "snippetPath": "example.js",
@@ -34,7 +34,7 @@
         {
           "id": "TypeScript",
           "title": "Usage Example with TypeScript:",
-          "description": "Consuming Kinesis event with Lambda using TypeScript.",
+          "description": "Consuming Kinesis event with Lambda using TypeScript with batch item handling.",
           "snippets": [
             {
               "snippetPath": "example.ts",
@@ -45,7 +45,7 @@
         {
           "id": ".NET",
           "title": "Usage Example with .NET:",
-          "description": "Consuming Kinesis event with Lambda using .NET.",
+          "description": "Consuming Kinesis event with Lambda using .NET with batch item handling.",
           "snippets": [
             {
               "snippetPath": "Function.cs",

@@ -10,7 +10,6 @@ using AWS.Lambda.Powertools.Logging;
 namespace KinesisIntegration;
 
 public class Function
-
 {
     // Powertools Logger requires an environment variables against your function
     // POWERTOOLS_SERVICE_NAME
