@@ -8,7 +8,7 @@
   "introBox": {
     "headline": "How it works",
     "text": [
-      "The Lambda function retrieves a batch of SQS messages from the event parameter that it receives. The function logs the content of each message."
+      "The Lambda function retrieves a batch of SQS messages from the event parameter that it receives. The function logs the content of each message. This snippet demostrates SQS Lambda integration without batch item handling."
     ]
   },
   "gitHub": {
@@ -23,7 +23,7 @@
         {
           "id": "Node.js",
           "title": "Usage Example with Node:",
-          "description": "Sample Amazon SQS function code using JavaScript.",
+          "description": "Sample Amazon SQS function code using JavaScript without batch item handling.",
           "snippets": [
             {
               "snippetPath": "example.js",
@@ -34,7 +34,7 @@
         {
           "id": ".NET",
           "title": "Usage Example with .NET:",
-          "description": "Sample Amazon SQS function code using .NET.",
+          "description": "Sample Amazon SQS function code using .NET without batch item handling.",
           "snippets": [
             {
               "snippetPath": "Function.cs",
@@ -45,7 +45,7 @@
         {
           "id": "TypeScript",
           "title": "Usage Example with TypeScript:",
-          "description": "Sample Amazon SQS function code using TypeScript.",
+          "description": "Sample Amazon SQS function code using TypeScript without batch item handling.",
           "snippets": [
             {
               "snippetPath": "example.ts",
