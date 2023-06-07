@@ -1,6 +1,6 @@
 {
-  "title": "Using AWS Lambda with Amazon Kinesis",
-  "description": "Using AWS Lambda with Amazon Kinesis",
+  "title": "Using AWS Lambda with Amazon Kinesis with Batch Item Handling.",
+  "description": "Using AWS Lambda with Amazon Kinesis with Batch Item Handling.",
   "type": "Integration",
   "services": ["lambda", "kinesis"],
   "languages": ["Node", "TypeScript", ".NET"],
