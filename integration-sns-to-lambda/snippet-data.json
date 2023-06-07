@@ -3,7 +3,7 @@
   "description": "Using an Amazon SNS trigger to invoke a Lambda function",
   "type": "Integration",
   "services": ["lambda", "sns"],
-  "languages": ["Node", "NET", "TypeScript"],
+  "languages": ["Node", ".NET", "TypeScript"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
