@@ -1,6 +1,6 @@
 {
-  "title": "Sample function code",
-  "description": "Sample function code",
+  "title": "Using AWS Lambda with Amazon Kinesis without Batch Item Handling",
+  "description": "Using AWS Lambda with Amazon Kinesis without Batch Item Handling.",
   "type": "Integration",
   "services": ["lambda", "kinesis"],
   "languages": ["Node", "TypeScript", ".NET"],
