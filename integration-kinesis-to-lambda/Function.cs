@@ -27,7 +27,7 @@ public class Function
             {
                 Logger.LogInformation($"Processed Event with EventId: {record.EventId}");
                 string data = await GetRecordDataAsync(record.Kinesis, context);
-                cLogger.LogInformation($"Data: {data}");
+                Logger.LogInformation($"Data: {data}");
                 // TODO: Do interesting work based on the new data
             }
             catch (Exception ex)
