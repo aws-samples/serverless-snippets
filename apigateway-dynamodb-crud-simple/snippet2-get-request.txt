@@ -1,0 +1,6 @@
+{
+	"TableName": "SimpleTable1", 
+	"Key": {
+		"partitionkey": {"S": "$input.params('stringkey')"}
+	}
+}
