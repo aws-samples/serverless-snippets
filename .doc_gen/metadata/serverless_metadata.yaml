@@ -1,9 +1,9 @@
 # zexi 0.4.3
 serverless_S3_Lambda:
-  title: Amazon S3 trigger to invoke a Lambda function
+  title: &S3; trigger to invoke a &Lambda; function
   title_abbrev: Send email
-  synopsis: Using an Amazon S3 trigger to invoke a Lambda function
-  category:
+  synopsis: use an &S3; trigger to invoke a &Lambda; function
+  category: Scenarios
   languages:
     JavaScript:
       versions:
@@ -13,4 +13,4 @@ serverless_S3_Lambda:
               snippet_files:
                 - integration-s3-to-lambda/example.js
   services:
-    serverless: {S3Lambda}
+    serverless:
