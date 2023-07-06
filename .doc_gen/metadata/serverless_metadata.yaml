@@ -12,3 +12,5 @@ serverless_S3_Lambda:
             - description: "Consuming an S3 event with Lambda using JavaScript."
               snippet_files:
                 - integration-s3-to-lambda/example.js
+  services:
+    serverless: {S3Lambda}
