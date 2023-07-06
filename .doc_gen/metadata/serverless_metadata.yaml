@@ -1,8 +1,8 @@
 # zexi 0.4.3
 serverless_S3_Lambda:
-  title: &S3; trigger to invoke a &Lambda; function
+  title: &S3; trigger to invoke a &LAM; function
   title_abbrev: Send email
-  synopsis: use an &S3; trigger to invoke a &Lambda; function
+  synopsis: use an &S3; trigger to invoke a &LAM; function
   category: Scenarios
   languages:
     JavaScript:
