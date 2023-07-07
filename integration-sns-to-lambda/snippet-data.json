@@ -3,7 +3,7 @@
   "description": "Using an Amazon SNS trigger to invoke a Lambda function",
   "type": "Integration",
   "services": ["lambda", "sns"],
-  "languages": ["Node", "NET", "TypeScript"],
+  "languages": ["Node", ".NET", "TypeScript"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -66,7 +66,7 @@
   },
   "authors": [
     {
-      "headline": "Node Examples Presented by Mohammed Tomeh",
+      "headline": "Node, .NET and TypeScript Examples Presented by Mohammed Tomeh",
       "name": "Mohammed Tomeh",
       "image": "https://pbs.twimg.com/profile_images/1651016809338793988/XUWbJJmv_400x400.jpg",
       "bio": "Cloud Application Architect at AWS",
