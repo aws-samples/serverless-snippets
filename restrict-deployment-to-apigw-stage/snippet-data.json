@@ -1,0 +1,35 @@
+{
+  "title": "IAM Policy to restrict deployment to particular API stage",
+  "description": "Using this policy a user access can be restricted to deploy API only to particular stage/s",
+  "type": "Integration",
+  "services": ["apigw", "iam"],
+  "tags": [],
+  "languages": ["json"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "The IAM policy allows deployment action only on the dev stage and not on other stages like prod"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/restrict-iamuser-deploy-to-apigw-stage agawanea"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Limit stage deployment to authorized user",
+      "snippetPath": "snippet.txt",
+      "language": "json"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Abhishek Agawane",
+      "name": "Abhishek Agawane",
+      "image": "https://drive.google.com/file/d/1E-5koDaKEaMUtOctX32I9TLwfh3kgpAq/view?usp=drivesdk",
+      "bio": "Abhishek Agawane is a Cloud Support Engineer at AWS who focuses on serverless and is passionate about Cloud",
+      "linkedin": "https://www.linkedin.com/in/agawabhi/"
+    }
+  ]
+}
