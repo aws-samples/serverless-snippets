@@ -1,0 +1,6 @@
+#set($responseData = $input.path('$.Item'))
+{#foreach($mapEntry in $responseData.entrySet())
+"$mapEntry.key": "$mapEntry.value.get("S")"##
+#if($foreach.hasNext),#end##
+#end
+}
