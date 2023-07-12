@@ -2,7 +2,7 @@
     "title": "Filter Events by detail field value not equal to a given value",
     "description": "Get the EventBridge events by filtering on a detail field value that is not equal to a given value ",
     "type": "CloudWatch Logs Insights",
-    "services": [],
+    "services": ["eventbridge"],
     "tags": [
       ""
     ],

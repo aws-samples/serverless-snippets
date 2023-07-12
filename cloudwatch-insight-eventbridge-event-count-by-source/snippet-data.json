@@ -2,7 +2,7 @@
     "title": "Events grouped by source",
     "description": "Get the number of EventBridge events by source",
     "type": "CloudWatch Logs Insights",
-    "services": [],
+    "services": ["eventbridge"],
     "tags": [
       ""
     ],

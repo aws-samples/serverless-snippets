@@ -1,18 +1,18 @@
 {
-    "title": "Filter Events by value of a detail field",
-    "description": "Get the EventBridge events by filtering on a detail field",
+    "title": "Events per hour ",
+    "description": "Get the EventBridge events per hour",
     "type": "CloudWatch Logs Insights",
-    "services": [],
+    "services": ["eventbridge"],
     "tags": [
       ""
     ],
     "introBox": {
       "headline": "How it works",
-      "text": ["Cloudwatch Log Insight snippet that filters the EventBridge events by value of a detail field"]
+      "text": ["Cloudwatch Log Insight snippet that returns the EventBridge events per hour"]
     },
     "gitHub": {
       "template": {
-        "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-filter-by-detail-field"
+        "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-per-minute"
       }
     },
     "snippets": [
@@ -32,4 +32,3 @@
       }
     ]
   }
-  

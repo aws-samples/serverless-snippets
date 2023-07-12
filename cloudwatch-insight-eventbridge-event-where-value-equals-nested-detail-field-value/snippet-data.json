@@ -1,18 +1,18 @@
 {
-    "title": "Events per minute ",
-    "description": "Get the EventBridge events per minute",
+    "title": "Events that match a value in detail-nested-field",
+    "description": "Get the EventBridge events that match a value in detail-nested-field",
     "type": "CloudWatch Logs Insights",
-    "services": [],
+    "services": ["eventbridge"],
     "tags": [
       ""
     ],
     "introBox": {
       "headline": "How it works",
-      "text": ["Cloudwatch Log Insight snippet that returns the EventBridge events per minute"]
+      "text": ["Cloudwatch Log Insight snippet that gets the EventBridge events that matches a value in detail-nested-field"]
     },
     "gitHub": {
       "template": {
-        "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-per-minute"
+        "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-where-value-equals-nested-detail-field-value"
       }
     },
     "snippets": [
@@ -32,3 +32,4 @@
       }
     ]
   }
+  

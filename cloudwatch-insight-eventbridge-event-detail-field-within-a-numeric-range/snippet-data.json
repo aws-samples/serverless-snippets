@@ -1,18 +1,18 @@
 {
-    "title": "Events which have no value for a given detail field ",
-    "description": "Get the EventBridge events for a given detail field that has no value",
+    "title": "Events with detail field value falling in a given numeric range ",
+    "description": "Get the EventBridge events for a given detail field that has values within a given numeric range",
     "type": "CloudWatch Logs Insights",
-    "services": [],
+    "services": ["eventbridge"],
     "tags": [
       ""
     ],
     "introBox": {
       "headline": "How it works",
-      "text": ["Cloudwatch Log Insight snippet that returns the EventBridge events for a given detail field that has no value"]
+      "text": ["Cloudwatch Log Insight snippet that returns the EventBridge events for a given detail field that has values within a given numeric range"]
     },
     "gitHub": {
       "template": {
-        "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-with-detail-field-empty"
+        "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-detail-field-within-a-numeric-range"
       }
     },
     "snippets": [

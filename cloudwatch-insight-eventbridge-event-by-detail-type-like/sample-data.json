@@ -2,7 +2,7 @@
     "title": "Events that match a pattern for detail-type value",
     "description": "Get the EventBridge events that match a pattern for detail-type value",
     "type": "CloudWatch Logs Insights",
-    "services": [],
+    "services": ["eventbridge"],
     "tags": [
       ""
     ],

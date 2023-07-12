@@ -2,7 +2,7 @@
   "title": "Events over time grouped by detail-type",
   "description": "Get the number of EventBridge events grouped by detail-type",
   "type": "CloudWatch Logs Insights",
-  "services": [],
+  "services": ["eventbridge"],
   "tags": [
     ""
   ],

@@ -1,18 +1,18 @@
 {
-    "title": "Get Events if a given detail field is present ",
-    "description": "Get the EventBridge events if detail field is present",
+    "title": "Events with detail field that matches any value in a list ",
+    "description": "Get the EventBridge events with a specific detail field that matches any value in a list.",
     "type": "CloudWatch Logs Insights",
-    "services": [],
+    "services": ["eventbridge"],
     "tags": [
       ""
     ],
     "introBox": {
       "headline": "How it works",
-      "text": ["Cloudwatch Log Insight snippet that returns the EventBridge events if a given detail field is present"]
+      "text": ["Cloudwatch Log Insight snippet that returns the EventBridge events for a given detail field that that matches any value in a list"]
     },
     "gitHub": {
       "template": {
-        "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-find-if-detail-field-exists"
+        "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-where-detail-field-value-in"
       }
     },
     "snippets": [
@@ -32,4 +32,3 @@
       }
     ]
   }
-  
