@@ -1,0 +1,3 @@
+fields @timestamp
+| filter detail.field-value >= N1 and detail.field-value <= N2 # replace field-value, N1, N2 with actual values. N1 and N2 are the numeric range.
+| sort @timestamp desc

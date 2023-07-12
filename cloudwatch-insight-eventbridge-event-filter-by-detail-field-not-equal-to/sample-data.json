@@ -1,0 +1,34 @@
+{
+    "title": "Filter Events by detail field value not equal to a given value",
+    "description": "Get the EventBridge events by filtering on a detail field value that is not equal to a given value ",
+    "type": "CloudWatch Logs Insights",
+    "services": [],
+    "tags": [
+      ""
+    ],
+    "introBox": {
+      "headline": "How it works",
+      "text": ["Cloudwatch Log Insight snippet that filters the EventBridge events on a detail field value not equal to a given value"]
+    },
+    "gitHub": {
+      "template": {
+        "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-filter-by-detail-field-not-equal-to"
+      }
+    },
+    "snippets": [
+      {
+        "snippetPath": "snippet.txt",
+        "language": "css"
+      }
+    ],
+    "authors": [
+      {
+        "headline": "Presented by Rahul Sringeri",
+        "name": "Rahul Sringeri",
+        "image": "",
+        "bio": "Technical Account Manager at AWS for Strategic Accounts",
+        "linkedin": "",
+        "twitter": ""
+      }
+    ]
+  }

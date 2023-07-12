@@ -1,0 +1,3 @@
+fields @timestamp
+| filter detail.field-value NOT IN ["value1", "value2", "value3"]  # replace field-value and value1, value2, value3 with actual values.
+| sort @timestamp desc
