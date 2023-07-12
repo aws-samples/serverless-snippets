@@ -1,0 +1,3 @@
+fields @timestamp
+| filter detail.field-name = "field-value"   # replace field-name and field-value with actual values
+| sort @timestamp desc

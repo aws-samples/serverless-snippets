@@ -1,0 +1,3 @@
+fields @timestamp
+| filter detail.array-field.n1 = "sample-value"  # replace array-field with the field name having values as array, n1 with array position and sample-value with value to filter. 
+| sort @timestamp desc

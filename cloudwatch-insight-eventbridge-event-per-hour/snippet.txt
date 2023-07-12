@@ -1,0 +1,4 @@
+fields @timestamp
+| filter ispresent(`detail-type`)
+| stats count(*) as CountOfEventsPerHour by bin(1h)
+| sort @timestamp desc

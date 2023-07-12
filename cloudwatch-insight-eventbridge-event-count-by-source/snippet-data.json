@@ -1,0 +1,35 @@
+{
+    "title": "Events grouped by source",
+    "description": "Get the number of EventBridge events by source",
+    "type": "CloudWatch Logs Insights",
+    "services": [],
+    "tags": [
+      ""
+    ],
+    "introBox": {
+      "headline": "How it works",
+      "text": ["Cloudwatch Log Insight snippet that counts the number of EventBridge events and groups by source"]
+    },
+    "gitHub": {
+      "template": {
+        "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-count-by-source"
+      }
+    },
+    "snippets": [
+      {
+        "snippetPath": "snippet.txt",
+        "language": "css"
+      }
+    ],
+    "authors": [
+      {
+        "headline": "Presented by Rahul Sringeri",
+        "name": "Rahul Sringeri",
+        "image": "",
+        "bio": "Technical Account Manager at AWS for Strategic Accounts",
+        "linkedin": "",
+        "twitter": ""
+      }
+    ]
+  }
+  

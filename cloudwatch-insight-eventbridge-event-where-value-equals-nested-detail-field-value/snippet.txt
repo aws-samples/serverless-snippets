@@ -1,0 +1,3 @@
+fields @timestamp
+| filter detail.field1.field2 = "sample-value"  # replace field1, field2, sample-value with appropriate values.
+| sort @timestamp desc

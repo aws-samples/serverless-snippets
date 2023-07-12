@@ -1,0 +1,34 @@
+{
+    "title": "Events which have no value for a given detail field ",
+    "description": "Get the EventBridge events for a given detail field that has no value",
+    "type": "CloudWatch Logs Insights",
+    "services": [],
+    "tags": [
+      ""
+    ],
+    "introBox": {
+      "headline": "How it works",
+      "text": ["Cloudwatch Log Insight snippet that returns the EventBridge events for a given detail field that has no value"]
+    },
+    "gitHub": {
+      "template": {
+        "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-with-detail-field-empty"
+      }
+    },
+    "snippets": [
+      {
+        "snippetPath": "snippet.txt",
+        "language": "css"
+      }
+    ],
+    "authors": [
+      {
+        "headline": "Presented by Rahul Sringeri",
+        "name": "Rahul Sringeri",
+        "image": "",
+        "bio": "Technical Account Manager at AWS for Strategic Accounts",
+        "linkedin": "",
+        "twitter": ""
+      }
+    ]
+  }
