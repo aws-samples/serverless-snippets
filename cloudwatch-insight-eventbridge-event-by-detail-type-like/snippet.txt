@@ -1,0 +1,3 @@
+fields @timestamp
+| filter `detail-type` like /sample-value/ # replace sample-value with actual value to be searched
+| sort @timestamp desc

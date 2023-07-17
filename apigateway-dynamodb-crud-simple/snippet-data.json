@@ -1,0 +1,82 @@
+{
+  "title": "VTL - CRUD Operations - Part 1",
+  "description": "REST Direct integration with DynamoDB",
+  "type": "Integration",
+  "services": [
+    "apigw",
+    "dynamodb"
+  ],
+  "tags": [],
+  "languages": [
+    "vtl",
+    "json"
+  ],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "It is possible to have full REST API CRUD (create, read, update, delete) operations using direct integration between API Gateway and DynamoDB, a true no-code solution.",
+      "To get started, in this first Part we will cover Create and Read using a simple strings only example.  In later installments we will cover Update and Delete and more complex data types.",
+      "All the JSON and DynamoDB values are strings for this example. All DynamoDB data types will be covered in later snippet examples."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/apigateway-dynamodb-crud-simple"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Prerequisites",
+      "description": "1) An API Gateway with REST API with the following API operations: POST /item/{stringkey}, GET /item/{stringkey} 2) DynamoDB table 'SimpleTable1' with a Partition key 'stringkey' of type String.  These snippets use the follwoing simple JSON document:",
+      "snippetPath": "create-request-body.json",
+      "language": "json"
+    },
+    {
+      "title": "CRUD 'C' is Create",
+      "description": "To create a record in DynamoDB using direct integration the API operation (POST /item/{stringkey}) integration must call the DynamoDB API PutItem Action.  The following POST URI: https://dynamodb.us-east-1.amazonaws.com/?Action=PutItem is called with the below JSON integration Request Body:",
+      "snippetPath": "putitem-request.json",
+      "language": "json"
+    },
+    {
+      "description": "To transform the simple JSON from the Request body into the JSON above used for DynamoDB PutItem API use the following Velocity Template in the Integration Request Mapping Template:",
+      "snippetPath": "snippet1-create.txt",
+      "language": "vtl"
+    },
+    {
+      "title": "CRUD 'R' is Read",
+      "description": "To read the same record from DynamoDB using direct integration the API operation (GET /item/{stringkey}) integration must call the DynamoDB API GetItem Action.  The following POST URI: https://dynamodb.us-east-1.amazonaws.com/?Action=GettItem is called with the below JSON integration Request Body",
+      "snippetPath": "getitem-request.json",
+      "language": "json"
+    },
+    {
+      "description": "To create the above JSON, the following Velocity Template is used in the Integration Request Mapping Template:",
+      "snippetPath": "snippet2-get-request.txt",
+      "language": "vtl"
+    },
+    {
+      "description": "The DynamoDB GetItem request produces the following JSON Response:",
+      "snippetPath": "getitem-reposnse.json",
+      "language": "json"
+    },
+    {
+      "description": "To transform the JSON response from DynamoDB format to the desired original JSON used to creaete the record, the following Velocity Template is used in the Integration Response Mapping Template:",
+      "snippetPath": "snippet3-get-transform.txt",
+      "language": "vtl"
+    },
+    {
+      "description": "The API response is the original JSON document:",
+      "snippetPath": "read-response-body.json",
+      "language": "json"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Ken Cyr",
+      "name": "Ken Cyr",
+      "image": "https://s12d.com/kc-toon",
+      "bio": "Ken Cyr is an Inventor and Senior Partner Solutions Architect with Amazon Web Services and is based in North Texas. Ken was an early adopter of serverless cloud and enjoys sharing serverless techniques and patterns with others.",
+      "linkedin": "",
+      "twitter": ""
+    }
+  ]
+}

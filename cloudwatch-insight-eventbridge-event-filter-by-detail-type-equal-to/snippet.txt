@@ -1,0 +1,3 @@
+fields @timestamp
+| filter `detail-type` = "detail-type-value"    # replace detail-type-value with the actual value
+| sort @timestamp desc

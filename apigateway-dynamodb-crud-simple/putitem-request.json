@@ -1,0 +1,23 @@
+{
+	"TableName": "SimpleTable1",
+	"Item": {
+		"partitionkey": {
+			"S": "item123"
+		},
+		"timestamp": {
+			"S": "2015-12-21T17:42:34Z"
+		},
+		"binary": {
+			"S": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"
+		},
+		"boolean": {
+			"S": "true"
+		},
+		"null": {
+			"S": "null"
+		},
+		"number": {
+			"S": "1437136300"
+		}
+	}
+}

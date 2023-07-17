@@ -1,0 +1,11 @@
+#set ($body-objects = $util.parseJson($input.json('$')))
+#set ($body-objects.partitionkey = $input.params('stringkey'))
+{
+    "TableName": "SimpleTable1",
+    "Item" : {
+        #foreach($mapEntry in $body-objects.entrySet())
+    "$mapEntry.key" :  {"S": "$util.escapeJavaScript( $mapEntry.value)"}
+        #if($foreach.hasNext),#end
+    #end
+    }
+}

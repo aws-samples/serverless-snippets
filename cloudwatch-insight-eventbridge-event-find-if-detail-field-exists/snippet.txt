@@ -1,0 +1,3 @@
+fields @timestamp
+| filter ispresent(detail.field-name)    # replace field-name with the actual value
+| sort @timestamp desc

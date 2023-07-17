@@ -1,0 +1,36 @@
+{
+  "title": "HTTP API parameter mapping for Remove action",
+  "description": "Using this aws cli command syntax we can add parameter mapping such as removing custom headers from incoming request in HTTP API",
+  "type": "Integration",
+  "services": ["apigw"],
+  "tags": [],
+  "languages": ["cli"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "The quotes inside the json payload are escaped using slashes to form a correct syntax for the mapping"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/http-api-parameter-mapping-for-remove-action"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Parameter mapping to remove custom headers from Request and Response",
+      "snippetPath": "snippet.txt",
+      "language": "cli"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Abhishek Agawane",
+      "name": "Abhishek Agawane",
+      "image": "https://drive.google.com/file/d/1E-5koDaKEaMUtOctX32I9TLwfh3kgpAq/view?usp=drivesdk",
+      "bio": "Abhishek is a Cloud Support Engineer at AWS who focuses on serverless and is passionate about the Cloud space",
+      "linkedin": "https://www.linkedin.com/in/agawabhi/"
+    }
+  ]
+}
+

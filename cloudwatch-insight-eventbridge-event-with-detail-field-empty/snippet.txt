@@ -1,0 +1,3 @@
+fields @timestamp
+| filter isempty(detail.field-value)   # replace field-value with the actual value
+| sort @timestamp desc

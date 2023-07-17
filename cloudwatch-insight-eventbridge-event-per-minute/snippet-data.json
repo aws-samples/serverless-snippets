@@ -1,0 +1,34 @@
+{
+    "title": "Events per minute ",
+    "description": "Get the EventBridge events per minute",
+    "type": "CloudWatch Logs Insights",
+    "services": ["eventbridge"],
+    "tags": [
+      ""
+    ],
+    "introBox": {
+      "headline": "How it works",
+      "text": ["Cloudwatch Log Insight snippet that returns the EventBridge events per minute"]
+    },
+    "gitHub": {
+      "template": {
+        "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-eventbridge-event-per-minute"
+      }
+    },
+    "snippets": [
+      {
+        "snippetPath": "snippet.txt",
+        "language": "css"
+      }
+    ],
+    "authors": [
+      {
+        "headline": "Presented by Rahul Sringeri",
+        "name": "Rahul Sringeri",
+        "image": "",
+        "bio": "Technical Account Manager at AWS for Strategic Accounts",
+        "linkedin": "",
+        "twitter": ""
+      }
+    ]
+  }
