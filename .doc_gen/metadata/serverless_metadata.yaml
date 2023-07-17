@@ -1,16 +1,19 @@
-# zexi 0.4.3
 serverless_S3_Lambda:
-  title: "&S3; trigger to invoke a &LAM; function"
-  title_abbrev: Send email
-  synopsis: "use an &S3; trigger to invoke a &LAM; function"
-  category: Scenarios
+  title: Invoke a &LAM; function from an &S3; trigger
+  title_abbrev: Invoke a &LAM; function from an &S3; trigger
+  synopsis: implement a Lambda function that receives an event triggered by uploading an object to an S3 bucket.
+    The function retrieves the S3 bucket name and object key from the event parameter and calls 
+    the Amazon S3 API to retrieve and log the content type of the object.
+  category: Serverless snippets
   languages:
     JavaScript:
       versions:
         - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
           excerpts:
-            - description: "Consuming an S3 event with Lambda using JavaScript."
+            - description: Consuming an S3 event with Lambda using JavaScript.
               snippet_files:
                 - integration-s3-to-lambda/example.js
   services:
-    serverless:
+    lambda:
+    s3:
