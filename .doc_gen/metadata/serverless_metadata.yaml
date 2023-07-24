@@ -14,6 +14,49 @@ serverless_S3_Lambda:
             - description: Consuming an S3 event with Lambda using JavaScript.
               snippet_files:
                 - integration-s3-to-lambda/example.js
+            - description: Consuming an S3 event with Lambda using TypeScript.
+              snippet_files:
+                - integration-s3-to-lambda/example.ts
+    Python:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
+          excerpts:
+            - description: Consuming an S3 event with Lambda using Python.
+              snippet_files:
+                - integration-s3-to-lambda/example.py
+    Java:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
+          excerpts:
+            - description: Consuming an S3 event with Lambda using Java.
+              snippet_files:
+                - integration-s3-to-lambda/Handler.java
+    .NET:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
+          excerpts:
+            - description: Consuming an S3 event with Lambda using .NET.
+              snippet_files:
+                - integration-s3-to-lambda/Function.cs
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
+          excerpts:
+            - description: Consuming an S3 event with Lambda using Go.
+              snippet_files:
+                - integration-s3-to-lambda/main.go
+    Rust:
+      versions:
+        - sdk_version: 1
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
+          excerpts:
+            - description: Consuming an S3 event with Lambda using Rust.
+              snippet_files:
+                - integration-s3-to-lambda/main.rs
   services:
     lambda:
     s3:
