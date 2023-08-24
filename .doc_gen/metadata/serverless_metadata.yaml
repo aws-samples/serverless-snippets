@@ -60,3 +60,158 @@ serverless_S3_Lambda:
   services:
     lambda:
     s3:
+serverless_SNS_Lambda:
+  title: Invoke a &LAM; function from an &SNS; trigger
+  title_abbrev: Invoke a &LAM; function from an &SNS; trigger
+  synopsis: implement a Lambda function that receives an event triggered by receiving messages from
+    an SNS topic. The function retrieves the messages from the event parameter and logs the content
+    of each message.
+  category: Serverless snippets
+  languages:
+    JavaScript:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/blob/main/integration-sns-to-lambda
+          excerpts:
+            - description: Consuming an SNS event with Lambda using JavaScript.
+              snippet_files:
+                - integration-sns-to-lambda/example.js
+            - description: Consuming an SNS event with Lambda using TypeScript.
+              snippet_files:
+                - integration-sns-to-lambda/example.ts
+    .NET:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sns-to-lambda
+          excerpts:
+            - description: Consuming an SNS event with Lambda using .NET.
+              snippet_files:
+                - integration-sns-to-lambda/Function.cs
+  services:
+    lambda:
+    sns:
+serverless_SQS_Lambda:
+  title: Invoke a &LAM; function from an &SQS; trigger
+  title_abbrev: Invoke a &LAM; function from an &SQS; trigger
+  synopsis: implement a Lambda function that receives an event triggered by receiving messages from
+    an SQS queue. The function retrieves the messages from the event parameter and logs the content
+    of each message.
+  category: Serverless snippets
+  languages:
+    JavaScript:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/blob/main/integration-sqs-to-lambda
+          excerpts:
+            - description: Consuming an SQS event with Lambda using JavaScript.
+              snippet_files:
+                - integration-sqs-to-lambda/example.js
+            - description: Consuming an SQS event with Lambda using TypeScript.
+              snippet_files:
+                - integration-sqs-to-lambda/example.ts
+    .NET:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda
+          excerpts:
+            - description: Consuming an SQS event with Lambda using .NET.
+              snippet_files:
+                - integration-sqs-to-lambda/Function.cs
+  services:
+    lambda:
+    sqs:
+serverless_SQS_Lambda_batch_item_failures:
+  title: Reporting batch item failures for &LAM; functions with an &SQS; trigger
+  title_abbrev: Reporting batch item failures for &LAM; functions with an &SQS; trigger
+  synopsis: implement partial batch response for Lambda functions that receive events from an
+    SQS queue. The function reports the batch item failures in the response, signaling to Lambda
+    to retry those messages later.
+  category: Serverless snippets
+  languages:
+    Python:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
+          excerpts:
+            - description: Reporting SQS batch item failures with Lambda using Python.
+              snippet_files:
+                - lambda-function-sqs-report-batch-item-failures/example.py
+    Java:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
+          excerpts:
+            - description: Reporting SQS batch item failures with Lambda using Java.
+              snippet_files:
+                - lambda-function-sqs-report-batch-item-failures/example.java
+    .NET:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
+          excerpts:
+            - description: Reporting SQS batch item failures with Lambda using .NET.
+              snippet_files:
+                - lambda-function-sqs-report-batch-item-failures/example.cs
+  services:
+    lambda:
+    sqs:
+serverless_Kinesis_Lambda:
+  title: Invoke a &LAM; function from a &AK; trigger
+  title_abbrev: Invoke a &LAM; function from a &AK; trigger
+  synopsis: implement a Lambda function that receives an event triggered by receiving records from
+    a Kinesis stream. The function retrieves the Kinesis payload, decodes from Base64, and logs
+    the record contents.
+  category: Serverless snippets
+  languages:
+    JavaScript:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/blob/main/integration-kinesis-to-lambda
+          excerpts:
+            - description: Consuming a Kinesis event with Lambda using JavaScript.
+              snippet_files:
+                - integration-kinesis-to-lambda/example.js
+            - description: Consuming a Kinesis event with Lambda using TypeScript.
+              snippet_files:
+                - integration-kinesis-to-lambda/example.ts
+    .NET:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda
+          excerpts:
+            - description: Consuming a Kinesis event with Lambda using .NET.
+              snippet_files:
+                - integration-kinesis-to-lambda/Function.cs
+  services:
+    lambda:
+    kinesis:
+serverless_Kinesis_Lambda_batch_item_failures:
+  title: Reporting batch item failures for &LAM; functions with a &AK; trigger
+  title_abbrev: Reporting batch item failures for &LAM; functions with a &AK; trigger
+  synopsis: implement partial batch response for Lambda functions that receive events from a
+    Kinesis stream. The function reports the batch item failures in the response, signaling
+    to Lambda to retry those messages later.
+  category: Serverless snippets
+  languages:
+    JavaScript:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/blob/main/integration-kinesis-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting Kinesis batch item failures with Lambda using Javascript.
+              snippet_files:
+                - integration-kinesis-to-lambda-with-batch-item-handling/example.js
+            - description: Reporting Kinesis batch item failures with Lambda using TypeScript.
+              snippet_files:
+                - integration-kinesis-to-lambda-with-batch-item-handling/example.ts
+    .NET:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting Kinesis batch item failures with Lambda using .NET.
+              snippet_files:
+                - integration-kinesis-to-lambda-with-batch-item-handling/Function.cs
+  services:
+    lambda:
+    kinesis:
