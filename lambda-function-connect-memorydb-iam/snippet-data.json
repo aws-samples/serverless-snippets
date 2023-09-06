@@ -1,0 +1,57 @@
+{
+  "title": "Connect to Amazon MemoryDB for Redis from AWS Lambda",
+  "description": "This snippet demonstrates how to conenct to an Amazon MemoryDB for Redis cluster from an AWS Lambda function with IAM authentication. This snippet is valid for Redis engine version 7.0+.",
+  "type": "Integration",
+  "services": ["lambda", "memorydb"],
+  "tags": [],
+  "languages": ["TypeScript", "Java"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "Amazon MemoryDB for Redis is a durable database with microsecond reads, low single-digit millisecond writes, scalability, and enterprise security. Connect to a MemoryDB cluster using IAM authentication."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-connect-memorydb-iam"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Runtimes",
+      "codeTabs": [
+        {
+          "id": "TypeScript",
+          "title": "Copy the code into your Lambda function",
+          "description": "Follow the AWS Lambda instructions for packaging with dependencies and uploading in .zip format. This snippet uses the ioredis library.",
+          "snippets": [
+            {
+              "snippetPath": "example.ts",
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "id": "Java",
+          "title": "Copy the code into your Lambda function",
+          "description": "Follow the AWS Lambda instructions for packaging with dependencies and uploading in .zip format. This snippet uses the lettuce library.",
+          "snippets": [
+            {
+              "snippetPath": "example.java",
+              "language": "java"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Josh Kahn",
+      "name": "Josh Kahn",
+      "image": "/assets/images/resources/contributors/joshhahn.jpg",
+      "bio": "Principal Solution Architect @ AWS.",
+      "twitter": "joshuaakahn"
+    }
+  ]
+}
