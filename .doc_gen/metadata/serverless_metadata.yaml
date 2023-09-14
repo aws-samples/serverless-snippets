@@ -212,6 +212,22 @@ serverless_Kinesis_Lambda_batch_item_failures:
             - description: Reporting Kinesis batch item failures with Lambda using .NET.
               snippet_files:
                 - integration-kinesis-to-lambda-with-batch-item-handling/Function.cs
+    Python:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting Kinesis batch item failures with Lambda using Python.
+              snippet_files:
+                - integration-kinesis-to-lambda-with-batch-item-handling/example.py
+    Java:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting Kinesis batch item failures with Lambda using Java.
+              snippet_files:
+                - integration-kinesis-to-lambda-with-batch-item-handling/example.java
   services:
     lambda:
     kinesis:

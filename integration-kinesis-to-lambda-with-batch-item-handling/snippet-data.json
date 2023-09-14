@@ -43,6 +43,28 @@
           ]
         },
         {
+          "id": "Java",
+          "title": "Usage Example with Java:",
+          "description": "Consuming Kinesis event with Lambda using Java with batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "example.java",
+              "language": "java"
+            }
+          ]
+        },
+        {
+          "id": "Python",
+          "title": "Usage Example with Python:",
+          "description": "Consuming Kinesis event with Lambda using Python with batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "example.py",
+              "language": "py"
+            }
+          ]
+        },
+        {
           "id": ".NET",
           "title": "Usage Example with .NET:",
           "description": "Consuming Kinesis event with Lambda using .NET with batch item handling.",
