@@ -11,10 +11,10 @@ serverless_S3_Lambda:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
           excerpts:
-            - description: Consuming an S3 event with Lambda using JavaScript.
+            - description: Consuming an S3 event with &LAM; using JavaScript.
               snippet_files:
                 - integration-s3-to-lambda/example.js
-            - description: Consuming an S3 event with Lambda using TypeScript.
+            - description: Consuming an S3 event with &LAM; using TypeScript.
               snippet_files:
                 - integration-s3-to-lambda/example.ts
     Python:
@@ -22,7 +22,7 @@ serverless_S3_Lambda:
         - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
           excerpts:
-            - description: Consuming an S3 event with Lambda using Python.
+            - description: Consuming an S3 event with &LAM; using Python.
               snippet_files:
                 - integration-s3-to-lambda/example.py
     Java:
@@ -30,7 +30,7 @@ serverless_S3_Lambda:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
           excerpts:
-            - description: Consuming an S3 event with Lambda using Java.
+            - description: Consuming an S3 event with &LAM; using Java.
               snippet_files:
                 - integration-s3-to-lambda/Handler.java
     .NET:
@@ -38,7 +38,7 @@ serverless_S3_Lambda:
         - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
           excerpts:
-            - description: Consuming an S3 event with Lambda using .NET.
+            - description: Consuming an S3 event with &LAM; using .NET.
               snippet_files:
                 - integration-s3-to-lambda/Function.cs
     Go:
@@ -46,7 +46,7 @@ serverless_S3_Lambda:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
           excerpts:
-            - description: Consuming an S3 event with Lambda using Go.
+            - description: Consuming an S3 event with &LAM; using Go.
               snippet_files:
                 - integration-s3-to-lambda/main.go
     Rust:
@@ -54,7 +54,7 @@ serverless_S3_Lambda:
         - sdk_version: 1
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
           excerpts:
-            - description: Consuming an S3 event with Lambda using Rust.
+            - description: Consuming an S3 event with &LAM; using Rust.
               snippet_files:
                 - integration-s3-to-lambda/main.rs
   services:
@@ -73,10 +73,10 @@ serverless_SNS_Lambda:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/blob/main/integration-sns-to-lambda
           excerpts:
-            - description: Consuming an SNS event with Lambda using JavaScript.
+            - description: Consuming an SNS event with &LAM; using JavaScript.
               snippet_files:
                 - integration-sns-to-lambda/example.js
-            - description: Consuming an SNS event with Lambda using TypeScript.
+            - description: Consuming an SNS event with &LAM; using TypeScript.
               snippet_files:
                 - integration-sns-to-lambda/example.ts
     .NET:
@@ -84,7 +84,7 @@ serverless_SNS_Lambda:
         - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sns-to-lambda
           excerpts:
-            - description: Consuming an SNS event with Lambda using .NET.
+            - description: Consuming an SNS event with &LAM; using .NET.
               snippet_files:
                 - integration-sns-to-lambda/Function.cs
   services:
@@ -103,10 +103,10 @@ serverless_SQS_Lambda:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/blob/main/integration-sqs-to-lambda
           excerpts:
-            - description: Consuming an SQS event with Lambda using JavaScript.
+            - description: Consuming an SQS event with &LAM; using JavaScript.
               snippet_files:
                 - integration-sqs-to-lambda/example.js
-            - description: Consuming an SQS event with Lambda using TypeScript.
+            - description: Consuming an SQS event with &LAM; using TypeScript.
               snippet_files:
                 - integration-sqs-to-lambda/example.ts
     .NET:
@@ -114,7 +114,7 @@ serverless_SQS_Lambda:
         - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda
           excerpts:
-            - description: Consuming an SQS event with Lambda using .NET.
+            - description: Consuming an SQS event with &LAM; using .NET.
               snippet_files:
                 - integration-sqs-to-lambda/Function.cs
   services:
@@ -133,7 +133,7 @@ serverless_SQS_Lambda_batch_item_failures:
         - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
           excerpts:
-            - description: Reporting SQS batch item failures with Lambda using Python.
+            - description: Reporting SQS batch item failures with &LAM; using Python.
               snippet_files:
                 - lambda-function-sqs-report-batch-item-failures/example.py
     Java:
@@ -141,7 +141,7 @@ serverless_SQS_Lambda_batch_item_failures:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
           excerpts:
-            - description: Reporting SQS batch item failures with Lambda using Java.
+            - description: Reporting SQS batch item failures with &LAM; using Java.
               snippet_files:
                 - lambda-function-sqs-report-batch-item-failures/example.java
     .NET:
@@ -149,7 +149,7 @@ serverless_SQS_Lambda_batch_item_failures:
         - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
           excerpts:
-            - description: Reporting SQS batch item failures with Lambda using .NET.
+            - description: Reporting SQS batch item failures with &LAM; using .NET.
               snippet_files:
                 - lambda-function-sqs-report-batch-item-failures/example.cs
   services:
@@ -168,10 +168,10 @@ serverless_Kinesis_Lambda:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/blob/main/integration-kinesis-to-lambda
           excerpts:
-            - description: Consuming a Kinesis event with Lambda using JavaScript.
+            - description: Consuming a &AK; event with &LAM; using JavaScript.
               snippet_files:
                 - integration-kinesis-to-lambda/example.js
-            - description: Consuming a Kinesis event with Lambda using TypeScript.
+            - description: Consuming a Kinesis event with &LAM; using TypeScript.
               snippet_files:
                 - integration-kinesis-to-lambda/example.ts
     .NET:
@@ -179,7 +179,7 @@ serverless_Kinesis_Lambda:
         - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda
           excerpts:
-            - description: Consuming a Kinesis event with Lambda using .NET.
+            - description: Consuming a &AK; event with &LAM; using .NET.
               snippet_files:
                 - integration-kinesis-to-lambda/Function.cs
   services:
@@ -198,10 +198,10 @@ serverless_Kinesis_Lambda_batch_item_failures:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/blob/main/integration-kinesis-to-lambda-with-batch-item-handling
           excerpts:
-            - description: Reporting Kinesis batch item failures with Lambda using Javascript.
+            - description: Reporting &AK; batch item failures with &LAM; using Javascript.
               snippet_files:
                 - integration-kinesis-to-lambda-with-batch-item-handling/example.js
-            - description: Reporting Kinesis batch item failures with Lambda using TypeScript.
+            - description: Reporting &AK; batch item failures with &LAM; using TypeScript.
               snippet_files:
                 - integration-kinesis-to-lambda-with-batch-item-handling/example.ts
     .NET:
@@ -209,7 +209,7 @@ serverless_Kinesis_Lambda_batch_item_failures:
         - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
           excerpts:
-            - description: Reporting Kinesis batch item failures with Lambda using .NET.
+            - description: Reporting &AK; batch item failures with &LAM; using .NET.
               snippet_files:
                 - integration-kinesis-to-lambda-with-batch-item-handling/Function.cs
     Python:
@@ -217,7 +217,7 @@ serverless_Kinesis_Lambda_batch_item_failures:
         - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
           excerpts:
-            - description: Reporting Kinesis batch item failures with Lambda using Python.
+            - description: Reporting &AK; batch item failures with &LAM; using Python.
               snippet_files:
                 - integration-kinesis-to-lambda-with-batch-item-handling/example.py
     Java:
@@ -225,7 +225,7 @@ serverless_Kinesis_Lambda_batch_item_failures:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
           excerpts:
-            - description: Reporting Kinesis batch item failures with Lambda using Java.
+            - description: Reporting &AK; batch item failures with &LAM; using Java.
               snippet_files:
                 - integration-kinesis-to-lambda-with-batch-item-handling/example.java
   services:
