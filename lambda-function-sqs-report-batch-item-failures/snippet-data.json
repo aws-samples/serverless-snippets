@@ -3,7 +3,7 @@
   "description": "This snippet demonstrates how to handle an SQS event and implement a partial batch response in a lambda function.",
   "type": "Integration",
   "services": ["lambda", "sqs"],
-  "languages": ["Java", "Python", ".NET"],
+  "languages": ["Java", "Python", ".NET", "Rust"],
   "tags": ["Amazon SQS", "Handling Errors"],
   "introBox": {
     "headline": "How it works",
@@ -52,6 +52,17 @@
               "language": "dotnet"
             }
           ]
+        },
+        {
+          "id": "Rust",
+          "title": "Usage Example with Rust:",
+          "description": "Implementing partial SQS batch responses using Rust.",
+          "snippets": [
+            {
+              "snippetPath": "example.rs",
+              "language": "rust"
+            }
+          ]
         }
       ]
     }
@@ -71,6 +82,14 @@
       "image": "https://avatars.githubusercontent.com/u/14178747?s=400&v=4",
       "bio": "Sr. Solutions Architect at AWS",
       "linkedin": "victorfeinman",
+      "twitter": ""
+    },
+    {
+      "headline": "Rust example by Charles Ede",
+      "name": "Charles Ede",
+      "image": "https://avatars.githubusercontent.com/u/22171170?s=400&v=4",
+      "bio": "Sr. Engineer at LEGO",
+      "linkedin": "",
       "twitter": ""
     }
   ]
