@@ -4,7 +4,7 @@ serverless_S3_Lambda:
   synopsis: implement a Lambda function that receives an event triggered by uploading an object to an S3 bucket.
     The function retrieves the S3 bucket name and object key from the event parameter and calls 
     the Amazon S3 API to retrieve and log the content type of the object.
-  category: Serverless snippets
+  category: Serverless examples
   languages:
     JavaScript:
       versions:
