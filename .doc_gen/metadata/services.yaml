@@ -3,7 +3,7 @@ serverless:
   short: "&Serverless;"
   sort: Serverless
   expanded:
-    long: Serverless Snippets
+    long: Serverless Examples
     short: Serverless
   blurb: used for Serverless Development.
   guide:

@@ -4,7 +4,7 @@ serverless_S3_Lambda:
   synopsis: implement a Lambda function that receives an event triggered by uploading an object to an S3 bucket.
     The function retrieves the S3 bucket name and object key from the event parameter and calls 
     the Amazon S3 API to retrieve and log the content type of the object.
-  category: Serverless snippets
+  category: Serverless examples
   languages:
     JavaScript:
       versions:
@@ -66,7 +66,7 @@ serverless_SNS_Lambda:
   synopsis: implement a Lambda function that receives an event triggered by receiving messages from
     an SNS topic. The function retrieves the messages from the event parameter and logs the content
     of each message.
-  category: Serverless snippets
+  category: Serverless examples
   languages:
     JavaScript:
       versions:
@@ -96,7 +96,7 @@ serverless_SQS_Lambda:
   synopsis: implement a Lambda function that receives an event triggered by receiving messages from
     an SQS queue. The function retrieves the messages from the event parameter and logs the content
     of each message.
-  category: Serverless snippets
+  category: Serverless examples
   languages:
     JavaScript:
       versions:
@@ -126,7 +126,7 @@ serverless_SQS_Lambda_batch_item_failures:
   synopsis: implement partial batch response for Lambda functions that receive events from an
     SQS queue. The function reports the batch item failures in the response, signaling to Lambda
     to retry those messages later.
-  category: Serverless snippets
+  category: Serverless examples
   languages:
     Python:
       versions:
@@ -161,7 +161,7 @@ serverless_Kinesis_Lambda:
   synopsis: implement a Lambda function that receives an event triggered by receiving records from
     a Kinesis stream. The function retrieves the Kinesis payload, decodes from Base64, and logs
     the record contents.
-  category: Serverless snippets
+  category: Serverless examples
   languages:
     JavaScript:
       versions:
@@ -191,7 +191,7 @@ serverless_Kinesis_Lambda_batch_item_failures:
   synopsis: implement partial batch response for Lambda functions that receive events from a
     Kinesis stream. The function reports the batch item failures in the response, signaling
     to Lambda to retry those messages later.
-  category: Serverless snippets
+  category: Serverless examples
   languages:
     JavaScript:
       versions:
