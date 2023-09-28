@@ -1,36 +1,37 @@
 {
-  "title": "[[your title]]",
-  "description": "[[ your description ]]",
-  "type": "CloudWatch Logs Insights",
-  "services": ["lambda"],
+  "title": "Find all VPC subnets with a specific tag",
+  "description": "Using AWS CLI to find all VPC instances of a specific a tag",
+  "type": "AWS CLI",
+  "services": ["Amazon VPC"],
   "tags": [],
-  "languages": [],
+  "languages": ["bash"],
   "introBox": {
     "headline": "How it works",
     "text": [
-      "[[description of how the snippet works]]"
+      "The AWS CLI command can find across multiple regions all instances of AWS VPC Subnet that has a 
+specific tag attached"
     ]
   },
   "gitHub": {
     "template": {
-      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-exception-per-hour"
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/vpc-subnets-serverless"
     }
   },
   "snippets": [
     {
-      "title": "Copy the code into CloudWatch Logs Insights",
+      "title": "Find all VPC subnets with a specific tag",
       "snippetPath": "snippet.txt",
-      "language": "css" // use css for cloudwatch (looks good), or find your language from https://prismjs.com/#languages-list
+      "language": "bash"
     }
   ],
   "authors": [
     {
-      "headline": "Presented by [[your name]]",
-      "name": "[[your name]]",
-      "image": "link-to-your-photo.jpg",
-      "bio": "Your bio",
-      "linkedin": "linked-in-ID",
-      "twitter": "twitter-handle"
+      "headline": "Presented by Xolile Speelman",
+      "name": "Xolile Speelman",
+      "image": "https://ibb.co/Zx1vbdq",
+      "bio": "Xolile Speelam is a Cloud Support Engineer @AWS",
+      "linkedin": "https://www.linkedin.com/in/xspeelman",    
     }
   ]
 }
+
