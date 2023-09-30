@@ -1,0 +1,38 @@
+
+{
+  "title": "Find all VPC subnets with a specific tag",
+  "description": "Using AWS CLI to find all VPC instances of a specific a tag",
+  "type": "AWS CLI",
+  "services": ["Amazon VPC"],
+  "tags": [],
+  "languages": ["bash"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "The AWS CLI command can find across multiple regions all instances of AWS VPC Subnet that has a 
+specific tag attached"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/vpc-subnets-serverless"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Find all VPC subnets with a specific tag",
+      "description": "The following describe-subnets example uses a filter to retrieve the details of those subnets with the tag VPCname=HappyVPC and the --query parameter to display the subnet IDs of the subnets with this tag. You can replace the key pair value to your own tags you to filter in your account.",
+      "snippetPath": "snippet.txt",
+      "language": "bash"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Xolile Speelman",
+      "name": "Xolile Speelman",
+      "image": "https://ibb.co/Zx1vbdq",
+      "bio": "Xolile Speelam is a Cloud Support Engineer @AWS",
+      "linkedin": "https://www.linkedin.com/in/xspeelman",    
+    }
+  ]
+}
