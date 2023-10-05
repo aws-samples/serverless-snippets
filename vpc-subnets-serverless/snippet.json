@@ -1,7 +1,7 @@
 
 {
   "title": "Find all VPC subnets with a specific tag",
-  "description": "Using AWS CLI to find all VPC instances of a specific a tag",
+  "description": "Using AWS CLI to find all VPC subnets with a specific a tag",
   "type": "AWS CLI",
   "services": ["Amazon VPC"],
   "tags": [],
