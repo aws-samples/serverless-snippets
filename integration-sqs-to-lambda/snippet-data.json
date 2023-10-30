@@ -3,7 +3,7 @@
   "description": "Sample Amazon SQS function code",
   "type": "Integration",
   "services": ["lambda", "sqs"],
-  "languages": ["Node", ".NET", "TypeScript"],
+  "languages": ["Node", ".NET", "TypeScript", "Java"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -52,6 +52,17 @@
               "language": "ts"
             }
           ]
+        },
+        {
+          "id": "Java",
+          "title": "Usage Example with Java:",
+          "description": "Sample Amazon SQS function code using Java without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "Function.java",
+              "language": "java"
+            }
+          ]
         }
       ]
     }
@@ -72,6 +83,14 @@
       "bio": "Cloud Application Architect at AWS",
       "linkedin": "mtomeh",
       "twitter": "mtomeh84"
+    },
+    {
+      "headline": "Java Example Presented by Girish B",
+      "name": "Girish B",
+      "image": "",
+      "bio": "Senior Solutions Architect at AWS",
+      "linkedin": "girishbalachandran",
+      "twitter": ""
     }
   ]
 }
