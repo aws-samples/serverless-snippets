@@ -117,6 +117,14 @@ serverless_SQS_Lambda:
             - description: Consuming an SQS event with &LAM; using .NET.
               snippet_files:
                 - integration-sqs-to-lambda/Function.cs
+    Java:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda
+          excerpts:
+            - description: Consuming an SQS event with &LAM; using Java.
+              snippet_files:
+                - integration-sqs-to-lambda/Function.java
   services:
     lambda:
     sqs:
