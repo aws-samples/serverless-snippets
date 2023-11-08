@@ -1,5 +1,4 @@
 def lambda_handler(event, context):
-    
     for message in event['Records']:
         process_message(message)
     print("done")
