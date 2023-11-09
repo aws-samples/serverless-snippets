@@ -3,7 +3,7 @@
   "description": "Sample Amazon SQS function code",
   "type": "Integration",
   "services": ["lambda", "sqs"],
-  "languages": ["Node", ".NET", "TypeScript", "Java"],
+  "languages": ["Node", ".NET", "TypeScript", "Java","Python"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -63,6 +63,17 @@
               "language": "java"
             }
           ]
+        },
+        {
+          "id": "Python",
+          "title": "Usage Example with Python:",
+          "description": "Sample Amazon SQS function code using Python without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "Function.py",
+              "language": "py"
+            }
+          ]
         }
       ]
     }
@@ -90,6 +101,12 @@
       "image": "https://avatars.githubusercontent.com/u/8285987?s=400&v=4",
       "bio": "Senior Solutions Architect at AWS",
       "linkedin": "girishbalachandran"
+    },
+    {
+      "headline": "Python Example Presented by Girish B",
+      "name": "Sanskar",
+      "bio": "Cloud Support Engineer at AWS",
+      "linkedin": "Sanskar05"
     }
   ]
 }
