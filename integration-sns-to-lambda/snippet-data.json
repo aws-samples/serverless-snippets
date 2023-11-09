@@ -52,6 +52,17 @@
               "language": "ts"
             }
           ]
+        },
+        {
+          "id": "Python",
+          "title": "Usage Example with Python:",
+          "description": "Consuming an SNS event with Lambda using Python.",
+          "snippets": [
+            {
+              "snippetPath": "example.py",
+              "language": "py"
+            }
+          ]
         }
       ]
     }
