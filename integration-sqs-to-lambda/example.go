@@ -1,0 +1,1 @@
+package integration_sqs_to_lambda
