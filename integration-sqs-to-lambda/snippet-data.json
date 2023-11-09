@@ -3,7 +3,7 @@
   "description": "Sample Amazon SQS function code",
   "type": "Integration",
   "services": ["lambda", "sqs"],
-  "languages": ["Node", ".NET", "TypeScript", "Java","Python"],
+  "languages": ["Node", ".NET", "TypeScript", "Java","Python","Golang"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -72,6 +72,17 @@
             {
               "snippetPath": "Function.py",
               "language": "py"
+            }
+          ]
+        },
+        {
+          "id": "Golang",
+          "title": "Usage Example with Golang:",
+          "description": "Sample Amazon SQS function code using Golang without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "Function.py",
+              "language": "go"
             }
           ]
         }
