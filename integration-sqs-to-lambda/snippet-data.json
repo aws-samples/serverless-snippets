@@ -81,7 +81,7 @@
           "description": "Sample Amazon SQS function code using Golang without batch item handling.",
           "snippets": [
             {
-              "snippetPath": "Function.py",
+              "snippetPath": "Function.go",
               "language": "go"
             }
           ]
