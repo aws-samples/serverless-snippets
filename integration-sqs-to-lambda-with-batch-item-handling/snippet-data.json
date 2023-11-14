@@ -2,8 +2,8 @@
   "title": "Amazon SQS trigger to invoke a Lambda function",
   "description": "Using an Amazon SQS trigger to invoke a Lambda function",
   "type": "Integration",
-  "services": ["lambda", "sqs", "ruby"],
-  "languages": ["Node", "TypeScript", ".NET"],
+  "services": ["lambda", "sqs"],
+  "languages": ["Node", "TypeScript", ".NET", "Ruby"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
