@@ -1,13 +1,12 @@
 package integration_sqs_to_lambda
 
 import (
-	"context"
 	"fmt"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
-func handler(ctx context.Context, event events.SQSEvent) error {
+func handler(event T) error {
 	for _, record := range event.Records {
 		err := processMessage(record)
 		if err != nil {
