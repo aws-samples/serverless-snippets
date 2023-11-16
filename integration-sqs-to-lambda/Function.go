@@ -6,7 +6,7 @@ import (
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
-func handler(event T) error {
+func handler(event events.SQSEvent) error {
 	for _, record := range event.Records {
 		err := processMessage(record)
 		if err != nil {
