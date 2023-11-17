@@ -52,6 +52,17 @@
               "language": "dotnet"
             }
           ]
+        },
+        {
+          "id": "Ruby",
+          "title": "Usage Example with Ruby:",
+          "description": "Consuming an SQS event with Lambda using Ruby with batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "example.rb",
+              "language": "ruby"
+            }
+          ]
         }
       ]
     }
