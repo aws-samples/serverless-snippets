@@ -52,6 +52,17 @@
               "language": "dotnet"
             }
           ]
+        },
+        {
+          "id": "Go",
+          "title": "Usage Example with Go:",
+          "description": "Consuming Kinesis event with Lambda using Go without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "main.go",
+              "language": "go"
+            }
+          ]
         }
       ]
     }
