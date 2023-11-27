@@ -1,0 +1,15 @@
+Create:  
+    API Operation: POST /item/{partitionkey}
+    DynamoDB Integration: POST https://dynamodb.<region>.amazonaws.com/?Action=PutItem
+
+Read: 
+    API Operation: GET /item/{partitionkey}
+    DynamoDB Integration: POST https://dynamodb.<region>.amazonaws.com/?Action=GetItem
+
+Update: 
+    API Operation: PUT /item/{partitionkey}
+    DynamoDB Integration: POST https://dynamodb.<region>.amazonaws.com/?Action=UpdateItem
+
+Delete: 
+    API Operation: DELETE /item/{partitionkey}
+    DynamoDB Integration: POST https://dynamodb.<region>.amazonaws.com/?Action=DeleteItem

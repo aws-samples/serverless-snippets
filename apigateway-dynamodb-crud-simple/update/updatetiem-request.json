@@ -1,0 +1,26 @@
+{
+    "TableName": "SimpleTable",
+    "Key": {
+        "str_PartitionKey": {
+            "S": "item123"
+        }
+    },
+    "UpdateExpression": "set str_Binary = :str_Binary, str_Boolean = :str_Boolean, str_Null = :str_Null, str_Number = :str_Number, str_String = :str_String",
+    "ExpressionAttributeValues": {
+        ":str_Binary": {
+            "S": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"
+        },
+        ":str_Boolean": {
+            "S": "true"
+        },
+        ":str_Null": {
+            "S": "null"
+        },
+        ":str_Number": {
+            "S": "1437136300"
+        },
+        ":str_String": {
+            "S": "Simple CRUD Example!"
+        }
+    }
+}

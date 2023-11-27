@@ -1,0 +1,8 @@
+{
+	"str_PartitionKey": "item123",
+	"str_Binary": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk",
+	"str_Boolean": "true",
+	"str_Null": "null",
+	"str_Number": "1437136300",
+	"str_String": "Simple CRUD Example"
+}

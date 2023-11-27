@@ -1,0 +1,21 @@
+#set ($UpdateExpression = "set ") 
+#set ($ExpressionAttributeValues = '')
+#set ($body-objects = $util.parseJson($input.json('$')))
+#foreach ($mapEntry in $body-objects.entrySet())
+    #if($mapEntry.key != "str_PartitionKey")
+        #set ($UpdateExpression = $UpdateExpression + $mapEntry.key + " = :" + $mapEntry.key) 
+        #set ($ExpressionAttributeValues = $ExpressionAttributeValues + """:$mapEntry.key"": {""S"": ""$mapEntry.value""}")
+        #if($foreach.hasNext)
+            #set ($UpdateExpression = $UpdateExpression + ", ")
+            #set ($ExpressionAttributeValues = $ExpressionAttributeValues + ", ")
+        #end
+    #end
+#end
+{
+  "TableName": "SimpleTable", 
+  "Key": {
+    "str_PartitionKey": {"S": "$input.params('partitionkey')"}
+  },
+ "UpdateExpression" : "$UpdateExpression",
+ "ExpressionAttributeValues" : {$ExpressionAttributeValues}
+}
