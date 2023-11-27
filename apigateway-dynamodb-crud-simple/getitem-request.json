@@ -1,8 +1,0 @@
-{
-	"TableName": "SimpleTable1",
-	"Key": {
-		"partitionkey": {
-			"S": "item123"
-		}
-	}
-}
