@@ -3,7 +3,7 @@
   "description": "Using AWS Lambda with Amazon Kinesis without Batch Item Handling.",
   "type": "Integration",
   "services": ["lambda", "kinesis"],
-  "languages": ["Node", "TypeScript", ".NET","Java"],
+  "languages": ["Node", "TypeScript", ".NET", "Java"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -61,6 +61,17 @@
             {
               "snippetPath": "Handler.java",
               "language": "java"
+            }
+          ]
+        },
+        {
+          "id": "Go",
+          "title": "Usage Example with Go:",
+          "description": "Consuming Kinesis event with Lambda using Go without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "main.go",
+              "language": "go"
             }
           ]
         }
