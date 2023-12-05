@@ -3,7 +3,7 @@
   "description": "Sample Amazon SQS function code",
   "type": "Integration",
   "services": ["lambda", "sqs"],
-  "languages": ["Node", ".NET", "TypeScript", "Java","Python","Golang"],
+  "languages": ["Node", ".NET", "TypeScript", "Java","Python","Go"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
