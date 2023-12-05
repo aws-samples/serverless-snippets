@@ -3,7 +3,7 @@
   "description": "Using AWS Lambda with Amazon Kinesis without Batch Item Handling.",
   "type": "Integration",
   "services": ["lambda", "kinesis"],
-  "languages": ["Node", "TypeScript", ".NET", "Java"],
+  "languages": ["Node", "TypeScript", ".NET", "Java", "Go"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
