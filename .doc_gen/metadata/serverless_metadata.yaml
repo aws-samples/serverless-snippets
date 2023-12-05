@@ -232,7 +232,7 @@ serverless_Kinesis_Lambda:
                 - integration-kinesis-to-lambda/Function.cs
     Java:
       versions:
-        - sdk_version: 3
+        - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda
           excerpts:
             - description: Consuming a &AK; event with &LAM; using Java.
