@@ -76,7 +76,7 @@
           ]
         },
         {
-          "id": "Golang",
+          "id": "Go",
           "title": "Usage Example with Golang:",
           "description": "Sample Amazon SQS function code using Golang without batch item handling.",
           "snippets": [
