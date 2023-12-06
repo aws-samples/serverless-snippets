@@ -3,7 +3,7 @@
   "description": "Using an Amazon S3 trigger to invoke a Lambda function",
   "type": "Integration",
   "services": ["lambda", "s3"],
-  "languages": ["TypeScript", "Python", "Rust", ".NET"],
+  "languages": ["TypeScript", "Python", "Rust", ".NET", "Go"],
   "tags": [],
   "introBox": {
     "headline": "How it works",

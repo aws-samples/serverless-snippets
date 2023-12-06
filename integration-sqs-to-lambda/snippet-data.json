@@ -3,7 +3,7 @@
   "description": "Sample Amazon SQS function code",
   "type": "Integration",
   "services": ["lambda", "sqs"],
-  "languages": ["Node", ".NET", "TypeScript", "Java","Ruby","Python"],
+  "languages": ["Node", ".NET", "TypeScript", "Java", "Ruby", "Python", "Go"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -85,6 +85,17 @@
               "language": "py"
             }
           ]
+        },
+        {
+          "id": "Go",
+          "title": "Usage Example with Golang:",
+          "description": "Sample Amazon SQS function code using Golang without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "Function.go",
+              "language": "go"
+            }
+          ]
         }
       ]
     }
@@ -109,6 +120,7 @@
     {
       "headline": "Java Example Presented by Girish B",
       "name": "Girish B",
+      "image": "https://avatars.githubusercontent.com/u/8285987?s=400&v=4",
       "bio": "Senior Solutions Architect at AWS",
       "linkedin": "girishbalachandran"
     },

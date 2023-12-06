@@ -3,7 +3,7 @@
   "description": "Using an Amazon SNS trigger to invoke a Lambda function",
   "type": "Integration",
   "services": ["lambda", "sns"],
-  "languages": ["Node", ".NET", "TypeScript"],
+  "languages": ["Node", "Python", ".NET", "TypeScript"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -50,6 +50,17 @@
             {
               "snippetPath": "example.ts",
               "language": "ts"
+            }
+          ]
+        },
+        {
+          "id": "Python",
+          "title": "Usage Example with Python:",
+          "description": "Consuming an SNS event with Lambda using Python.",
+          "snippets": [
+            {
+              "snippetPath": "example.py",
+              "language": "py"
             }
           ]
         }
