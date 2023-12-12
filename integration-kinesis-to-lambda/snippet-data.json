@@ -74,6 +74,17 @@
               "language": "go"
             }
           ]
+        },
+        {
+          "id": "Rust",
+          "title": "Usage Example with Rust:",
+          "description": "Consuming Kinesis event with Lambda using Rust without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "main.rs",
+              "language": "rust"
+            }
+          ]
         }
       ]
     }
