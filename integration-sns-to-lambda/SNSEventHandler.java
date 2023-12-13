@@ -15,24 +15,24 @@ public class SNSEventHandler implements RequestHandler<SNSEvent, Boolean> {
 
     @Override
     public Boolean handleRequest(SNSEvent event, Context context) {
-        try {
-            logger = context.getLogger();
-            List<SNSRecord> records = event.getRecords();
-            if (!records.isEmpty()) {
-                Iterator<SNSRecord> recordsIter = records.iterator();
-                while (recordsIter.hasNext()) {
-                    processRecord(recordsIter.next());
-                }
+        logger = context.getLogger();
+        List<SNSRecord> records = event.getRecords();
+        if (!records.isEmpty()) {
+            Iterator<SNSRecord> recordsIter = records.iterator();
+            while (recordsIter.hasNext()) {
+                processRecord(recordsIter.next());
             }
-            return Boolean.TRUE;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
+        return Boolean.TRUE;
     }
 
     public void processRecord(SNSRecord record) {
-        String message = record.getSNS().getMessage();
-        logger.log("message: " + message);
+        try {
+            String message = record.getSNS().getMessage();
+            logger.log("message: " + message);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
