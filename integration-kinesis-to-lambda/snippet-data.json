@@ -77,7 +77,7 @@
         },
         {
           "id": "Python",
-          "title": "Usage Example with Python:",
+          "title": "Usage Example with Python",
           "description": "Consuming Kinesis event with Lambda using Python without batch item handling.",
           "snippets": [
             {
