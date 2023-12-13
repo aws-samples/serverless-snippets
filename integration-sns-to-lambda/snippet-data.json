@@ -54,6 +54,17 @@
           ]
         },
         {
+          "id": "Go",
+          "title": "Usage Example with Go:",
+          "description": "Consuming an SNS event with Lambda using Go.",
+          "snippets": [
+            {
+              "snippetPath": "example.go",
+              "language": "go"
+            }
+          ]
+        },
+        {
           "id": "Python",
           "title": "Usage Example with Python:",
           "description": "Consuming an SNS event with Lambda using Python.",
