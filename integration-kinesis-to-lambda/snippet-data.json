@@ -3,7 +3,7 @@
   "description": "Using AWS Lambda with Amazon Kinesis without Batch Item Handling.",
   "type": "Integration",
   "services": ["lambda", "kinesis"],
-  "languages": ["Node", "TypeScript", ".NET", "Java", "Go"],
+  "languages": ["Node", "TypeScript", ".NET", "Java", "Go", "Python"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -85,6 +85,17 @@
               "language": "rust"
             }
           ]
+        },
+        {
+          "id": "Python",
+          "title": "Usage Example with Python",
+          "description": "Consuming Kinesis event with Lambda using Python without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "main.py",
+              "language": "python"
+            }
+          ]
         }
       ]
     }
@@ -112,6 +123,13 @@
       "image": "https://pbs.twimg.com/profile_images/888727786797412352/DEZ1mRjs_400x400.jpg",
       "bio": "Solutions Architect Architect at AWS",
       "linkedin": "ananthanr"
+    },
+    {
+      "headline": "Python Example Presented by Umang Aggarwal",
+      "name": "Umang Aggarwal",
+      "image": "https://media.licdn.com/dms/image/D5603AQGPJSLqUSGPmA/profile-displayphoto-shrink_800_800/0/1684261011000?e=1707350400&v=beta&t=YoDvcLUA8y_w5ZAq0p6wDNL5nut8PVKCUvrf6rTi43A",
+      "bio": "Cloud Support Engineer at AWS",
+      "linkedin": "umangaggarwal"
     }
   ]
 }
