@@ -3,7 +3,7 @@
   "description": "Sample Amazon SQS function code",
   "type": "Integration",
   "services": ["lambda", "sqs"],
-  "languages": ["Node", ".NET", "TypeScript"],
+  "languages": ["Node", ".NET", "TypeScript", "Java", "Ruby", "Python", "Go"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -52,6 +52,50 @@
               "language": "ts"
             }
           ]
+        },
+        {
+          "id": "Java",
+          "title": "Usage Example with Java:",
+          "description": "Sample Amazon SQS function code using Java without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "Function.java",
+              "language": "java"
+            }
+          ]
+        },
+        {
+          "id": "Ruby",
+          "title": "Usage Example with Ruby:",
+          "description": "Sample Amazon SQS function code using Ruby without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "Function.rb",
+              "language": "rb"
+            }
+          ]
+        },
+        {
+          "id": "Python",
+          "title": "Usage Example with Python:",
+          "description": "Sample Amazon SQS function code using Python without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "Function.py",
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "id": "Go",
+          "title": "Usage Example with Golang:",
+          "description": "Sample Amazon SQS function code using Golang without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "Function.go",
+              "language": "go"
+            }
+          ]
         }
       ]
     }
@@ -72,6 +116,19 @@
       "bio": "Cloud Application Architect at AWS",
       "linkedin": "mtomeh",
       "twitter": "mtomeh84"
+    },
+    {
+      "headline": "Java Example Presented by Girish B",
+      "name": "Girish B",
+      "image": "https://avatars.githubusercontent.com/u/8285987?s=400&v=4",
+      "bio": "Senior Solutions Architect at AWS",
+      "linkedin": "girishbalachandran"
+    },
+    {
+      "headline": "Python & Ruby Example Presented by Sanskar",
+      "name": "Sanskar",
+      "bio": "Cloud Support Engineer at AWS",
+      "linkedin": "Sanskar05"
     }
   ]
 }

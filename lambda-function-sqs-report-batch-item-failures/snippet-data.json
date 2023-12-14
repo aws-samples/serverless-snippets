@@ -63,6 +63,17 @@
               "language": "rust"
             }
           ]
+        },
+        {
+          "id": "JavaScript",
+          "title": "Usage Example with JavaScript:",
+          "description": "Implementing partial SQS batch responses using Rust.",
+          "snippets": [
+            {
+              "snippetPath": "example.js",
+              "language": "js"
+            }
+          ]
         }
       ]
     }
