@@ -1,0 +1,47 @@
+{
+  "title": "Connect to Amazon RDS from AWS Lambda",
+  "description": "This snippet demonstrates how to connect to an  Amazon Relational Database cluster from an AWS Lambda function with IAM authentication. This snippet is valid for version/engines XXXXXXXXXX",
+  "type": "Integration",
+  "services": ["lambda", "rds"],
+  "tags": [],
+  "languages": ["Javascript"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "Amazon Relational Database Service (Amazon RDS) is a collection of managed services that makes it simple to set up, operate, and scale databases in the cloud. Choose from seven popular engines. Connect to an RDS cluster using IAM authentication."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-connect-rds-iam"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Runtimes",
+      "codeTabs": [
+        {
+          "id": "Javascript",
+          "title": "Copy the code into your Lambda function",
+          "description": "Follow the AWS Lambda instructions for packaging with dependencies and uploading in .zip format. This snippet uses the ioredis library.",
+          "snippets": [
+            {
+              "snippetPath": "index.mjs",
+              "language": "js"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "authors": [
+    {
+      "headline": "JavaScript (Node) example by Jon Loinaz",
+      "name": "Jon Loinaz",
+      "image": "/assets/images/resources/contributors/jloinaz.jpg",
+      "bio": " Solutions Architect @ AWS.",
+      "twitter": "",
+      "linkedin": "jonloinaz"
+    }
+  ]
+}
