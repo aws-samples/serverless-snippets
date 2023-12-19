@@ -95,6 +95,14 @@ serverless_SNS_Lambda:
             - description: Consuming an SNS event with &LAM; using Python.
               snippet_files:
                 - integration-sns-to-lambda/example.py
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sns-to-lambda
+          excerpts:
+            - description: Consuming an SNS event with &LAM; using Go.
+              snippet_files:
+                - integration-sns-to-lambda/example.go
   services:
     lambda:
     sns:
@@ -141,6 +149,22 @@ serverless_SQS_Lambda:
             - description: Consuming an SQS event with &LAM; using Python.
               snippet_files:
                 - integration-sqs-to-lambda/Function.py
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda
+          excerpts:
+            - description: Consuming an SQS event with &LAM; using Go.
+              snippet_files:
+                - integration-sqs-to-lambda/Function.go
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda
+          excerpts:
+            - description: Consuming an SQS event with &LAM; using Ruby.
+              snippet_files:
+                - integration-sqs-to-lambda/Function.rb
   services:
     lambda:
     sqs:
@@ -246,6 +270,14 @@ serverless_Kinesis_Lambda:
             - description: Consuming a &AK; event with &LAM; using Go.
               snippet_files:
                 - integration-kinesis-to-lambda/main.go
+    Python:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda
+          excerpts:
+            - description: Consuming a &AK; event with &LAM; using Python.
+              snippet_files:
+                - integration-kinesis-to-lambda/main.py
   services:
     lambda:
     kinesis:
