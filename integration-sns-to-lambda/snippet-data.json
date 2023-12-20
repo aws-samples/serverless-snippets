@@ -74,6 +74,17 @@
               "language": "py"
             }
           ]
+        },
+        {
+          "id": "PHP",
+          "title": "Usage Example with PHP:",
+          "description": "Consuming an SNS event with Lambda using PHP.",
+          "snippets": [
+            {
+              "snippetPath": "example.php",
+              "language": "php"
+            }
+          ]
         }
       ]
     }
