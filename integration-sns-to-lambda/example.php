@@ -8,7 +8,8 @@ Another approach would be to create a custom runtime.
 A practical example can be found here: https://aws.amazon.com/blogs/apn/aws-lambda-custom-runtime-for-php-a-practical-example/
 */
 
-require __DIR__ . '/vendor/autoload.php';
+// Additional composer packages may be required when using Bref or any other PHP functions runtime.
+// require __DIR__ . '/vendor/autoload.php';
 
 return function ($event, $context) {
     foreach ($event["Records"] as $record) {
