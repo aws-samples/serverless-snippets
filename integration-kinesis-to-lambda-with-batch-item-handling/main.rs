@@ -5,8 +5,6 @@ use aws_lambda_events::{
 };
 use lambda_runtime::{run, service_fn, Error, LambdaEvent};
 
-static UNDEFINED: &str = "undefined";
-
 async fn function_handler(event: LambdaEvent<KinesisEvent>) -> Result<KinesisEventResponse, Error> {
     let mut response = KinesisEventResponse {
         batch_item_failures: vec![],
@@ -20,7 +18,7 @@ async fn function_handler(event: LambdaEvent<KinesisEvent>) -> Result<KinesisEve
     for record in &event.payload.records {
         tracing::info!(
             "EventId: {}",
-            record.event_id.as_deref().unwrap_or(UNDEFINED)
+            record.event_id.as_deref().unwrap_or_default()
         );
 
         let record_processing_result = process_record(record);
@@ -46,13 +44,12 @@ async fn function_handler(event: LambdaEvent<KinesisEvent>) -> Result<KinesisEve
 fn process_record(record: &KinesisEventRecord) -> Result<(), Error> {
     let record_data = std::str::from_utf8(record.kinesis.data.as_slice());
 
-    if record_data.is_err() {
-        let err = record_data.err().unwrap();
+    if let Some(err) = record_data.err() {
         tracing::error!("Error: {}", err);
         return Err(Error::from(err));
     }
 
-    let record_data = record_data.unwrap();
+    let record_data = record_data.unwrap_or_default();
 
     // do something interesting with the data
     tracing::info!("Data: {}", record_data);
