@@ -76,6 +76,17 @@
           ]
         },
         {
+          "id": "Rust",
+          "title": "Usage Example with Rust:",
+          "description": "Consuming Kinesis event with Lambda using Rust without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "main.rs",
+              "language": "rust"
+            }
+          ]
+        },
+        {
           "id": "Python",
           "title": "Usage Example with Python",
           "description": "Consuming Kinesis event with Lambda using Python without batch item handling.",

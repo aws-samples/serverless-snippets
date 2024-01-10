@@ -74,6 +74,17 @@
               "language": "dotnet"
             }
           ]
+        },
+        {
+          "id": "Rust",
+          "title": "Usage Example with Rust:",
+          "description": "Consuming Kinesis event with Lambda using Rust with batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "main.rs",
+              "language": "rust"
+            }
+          ]
         }
       ]
     }
