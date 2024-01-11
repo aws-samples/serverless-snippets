@@ -1,0 +1,6 @@
+for region in `aws ec2 describe-regions --query "Regions[].RegionName" --region us-east-1 --output text`
+do
+    echo "[${region}]"
+    aws ec2 describe-subnets --filters "Name=tag:VPCname,Values=HappyVPC" --query "Subnets[*].SubnetId" --output text --region ${region}
+done
+echo "finished"
