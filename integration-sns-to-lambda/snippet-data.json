@@ -3,7 +3,7 @@
   "description": "Using an Amazon SNS trigger to invoke a Lambda function",
   "type": "Integration",
   "services": ["lambda", "sns"],
-  "languages": ["Node", "Python", ".NET", "TypeScript"],
+  "languages": ["Node", "Python", ".NET", "TypeScript", "Rust", "PHP"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -72,6 +72,28 @@
             {
               "snippetPath": "example.py",
               "language": "py"
+            }
+          ]
+        },
+        {
+          "id": "Rust",
+          "title": "Usage Example with Rust:",
+          "description": "Consuming an SNS event with Lambda using Rust.",
+          "snippets": [
+            {
+              "snippetPath": "lambda-sns-receive.rs",
+              "language": "rust"
+            }
+          ]
+        },
+         {
+          "id": "PHP",
+          "title": "Usage Example with PHP:",
+          "description": "Consuming an SNS event with Lambda using PHP.",
+          "snippets": [
+            {
+              "snippetPath": "example.php",
+              "language": "php"
             }
           ]
         }
