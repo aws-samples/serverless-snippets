@@ -76,6 +76,17 @@
           ]
         },
         {
+          "id": "PHP",
+          "title": "Usage Example with PHP",
+          "description": "Consuming Kinesis event with Lambda using PHP with batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "example.php",
+              "language": "PHP"
+            }
+          ]
+        },
+        {
           "id": "Rust",
           "title": "Usage Example with Rust:",
           "description": "Consuming Kinesis event with Lambda using Rust with batch item handling.",
@@ -105,6 +116,13 @@
       "bio": "Cloud Application Architect at AWS",
       "linkedin": "mtomeh",
       "twitter": "mtomeh84"
+    },
+    {
+      "headline": "PHP Example Presented by Jan Richter",
+      "name": "Jan Richter",
+      "image": "https://pbs.twimg.com/profile_images/1310542979958882305/IJ7mqVQ4_400x400.jpg",
+      "bio": "Cloud Architect at AWS",
+      "linkedin": "falnyr"
     }
   ]
 }
