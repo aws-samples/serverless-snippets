@@ -96,6 +96,17 @@
               "language": "go"
             }
           ]
+        },
+        {
+          "id": "Rust",
+          "title": "Usage Example with Rust:",
+          "description": "Sample Amazon SQS function code using Rust without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "main.rs",
+              "language": "rust"
+            }
+          ]
         }
       ]
     }
