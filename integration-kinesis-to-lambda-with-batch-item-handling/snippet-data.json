@@ -86,6 +86,18 @@
             }
           ]
         },
+        ,
+        {
+          "id": "Go",
+          "title": "Usage Example with Go:",
+          "description": "Consuming Kinesis event with Lambda using Go with batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "example.go",
+              "language": "go"
+            }
+          ]
+        },
         {
           "id": "Rust",
           "title": "Usage Example with Rust:",
