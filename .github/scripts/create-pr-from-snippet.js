@@ -58,12 +58,11 @@ const path = require('path');
     ],
     authors: [
       {
-        headline: 'Presented by Eric Johnson',
-        name: 'Eric Johnson',
-        image: 'https://s12d.com/ej-icon',
-        bio: 'Eric Johnson is a Principal Developer Advocate for Serverless Applications at Amazon Web Services and is based in Northern Colorado. Eric is a fanatic about serverless and enjoys helping developers understand how serverless technologies introduces a major paradigm shift in how they approach building and running applications at massive scale with minimal administration overhead. Prior to this, Eric has worked as a developer, solutions architect and AWS Evangelist for an AWS partner company.',
-        linkedin: 'singledigit',
-        twitter: 'edjgeek',
+        headline: 'Presented by',
+        name: issueModel['author-name'],
+        bio: issueModel['bio'] || 'ServerlessLand Contributor',
+        linkedin: issueModel['linkedin'] || '',
+        twitter: issueModel['twitter'] || '',
       },
     ],
   };

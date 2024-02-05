@@ -197,3 +197,38 @@ body:
         --response-parameters {\"200\":{\"remove:header.headerB\":\"\'\'\"}}
     validations:
       required: true
+
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Your details
+        These will be displayed under the snippet.
+
+  - type: input
+    id: author-name
+    attributes:
+      label: Name
+      description: "Your name"
+      placeholder: "David Boyne"
+    validations:
+      required: true  
+  - type: input
+    id: author-bio
+    attributes:
+      label: Bio (optional)
+      description: "Short bio about you"
+      placeholder: "Dave Boyne is a Developer Advocate for Serverless Applications at Amazon Web Services."
+  - type: input
+    id: author-linkedin
+    attributes:
+      label: LinkedIn
+      description: "Don't include the URL just the ID"
+      placeholder: "singledigit"
+  - type: input
+    id: author-twitter
+    attributes:
+      label: Twitter
+      description: "Twitter handle"
+      placeholder: "@boyney123"
