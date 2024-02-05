@@ -1,5 +1,5 @@
-module.exports = async ({ github, context, core }) => {
-  console.log('Trigger', process.env);
+module.exports = async ({ github, context, core }, issueData) => {
+  console.log('Trigger', issueData);
 
   const issueNumber = process.env.ISSUE_NUMBER;
 
@@ -14,7 +14,7 @@ module.exports = async ({ github, context, core }) => {
   });
 
   const issueBody = response.data.body;
-  console.log(response)
+  console.log(response);
   console.log(issueBody);
 
   //   const prNumber = process.env.PR_NUMBER;
