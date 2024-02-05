@@ -1,0 +1,22 @@
+name: Issue to Pull Request
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Check and write snippet to PR
+      id: snippet-to-pr
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const script = require('.github/scripts/create-pr-from-snippet.js');
+          await script({github, context, core});
