@@ -15,8 +15,8 @@ const issueModel = {
 const fs = require('fs');
 const path = require('path');
 
-const test = async ({ github, context, core } = {}) => {
-// module.exports = async ({ github, context, core }) => {
+// const test = async ({ github, context, core } = {}) => {
+module.exports = async ({ github, context, core }) => {
 
   // Get the ISSUE JSON FILE.
   // const issueModel = JSON.parse(process.env.ISSUE_MODEL);
