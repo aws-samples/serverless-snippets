@@ -7,7 +7,7 @@ module.exports = async ({ github, context, core }) => {
     core.setFailed(`No issue number was passed. Aborting`);
   }
 
-  const { response } = await github.issues.get({
+  const { response } = await github.rest.issues.get({
     owner: context.repo.owner,
     repo: context.repo.repo,
     issue_number: issueNumber,
