@@ -32,7 +32,6 @@ jobs:
     - name: Create File
       run: echo "Your file content" > newfile.txt
 
-    - uses: actions/checkout@v2
     - name: pull-request
       uses: repo-sync/pull-request@v2
       with:
