@@ -28,4 +28,17 @@ jobs:
           await script({github, context, core, require}, path);
       env:
         ISSUE_MODEL: ${{ steps.issue-parser.outputs.jsonString }}
-  
+
+    - name: Create File
+      run: echo "Your file content" > newfile.txt
+
+    - uses: actions/checkout@v2
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "main"
+        pr_title: "Pulling ${{ github.ref }} into main"
+        pr_body: "👑 *An automated PR test*"
+        pr_reviewer: "boyney123"
+        github_token: ${{ secrets.GITHUB_TOKEN }}    
+
