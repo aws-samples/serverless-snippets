@@ -1,64 +1,64 @@
-name: New Serverless Snippet
+name: Bug
 description: File a bug report
-title: "[New Snippet]: {Your Snippet Name}"
-labels: ["bug", "triage"]
-projects: ["octo-org/1", "octo-org/44"]
-assignees:
-  - octocat
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Before opening a bug report, please search for the behaviour in the existing issues. 
+        
+        ---
+        
+        Thank you for taking the time to file a bug report. To address this bug as fast as possible, we need some information.
   - type: input
-    id: contact
+    id: os
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
+      label: Operating system
+      description: "Which operating system do you use? Please provide the version as well."
+      placeholder: "macOS Big Sur 11.5.2"
     validations:
-      required: false
+      required: true  
+  - type: input
+    id: laravel
+    attributes:
+      label: Laravel Version
+      description: "Please provide the full Laravel version of your project."
+      placeholder: "v8.6.1"
+    validations:
+      required: true
+  - type: input
+    id: php
+    attributes:
+      label: PHP Version
+      description: "Please provide the full PHP version that is powering Tinkerwell."
+      placeholder: "PHP 8.0.7, built: Jun  4 2021 01:50:04"
+    validations:
+      required: true
+  - type: dropdown
+    id: location
+    attributes:
+      label: Project Location
+      description: Where is the project located?
+      options:
+        - Local
+        - Remote
+        - Somewhere else (please specify in the description!)
+    validations:
+      required: true
   - type: textarea
-    id: what-happened
+    id: bug-description
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: Bug description
+      description: What happened?
     validations:
       required: true
-  - type: dropdown
-    id: version
+  - type: textarea
+    id: steps
     attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
-    validations:
-      required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+      label: Steps to reproduce
+      description: Which steps do we need to take to reproduce this error?
   - type: textarea
     id: logs
     attributes:
       label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      description: If applicable, provide relevant log output. No need for backticks here.
       render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
