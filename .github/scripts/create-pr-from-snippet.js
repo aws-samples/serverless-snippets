@@ -22,7 +22,7 @@ module.exports = async ({ github, context, core }) => {
   console.log('FILES');
   console.log(fs.readdirSync(__dirname));
 
-  fs.writeFileSync(path.join(__dirname, 'test.txt', 'Hello');
+  fs.writeFileSync(path.join(__dirname, 'test.txt', 'Hello'));
 
   
 
