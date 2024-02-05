@@ -1,5 +1,5 @@
 module.exports = async ({ github, context, core }, issueData) => {
-  console.log('Trigger', issueData);
+  console.log('Trigger', issueData());
 
   const issueNumber = process.env.ISSUE_NUMBER;
 
