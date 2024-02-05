@@ -24,7 +24,5 @@ jobs:
       with:
         script: |
           const script = require('.github/scripts/create-pr-from-snippet.js');
-          const data = fs.readFileSync(`${HOME}/issue-parser-result.json`);
-          console.log('Data', data);
-          await script({github, context, core}, ${{ steps.issue-parser.outputs }});
+          await script({github, context, core}, `${HOME}/issue-parser-result.json`);
   
