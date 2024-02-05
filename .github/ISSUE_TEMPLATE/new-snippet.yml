@@ -189,7 +189,6 @@ body:
     attributes:
       label: Snippet
       description: "The snippet code"
-      render: bash
       placeholder: |
         aws apigatewayv2 update-integration \
         --api-id $API 

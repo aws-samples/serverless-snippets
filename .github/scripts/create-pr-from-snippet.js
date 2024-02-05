@@ -1,4 +1,4 @@
-const test = {
+const issueModel = {
   'snippet-id': 'cloudwatch-insight-apigw-integration-latency2',
   title: 'Integration latency report',
   subtitle: 'Create API Gateway integration latency report for your API Gateway access log group.',
@@ -15,24 +15,90 @@ const test = {
 const fs = require('fs');
 const path = require('path');
 
-module.exports = async ({ github, context, core }) => {
-  console.log('ISSUE', process.env.ISSUE_MODEL);
-  const issueModel = JSON.parse(process.env.ISSUE_MODEL);
+const test = async ({ github, context, core } = {}) => {
+// module.exports = async ({ github, context, core }) => {
 
-  console.log('FILES');
-  console.log(fs.readdirSync(__dirname));
+  // Get the ISSUE JSON FILE.
+  // const issueModel = JSON.parse(process.env.ISSUE_MODEL);
 
-  // Ths is the main dir
-  console.log(fs.readdirSync(process.env.GITHUB_WORKSPACE));
+  // The repo path to everything
+  const REPO_PATH = process.env.GITHUB_WORKSPACE || __dirname;
+  const SNIPPET_FOLDER = path.join(REPO_PATH, issueModel['snippet-id']);
 
-  fs.writeFileSync(path.join(process.env.GITHUB_WORKSPACE, 'test.txt'), 'Hello');
-
-
-  const issueNumber = process.env.ISSUE_NUMBER;
-
-  if (!issueNumber) {
-    core.setFailed(`No issue number was passed. Aborting`);
+  // make a new directory for the snippet
+  if(!fs.existsSync(SNIPPET_FOLDER)){
+    fs.mkdirSync(SNIPPET_FOLDER);
   }
+
+  // Make the snippet text file.
+  fs.writeFileSync(path.join(SNIPPET_FOLDER, 'snippet.txt'), issueModel.snippet)
+
+
+  // {
+  //   "title": "VTL - Typeahead",
+  //   "description": "Direct integration search on DynamoDB",
+  //   "type": "Integration",
+  //   "services": ["apigw", "dynamodb"],
+  //   "tags": [],
+  //   "languages": ["vtl"],
+  //   "introBox": {
+  //     "headline": "How it works",
+  //     "text": [
+  //       "The snippet demonstrates how to do a search against a GSI and filter the results by text containing a specific string"
+  //     ]
+  //   },
+  //   "gitHub": {
+  //     "template": {
+  //       "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/apigateway-dynamodb-typeahead"
+  //     }
+  //   },
+  //   "snippets": [
+  //     {
+  //       "title": "Direct integration typeahead",
+  //       "snippetPath": "snippet.txt",
+  //       "language": "vtl"
+  //     }
+  //   ],
+  //   "authors": [
+  //     {
+  //       "headline": "Presented by Eric Johnson",
+  //       "name": "Eric Johnson",
+  //       "image": "https://s12d.com/ej-icon",
+  //       "bio": "Eric Johnson is a Principal Developer Advocate for Serverless Applications at Amazon Web Services and is based in Northern Colorado. Eric is a fanatic about serverless and enjoys helping developers understand how serverless technologies introduces a major paradigm shift in how they approach building and running applications at massive scale with minimal administration overhead. Prior to this, Eric has worked as a developer, solutions architect and AWS Evangelist for an AWS partner company.",
+  //       "linkedin": "singledigit",
+  //       "twitter": "edjgeek"
+  //     }
+  //   ]
+  // }
+  
+
+
+  // Parse the file and write the new snippet within the directory.
+  // If its already there then just add it to that folder.
+  // Maybe another submition to add it an exisitng folder.
+  // Write then let the PR open.....
+
+
+
+
+
+  // console.log('FILES');
+  // console.log(fs.readdirSync(__dirname));
+
+  // // Ths is the main dir
+  // console.log(fs.readdirSync(process.env.GITHUB_WORKSPACE));
+
+  // fs.writeFileSync(path.join(process.env.GITHUB_WORKSPACE, 'test.txt'), 'Hello');
+
+
+  // const issueNumber = process.env.ISSUE_NUMBER;
+
+  // if (!issueNumber) {
+  //   core.setFailed(`No issue number was passed. Aborting`);
+  // }
+
+
+  // Just create the files to be done
 
   // Create a pull request
   // const result = await github.rest.pulls.create({
@@ -83,3 +149,5 @@ module.exports = async ({ github, context, core }) => {
   //     throw error;
   //   }
 };
+
+test();

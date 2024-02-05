@@ -29,8 +29,8 @@ jobs:
       env:
         ISSUE_MODEL: ${{ steps.issue-parser.outputs.jsonString }}
 
-    - name: Create File
-      run: echo "Your file content" > newfile.txt
+    # - name: Create File
+    #   run: echo "Your file content" > newfile.txt
 
     - name: Create New Branch
       run: |
@@ -51,7 +51,7 @@ jobs:
       uses: repo-sync/pull-request@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_title: "Build UI Static Files"
+        pr_title: "New Snippet ${{ github.sha }}"
         pr_body: "Automated UI build for commit ${{ github.sha }}"
         destination_branch: "main"
         source_branch: "new-serverless-snippet-${{ github.run_id }}"
