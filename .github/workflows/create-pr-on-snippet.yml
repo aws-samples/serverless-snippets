@@ -32,6 +32,10 @@ jobs:
     - name: Create File
       run: echo "Your file content" > newfile.txt
 
+    - name: Create New Branch
+      run: |
+          git checkout -b new-serverless-snippet-${{ github.run_id }}  
+
     - name: Commit Changes
       run: |
         git config --global user.name 'serverlessland'
