@@ -53,7 +53,6 @@ body:
         - label: AWS Amplify
         - label: AWS AppSync
         - label: AWS AppConfig
-        - label: AWS Config
         - label: AWS Organizations
         - label: Amazon Managed Grafana
         - label: Amazon Managed Service for Prometheus
@@ -119,7 +118,6 @@ body:
         - label: AWS Secrets Manager
         - label: Amazon Textract
         - label: AWS Transfer
-        - label: AWS Step Functions
         - label: AWS Step Functions
         - label: AWS WAF
         - label: Amazon VPC
