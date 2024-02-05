@@ -25,7 +25,7 @@ jobs:
         script: |
           const path = "${{ github.workspace }}/issue-parser-result.json";
           const script = require('.github/scripts/create-pr-from-snippet.js');
-          await script({github, context, core}, path);
+          await script({github, context, core, require}, path);
       env:
         DATA_PATH: ${HOME}/issue-parser-result.json
   
