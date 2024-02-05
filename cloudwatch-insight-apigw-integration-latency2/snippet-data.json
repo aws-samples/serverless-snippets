@@ -1,0 +1,38 @@
+{
+    "title": "Integration latency report",
+    "description": "Create API Gateway integration latency report for your API Gateway access log group.",
+    "type": "CloudWatch Logs Insights",
+    "services": [
+        "Amazon API Gateway"
+    ],
+    "tags": [],
+    "languages": [],
+    "introBox": {
+        "headline": "How it works",
+        "text": [
+            "Cloudwatch Log Insight snippet that returns API Gateway integration latency statistics in 1 minute intervals in your API Gateway access log group."
+        ]
+    },
+    "gitHub": {
+        "template": {
+            "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-apigw-integration-latency2"
+        }
+    },
+    "snippets": [
+        {
+            "title": "Copy the code into CloudWatch Logs Insights",
+            "snippetPath": "snippet.txt",
+            "language": "bash"
+        }
+    ],
+    "authors": [
+        {
+            "headline": "Presented by Eric Johnson",
+            "name": "Eric Johnson",
+            "image": "https://s12d.com/ej-icon",
+            "bio": "Eric Johnson is a Principal Developer Advocate for Serverless Applications at Amazon Web Services and is based in Northern Colorado. Eric is a fanatic about serverless and enjoys helping developers understand how serverless technologies introduces a major paradigm shift in how they approach building and running applications at massive scale with minimal administration overhead. Prior to this, Eric has worked as a developer, solutions architect and AWS Evangelist for an AWS partner company.",
+            "linkedin": "singledigit",
+            "twitter": "edjgeek"
+        }
+    ]
+}
