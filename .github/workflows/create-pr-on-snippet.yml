@@ -34,7 +34,7 @@ jobs:
 
     - name: Create New Branch
       run: |
-          git checkout -b new-serverless-snippet-${{ steps.issue-parser.outputs.issueparser_snippet_id }}  
+          git checkout -b new-serverless-snippet-${{ steps.issue-parser.outputs.issueparser_snippet-id }}  
 
     - name: Commit Changes
       run: |
@@ -45,7 +45,7 @@ jobs:
 
     - name: Push Changes
       run: |
-        git push origin new-serverless-snippet-${{ steps.issue-parser.outputs.issueparser_snippet_id }}  
+        git push origin new-serverless-snippet-${{ steps.issue-parser.outputs.issueparser_snippet-id }}  
 
     - name: Create Pull Request
       uses: repo-sync/pull-request@v2
@@ -54,6 +54,6 @@ jobs:
         pr_title: "New Snippet - ${{ steps.issue-parser.outputs.issueparser_title }}"
         pr_body: "Automated commit for ${{ steps.issue-parser.outputs.issueparser_title }} - ${{ steps.issue-parser.outputs.issueparser_description }}"
         destination_branch: "main"
-        source_branch: "new-serverless-snippet-${{ steps.issue-parser.outputs.issueparser_snippet_id }}"
+        source_branch: "new-serverless-snippet-${{ steps.issue-parser.outputs.issueparser_snippet-id }}"
         pr_assignee: "boyney123"
 

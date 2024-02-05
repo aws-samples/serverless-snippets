@@ -59,7 +59,7 @@ const path = require('path');
     authors: [
       {
         headline: 'Presented by',
-        name: issueModel['author-name'],
+        name: issueModel['author-name'] || '',
         bio: issueModel['bio'] || 'ServerlessLand Contributor',
         linkedin: issueModel['linkedin'] || '',
         twitter: issueModel['twitter'] || '',

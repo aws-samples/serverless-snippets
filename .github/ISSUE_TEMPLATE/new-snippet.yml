@@ -176,7 +176,7 @@ body:
   - type: markdown
     attributes:
       value: "---"      
-  - type: textarea
+  - type: input
     id: snippet-title
     attributes:
       label: Snippet title
