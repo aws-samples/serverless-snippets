@@ -12,10 +12,12 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
-    - name: Parse issue into format
-      id: parse
-      uses: zentered/issue-forms-body-parser@v2.0.0
-      run: echo ${{ toJSON(steps.parse.outputs.data) }}  
+    - uses: stefanbuck/github-issue-parser@v3
+      id: issue-parser
+      with:
+        template-path: .github/ISSUE_TEMPLATE/new-snippet.yml # optional but recommended
+    - run: cat ${HOME}/issue-parser-result.json
+    
     - name: Check and write snippet to PR
       id: snippet-to-pr
       uses: actions/github-script@v6
@@ -23,10 +25,4 @@ jobs:
         script: |
           const script = require('.github/scripts/create-pr-from-snippet.js');
           await script({github, context, core});
-    - name: Check and write snippet to PR
-      id: snippet-to-pr
-      uses: actions/github-script@v6
-      with:
-        script: |
-          const script = require('.github/scripts/create-pr-from-snippet.js');
-          await script({github, context, core});
+  
