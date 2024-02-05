@@ -12,11 +12,19 @@ const test = {
 
 // Create pull request with the files that have changed..
 
+const fs = require('fs');
+const path = require('path');
+
 module.exports = async ({ github, context, core }) => {
   console.log('ISSUE', process.env.ISSUE_MODEL);
   const issueModel = JSON.parse(process.env.ISSUE_MODEL);
 
-  console.log(issueModel);
+  console.log('FILES');
+  console.log(fs.readdirSync(__dirname));
+
+  fs.writeFileSync(path.join(__dirname, 'test.txt', 'Hello');
+
+  
 
   const issueNumber = process.env.ISSUE_NUMBER;
 
