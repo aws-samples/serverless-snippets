@@ -27,5 +27,5 @@ jobs:
           const script = require('.github/scripts/create-pr-from-snippet.js');
           await script({github, context, core, require}, path);
       env:
-        DATA_PATH: ${HOME}/issue-parser-result.json
+        ISSUE_MODEL: ${{ steps.issue-parser.outputs.jsonString }}
   

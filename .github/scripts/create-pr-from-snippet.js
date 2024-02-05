@@ -1,10 +1,9 @@
-module.exports = async ({ github, context, core, require }, path) => {
+module.exports = async ({ github, context, core }) => {
 
-  const fs = require('fs');
+  console.log('ISSUE', process.env.ISSUE_MODEL)
+  const issueModel = JSON.parse(process.env.ISSUE_MODEL);
 
-  const data = fs.readFileSync(path, 'utf-8');
-
-  console.log('data', data);
+  console.log(issueModel);
 
   const issueNumber = process.env.ISSUE_NUMBER;
 
