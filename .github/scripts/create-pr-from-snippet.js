@@ -21,8 +21,9 @@ module.exports = async ({ github, context, core }) => {
 
   console.log('FILES');
   console.log(fs.readdirSync(__dirname));
+  console.log(fs.readdirSync(process.env.GITHUB_WORKSPACE));
 
-  fs.writeFileSync(path.join(__dirname, 'test.txt', 'Hello'));
+  fs.writeFileSync(path.join(__dirname, 'test.txt'), 'Hello');
 
   
 
