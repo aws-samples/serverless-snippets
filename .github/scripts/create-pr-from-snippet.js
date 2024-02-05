@@ -16,7 +16,7 @@ const fs = require('fs');
 const path = require('path');
 
 // const test = async ({ github, context, core } = {}) => {
-module.exports = async ({ github, context, core }) => {
+  module.exports = async ({ github, context, core }) => {
 
   // Get the ISSUE JSON FILE.
   // const issueModel = JSON.parse(process.env.ISSUE_MODEL);
@@ -26,61 +26,56 @@ module.exports = async ({ github, context, core }) => {
   const SNIPPET_FOLDER = path.join(REPO_PATH, issueModel['snippet-id']);
 
   // make a new directory for the snippet
-  if(!fs.existsSync(SNIPPET_FOLDER)){
+  if (!fs.existsSync(SNIPPET_FOLDER)) {
     fs.mkdirSync(SNIPPET_FOLDER);
   }
 
   // Make the snippet text file.
-  fs.writeFileSync(path.join(SNIPPET_FOLDER, 'snippet.txt'), issueModel.snippet)
+  fs.writeFileSync(path.join(SNIPPET_FOLDER, 'snippet.txt'), issueModel.snippet);
 
+  const snippetJSONFile = {
+    title: issueModel.title,
+    description: issueModel.subtitle,
+    type: issueModel.type,
+    services: issueModel.services || [],
+    tags: issueModel.tags || [],
+    languages: issueModel.languages || [],
+    introBox: {
+      headline: 'How it works',
+      text: [issueModel.description],
+    },
+    gitHub: {
+      template: {
+        repoURL: `https://github.com/aws-samples/serverless-snippets/tree/main/${issueModel['snippet-id']}`,
+      },
+    },
+    snippets: [
+      {
+        title: issueModel['snippet-title'] || issueModel.title,
+        snippetPath: 'snippet.txt',
+        language: 'bash',
+      },
+    ],
+    authors: [
+      {
+        headline: 'Presented by Eric Johnson',
+        name: 'Eric Johnson',
+        image: 'https://s12d.com/ej-icon',
+        bio: 'Eric Johnson is a Principal Developer Advocate for Serverless Applications at Amazon Web Services and is based in Northern Colorado. Eric is a fanatic about serverless and enjoys helping developers understand how serverless technologies introduces a major paradigm shift in how they approach building and running applications at massive scale with minimal administration overhead. Prior to this, Eric has worked as a developer, solutions architect and AWS Evangelist for an AWS partner company.',
+        linkedin: 'singledigit',
+        twitter: 'edjgeek',
+      },
+    ],
+  };
 
-  // {
-  //   "title": "VTL - Typeahead",
-  //   "description": "Direct integration search on DynamoDB",
-  //   "type": "Integration",
-  //   "services": ["apigw", "dynamodb"],
-  //   "tags": [],
-  //   "languages": ["vtl"],
-  //   "introBox": {
-  //     "headline": "How it works",
-  //     "text": [
-  //       "The snippet demonstrates how to do a search against a GSI and filter the results by text containing a specific string"
-  //     ]
-  //   },
-  //   "gitHub": {
-  //     "template": {
-  //       "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/apigateway-dynamodb-typeahead"
-  //     }
-  //   },
-  //   "snippets": [
-  //     {
-  //       "title": "Direct integration typeahead",
-  //       "snippetPath": "snippet.txt",
-  //       "language": "vtl"
-  //     }
-  //   ],
-  //   "authors": [
-  //     {
-  //       "headline": "Presented by Eric Johnson",
-  //       "name": "Eric Johnson",
-  //       "image": "https://s12d.com/ej-icon",
-  //       "bio": "Eric Johnson is a Principal Developer Advocate for Serverless Applications at Amazon Web Services and is based in Northern Colorado. Eric is a fanatic about serverless and enjoys helping developers understand how serverless technologies introduces a major paradigm shift in how they approach building and running applications at massive scale with minimal administration overhead. Prior to this, Eric has worked as a developer, solutions architect and AWS Evangelist for an AWS partner company.",
-  //       "linkedin": "singledigit",
-  //       "twitter": "edjgeek"
-  //     }
-  //   ]
-  // }
-  
+  // Make the snippet text file.
+  fs.writeFileSync(path.join(SNIPPET_FOLDER, 'snippet-data.json'), JSON.stringify(snippetJSONFile, null, 4));
 
 
   // Parse the file and write the new snippet within the directory.
   // If its already there then just add it to that folder.
   // Maybe another submition to add it an exisitng folder.
   // Write then let the PR open.....
-
-
-
-
 
   // console.log('FILES');
   // console.log(fs.readdirSync(__dirname));
@@ -90,13 +85,11 @@ module.exports = async ({ github, context, core }) => {
 
   // fs.writeFileSync(path.join(process.env.GITHUB_WORKSPACE, 'test.txt'), 'Hello');
 
-
   // const issueNumber = process.env.ISSUE_NUMBER;
 
   // if (!issueNumber) {
   //   core.setFailed(`No issue number was passed. Aborting`);
   // }
-
 
   // Just create the files to be done
 
@@ -112,7 +105,6 @@ module.exports = async ({ github, context, core }) => {
   //     '[actions/github-script](https://github.com/actions/github-script).'
   //   ].join('\n')
   // });
-
 
   //   const prNumber = process.env.PR_NUMBER;
 
@@ -150,4 +142,4 @@ module.exports = async ({ github, context, core }) => {
   //   }
 };
 
-test();
+// test();
