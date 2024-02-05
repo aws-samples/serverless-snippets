@@ -18,7 +18,7 @@ body:
     validations:
       required: true  
   - type: input
-    id: title
+    id: subtitle
     attributes:
       label: Subtitle
       description: "Small subtitle for the snippet snippet"
@@ -58,7 +58,6 @@ body:
         - label: Amazon Managed Grafana
         - label: Amazon Managed Service for Prometheus
         - label: AWS Security Hub
-        - label: Amazon API Gateway
         - label: Amazon API Gateway
         - label: AWS App Runner
         - label: Amazon Athena
@@ -155,7 +154,6 @@ body:
         - label: Amazon Kinesis
         - label: Amazon Managed Workflows for Apache Airflow
         - label: Amazon Elastic Map Reduce
-        - label: Internet
         - label: Managed Service for Apache Flink
         - label: Amazon DocumentDB
         - label: AWS Application Composer
