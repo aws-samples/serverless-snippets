@@ -1,4 +1,5 @@
-module.exports = async ({ github, context, core }) => {
+module.exports = async ({ github, context, core }, path) => {
+  console.log('process.env.DATA_PATH', path);
   console.log('process.env.DATA_PATH', process.env.DATA_PATH);
   console.log('process.env.DATA', process.env.DATA);
 
