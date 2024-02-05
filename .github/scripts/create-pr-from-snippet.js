@@ -25,7 +25,7 @@ module.exports = async ({ github, context, core }) => {
   // Ths is the main dir
   console.log(fs.readdirSync(process.env.GITHUB_WORKSPACE));
 
-  fs.writeFileSync(path.join(GITHUB_WORKSPACE, 'test.txt'), 'Hello');
+  fs.writeFileSync(path.join(process.env.GITHUB_WORKSPACE, 'test.txt'), 'Hello');
 
 
   const issueNumber = process.env.ISSUE_NUMBER;
