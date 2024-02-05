@@ -1,14 +1,14 @@
-const issueModel = {
-  'snippet-id': 'cloudwatch-insight-apigw-integration-latency2',
-  title: 'Integration latency report',
-  subtitle: 'Create API Gateway integration latency report for your API Gateway access log group.',
-  description: 'Cloudwatch Log Insight snippet that returns API Gateway integration latency statistics in 1 minute intervals in your API Gateway access log group.',
-  type: 'CloudWatch Logs Insights',
-  services: ['Amazon API Gateway'],
-  languages: [],
-  'snippet-title': 'Copy the code into CloudWatch Logs Insights',
-  snippet: '```bash\n' + 'filter status=200\r\n' + '| stats avg(integrationLatency), max(integrationLatency), \r\n' + 'min(integrationLatency) by bin(1m)\n' + '```',
-};
+// const issueModel = {
+//   'snippet-id': 'cloudwatch-insight-apigw-integration-latency2',
+//   title: 'Integration latency report',
+//   subtitle: 'Create API Gateway integration latency report for your API Gateway access log group.',
+//   description: 'Cloudwatch Log Insight snippet that returns API Gateway integration latency statistics in 1 minute intervals in your API Gateway access log group.',
+//   type: 'CloudWatch Logs Insights',
+//   services: ['Amazon API Gateway'],
+//   languages: [],
+//   'snippet-title': 'Copy the code into CloudWatch Logs Insights',
+//   snippet: '```bash\n' + 'filter status=200\r\n' + '| stats avg(integrationLatency), max(integrationLatency), \r\n' + 'min(integrationLatency) by bin(1m)\n' + '```',
+// };
 
 // Create pull request with the files that have changed..
 
@@ -19,7 +19,7 @@ const path = require('path');
   module.exports = async ({ github, context, core }) => {
 
   // Get the ISSUE JSON FILE.
-  // const issueModel = JSON.parse(process.env.ISSUE_MODEL);
+  const issueModel = JSON.parse(process.env.ISSUE_MODEL);
 
   // The repo path to everything
   const REPO_PATH = process.env.GITHUB_WORKSPACE || __dirname;
