@@ -127,6 +127,14 @@ serverless_SNS_Lambda:
             - description: Consuming an SNS event with &LAM; using Java.
               snippet_files:
                 - integration-sns-to-lambda/SNSEventHandler.java
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sns-to-lambda
+          excerpts:
+            - description: Consuming an SNS event with &LAM; using Ruby.
+              snippet_files:
+                - integration-sns-to-lambda/example.rb
   services:
     lambda:
     sns:
@@ -264,6 +272,14 @@ serverless_SQS_Lambda_batch_item_failures:
             - description: Reporting SQS batch item failures with &LAM; using Go.
               snippet_files:
                 - lambda-function-sqs-report-batch-item-failures/example.go
+    PHP:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
+          excerpts:
+            - description: Reporting SQS batch item failures with &LAM; using PHP.
+              snippet_files:
+                - lambda-function-sqs-report-batch-item-failures/example.php
   services:
     lambda:
     sqs:
@@ -388,6 +404,22 @@ serverless_Kinesis_Lambda_batch_item_failures:
             - description: Reporting &AK; batch item failures with &LAM; using Rust.
               snippet_files:
                 - integration-kinesis-to-lambda-with-batch-item-handling/main.rs
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &AK; batch item failures with &LAM; using Go.
+              snippet_files:
+                - integration-kinesis-to-lambda-with-batch-item-handling/example.go
+    PHP:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &AK; batch item failures with &LAM; using PHP.
+              snippet_files:
+                - integration-kinesis-to-lambda-with-batch-item-handling/example.php 
   services:
     lambda:
     kinesis:
