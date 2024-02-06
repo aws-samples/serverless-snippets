@@ -48,6 +48,7 @@ jobs:
         git push origin new-serverless-snippet-${{ steps.issue-parser.outputs.issueparser_snippet-id }}-${{github.run_number}}-${{github.sha}}  
 
     - name: Create Pull Request
+      id: open-pr
       uses: repo-sync/pull-request@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -57,3 +58,16 @@ jobs:
         source_branch: "new-serverless-snippet-${{ steps.issue-parser.outputs.issueparser_snippet-id }}-${{github.run_number}}-${{github.sha}}"
         pr_assignee: "boyney123"
 
+    - name: Write PR back to issue.
+      id: snippet-to-pr
+      uses: actions/github-script@v7
+      with:
+        script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for reporting!'
+            })
+
+# steps.open-pr.outputs.pr_number
