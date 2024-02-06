@@ -65,6 +65,6 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '👋 Thanks for reporting!'
+              body: '👋 Thanks for adding your snippet! We automatically created a pull request for you https://github.com/aws-samples/serverless-snippets/pull/${{ steps.open-pr.outputs.pr_number}}'
             })
 
