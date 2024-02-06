@@ -70,4 +70,3 @@ jobs:
               body: '👋 Thanks for reporting!'
             })
 
-# steps.open-pr.outputs.pr_number
