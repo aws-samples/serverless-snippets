@@ -1,0 +1,39 @@
+{
+    "title": "Find all Lambda functions with a specific runtime",
+    "description": "Using AWS CLI to find all instances of a specific runtime",
+    "type": "Integration",
+    "services": [
+        "AWS Amplify"
+    ],
+    "tags": [],
+    "languages": [
+        "Java"
+    ],
+    "introBox": {
+        "headline": "How it works",
+        "text": [
+            "The AWSCLI can find all instances of a specific runtime in a single location or across multiple regions"
+        ]
+    },
+    "gitHub": {
+        "template": {
+            "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/aws-cli-find-function-runtimes2"
+        }
+    },
+    "snippets": [
+        {
+            "title": "Find all Lambda functions in a single region with a specific runtime",
+            "snippetPath": "snippet.txt",
+            "language": "bash"
+        }
+    ],
+    "authors": [
+        {
+            "headline": "Presented by",
+            "name": "",
+            "bio": "ServerlessLand Contributor",
+            "linkedin": "",
+            "twitter": ""
+        }
+    ]
+}

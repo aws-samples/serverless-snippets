@@ -1,0 +1,1 @@
+aws lambda list-functions --function-version ALL --output text --query "Functions[?Runtime=='python2.7'].FunctionArn"
