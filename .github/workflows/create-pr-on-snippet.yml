@@ -17,6 +17,20 @@ jobs:
       with:
         template-path: .github/ISSUE_TEMPLATE/new-snippet.yml # optional but recommended
     - run: cat ${HOME}/issue-parser-result.json
+
+
+    - name: Check if issue is from new-snippet template
+      id: check-template
+      run: |
+        ISSUE_BODY=$(cat $GITHUB_EVENT_PATH | jq -r .issue.body)
+        echo $ISSUE_BODY
+        if [[ $ISSUE_BODY == *"This issue was created using the new-snippet template."* ]]; then
+          echo "Match found"
+          echo "::set-output name=template_match::true"
+        else
+          echo "No match found"
+          echo "::set-output name=template_match::false"
+        fi
     
     - name: Check and write snippet to PR
       uses: actions/github-script@v6
