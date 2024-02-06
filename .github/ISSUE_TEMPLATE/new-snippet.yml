@@ -1,4 +1,4 @@
-name: New Snippet
+name: Submit new snippet
 description: Submit you new snippet here.
 body:
   - type: input
