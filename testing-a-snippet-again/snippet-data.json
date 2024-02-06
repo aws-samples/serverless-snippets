@@ -1,0 +1,39 @@
+{
+    "title": "Standarise logs with AWS Lambda Powertools",
+    "description": "Standarise your function logs with Powertools.",
+    "type": "Tools",
+    "services": [
+        "AWS Amplify"
+    ],
+    "tags": [],
+    "languages": [
+        "Node"
+    ],
+    "introBox": {
+        "headline": "How it works",
+        "text": [
+            "Cloudwatch Log Insight snippet that returns logs that are not exceptions"
+        ]
+    },
+    "gitHub": {
+        "template": {
+            "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/testing-a-snippet-again"
+        }
+    },
+    "snippets": [
+        {
+            "title": "Install the library in your project",
+            "snippetPath": "snippet.txt",
+            "language": "bash"
+        }
+    ],
+    "authors": [
+        {
+            "headline": "Presented by",
+            "name": "David Boyne",
+            "bio": "ServerlessLand Contributor",
+            "linkedin": "",
+            "twitter": ""
+        }
+    ]
+}
