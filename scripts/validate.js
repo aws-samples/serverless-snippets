@@ -3,7 +3,7 @@ const path = require('path');
 
 const Validator = require('jsonschema').Validator;
 const v = new Validator();
-const schema = require('./pattern-schema.json');
+const schema = require('./schema.json');
 const { ValidationError } = require('jsonschema');
 
 console.info(process.env);
