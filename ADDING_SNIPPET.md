@@ -13,7 +13,12 @@ Please pick what you want to do:
 
 # I want to add a single snippet
 
+The fastest way to add a new snippet is to follow these steps:
 
+1. Fill in the [snippet GitHub issue form](https://github.com/aws-samples/serverless-snippets/issues/new?assignees=&labels=&projects=&template=new-snippet.yml)
+1. Once issue is created, a new pull request will be created for you.
+
+Maintainers of the project will review your pull request, and if accepted will be merged into ServerlessLand for you.
 
 
 # I want to add a snippet with multiple examples
