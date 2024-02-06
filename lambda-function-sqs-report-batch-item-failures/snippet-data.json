@@ -65,6 +65,17 @@
           ]
         },
         {
+          "id": "Go",
+          "title": "Usage Example with Go:",
+          "description": "Implementing partial SQS batch responses using Go.",
+          "snippets": [
+            {
+              "snippetPath": "example.go",
+              "language": "Go"
+            }
+          ]
+        },
+        {
           "id": "JavaScript",
           "title": "Usage Example with JavaScript:",
           "description": "Implementing partial SQS batch responses using Rust.",

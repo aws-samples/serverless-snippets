@@ -1,0 +1,59 @@
+name: Issue to Pull Request
+
+on:
+  issues:
+    types: [opened, reopened]
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+    - uses: stefanbuck/github-issue-parser@v3
+      id: issue-parser
+      with:
+        template-path: .github/ISSUE_TEMPLATE/new-snippet.yml # optional but recommended
+    - run: cat ${HOME}/issue-parser-result.json
+    
+    - name: Check and write snippet to PR
+      id: snippet-to-pr
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const path = "${{ github.workspace }}/issue-parser-result.json";
+          const script = require('.github/scripts/create-pr-from-snippet.js');
+          await script({github, context, core, require}, path);
+      env:
+        ISSUE_MODEL: ${{ steps.issue-parser.outputs.jsonString }}
+
+    # - name: Create File
+    #   run: echo "Your file content" > newfile.txt
+
+    - name: Create New Branch
+      run: |
+          git checkout -b new-serverless-snippet-${{ steps.issue-parser.outputs.issueparser_snippet-id }}  
+
+    - name: Commit Changes
+      run: |
+        git config --global user.name 'serverlessland'
+        git config --global user.email 'serverlessland@amazon.co.uk'
+        git add .
+        git commit -am "Adding new files" -a || echo "No changes to commit"
+
+    - name: Push Changes
+      run: |
+        git push origin new-serverless-snippet-${{ steps.issue-parser.outputs.issueparser_snippet-id }}  
+
+    - name: Create Pull Request
+      uses: repo-sync/pull-request@v2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pr_title: "New Snippet - ${{ steps.issue-parser.outputs.issueparser_title }}"
+        pr_body: "Automated commit for ${{ steps.issue-parser.outputs.issueparser_title }} - ${{ steps.issue-parser.outputs.issueparser_description }}"
+        destination_branch: "main"
+        source_branch: "new-serverless-snippet-${{ steps.issue-parser.outputs.issueparser_snippet-id }}"
+        pr_assignee: "boyney123"
+
