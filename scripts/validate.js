@@ -8,19 +8,6 @@ const { ValidationError } = require('jsonschema');
 
 console.info(process.env);
 
-// Returns an array of errors if any are found.
-const customValidate = async (patternFile) => {
-  const errors = [];
-
-  const { gitHub: { template: { repoURL, templateURL, projectFolder, templateFile } = {} } = {} } = patternFile;
-
-  if (templateFile.includes(projectFolder)) {
-    errors.push(new ValidationError('Please remove the projectFolder value from the templateFile', null, null, 'gitHub.template.templateURL'));
-  }
-
-  return errors;
-};
-
 const convertToFriendlyMessages = (errors) => {
   return errors.map((error) => {
     if (error.includes('.linkedin is of prohibited type [object Object]')) {
@@ -67,13 +54,9 @@ const main = async () => {
 
     const result = v.validate(parsedJSON, schema);
 
-    // Some validation we can't do easily in JSON schema validation, this uses code to validate the pattern
-    const resultsWithCustomValidation = await customValidate(parsedJSON);
-
-    const mergedErrors = [...result.errors, ...resultsWithCustomValidation];
+    const mergedErrors = [...result.errors];
 
     console.log('Result errors', result.errors);
-    console.log('Custom errors', resultsWithCustomValidation);
 
     if (mergedErrors.length > 0) {
       const errors = buildErrors(mergedErrors);
