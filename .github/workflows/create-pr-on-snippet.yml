@@ -24,7 +24,7 @@ jobs:
       run: |
         ISSUE_BODY=$(cat $GITHUB_EVENT_PATH | jq -r .issue.body)
         echo $ISSUE_BODY
-        if [[ $ISSUE_BODY == *"This issue was created using the new-snippet template."* ]]; then
+        if [[ $ISSUE_BODY == *"Snippet ID"* ]]; then
           echo "Match found"
           echo "::set-output name=template_match::true"
         else
