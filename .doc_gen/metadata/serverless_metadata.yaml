@@ -248,14 +248,14 @@ serverless_SQS_Lambda_batch_item_failures:
             - description: Reporting SQS batch item failures with &LAM; using Rust.
               snippet_files:
                 - lambda-function-sqs-report-batch-item-failures/example.rs
-    # JavaScript:
-    #   versions:
-    #     - sdk_version: 2
-    #       github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
-    #       excerpts:
-    #         - description: Reporting SQS batch item failures with &LAM; using JavaScript.
-    #           snippet_files:
-    #             - lambda-function-sqs-report-batch-item-failures/example.js
+    JavaScript:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
+          excerpts:
+            - description: Reporting SQS batch item failures with &LAM; using JavaScript.
+              snippet_files:
+                - lambda-function-sqs-report-batch-item-failures/example.mjs
     Ruby:
       versions:
         - sdk_version: 3

@@ -3,7 +3,7 @@
   "description": "This snippet demonstrates how to handle an SQS event and implement a partial batch response in a lambda function.",
   "type": "Integration",
   "services": ["lambda", "sqs"],
-  "languages": ["Java", "Python", ".NET", "Rust", "PHP"],
+  "languages": ["Java", "Python", ".NET", "Rust", "Go", "PHP"],
   "tags": ["Amazon SQS", "Handling Errors"],
   "introBox": {
     "headline": "How it works",
@@ -81,7 +81,7 @@
           "description": "Implementing partial SQS batch responses using JavaScript.",
           "snippets": [
             {
-              "snippetPath": "example.js",
+              "snippetPath": "example.mjs",
               "language": "js"
             }
           ]
