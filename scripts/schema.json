@@ -1,0 +1,57 @@
+{
+    "id": "serverless-pattern-schema",
+    "type": "object",
+    "properties": {
+      "title": { "type": "string", "maxLength": 75 },
+      "description": { "type": "string", "maxLength": 150 },
+      "type": {
+        "type": "string",
+        "enum": ["CloudWatch Logs Insights", "AWS CLI", "Integration", "Step Functions intrinsic functions", "Tools", ""]
+      },
+      "introBox": {
+        "type": "object",
+        "properties": {
+          "headline": { "type": "string", "maxLength": 75 },
+          "text": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["headline", "text"]
+      },
+      "gitHub": {
+        "type": "object",
+        "properties": {
+          "template": {
+            "type": "object",
+            "properties": {
+              "repoURL": { "type": "string" }
+            },
+            "required": ["repoURL"]
+          }
+        },
+        "required": ["template"]
+      },
+      "authors": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "bio": { "type": "string" },
+            "linkedin": {
+              "type": "string",
+              "not": {
+                "format": "uri"
+              }
+            }
+          },
+          "required": ["name", "bio"]
+        }
+      }
+    },
+    "required": ["title", "description", "type", "introBox", "gitHub", "authors"]
+  }
+  

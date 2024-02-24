@@ -3,7 +3,9 @@
   "description": "Using AWS Lambda with Amazon Kinesis without Batch Item Handling.",
   "type": "Integration",
   "services": ["lambda", "kinesis"],
-  "languages": ["Node", "TypeScript", ".NET", "Java", "Go", "Python","Ruby"],
+
+  "languages": ["Node", "TypeScript", ".NET", "Java", "Go", "Python", "PHP","Ruby"],
+
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -107,6 +109,17 @@
               "language": "rb"
             }
           ]
+        },
+        {
+          "id": "PHP",
+          "title": "Usage Example with PHP",
+          "description": "Consuming Kinesis event with Lambda using PHP without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "example.php",
+              "language": "PHP"
+            }
+          ]
         }
       ]
     }
@@ -147,6 +160,13 @@
       "name": "Sanskar",
       "bio": "Cloud Support Engineer at AWS",
       "linkedin": "Sanskar05"
+    },
+    {
+      "headline": "PHP Example Presented by Jan Richter",
+      "name": "Jan Richter",
+      "image": "https://pbs.twimg.com/profile_images/1310542979958882305/IJ7mqVQ4_400x400.jpg",
+      "bio": "Cloud Architect at AWS",
+      "linkedin": "falnyr"
     }
   ]
 }

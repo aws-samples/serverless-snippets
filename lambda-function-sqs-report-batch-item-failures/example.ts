@@ -1,6 +1,7 @@
-exports.handler = async (event, context) => {
+import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
 
-    const batchItemFailures = [];
+export const handler = async (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
+    const batchItemFailures: { ItemIdentifier: string }[] = [];
 
     for (const record of event.Records) {
         try {
@@ -16,7 +17,7 @@ exports.handler = async (event, context) => {
     };
 };
 
-async function processMessageAsync(record, context) {
+async function processMessageAsync(record: any, context: Context): Promise<void> {
     if (!record.body) {
         throw new Error('No Body in SQS Message.');
     }
