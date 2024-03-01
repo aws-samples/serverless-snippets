@@ -3,7 +3,7 @@
   "description": "Using AWS Lambda with Amazon Kinesis with Batch Item Handling.",
   "type": "Integration",
   "services": ["lambda", "kinesis"],
-  "languages": ["Node", "TypeScript", ".NET"],
+  "languages": ["Node", "TypeScript", ".NET", "Ruby"],
   "tags": [],
   "introBox": {
     "headline": "How it works",
@@ -76,6 +76,19 @@
           ]
         },
         {
+
+          "id": "Ruby",
+          "title": "Usage Example with Ruby:",
+          "description": "Consuming Kinesis event with Lambda using Ruby with batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "example.rb",
+              "language": "rb"
+            }
+          ]
+        },
+        {
+
           "id": "PHP",
           "title": "Usage Example with PHP",
           "description": "Consuming Kinesis event with Lambda using PHP with batch item handling.",
@@ -94,6 +107,7 @@
             {
               "snippetPath": "example.go",
               "language": "go"
+
             }
           ]
         },
@@ -127,6 +141,12 @@
       "bio": "Cloud Application Architect at AWS",
       "linkedin": "mtomeh",
       "twitter": "mtomeh84"
+    },
+    {
+      "headline": "Ruby Example Presented by Sanskar",
+      "name": "Sanskar",
+      "bio": "Cloud Support Engineer at AWS",
+      "linkedin": "Sanskar05"
     },
     {
       "headline": "PHP Example Presented by Jan Richter",
