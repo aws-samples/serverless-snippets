@@ -205,6 +205,14 @@ serverless_SQS_Lambda:
             - description: Consuming an SQS event with &LAM; using Rust.
               snippet_files:
                 - integration-sqs-to-lambda/main.rs
+    PHP:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda
+          excerpts:
+            - description: Consuming an SQS event with &LAM; using PHP.
+              snippet_files:
+                - integration-sqs-to-lambda/example.php
   services:
     lambda:
     sqs:
@@ -256,6 +264,9 @@ serverless_SQS_Lambda_batch_item_failures:
             - description: Reporting SQS batch item failures with &LAM; using JavaScript.
               snippet_files:
                 - lambda-function-sqs-report-batch-item-failures/example.mjs
+            - description: Reporting SQS batch item failures with &LAM; using TypeScript.
+              snippet_files:
+                - lambda-function-sqs-report-batch-item-failures/example.ts
     Ruby:
       versions:
         - sdk_version: 3
@@ -349,7 +360,15 @@ serverless_Kinesis_Lambda:
           excerpts:
             - description: Consuming an &AK; event with &LAM; using PHP.
               snippet_files:
-                - integration-kinesis-to-lambda/example.php        
+                - integration-kinesis-to-lambda/example.php   
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda
+          excerpts:
+            - description: Consuming an &AK; event with &LAM; using Ruby.
+              snippet_files:
+                - integration-kinesis-to-lambda/example.rb
   services:
     lambda:
     kinesis:
@@ -419,7 +438,15 @@ serverless_Kinesis_Lambda_batch_item_failures:
           excerpts:
             - description: Reporting &AK; batch item failures with &LAM; using PHP.
               snippet_files:
-                - integration-kinesis-to-lambda-with-batch-item-handling/example.php 
+                - integration-kinesis-to-lambda-with-batch-item-handling/example.php
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &AK; batch item failures with &LAM; using Ruby.
+              snippet_files:
+                - integration-kinesis-to-lambda-with-batch-item-handling/example.rb
   services:
     lambda:
     kinesis:
