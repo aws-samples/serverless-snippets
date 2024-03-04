@@ -1,0 +1,38 @@
+{
+    "title": "Deploy Cloudformations Stacks using Stack Sets",
+    "description": "This script demonstrates commands which can be used to deploy Cloudformation Stack Set Instances using AWS CLI in the same AWS account across regions.",
+    "type": "AWS CLI",
+    "services": [
+        "CloudFormation"
+    ],
+    "languages": [
+        "aws cli"
+    ],
+    "introBox": {
+        "headline": "How it works",
+        "text": [
+            "An bash script which has AWS CLI commands to deploy stack instances after creating a stack-set."
+        ]
+    },
+    "gitHub": {
+        "template": {
+            "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/deploy-stack-set"
+        }
+    },
+    "snippets": [
+        {
+            "title": "Bash script for creating stack set and deploying stack instances",
+            "snippetPath": "snippet.sh",
+            "language": "bash"
+          }
+    ],
+    "authors": [
+        {
+            "headline": "Contributed by Sameer Shrivastava",
+            "name": "Sameer Shrivastava",
+            "image": "https://drive.google.com/file/d/1FbzHKXsEtyhHnWzK66PHcdEIrVIbM09r/view?usp=sharing",
+            "bio": "Solutions Architect @ AWS India",
+            "linkedin": "sameer-shrivastava"
+        }
+    ]
+}
