@@ -468,6 +468,33 @@ serverless_DynamoDB_Lambda:
   services:
     lambda:
     ddb:
+serverless_DynamoDB_Lambda_batch_item_failures:
+  title: Reporting batch item failures for &LAM; functions with a &DDB; trigger
+  title_abbrev: Reporting batch item failures for &LAM; functions with a &DDB; trigger
+  synopsis: implement partial batch response for Lambda functions that receive events from a
+    DynamoDB stream. The function reports the batch item failures in the response, signaling
+    to Lambda to retry those messages later.
+  category: Serverless examples
+  languages:
+    Python:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using Python.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/example.py
+    Java:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using Java.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/example.java
+  services:
+    lambda:
+    ddb:
 serverless_connect_RDS_Lambda:
   title: Connecting to an &RDS; database in a &LAM; function
   title_abbrev: Connecting to an &RDS; database in a &LAM; function
