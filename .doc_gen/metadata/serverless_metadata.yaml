@@ -450,6 +450,24 @@ serverless_Kinesis_Lambda_batch_item_failures:
   services:
     lambda:
     kinesis:
+serverless_DynamoDB_Lambda:
+  title: Invoke a &LAM; function from a &DDB; trigger
+  title_abbrev: Invoke a &LAM; function from a &DDB; trigger
+  synopsis: implement a Lambda function that receives an event triggered by receiving records from
+    a DynamoDB stream. The function retrieves the DynamoDB payload and logs the record contents.
+  category: Serverless examples
+  languages:
+    JavaScript:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          excerpts:
+            - description: Consuming a &DDB; event with &LAM; using JavaScript.
+              snippet_files:
+                - integration-ddb-to-lambda/example.js
+  services:
+    lambda:
+    ddb:
 serverless_connect_RDS_Lambda:
   title: Connecting to an &RDS; database in a &LAM; function
   title_abbrev: Connecting to an &RDS; database in a &LAM; function
