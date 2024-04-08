@@ -2,12 +2,12 @@
 
 use Bref\Context\Context;
 use Bref\Event\Sqs\SqsEvent;
-use Bref\Event\Handler as StdHandler;
+use Bref\Event\Sqs\SqsHandler;
 use Bref\Logger\StderrLogger;
 
 require __DIR__ . '/vendor/autoload.php';
 
-class Handler implements StdHandler
+class Handler extends SqsHandler
 {
     private StderrLogger $logger;
     public function __construct(StderrLogger $logger)
@@ -19,13 +19,11 @@ class Handler implements StdHandler
      * @throws JsonException
      * @throws \Bref\Event\InvalidLambdaEvent
      */
-    public function handle(mixed $event, Context $context): array
+    public function handleSqs(SqsEvent $event, Context $context): void
     {
-        $sqsEvent = new SqsEvent($event);
         $this->logger->info("Processing SQS records");
-        $records = $sqsEvent->getRecords();
+        $records = $event->getRecords();
 
-        $failedRecords = [];
         foreach ($records as $record) {
             try {
                 // Assuming the SQS message is in JSON format
@@ -35,25 +33,13 @@ class Handler implements StdHandler
             } catch (Exception $e) {
                 $this->logger->error($e->getMessage());
                 // failed processing the record
-                $failedRecords[] = $record->getMessageId();
+                $this->markAsFailed($record);
             }
         }
         $totalRecords = count($records);
         $this->logger->info("Successfully processed $totalRecords SQS records");
-
-        // Format failures for the response
-        $failures = array_map(
-            fn(string $messageId) => ['itemIdentifier' => $messageId],
-            $failedRecords
-        );
-
-        return [
-            'batchItemFailures' => $failures
-        ];
     }
 }
 
 $logger = new StderrLogger();
 return new Handler($logger);
-
-?>

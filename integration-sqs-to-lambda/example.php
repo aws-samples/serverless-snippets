@@ -10,7 +10,6 @@ use Bref\Logger\StderrLogger;
 
 require __DIR__ . '/vendor/autoload.php';
 
-
 class Handler extends SqsHandler
 {
     private StderrLogger $logger;
@@ -20,21 +19,13 @@ class Handler extends SqsHandler
     }
 
     /**
-     * @param SqsEvent $event
-     * @param Context $context
-     * @return void
      * @throws InvalidLambdaEvent
      */
     public function handleSqs(SqsEvent $event, Context $context): void
     {
-        try {
-            foreach ($event->getRecords() as $record) {
-                $body = $record->getBody();
-                // TODO: Do interesting work based on the new message
-            }
-        } catch (InvalidLambdaEvent $e) {
-            $this->logger->error($e->getMessage());
-            throw $e;
+        foreach ($event->getRecords() as $record) {
+            $body = $record->getBody();
+            // TODO: Do interesting work based on the new message
         }
     }
 }
