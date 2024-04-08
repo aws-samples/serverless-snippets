@@ -1,3 +1,5 @@
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
 exports.handler = async (event, context) => {
     const batchItemFailures = [];
     if (event.Records.length == 0){

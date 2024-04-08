@@ -1,3 +1,5 @@
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
 use aws_lambda_events::event::sns::SnsEvent;
 use aws_lambda_events::sns::SnsRecord;
 use lambda_runtime::{run, service_fn, Error, LambdaEvent};

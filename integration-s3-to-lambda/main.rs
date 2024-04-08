@@ -1,3 +1,5 @@
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
 use aws_lambda_events::event::s3::S3Event;
 use aws_sdk_s3::{Client};
 use lambda_runtime::{run, service_fn, Error, LambdaEvent};

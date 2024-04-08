@@ -7,7 +7,7 @@ def handler(event, context):
     for record in records:
         try:
             # Process your record
-            curRecordSequenceNumber = record["kinesis"]["sequenceNumber"]
+            curRecordSequenceNumber = record["dynamodb"]["SequenceNumber"]
         except Exception as e:
             # Return failed record's sequence number
             return {"batchItemFailures":[{"itemIdentifier": curRecordSequenceNumber}]}

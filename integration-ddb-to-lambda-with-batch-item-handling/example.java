@@ -2,27 +2,28 @@
 // SPDX-License-Identifier: Apache-2.0
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-import com.amazonaws.services.lambda.runtime.events.KinesisEvent;
+import com.amazonaws.services.lambda.runtime.events.DynamodbEvent;
 import com.amazonaws.services.lambda.runtime.events.StreamsEventResponse;
+import com.amazonaws.services.lambda.runtime.events.models.dynamodb.StreamRecord;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProcessKinesisRecords implements RequestHandler<KinesisEvent, StreamsEventResponse> {
+public class ProcessDynamodbRecords implements RequestHandler<DynamodbEvent, Serializable> {
 
     @Override
-    public StreamsEventResponse handleRequest(KinesisEvent input, Context context) {
+    public StreamsEventResponse handleRequest(DynamodbEvent input, Context context) {
 
         List<StreamsEventResponse.BatchItemFailure> batchItemFailures = new ArrayList<>();
         String curRecordSequenceNumber = "";
 
-        for (KinesisEvent.KinesisEventRecord kinesisEventRecord : input.getRecords()) {
-            try {
+        for (DynamodbEvent.DynamodbStreamRecord dynamodbStreamRecord : input.getRecords()) {
+          try {
                 //Process your record
-                KinesisEvent.Record kinesisRecord = kinesisEventRecord.getKinesis();
-                curRecordSequenceNumber = kinesisRecord.getSequenceNumber();
-
+                StreamRecord dynamodbRecord = dynamodbStreamRecord.getDynamodb();
+                curRecordSequenceNumber = dynamodbRecord.getSequenceNumber();
+                
             } catch (Exception e) {
                 /* Since we are working with streams, we can return the failed item immediately.
                    Lambda will immediately begin to retry processing from this failed item onwards. */
@@ -31,6 +32,6 @@ public class ProcessKinesisRecords implements RequestHandler<KinesisEvent, Strea
             }
         }
        
-       return new StreamsEventResponse(batchItemFailures);   
+       return new StreamsEventResponse();   
     }
 }
