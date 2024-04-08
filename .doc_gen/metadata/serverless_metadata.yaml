@@ -467,7 +467,7 @@ serverless_DynamoDB_Lambda:
                 - integration-ddb-to-lambda/example.js
   services:
     lambda:
-    ddb:
+    dynamodb:
 serverless_DynamoDB_Lambda_batch_item_failures:
   title: Reporting batch item failures for &LAM; functions with a &DDB; trigger
   title_abbrev: Reporting batch item failures for &LAM; functions with a &DDB; trigger
@@ -494,7 +494,7 @@ serverless_DynamoDB_Lambda_batch_item_failures:
                 - integration-ddb-to-lambda-with-batch-item-handling/example.java
   services:
     lambda:
-    ddb:
+    dynamodb:
 serverless_connect_RDS_Lambda:
   title: Connecting to an &RDS; database in a &LAM; function
   title_abbrev: Connecting to an &RDS; database in a &LAM; function

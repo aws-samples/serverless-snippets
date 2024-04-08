@@ -1,3 +1,5 @@
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
 import { SNSEvent, Context, SNSHandler, SNSEventRecord } from "aws-lambda";
 
 export const functionHandler: SNSHandler = async (

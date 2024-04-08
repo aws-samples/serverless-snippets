@@ -1,3 +1,5 @@
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
 exports.handler = async (event, context) => {
     console.log(JSON.stringify(event, null, 2));
     event.Records.forEach(record => {

@@ -1,3 +1,5 @@
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
 const aws = require('aws-sdk');
 
 const s3 = new aws.S3({ apiVersion: '2006-03-01' });
