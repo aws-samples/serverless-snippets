@@ -28,14 +28,11 @@ class Handler extends KinesisHandler
         $this->logger->info("Processing records");
         $records = $event->getRecords();
         foreach ($records as $record) {
-            try {
-                $data = $record->getData();
-                $this->logger->info(json_encode($data));
-                // TODO: Do interesting work based on the new data
-            } catch (Exception $e) {
-                $this->logger->error($e->getMessage());
-                throw $e;
-            }
+            $data = $record->getData();
+            $this->logger->info(json_encode($data));
+            // TODO: Do interesting work based on the new data
+
+            // Any exception thrown will be logged and the invocation will be marked as failed
         }
         $totalRecords = count($records);
         $this->logger->info("Successfully processed $totalRecords records");

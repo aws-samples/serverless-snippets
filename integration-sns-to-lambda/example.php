@@ -13,20 +13,23 @@ A practical example can be found here: https://aws.amazon.com/blogs/apn/aws-lamb
 // Additional composer packages may be required when using Bref or any other PHP functions runtime.
 // require __DIR__ . '/vendor/autoload.php';
 
-return function ($event, $context) {
-    foreach ($event["Records"] as $record) {
-        processMessage($record);
-    }
-    echo "Done!" . PHP_EOL;
-};
+use Bref\Context\Context;
+use Bref\Event\Sns\SnsEvent;
+use Bref\Event\Sns\SnsHandler;
 
-function processMessage($record)
+class Handler extends SnsHandler
 {
-    try {
-        $message = $record['Sns']['Message'];
-        echo "Processed Message: {$message}" . PHP_EOL;
-    } catch (Exception $e) {
-        echo "Error occured: {$e->getMessage()}" . PHP_EOL;
-        throw $e;
+    public function handleSns(SnsEvent $event, Context $context): void
+    {
+        foreach ($event->getRecords() as $record) {
+            $message = $record->getMessage();
+
+            // TODO: Implement your custom processing logic here
+            // Any exception thrown will be logged and the invocation will be marked as failed
+
+            echo "Processed Message: $message" . PHP_EOL;
+        }
     }
 }
+
+return new Handler();
