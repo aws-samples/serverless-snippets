@@ -1,27 +1,24 @@
 ﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
-import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
+import { SQSEvent, SQSBatchResponse, Context, SQSBatchItemFailure, SQSRecord } from 'aws-lambda';
 
-export const handler = async (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
-    const batchItemFailures: { ItemIdentifier: string }[] = [];
+export const handler = async (event: SQSEvent, context: Context): Promise<SQSBatchResponse> => {
+    const batchItemFailures: SQSBatchItemFailure[] = [];
 
     for (const record of event.Records) {
         try {
-            await processMessageAsync(record, context);
+            await processMessageAsync(record);
         } catch (error) {
-            batchItemFailures.push({ ItemIdentifier: record.messageId });
+            batchItemFailures.push({ itemIdentifier: record.messageId });
         }
     }
 
-    return {
-        statusCode: 200,
-        body: JSON.stringify({ batchItemFailures }),
-    };
+    return {batchItemFailures: batchItemFailures};
 };
 
-async function processMessageAsync(record: any, context: Context): Promise<void> {
-    if (!record.body) {
-        throw new Error('No Body in SQS Message.');
+async function processMessageAsync(record: SQSRecord): Promise<void> {
+    if (record.body && record.body.includes("error")) {
+        throw new Error('There is an error in the SQS Message.');
     }
-    context.log(`Processed message ${record.body}`);
+    console.log(`Processed message ${record.body}`);
 }
