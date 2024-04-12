@@ -87,6 +87,17 @@
           ]
         },
         {
+          "id": "TypeScript",
+          "title": "Usage example with TypeScript:",
+          "description": "Implementing partial SQS batch responses using TypeScript.",
+          "snippets": [
+            {
+              "snippetPath": "example.ts",
+              "language": "ts"
+            }
+          ]
+        },
+        {
           "id": "PHP",
           "title": "Usage Example with PHP:",
           "description": "Implementing partial SQS batch responses using PHP.",
