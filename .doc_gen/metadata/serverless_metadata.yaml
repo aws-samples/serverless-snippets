@@ -258,7 +258,7 @@ serverless_SQS_Lambda_batch_item_failures:
                 - lambda-function-sqs-report-batch-item-failures/example.rs
     JavaScript:
       versions:
-        - sdk_version: 2
+        - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
           excerpts:
             - description: Reporting SQS batch item failures with &LAM; using JavaScript.
@@ -382,7 +382,7 @@ serverless_Kinesis_Lambda_batch_item_failures:
   languages:
     JavaScript:
       versions:
-        - sdk_version: 2
+        - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/blob/main/integration-kinesis-to-lambda-with-batch-item-handling
           excerpts:
             - description: Reporting &AK; batch item failures with &LAM; using Javascript.
@@ -465,6 +465,22 @@ serverless_DynamoDB_Lambda:
             - description: Consuming a &DDB; event with &LAM; using JavaScript.
               snippet_files:
                 - integration-ddb-to-lambda/example.js
+    .NET:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          excerpts:
+            - description: Consuming a &DDB; event with &LAM; using .NET.
+              snippet_files:
+                - integration-ddb-to-lambda/Function.cs
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          excerpts:
+            - description: Consuming a &DDB; event with &LAM; using Go.
+              snippet_files:
+                - integration-ddb-to-lambda/example.go
   services:
     lambda:
     dynamodb:
@@ -492,6 +508,22 @@ serverless_DynamoDB_Lambda_batch_item_failures:
             - description: Reporting &DDB; batch item failures with &LAM; using Java.
               snippet_files:
                 - integration-ddb-to-lambda-with-batch-item-handling/example.java
+    .NET:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using .NET.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/Function.cs
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using Go.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/example.go
   services:
     lambda:
     dynamodb:
