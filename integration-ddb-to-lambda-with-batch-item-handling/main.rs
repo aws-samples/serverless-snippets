@@ -51,10 +51,7 @@ async fn function_handler(event: LambdaEvent<Event>) -> Result<DynamoDbEventResp
         }
     }
 
-    tracing::info!(
-        "Successfully processed {} records",
-        event.payload.records.len()
-    );
+    tracing::info!("Successfully processed {} record(s)", records.len());
 
     Ok(response)
 }
