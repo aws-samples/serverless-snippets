@@ -1,21 +1,24 @@
-﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
-const aws = require('aws-sdk');
+import { S3Client, HeadObjectCommand } from "@aws-sdk/client-s3";
 
-const s3 = new aws.S3({ apiVersion: '2006-03-01' });
+const client = new S3Client();
 
 exports.handler = async (event, context) => {
+
     // Get the object from the event and show its content type
     const bucket = event.Records[0].s3.bucket.name;
     const key = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, ' '));
-    const params = {
-        Bucket: bucket,
-        Key: key,
-    }; 
+
     try {
-        const { ContentType } = await s3.headObject(params).promise();
+        const { ContentType } = await client.send(new HeadObjectCommand({
+            Bucket: bucket,
+            Key: key,
+        }));
+
         console.log('CONTENT TYPE:', ContentType);
         return ContentType;
+
     } catch (err) {
         console.log(err);
         const message = `Error getting object ${key} from bucket ${bucket}. Make sure they exist and your bucket is in the same region as this function.`;
