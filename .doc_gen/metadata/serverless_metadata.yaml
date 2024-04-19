@@ -8,7 +8,7 @@ serverless_S3_Lambda:
   languages:
     JavaScript:
       versions:
-        - sdk_version: 2
+        - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
           excerpts:
             - description: Consuming an S3 event with &LAM; using JavaScript.
@@ -57,6 +57,22 @@ serverless_S3_Lambda:
             - description: Consuming an S3 event with &LAM; using Rust.
               snippet_files:
                 - integration-s3-to-lambda/main.rs
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
+          excerpts:
+            - description: Consuming an S3 event with &LAM; using Ruby.
+              snippet_files:
+                - integration-s3-to-lambda/example.rb
+    PHP:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
+          excerpts:
+            - description: Consuming an S3 event with &LAM; using PHP.
+              snippet_files:
+                - integration-s3-to-lambda/example.php
   services:
     lambda:
     s3:
@@ -148,7 +164,7 @@ serverless_SQS_Lambda:
   languages:
     JavaScript:
       versions:
-        - sdk_version: 2
+        - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/blob/main/integration-sqs-to-lambda
           excerpts:
             - description: Consuming an SQS event with &LAM; using JavaScript.
@@ -481,6 +497,22 @@ serverless_DynamoDB_Lambda:
             - description: Consuming a &DDB; event with &LAM; using Go.
               snippet_files:
                 - integration-ddb-to-lambda/example.go
+    Python:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          excerpts:
+            - description: Consuming a &DDB; event with &LAM; using Python.
+              snippet_files:
+                - integration-ddb-to-lambda/example.py
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          excerpts:
+            - description: Consuming a &DDB; event with &LAM; using Ruby.
+              snippet_files:
+                - integration-ddb-to-lambda/example.rb
   services:
     lambda:
     dynamodb:
@@ -524,6 +556,22 @@ serverless_DynamoDB_Lambda_batch_item_failures:
             - description: Reporting &DDB; batch item failures with &LAM; using Go.
               snippet_files:
                 - integration-ddb-to-lambda-with-batch-item-handling/example.go
+    Rust:
+      versions:
+        - sdk_version: 1
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using Rust.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/main.rs
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using Ruby.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/example.rb
   services:
     lambda:
     dynamodb:
