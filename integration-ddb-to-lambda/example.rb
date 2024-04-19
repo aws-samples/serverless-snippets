@@ -14,5 +14,6 @@ def lambda_handler(event:, context:)
   def log_dynamodb_record(record)
     puts record['eventID']
     puts record['eventName']
+    puts "DynamoDB Record: #{JSON.generate(record['dynamodb'])}"
   end
   
