@@ -1,3 +1,5 @@
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
 import { S3Event } from 'aws-lambda';
 import { S3Client, HeadObjectCommand } from '@aws-sdk/client-s3';
 

@@ -1,3 +1,5 @@
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
 exports.handler = async (event, context) => {
   for (const message of event.Records) {
     await processMessageAsync(message);

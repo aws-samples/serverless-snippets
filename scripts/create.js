@@ -1,3 +1,5 @@
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');

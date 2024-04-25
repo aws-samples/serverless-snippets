@@ -96,6 +96,28 @@
               "language": "go"
             }
           ]
+        },
+        {
+          "id": "Rust",
+          "title": "Usage Example with Rust:",
+          "description": "Sample Amazon SQS function code using Rust without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "main.rs",
+              "language": "rust"
+            }
+          ]
+        },
+        {
+          "id": "PHP",
+          "title": "Usage Example with PHP",
+          "description": "Sample Amazon SQS function code using PHP without batch item handling.",
+          "snippets": [
+            {
+              "snippetPath": "example.php",
+              "language": "PHP"
+            }
+          ]
         }
       ]
     }
@@ -129,6 +151,13 @@
       "name": "Sanskar",
       "bio": "Cloud Support Engineer at AWS",
       "linkedin": "Sanskar05"
+    },
+    {
+      "headline": "PHP Example Presented by Jan Richter",
+      "name": "Jan Richter",
+      "image": "https://pbs.twimg.com/profile_images/1310542979958882305/IJ7mqVQ4_400x400.jpg",
+      "bio": "Cloud Architect at AWS",
+      "linkedin": "falnyr"
     }
   ]
 }

@@ -1,3 +1,5 @@
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
 // Snippet uses the ioredis library, but other redis clients will also work
 import { Cluster } from 'ioredis';
 import { SignatureV4 } from '@aws-sdk/signature-v4';

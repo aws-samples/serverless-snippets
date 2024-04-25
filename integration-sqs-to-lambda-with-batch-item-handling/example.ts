@@ -1,3 +1,5 @@
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
 import { SQSEvent, Context, SQSHandler, SQSBatchResponse, SQSBatchItemFailure, SQSRecord } from 'aws-lambda';
 
 export const functionHandler : SQSHandler = async (event: SQSEvent, context: Context) : Promise<SQSBatchResponse> => {

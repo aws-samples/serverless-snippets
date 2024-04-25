@@ -1,3 +1,5 @@
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
 package example;
 
 import software.amazon.awssdk.auth.credentials.AwsCredentials;

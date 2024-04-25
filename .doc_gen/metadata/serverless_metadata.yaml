@@ -8,7 +8,7 @@ serverless_S3_Lambda:
   languages:
     JavaScript:
       versions:
-        - sdk_version: 2
+        - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
           excerpts:
             - description: Consuming an S3 event with &LAM; using JavaScript.
@@ -57,6 +57,22 @@ serverless_S3_Lambda:
             - description: Consuming an S3 event with &LAM; using Rust.
               snippet_files:
                 - integration-s3-to-lambda/main.rs
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
+          excerpts:
+            - description: Consuming an S3 event with &LAM; using Ruby.
+              snippet_files:
+                - integration-s3-to-lambda/example.rb
+    PHP:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
+          excerpts:
+            - description: Consuming an S3 event with &LAM; using PHP.
+              snippet_files:
+                - integration-s3-to-lambda/example.php
   services:
     lambda:
     s3:
@@ -95,6 +111,46 @@ serverless_SNS_Lambda:
             - description: Consuming an SNS event with &LAM; using Python.
               snippet_files:
                 - integration-sns-to-lambda/example.py
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sns-to-lambda
+          excerpts:
+            - description: Consuming an SNS event with &LAM; using Go.
+              snippet_files:
+                - integration-sns-to-lambda/example.go
+    Rust:
+      versions:
+        - sdk_version: 1
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sns-to-lambda
+          excerpts:
+            - description: Consuming an SNS event with &LAM; using Rust.
+              snippet_files:
+                - integration-sns-to-lambda/lambda-sns-receive.rs
+    PHP:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sns-to-lambda
+          excerpts:
+            - description: Consuming an SNS event with &LAM; using PHP.
+              snippet_files:
+                - integration-sns-to-lambda/example.php
+    Java:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sns-to-lambda
+          excerpts:
+            - description: Consuming an SNS event with &LAM; using Java.
+              snippet_files:
+                - integration-sns-to-lambda/SNSEventHandler.java
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sns-to-lambda
+          excerpts:
+            - description: Consuming an SNS event with &LAM; using Ruby.
+              snippet_files:
+                - integration-sns-to-lambda/example.rb
   services:
     lambda:
     sns:
@@ -108,7 +164,7 @@ serverless_SQS_Lambda:
   languages:
     JavaScript:
       versions:
-        - sdk_version: 2
+        - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/blob/main/integration-sqs-to-lambda
           excerpts:
             - description: Consuming an SQS event with &LAM; using JavaScript.
@@ -141,6 +197,38 @@ serverless_SQS_Lambda:
             - description: Consuming an SQS event with &LAM; using Python.
               snippet_files:
                 - integration-sqs-to-lambda/Function.py
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda
+          excerpts:
+            - description: Consuming an SQS event with &LAM; using Go.
+              snippet_files:
+                - integration-sqs-to-lambda/Function.go
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda
+          excerpts:
+            - description: Consuming an SQS event with &LAM; using Ruby.
+              snippet_files:
+                - integration-sqs-to-lambda/Function.rb
+    Rust:
+      versions:
+        - sdk_version: 1
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda
+          excerpts:
+            - description: Consuming an SQS event with &LAM; using Rust.
+              snippet_files:
+                - integration-sqs-to-lambda/main.rs
+    PHP:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda
+          excerpts:
+            - description: Consuming an SQS event with &LAM; using PHP.
+              snippet_files:
+                - integration-sqs-to-lambda/example.php
   services:
     lambda:
     sqs:
@@ -186,12 +274,15 @@ serverless_SQS_Lambda_batch_item_failures:
                 - lambda-function-sqs-report-batch-item-failures/example.rs
     JavaScript:
       versions:
-        - sdk_version: 2
+        - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
           excerpts:
             - description: Reporting SQS batch item failures with &LAM; using JavaScript.
               snippet_files:
-                - lambda-function-sqs-report-batch-item-failures/example.js
+                - lambda-function-sqs-report-batch-item-failures/example.mjs
+            - description: Reporting SQS batch item failures with &LAM; using TypeScript.
+              snippet_files:
+                - lambda-function-sqs-report-batch-item-failures/example.ts
     Ruby:
       versions:
         - sdk_version: 3
@@ -200,6 +291,22 @@ serverless_SQS_Lambda_batch_item_failures:
             - description: Reporting SQS batch item failures with &LAM; using Ruby.
               snippet_files:
                 - integration-sqs-to-lambda-with-batch-item-handling/example.rb
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
+          excerpts:
+            - description: Reporting SQS batch item failures with &LAM; using Go.
+              snippet_files:
+                - lambda-function-sqs-report-batch-item-failures/example.go
+    PHP:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
+          excerpts:
+            - description: Reporting SQS batch item failures with &LAM; using PHP.
+              snippet_files:
+                - lambda-function-sqs-report-batch-item-failures/example.php
   services:
     lambda:
     sqs:
@@ -246,6 +353,38 @@ serverless_Kinesis_Lambda:
             - description: Consuming a &AK; event with &LAM; using Go.
               snippet_files:
                 - integration-kinesis-to-lambda/main.go
+    Python:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda
+          excerpts:
+            - description: Consuming a &AK; event with &LAM; using Python.
+              snippet_files:
+                - integration-kinesis-to-lambda/main.py
+    Rust:
+      versions:
+        - sdk_version: 1
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda
+          excerpts:
+            - description: Consuming an &AK; event with &LAM; using Rust.
+              snippet_files:
+                - integration-kinesis-to-lambda/main.rs
+    PHP:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda
+          excerpts:
+            - description: Consuming an &AK; event with &LAM; using PHP.
+              snippet_files:
+                - integration-kinesis-to-lambda/example.php   
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda
+          excerpts:
+            - description: Consuming an &AK; event with &LAM; using Ruby.
+              snippet_files:
+                - integration-kinesis-to-lambda/example.rb
   services:
     lambda:
     kinesis:
@@ -259,7 +398,7 @@ serverless_Kinesis_Lambda_batch_item_failures:
   languages:
     JavaScript:
       versions:
-        - sdk_version: 2
+        - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/blob/main/integration-kinesis-to-lambda-with-batch-item-handling
           excerpts:
             - description: Reporting &AK; batch item failures with &LAM; using Javascript.
@@ -292,6 +431,165 @@ serverless_Kinesis_Lambda_batch_item_failures:
             - description: Reporting &AK; batch item failures with &LAM; using Java.
               snippet_files:
                 - integration-kinesis-to-lambda-with-batch-item-handling/example.java
+    Rust:
+      versions:
+        - sdk_version: 1
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &AK; batch item failures with &LAM; using Rust.
+              snippet_files:
+                - integration-kinesis-to-lambda-with-batch-item-handling/main.rs
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &AK; batch item failures with &LAM; using Go.
+              snippet_files:
+                - integration-kinesis-to-lambda-with-batch-item-handling/example.go
+    PHP:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &AK; batch item failures with &LAM; using PHP.
+              snippet_files:
+                - integration-kinesis-to-lambda-with-batch-item-handling/example.php
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &AK; batch item failures with &LAM; using Ruby.
+              snippet_files:
+                - integration-kinesis-to-lambda-with-batch-item-handling/example.rb
   services:
     lambda:
     kinesis:
+serverless_DynamoDB_Lambda:
+  title: Invoke a &LAM; function from a &DDB; trigger
+  title_abbrev: Invoke a &LAM; function from a &DDB; trigger
+  synopsis: implement a Lambda function that receives an event triggered by receiving records from
+    a DynamoDB stream. The function retrieves the DynamoDB payload and logs the record contents.
+  category: Serverless examples
+  languages:
+    JavaScript:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          excerpts:
+            - description: Consuming a &DDB; event with &LAM; using JavaScript.
+              snippet_files:
+                - integration-ddb-to-lambda/example.js
+    .NET:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          excerpts:
+            - description: Consuming a &DDB; event with &LAM; using .NET.
+              snippet_files:
+                - integration-ddb-to-lambda/Function.cs
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          excerpts:
+            - description: Consuming a &DDB; event with &LAM; using Go.
+              snippet_files:
+                - integration-ddb-to-lambda/example.go
+    Python:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          excerpts:
+            - description: Consuming a &DDB; event with &LAM; using Python.
+              snippet_files:
+                - integration-ddb-to-lambda/example.py
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          excerpts:
+            - description: Consuming a &DDB; event with &LAM; using Ruby.
+              snippet_files:
+                - integration-ddb-to-lambda/example.rb
+  services:
+    lambda:
+    dynamodb:
+serverless_DynamoDB_Lambda_batch_item_failures:
+  title: Reporting batch item failures for &LAM; functions with a &DDB; trigger
+  title_abbrev: Reporting batch item failures for &LAM; functions with a &DDB; trigger
+  synopsis: implement partial batch response for Lambda functions that receive events from a
+    DynamoDB stream. The function reports the batch item failures in the response, signaling
+    to Lambda to retry those messages later.
+  category: Serverless examples
+  languages:
+    Python:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using Python.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/example.py
+    Java:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using Java.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/example.java
+    .NET:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using .NET.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/Function.cs
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using Go.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/example.go
+    Rust:
+      versions:
+        - sdk_version: 1
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using Rust.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/main.rs
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using Ruby.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/example.rb
+  services:
+    lambda:
+    dynamodb:
+serverless_connect_RDS_Lambda:
+  title: Connecting to an &RDS; database in a &LAM; function
+  title_abbrev: Connecting to an &RDS; database in a &LAM; function
+  synopsis: implement a Lambda function that connects to an RDS database. The function makes a
+    simple database request and returns the result.
+  category: Serverless examples
+  languages:
+    JavaScript:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-connect-rds-iam
+          excerpts:
+            - description: Reporting &AK; batch item failures with &LAM; using Javascript.
+              snippet_files:
+                - lambda-function-connect-rds-iam/example.js
+  services:
+    lambda:
+    rds:
