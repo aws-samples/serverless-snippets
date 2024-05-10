@@ -513,6 +513,14 @@ serverless_DynamoDB_Lambda:
             - description: Consuming a &DDB; event with &LAM; using Ruby.
               snippet_files:
                 - integration-ddb-to-lambda/example.rb
+    Rust:
+      versions:
+        - sdk_version: 1
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          excerpts:
+            - description: Consuming a &DDB; event with &LAM; using Rust.
+              snippet_files:
+                - integration-ddb-to-lambda/example.rs
   services:
     lambda:
     dynamodb:
@@ -577,6 +585,9 @@ serverless_DynamoDB_Lambda_batch_item_failures:
         - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
           excerpts:
+            - description: Reporting &DDB; batch item failures with &LAM; using JavaScript.
+              snippet_files:
+                - integration-ddb-to-lambda-with-batch-item-handling/example.js
             - description: Reporting &DDB; batch item failures with &LAM; using TypeScript.
               snippet_files:
                 - integration-ddb-to-lambda-with-batch-item-handling/example.ts
