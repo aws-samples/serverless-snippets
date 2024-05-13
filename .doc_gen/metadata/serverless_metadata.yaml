@@ -481,14 +481,6 @@ serverless_DynamoDB_Lambda:
             - description: Consuming a &DDB; event with &LAM; using JavaScript.
               snippet_files:
                 - integration-ddb-to-lambda/example.js
-    Typescript:
-      versions:
-        - sdk_version: 3
-          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
-          excerpts:
-            - description: Consuming a &DDB; event with &LAM; using Typescript.
-              snippet_files:
-                - integration-ddb-to-lambda/example.ts
     .NET:
       versions:
         - sdk_version: 3
