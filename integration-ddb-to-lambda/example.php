@@ -35,9 +35,11 @@ class Handler extends DynamoDbHandler
             $old = $record->getOldImage();
             $new = $record->getNewImage();
             
-            $this->logger->info($eventName);
-            $this->logger->info("DynamoDb Record". json_encode($keys).json_encode($old).json_encode($new));
-
+            $this->logger->info("Event Name:".$eventName."\n");
+            $this->logger->info("Keys:". json_encode($keys)."\n");
+            $this->logger->info("Old Image:". json_encode($old)."\n");
+            $this->logger->info("New Image:". json_encode($new));
+            
             // TODO: Do interesting work based on the new data
 
             // Any exception thrown will be logged and the invocation will be marked as failed
