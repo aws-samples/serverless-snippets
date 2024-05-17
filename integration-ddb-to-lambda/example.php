@@ -30,9 +30,12 @@ class Handler extends DynamoDbHandler
         $records = $event->getRecords();
 
         foreach ($records as $record) {
+            $eventName = $record->getEventName();
             $keys = $record->getKeys();
             $old = $record->getOldImage();
             $new = $record->getNewImage();
+            
+            $this->logger->info("DynamoDB Record: $keys, $old, $new");
 
             // TODO: Do interesting work based on the new data
 
