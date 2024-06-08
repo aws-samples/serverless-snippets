@@ -532,6 +532,14 @@ serverless_DynamoDB_Lambda:
             - description: Consuming a &DDB; event with &LAM; using PHP.
               snippet_files:
                 - integration-ddb-to-lambda/example.php
+    Java:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          excerpts:
+            - description: Consuming a &DDB; event with &LAM; using Java.
+              snippet_files:
+                - integration-ddb-to-lambda/example.java
   services:
     lambda:
     dynamodb:
