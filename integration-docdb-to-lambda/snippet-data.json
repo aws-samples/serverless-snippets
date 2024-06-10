@@ -1,19 +1,19 @@
 {
-  "title": "Connect to Amazon RDS from AWS Lambda",
-  "description": "This snippet demonstrates how to connect to an  Amazon RDS database from an AWS Lambda function with IAM authentication. This snippet is valid for MariaDB/MySQL or Aurora for MySQL",
+  "title": "Integration of Amazon DocumentDB with AWS Lambda",
+  "description": "This snippet demonstrates how to integrate Amazon DocumentDB with an AWS Lambda function.",
   "type": "Integration",
-  "services": ["lambda", "rds"],
+  "services": ["lambda", "DocumentDB"],
   "tags": [],
-  "languages": ["Go", "Ruby", "Javascript"],
+  "languages": ["Python", "Go", "Ruby", "Javascript"],
   "introBox": {
     "headline": "How it works",
     "text": [
-      "Amazon Relational Database Service (Amazon RDS) is a collection of managed services that makes it simple to set up, operate, and scale databases in the cloud. Choose from seven popular engines. Connect to an RDS database using IAM authentication."
-    ]
+      "Amazon DocumentDB (with MongoDB compatibility) is a fast, scalable, highly available, and fully managed document database service that supports MongoDB workloads. AWS Lambda can be easily integrated with Amazon DocumentDB to build serverless applications that leverage the power of a fully managed document database"
+    ] 
   },
   "gitHub": {
     "template": {
-      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-connect-rds-iam"
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/integration-docdb-to-lambda"
     }
   },
   "snippets": [
@@ -21,9 +21,20 @@
       "title": "Runtimes",
       "codeTabs": [
         {
+          "id": "Python",
+          "title": "Copy the code into your Lambda function",
+          "description": "Follow the AWS Lambda instructions for packaging with dependencies and uploading in .zip format.",
+          "snippets": [
+            {
+              "snippetPath": "example.py",
+              "language": "py"
+            }
+          ]
+        },
+        {
           "id": "Go",
           "title": "Copy the code into your Lambda function",
-          "description": "Follow the AWS Lambda instructions for packaging with dependencies and uploading in .zip format. This snippet uses the go mysql driver",
+          "description": "Follow the AWS Lambda instructions for packaging with dependencies and uploading in .zip format.",
           "snippets": [
             {
               "snippetPath": "main.go",
@@ -34,10 +45,10 @@
         {
           "id": "Ruby",
           "title": "Copy the code into your Lambda function",
-          "description": "Follow the AWS Lambda instructions for packaging with ruby dependencies with Ruby gem and bundler. This snippet uses the mysql2 gem so needs to use lambda containers",
+          "description": "Follow the AWS Lambda instructions for packaging with ruby dependencies with Ruby gem and bundler.",
           "snippets": [
             {
-              "snippetPath": "lambda_function.rb",
+              "snippetPath": "example.rb",
               "language": "ruby"
             }
           ]
@@ -63,13 +74,6 @@
       "image": "https://drive.google.com/file/d/1E-5koDaKEaMUtOctX32I9TLwfh3kgpAq/view?usp=drivesdk",
       "bio": "API Gateway SME & Cloud Support Engineer @ AWS",
       "linkedin": "https://www.linkedin.com/in/agawabhi/"
-    },
-    {
-      "headline": "JavaScript (Node) example by Jon Loinaz",
-      "name": "Jon Loinaz",
-      "image": "/assets/images/resources/contributors/jloinaz.jpg",
-      "bio": " Solutions Architect @ AWS.",
-      "linkedin": "jonloinaz"
     }
   ]
 }
