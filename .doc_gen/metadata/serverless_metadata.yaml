@@ -636,6 +636,9 @@ serverless_DocumentDB_Lambda:
             - description: Consuming a &DocDB; event with &LAM; using JavaScript.
               snippet_files:
                 - integration-docdb-to-lambda/example.js
+            - description: Consuming a &DocDB; event with &LAM; using TypeScript
+              snippet_files:
+                - integration-docdb-to-lambda/example.ts
     Python:
       versions:
         - sdk_version: 3
@@ -660,6 +663,14 @@ serverless_DocumentDB_Lambda:
             - description: Consuming a &DocDB; event with &LAM; using Go.
               snippet_files:
                 - integration-docdb-to-lambda/main.go
+    PHP:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-docdb-to-lambda
+          excerpts:
+            - description: Consuming a &DocDB; event with &LAM; using PHP.
+              snippet_files:
+                - integration-docdb-to-lambda/example.php
   services:
     lambda:
     docdb:
@@ -678,14 +689,22 @@ serverless_connect_RDS_Lambda:
             - description: Connecting to an &RDS; database in a &LAM; function using Javascript.
               snippet_files:
                 - lambda-function-connect-rds-iam/example.js
-    Go:
+    Python:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-connect-rds-iam
+          excerpts:
+            - description: Connecting to an &RDS; database in a &LAM; function using Python.
+              snippet_files:
+                - lambda-function-connect-rds-iam/example.py
+    Java:
       versions:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-connect-rds-iam
           excerpts:
-            - description: Connecting to an &RDS; database in a &LAM; function using Go.
+            - description: Connecting to an &RDS; database in a &LAM; function using Java.
               snippet_files:
-                - lambda-function-connect-rds-iam/main.go
+                - lambda-function-connect-rds-iam/example.java
   services:
     lambda:
     rds:
