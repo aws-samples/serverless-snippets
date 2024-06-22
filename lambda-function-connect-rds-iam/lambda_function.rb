@@ -7,11 +7,11 @@ require 'json'
 require 'mysql2'
 
 def lambda_handler(event:, context:)
-  endpoint = 'mysqldb.123456789012.us-east-1.rds.amazonaws.com'
-  port = '3306'
-  user = 'DatabaseUser'
-  region = 'us-east-1'
-  db_name = 'DatabaseName'
+  endpoint = ENV['DBEndpoint'] # Add the endpoint without https"
+  port = ENV['Port']           # 3306
+  user = ENV['DBUser']
+  region = ENV['DBRegion']     # 'us-east-1'
+  db_name = ENV['DBName']
 
   credentials = Aws::Credentials.new(
     ENV['AWS_ACCESS_KEY_ID'],

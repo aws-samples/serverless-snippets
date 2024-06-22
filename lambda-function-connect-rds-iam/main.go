@@ -11,6 +11,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
+	"os"
 
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/aws/aws-sdk-go-v2/config"
@@ -24,12 +25,12 @@ type MyEvent struct {
 
 func HandleRequest(event *MyEvent) (map[string]interface{}, error) {
 
-	var dbName string = "DatabaseName"
-	var dbUser string = "DatabaseUser"
-	var dbHost string = "mysqldb.123456789012.us-east-1.rds.amazonaws.com"
-	var dbPort int = 3306
+	var dbName string = os.Getenv("DatabaseName")
+	var dbUser string = os.Getenv("DatabaseUser")
+	var dbHost string = os.Getenv("DBHost") // Add hostname without https
+	var dbPort int = os.Getenv("Port")      // Add port number
 	var dbEndpoint string = fmt.Sprintf("%s:%d", dbHost, dbPort)
-	var region string = "us-east-1"
+	var region string = os.Getenv("AWS_REGION")
 
 	cfg, err := config.LoadDefaultConfig(context.TODO())
 	if err != nil {
