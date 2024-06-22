@@ -1,0 +1,46 @@
+{
+  "title": "Connect to AWS Opensearch from AWS Lambda",
+  "description": "This snippet demonstrates how to connect and ingest data to AWS Opensearch Serverless collection from an AWS Lambda function with IAM authentication.",
+  "type": "Integration",
+  "services": ["lambda", "opensearch"],
+  "tags": [],
+  "languages": ["Go"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "Amazon OpenSearch Serverless is an on-demand auto scaling configuration for Amazon OpenSearch Service. An OpenSearch Serverless collection is an OpenSearch cluster that scales compute capacity based on your application's needs. OpenSearch Serverless provides a simple, cost-effective option for infrequent, intermittent, or unpredictable workloads. Connect to the Opensearch Serverless collection using lambda function."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-connect-opensearch"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Runtimes",
+      "codeTabs": [
+        {
+          "id": "Go",
+          "title": "Copy the code into your Lambda function",
+          "description": "Follow the AWS Lambda instructions for packaging with dependencies and uploading in .zip format. Install the required go packages to be imported",
+          "snippets": [
+            {
+              "snippetPath": "main.go",
+              "language": "go"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Abhishek Agawane",
+      "name": "Abhishek Agawane",
+      "image": "https://drive.google.com/file/d/1E-5koDaKEaMUtOctX32I9TLwfh3kgpAq/view?usp=drivesdk",
+      "bio": "API Gateway SME & Cloud Support Engineer @ AWS",
+      "linkedin": "https://www.linkedin.com/in/agawabhi/"
+    }
+  ]
+}
