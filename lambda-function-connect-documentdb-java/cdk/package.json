@@ -1,0 +1,23 @@
+{
+  "name": "document-db-lambda-sample",
+  "version": "0.1.0",
+  "bin": {
+    "document-db-lambda-sample": "bin/document-db-lambda-sample.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.2",
+    "aws-cdk": "2.146.0",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.4.5"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.146.0",
+    "@aws-cdk/aws-cloud9-alpha": "^2.146.0-alpha.0",
+    "constructs": "^10.0.0"
+  }
+}

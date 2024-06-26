@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+task packageJar(type: Zip) {
+    into('lib') {
+        from(jar)
+        from(configurations.runtimeClasspath)
+    }
+}
+
+dependencies {
+    implementation 'com.amazonaws:aws-lambda-java-core:1.2.3'
+    implementation 'com.amazonaws:aws-lambda-java-events:3.11.0'
+    implementation 'org.mongodb:mongodb-driver-sync:5.1.1'
+    implementation 'software.amazon.awssdk:secretsmanager:2.20.11'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+build.dependsOn packageJar
