@@ -1,0 +1,41 @@
+{
+  "title": "Connect to DocumentDB from AWS Lambda using Java 17",
+  "description": "This snippet demonstrates how to use Amazon DocumentDB from an AWS Lambda function written in Java. It includes a CDK project that creates a CRUD API based on Amazon API Gateway as the frontdoor to a backend powered by Lambda and DocumentDB",
+  "type": "Integration",
+  "services": ["lambda", "documentdb", "apigateway"],
+  "tags": [],
+  "languages": ["java", "typescript"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "Inspect the samples in java/documentdb/sample to see the Java code or follow the instructions in the README to deploy the stack."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-connect-documentdb-java"
+    }
+  },
+  "snippets": [
+    {
+      "title": "The handler function that creates a document in DocumentDB based on the input retrieved from the body of a POST request",
+      "snippetPath": "snippet_create.txt",
+      "language": "java"
+    },
+    {
+      "title": "The utils function that establishes a connection to DocumentDB from the Lambda function",
+      "snippetPath": "snippet_utils.txt",
+      "language": "java"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Markus Ziller",
+      "name": "Markus Ziller",
+      "image": "https://www.markusziller.de/assets/img/bilder/me500x500.png",
+      "bio": "Senior Solutions Architect @ AWS",
+      "linkedin": "markusziller",
+      "twitter": ""
+    }
+  ]
+}
