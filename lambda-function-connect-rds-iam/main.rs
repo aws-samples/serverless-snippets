@@ -4,9 +4,8 @@ use aws_sigv4::{
     http_request::{sign, SignableBody, SignableRequest, SigningSettings},
     sign::v4,
 };
-use lambda_runtime::{service_fn, Error, LambdaEvent};
-use serde_json::Value;
-use sqlx::mysql::MySqlConnectOptions;
+use lambda_http::{run, service_fn, Body, Error, Request, Response};
+use sqlx::postgres::PgConnectOptions;
 use std::env;
 use std::time::{Duration, SystemTime};
 
@@ -66,12 +65,10 @@ async fn generate_rds_iam_token(
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
-    let func = service_fn(func);
-    lambda_runtime::run(func).await?;
-    Ok(())
+    run(service_fn(handler)).await
 }
 
-async fn func(_event: LambdaEvent<Value>) -> Result<(), Error> {
+async fn handler(_event: Request) -> Result<(Response<Body>), Error> {
     let db_host = env::var("DB_HOSTNAME").expect("DB_HOSTNAME must be set");
     let db_port = env::var("DB_PORT")
         .expect("DB_PORT must be set")
@@ -82,21 +79,20 @@ async fn func(_event: LambdaEvent<Value>) -> Result<(), Error> {
 
     let token = generate_rds_iam_token(&db_host, db_port, &db_user_name).await?;
 
-    let opts = MySqlConnectOptions::new()
+    let opts = PgConnectOptions::new()
         .host(&db_host)
         .port(db_port)
         .username(&db_user_name)
         .password(&token)
         .database(&db_name)
-        .ssl_ca_from_pem(RDS_CERTS.to_vec())
-        .ssl_mode(sqlx::mysql::MySqlSslMode::VerifyIdentity)
-        .enable_cleartext_plugin(true);
+        .ssl_root_cert_from_pem(RDS_CERTS.to_vec())
+        .ssl_mode(sqlx::postgres::PgSslMode::Require);
 
-    let pool = sqlx::mysql::MySqlPoolOptions::new()
+    let pool = sqlx::postgres::PgPoolOptions::new()
         .connect_with(opts)
         .await?;
 
-    let result = sqlx::query("SELECT ? + ?")
+    let result: i32 = sqlx::query_scalar("SELECT $1 + $2")
         .bind(3)
         .bind(2)
         .fetch_one(&pool)
@@ -104,5 +100,10 @@ async fn func(_event: LambdaEvent<Value>) -> Result<(), Error> {
 
     println!("Result: {:?}", result);
 
-    Ok(())
+    let resp = Response::builder()
+        .status(200)
+        .header("content-type", "text/plain")
+        .body(format!("The selected sum is: {result}").into())
+        .map_err(Box::new)?;
+    Ok(resp)
 }
