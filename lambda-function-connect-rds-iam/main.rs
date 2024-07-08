@@ -4,7 +4,8 @@ use aws_sigv4::{
     http_request::{sign, SignableBody, SignableRequest, SigningSettings},
     sign::v4,
 };
-use lambda_http::{run, service_fn, Body, Error, Request, Response};
+use lambda_runtime::{run, service_fn, Error, LambdaEvent};
+use serde_json::{json, Value};
 use sqlx::postgres::PgConnectOptions;
 use std::env;
 use std::time::{Duration, SystemTime};
@@ -68,7 +69,7 @@ async fn main() -> Result<(), Error> {
     run(service_fn(handler)).await
 }
 
-async fn handler(_event: Request) -> Result<(Response<Body>), Error> {
+async fn handler(_event: LambdaEvent<Value>) -> Result<Value, Error> {
     let db_host = env::var("DB_HOSTNAME").expect("DB_HOSTNAME must be set");
     let db_port = env::var("DB_PORT")
         .expect("DB_PORT must be set")
@@ -100,10 +101,9 @@ async fn handler(_event: Request) -> Result<(Response<Body>), Error> {
 
     println!("Result: {:?}", result);
 
-    let resp = Response::builder()
-        .status(200)
-        .header("content-type", "text/plain")
-        .body(format!("The selected sum is: {result}").into())
-        .map_err(Box::new)?;
-    Ok(resp)
+    Ok(json!({
+        "statusCode": 200,
+        "content-type": "text/plain",
+        "body": format!("The selected sum is: {result}")
+    }))
 }
