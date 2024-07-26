@@ -691,12 +691,15 @@ serverless_connect_RDS_Lambda:
   languages:
     JavaScript:
       versions:
-        - sdk_version: 2
+        - sdk_version: 3
           github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-connect-rds-iam
           excerpts:
-            - description: Connecting to an &RDS; database in a &LAM; function using Javascript.
+            - description: Connecting to an &RDS; database in a &LAM; function using JavaScript.
               snippet_files:
                 - lambda-function-connect-rds-iam/example.js
+            - description: Connecting to an &RDS; database in a &LAM; function using TypeScript.
+              snippet_files:
+                - lambda-function-connect-rds-iam/example.ts
     Python:
       versions:
         - sdk_version: 3
@@ -748,3 +751,21 @@ serverless_connect_RDS_Lambda:
   services:
     lambda:
     rds:
+serverless_MSK_Lambda:
+  title: Invoke a &LAM; function from an &MSK; trigger
+  title_abbrev: Invoke a &LAM; function from an &MSK; trigger
+  synopsis: implement a Lambda function that receives an event triggered by receiving records from
+    an Amazon MSK cluster. The function retrieves the MSK payload and logs the record contents.
+  category: Serverless examples
+  languages:
+    JavaScript:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-msk-to-lambda
+          excerpts:
+            - description: Consuming an &MSK; event with &LAM; using JavaScript.
+              snippet_files:
+                - integration-msk-to-lambda/example.js
+  services:
+    lambda:
+    kafka:
