@@ -20,7 +20,7 @@ public class Function
 
         foreach (var record in evnt.Records)
         {
-            Console.WriteLine("Key:", record.Key); 
+            Console.WriteLine("Key:" + record.Key); 
             foreach (var eventRecord in record.Value)
             {
                 var valueBytes = eventRecord.Value.ToArray();    
