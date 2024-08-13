@@ -4,7 +4,7 @@ import { S3Client, HeadObjectCommand } from "@aws-sdk/client-s3";
 
 const client = new S3Client();
 
-exports.handler = async (event, context) => {
+export const handler = async (event, context) => {
 
     // Get the object from the event and show its content type
     const bucket = event.Records[0].s3.bucket.name;
