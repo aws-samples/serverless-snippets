@@ -774,6 +774,30 @@ serverless_MSK_Lambda:
             - description: Consuming an &MSK; event with &LAM; using Java.
               snippet_files:
                 - integration-msk-to-lambda/Example.java
+    Python:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-msk-to-lambda
+          excerpts:
+            - description: Consuming an &MSK; event with &LAM; using Python.
+              snippet_files:
+                - integration-msk-to-lambda/example.py
+    Ruby:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-msk-to-lambda
+          excerpts:
+            - description: Consuming an &MSK; event with &LAM; using Ruby.
+              snippet_files:
+                - integration-msk-to-lambda/example.rb
+    .NET:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-msk-to-lambda
+          excerpts:
+            - description: Consuming an &MSK; event with &LAM; using .NET.
+              snippet_files:
+                - integration-msk-to-lambda/Function.cs
   services:
     lambda:
     kafka:
