@@ -1,8 +1,8 @@
-﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿<?php
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
-<?php
 
-# using bref/bref and bref/logger for simplicity
+// using bref/bref and bref/logger for simplicity
 
 use Bref\Context\Context;
 use Bref\Event\Kafka\KafkaEvent;
@@ -31,9 +31,16 @@ class Handler implements StdHandler
 
         foreach ($records as $record) {
             try {
-                $data = $record->getValue();
-                $this->logger->info(json_encode($data));
-                // TODO: Do interesting work based on the new data
+                $key = $record->getKey();
+                $this->logger->info("Key: $key");
+
+                $values = $record->getValue();
+                $this->logger->info(json_encode($values));
+
+                foreach ($values as $value) {
+                    $this->logger->info("Value: $value");
+                }
+                
             } catch (Exception $e) {
                 $this->logger->error($e->getMessage());
             }
