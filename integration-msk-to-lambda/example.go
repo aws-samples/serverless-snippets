@@ -7,17 +7,20 @@ import (
 	"encoding/base64"
 	"fmt"
 
+	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
-func handler(event map[string]map[string][]map[string]string) {
-	for key := range event["records"] {
+func handler(event events.KafkaEvent) {
+	for key, records := range event.Records {
 		fmt.Println("Key:", key)
-		for _, record := range event["records"][key] {
+
+		for _, record := range records {
 			fmt.Println("Record:", record)
-			decodedBytes, _ := base64.StdEncoding.DecodeString(record["value"])
-			msg := string(decodedBytes)
-			fmt.Println("Message:", msg)
+
+			decodedValue, _ := base64.StdEncoding.DecodeString(record.Value)
+			message := string(decodedValue)
+			fmt.Println("Message:", message)
 		}
 	}
 }
