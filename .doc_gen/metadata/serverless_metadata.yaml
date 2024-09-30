@@ -798,6 +798,22 @@ serverless_MSK_Lambda:
             - description: Consuming an &MSK; event with &LAM; using .NET.
               snippet_files:
                 - integration-msk-to-lambda/Function.cs
+    Go:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-msk-to-lambda
+          excerpts:
+            - description: Consuming an &MSK; event with &LAM; using Go.
+              snippet_files:
+                - integration-msk-to-lambda/example.go
+    PHP:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-msk-to-lambda
+          excerpts:
+            - description: Consuming an &MSK; event with &LAM; using PHP.
+              snippet_files:
+                - integration-msk-to-lambda/example.php
   services:
     lambda:
     kafka:
