@@ -4,7 +4,7 @@
   "type": "Integration",
   "services": ["lambda", "DocumentDB"],
   "tags": [],
-  "languages": ["Python", "Go", "Ruby", "Javascript"],
+  "languages": ["Python", "Go", "Ruby", "Javascript", "Java"],
   "introBox": {
     "headline": "How it works",
     "text": [
@@ -61,6 +61,17 @@
             {
               "snippetPath": "example.js",
               "language": "js"
+            }
+          ]
+        },
+        {
+          "id": "Java",
+          "title": "Copy the code into your Lambda function",
+          "description": "Follow the AWS Lambda instructions for packaging with dependencies and uploading in .zip format.",
+          "snippets": [
+            {
+              "snippetPath": "Example.java",
+              "language": "java"
             }
           ]
         }
