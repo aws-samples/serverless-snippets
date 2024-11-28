@@ -1,6 +1,7 @@
-using Amazon.Lambda.Core;
+using System.Data;
+using System.Text.Json;
 using Amazon.Lambda.APIGatewayEvents;
-using Amazon.RDS.Util;
+using Amazon.Lambda.Core;
 using MySql.Data.MySqlClient;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
@@ -16,8 +17,8 @@ public class Function
     /// </summary>
     /// <param name="input">The event for the Lambda function handler to process.</param>
     /// <param name="context">The ILambdaContext that provides methods for logging and describing the Lambda environment.</param>
-    /// <returns></returns>
-    public APIGatewayProxyResponse FunctionHandler(string input, ILambdaContext context)
+    /// <returns>Task of APIGatewayProxyResponse</returns>
+    public async Task<APIGatewayProxyResponse> FunctionHandler(string input, ILambdaContext context)
     {
         /// Obtain authentication token
         var authToken = RDSAuthTokenGenerator.GenerateAuthToken(
