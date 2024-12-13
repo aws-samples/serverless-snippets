@@ -15,7 +15,7 @@ jobs:
 
       - name: Get changed files using defaults
         id: changed-files
-        uses: tj-actions/changed-files@v41
+        uses: tj-actions/changed-files@df3e9932c48cda43e6e09567f3a1ce1b38ca76e9
         with:
           separator: ","    
 
