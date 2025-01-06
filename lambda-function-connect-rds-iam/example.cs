@@ -9,17 +9,26 @@ using MySql.Data.MySqlClient;
 
 namespace aws_rds;
 
+public class InputModel
+{
+    public string key1 { get; set; }
+    public string key2 { get; set; }
+}
+
 public class Function
 {
-
     /// <summary>
-    /// A simple function that takes a string and does a ToUpper
+    // Handles the Lambda function execution for connecting to RDS using IAM authentication.
     /// </summary>
-    /// <param name="input">The event for the Lambda function handler to process.</param>
-    /// <param name="context">The ILambdaContext that provides methods for logging and describing the Lambda environment.</param>
-    /// <returns>Task of APIGatewayProxyResponse</returns>
-    public async Task<APIGatewayProxyResponse> FunctionHandler(string input, ILambdaContext context)
+    /// <param name="input">The input event data passed to the Lambda function</param>
+    /// <param name="context">The Lambda execution context that provides runtime information</param>
+    /// <returns>A response object containing the execution result</returns>
+
+    public async Task<APIGatewayProxyResponse> FunctionHandler(APIGatewayProxyRequest request, ILambdaContext context)
     {
+        // Sample Input: {"body": "{\"key1\":\"20\", \"key2\":\"25\"}"}
+        var input = JsonSerializer.Deserialize<InputModel>(request.Body);
+
         /// Obtain authentication token
         var authToken = RDSAuthTokenGenerator.GenerateAuthToken(
             Environment.GetEnvironmentVariable("RDS_ENDPOINT"),
@@ -36,20 +45,21 @@ public class Function
 
         try
         {
-            /// Connect to the DB
             await using var connection = new MySqlConnection(connectionString);
             await connection.OpenAsync();
 
             const string sql = "SELECT @param1 + @param2 AS Sum";
 
             await using var command = new MySqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@param1", 1);
-            command.Parameters.AddWithValue("@param2", 2);
+            command.Parameters.AddWithValue("@param1", int.Parse(input.key1 ?? "0"));
+            command.Parameters.AddWithValue("@param2", int.Parse(input.key2 ?? "0"));
 
             await using var reader = await command.ExecuteReaderAsync();
             if (await reader.ReadAsync())
             {
                 int result = reader.GetInt32("Sum");
+
+                //Sample Response: {"statusCode":200,"body":"{\"message\":\"The sum is: 45\"}","isBase64Encoded":false}
                 return new APIGatewayProxyResponse
                 {
                     StatusCode = 200,
