@@ -22,12 +22,13 @@ async fn function_handler(event: LambdaEvent<KafkaEvent>) -> Result<Value, Error
 
         for record in records {
 
-         let record_text = record.value.as_ref().unwrap();
+         let record_text = record.value.as_ref().ok_or("Value is None")?;
          info!("Record: {}", &record_text);
 
          // perform Base64 decoding
-         let record_bytes = BASE64_STANDARD.decode(record_text).unwrap();
-         let message = std::str::from_utf8(&record_bytes).unwrap();
+         let record_bytes = BASE64_STANDARD.decode(record_text)?;
+         let message = std::str::from_utf8(&record_bytes)?;
+         
          info!("Message: {}", message);
         }
 
@@ -39,18 +40,9 @@ async fn function_handler(event: LambdaEvent<KafkaEvent>) -> Result<Value, Error
 #[tokio::main]
 async fn main() -> Result<(), Error> {
 
-    tracing_subscriber::fmt().json()
-        .with_max_level(tracing::Level::INFO)
-        // this needs to be set to remove duplicated information in the log.
-        .with_current_span(false)
-        // this needs to be set to false, otherwise ANSI color codes will
-        // show up in a confusing manner in CloudWatch logs.
-        .with_ansi(false)
-        // disabling time is handy because CloudWatch will add the ingestion time.
-        .without_time()
-        // remove the name of the function from every log entry
-        .with_target(false)
-        .init();
+    // required to enable CloudWatch error logging by the runtime
+    tracing::init_default_subscriber();
+    info!("Setup CW subscriber!");
 
     run(service_fn(function_handler)).await
 }
