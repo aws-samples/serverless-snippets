@@ -1,4 +1,4 @@
-import { MSKEvent, Context, MSKRecord } from "aws-lambda";
+  import { MSKEvent, Context, MSKRecord } from "aws-lambda";
   import { Buffer } from "buffer";
   import { Logger } from "@aws-lambda-powertools/logger";
   
