@@ -790,6 +790,9 @@ serverless_MSK_Lambda:
             - description: Consuming an &MSK; event with &LAM; using JavaScript.
               snippet_files:
                 - integration-msk-to-lambda/example.js
+            - description: Consuming an &MSK; event with &LAM; using TypeScript.
+              snippet_files:
+                - integration-msk-to-lambda/example.ts
     Java:
       versions:
         - sdk_version: 2
