@@ -6,11 +6,10 @@ import com.amazonaws.services.lambda.runtime.events.DynamodbEvent;
 import com.amazonaws.services.lambda.runtime.events.StreamsEventResponse;
 import com.amazonaws.services.lambda.runtime.events.models.dynamodb.StreamRecord;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProcessDynamodbRecords implements RequestHandler<DynamodbEvent, Serializable> {
+public class ProcessDynamodbRecords implements RequestHandler<DynamodbEvent, StreamsEventResponse> {
 
     @Override
     public StreamsEventResponse handleRequest(DynamodbEvent input, Context context) {
