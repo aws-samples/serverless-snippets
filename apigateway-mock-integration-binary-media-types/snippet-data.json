@@ -1,0 +1,36 @@
+{
+  "title": "Disable Content-Type conversion in Mock integration",
+  "description": "Using AWS CLI to disable Content-Type conversion in MOCK integration when Binary media types are enabled on API Gateway.",
+  "type": "Integration",
+  "services": ["apigw"],
+  "tags": ["API Gateway"],
+  "languages": ["bash"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "When Binary Media Types are enabled on a REST API with '/' or 'application/json', API Gateway converts payloads based on Content-Type headers, but MOCK integrations don't support binary content. This often results in 500 error.",
+      "To resolve this, the Content Handling behavior must be set to 'CONVERT_TO_TEXT' for the Integration request, which can only be done via AWS CLI and not via the console at the moment."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/apigateway-mock-integration-binary-media-types"
+    }
+  },
+  "snippets": [
+    {
+      "title": "The contentHandling property of the MOCK Integration can be set to CONVERT_TO_TEXT using the following CLI command (NOTE: replace the API ID, resource ID and AWS region):",
+      "snippetPath": "snippet.txt",
+      "language": "cli" 
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Pallavi Bhat",
+      "name": "Pallavi Bhat",
+      "image": "https://drive.google.com/file/d/1xYr8HfVnLZOMmhAc9hSsyj_O85yyznF7/view?usp=drive_link",
+      "bio": "Pallavi is a Cloud Support Enginner focusing on serverless at Amazon Web Services.",
+      "linkedin": "https://www.linkedin.com/in/pallavi-bhat11/"
+    }
+  ]
+}
