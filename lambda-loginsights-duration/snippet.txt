@@ -1,0 +1,5 @@
+fields @timestamp, @message
+|filter @type = "REPORT" 
+| parse @message /Duration: (?<duration>.*?) ms/
+| filter duration > 1000
+| sort by duration desc
