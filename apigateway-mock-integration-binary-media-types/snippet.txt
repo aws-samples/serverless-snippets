@@ -1,0 +1,1 @@
+aws apigateway update-integration --rest-api-id <your-rest-api-id> --resource-id <resource-id> --http-method OPTIONS --patch-operations "op='replace' ,path='/contentHandling' ,value='CONVERT_TO_TEXT'" --region <region-of-api>
