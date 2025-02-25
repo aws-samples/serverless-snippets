@@ -1,0 +1,47 @@
+{
+  "title": "Mapping template for API Gateway with Secrets Manager integration",
+  "description": "Provides a mapping template for API Gateway and Secrets Manager integration",
+  "type": "Integration",
+  "services": ["apigw", "secretsmanager"],
+  "tags": [],
+  "languages": ["vtl"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This snippet can be used to retrieve the secrets from Secrets Manager.",
+      "When creating the integration, ensure to have the below configuration to use the mapping template:"
+      "1. In Action type select Use action name and provide the Action Name as GetSecretValue.",
+      "2. Add the following headers in the integration headers: ",
+      "X-Amz-Target: 'secretsmanager.GetSecretValue'",
+      "Content-Type: 'application/x-amz-json-1.1'",
+      "3. Provide IAM role with appropriate permission to perform GetSecretValue action on the secret resource",
+      "4. Select the integration HTTP method as 'POST'"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/apigateway-secrets-manager-integration-mapping-template"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Use the following maapping template which will fetch the SecretId from the input request body (secret_name) and pass it in the GetSecretValue API call as required in the API call:",
+      "snippetPath": "snippet.txt",
+      "language": "vtl"
+    },
+    {
+      "title": "The following payload can be used for testing this set up:",
+      "snippetPath": "snippet-test.txt",
+      "language": "vtl"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Pallavi Bhat",
+      "name": "Pallavi Bhat",
+      "image": "https://drive.google.com/file/d/1xYr8HfVnLZOMmhAc9hSsyj_O85yyznF7/view?usp=sharing",
+      "bio": "Pallavi is a Cloud Support Enginner focusing on serverless at Amazon Web Services.",
+      "linkedin": "https://www.linkedin.com/in/pallavi-bhat11/"
+    }
+  ]
+}
