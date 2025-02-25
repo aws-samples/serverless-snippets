@@ -1,0 +1,7 @@
+fields @timestamp, @message
+| filter @message like 'Integration latency'
+| parse @message /Integration latency: (?<IntegrationLatency>.*?) ms/
+| parse @message /(?<requestID>[0-9a-zA-Z-]{36}).*/
+| filter IntegrationLatency > 0
+| sort by @timestamp desc
+| display timestamp, IntegrationLatency, requestID

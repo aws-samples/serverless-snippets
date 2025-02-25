@@ -1,0 +1,55 @@
+{
+  "title": "Find if the API requests are being served from Cache",
+  "description": "Provides CloudWatch log insights queries to find the requests served from Cache",
+  "type": "Integration",
+  "services": ["apigw"],
+  "tags": [],
+  "languages": ["css"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "Caching is a feature of API Gateway which stores and reuses API responses for a specified TTL enhancing the responsiveness of the API. ",
+      "One way to monitor if the requests are being served from cache or no is by using the API Gateway CacheMissCount and CacheHitCount CloudWatch metrics. The periodic pattern in the metric graph display the caching behavior."
+      "Another approach to check specifically which all requests are served from cache or backend, given the access logs or execution logs have been enabled on the API Gateway is using the following CloudWatch log insight queries."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/apigateway-log-insights-caching"
+    }
+  },
+  "snippets": [
+    {
+      "title": [
+        "For Access logs:",
+        "NOTE: The access log format must contain $context.integrationLatency access logging variable which will log the integration latency of the request. Change the requestId and IntegrationLatency filters as per the logging format you have"
+    
+    ],
+      "snippetPath": "snippet-access.txt",
+      "language": "css"
+    },
+    {
+      "title": [
+        "For Execution logs:",
+        "NOTE: Requires Error and Info logs with Data tracing enabled."
+    
+    ],
+      "snippetPath": "snippet-execution.txt",
+      "language": "css"
+    },
+    {
+      "title": "Following query can be used to list the requests which were not served from cache:",
+      "snippetPath": "snippet-execution-ca.txt",
+      "language": "css"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Pallavi Bhat",
+      "name": "Pallavi Bhat",
+      "image": "https://drive.google.com/file/d/1xYr8HfVnLZOMmhAc9hSsyj_O85yyznF7/view?usp=sharing",
+      "bio": "Pallavi is a Cloud Support Enginner focusing on serverless at Amazon Web Services.",
+      "linkedin": "https://www.linkedin.com/in/pallavi-bhat11/"
+    }
+  ]
+}
