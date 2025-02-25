@@ -17,10 +17,9 @@ public class ProcessSQSMessageBatch implements RequestHandler<SQSEvent, SQSBatch
          for (SQSEvent.SQSMessage message : sqsEvent.getRecords()) {
              try {
                  //process your message
-                 messageId = message.getMessageId();
              } catch (Exception e) {
                  //Add failed message identifier to the batchItemFailures list
-                 batchItemFailures.add(new SQSBatchResponse.BatchItemFailure(messageId));
+                 batchItemFailures.add(new SQSBatchResponse.BatchItemFailure(message.getMessageId()));
              }
          }
          return new SQSBatchResponse(batchItemFailures);
