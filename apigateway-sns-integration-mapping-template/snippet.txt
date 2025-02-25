@@ -1,0 +1,2 @@
+#set($topic="arn:aws:sns:<region>:<account-number>:<topic-name>")
+Action=Publish&TopicArn=$util.urlEncode($topic)&Message=$input.json('$')
