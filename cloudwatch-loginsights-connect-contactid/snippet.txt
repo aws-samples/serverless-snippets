@@ -1,0 +1,4 @@
+fields @timestamp, @message
+| sort @timestamp desc
+| filter ContactId = "1234abc-456d-4ef-ghi-96c9631f2a95"
+| filter Results LIKE "Error"
