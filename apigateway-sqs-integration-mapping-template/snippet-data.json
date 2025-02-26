@@ -1,0 +1,45 @@
+{
+  "title": "Mapping template for API Gateway with SQS integration",
+  "description": "Provides a mapping template for API Gateway and SQS integration",
+  "type": "Integration",
+  "services": ["apigw", "sqs"],
+  "tags": [],
+  "languages": ["vtl"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "These snippets can be used to send and receive messages to an existing SQS queue.",
+      "When creating the integration, ensure to have the below configuration to use the mapping template:"
+      "1. For Path override the value must be given as '<AWS account number>/<SQS Queue name>' ",
+      "2. The header 'Content-Type' should have the value 'application/x-www-form-urlencoded' (include the single quotes in the value)",
+      "3. IAM role with appropriate sns:publish IAM permission for sqs:publish and sqs:receive",
+      "4. Select the integration HTTP method as 'POST'"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/apigateway-sqs-integration-mapping-template"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Use the following mapping template to send messages to SQS queue:",
+      "snippetPath": "snippet-send.txt",
+      "language": "vtl"
+    },
+    {
+      "title": "Use the following mapping template to poll for or retrieve messages from the specified queue:",
+      "snippetPath": "snippet-receive.txt",
+      "language": "vtl"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Pallavi Bhat",
+      "name": "Pallavi Bhat",
+      "image": "https://drive.google.com/file/d/1xYr8HfVnLZOMmhAc9hSsyj_O85yyznF7/view?usp=sharing",
+      "bio": "Pallavi is a Cloud Support Enginner focusing on serverless at Amazon Web Services.",
+      "linkedin": "https://www.linkedin.com/in/pallavi-bhat11/"
+    }
+  ]
+}
