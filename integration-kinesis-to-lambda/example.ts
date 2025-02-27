@@ -28,8 +28,8 @@ export const functionHandler: KinesisStreamHandler = async (
       logger.error(`An error occurred ${err}`);
       throw err;
     }
-    logger.info(`Successfully processed ${event.Records.length} records.`);
   }
+  logger.info(`Successfully processed ${event.Records.length} records.`);
 };
 
 async function getRecordDataAsync(
