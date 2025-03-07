@@ -8,7 +8,7 @@ def lambda_handler(event, context):
      
         for record in event["Records"]:
             try:
-                # process message
+                print(f"Processed message: {record['body']}")
             except Exception as e:
                 batch_item_failures.append({"itemIdentifier": record['messageId']})
         
