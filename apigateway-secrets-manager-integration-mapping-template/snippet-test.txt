@@ -1,0 +1,3 @@
+{
+    "secret_name":"<secret name that is configured>"
+}
