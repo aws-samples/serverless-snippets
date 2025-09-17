@@ -11,9 +11,8 @@ import java.util.List;
 public class ProcessSQSMessageBatch implements RequestHandler<SQSEvent, SQSBatchResponse> {
     @Override
     public SQSBatchResponse handleRequest(SQSEvent sqsEvent, Context context) {
- 
          List<SQSBatchResponse.BatchItemFailure> batchItemFailures = new ArrayList<SQSBatchResponse.BatchItemFailure>();
-         String messageId = "";
+
          for (SQSEvent.SQSMessage message : sqsEvent.getRecords()) {
              try {
                  //process your message
