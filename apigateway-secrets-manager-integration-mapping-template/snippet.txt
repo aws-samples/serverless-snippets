@@ -1,0 +1,4 @@
+#set($allParams = $input.params())
+{
+  "SecretId": "$input.path('$.secret_name')"
+}
