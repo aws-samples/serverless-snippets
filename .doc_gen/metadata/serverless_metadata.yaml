@@ -852,3 +852,47 @@ serverless_MSK_Lambda:
   services:
     lambda:
     kafka:
+serverless_DynamoDB_Lambda_batch_processor:
+  title: Process &DDB; Stream records with &LAM; Powertools Batch Processor
+  title_abbrev: Process &DDB; Stream records with &LAM; Powertools Batch Processor
+  synopsis: implement a Lambda function that processes DynamoDB Stream records using the AWS Lambda Powertools Batch Processor utility to handle partial failures gracefully and prevent Lambda from retrying the entire batch when only some records fail.
+  category: Serverless examples
+  languages:
+    JavaScript:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/tools-powertools-batch-processor-ddb
+          excerpts:
+            - description: Processing &DDB; Stream records with Powertools Batch Processor using JavaScript.
+              snippet_files:
+                - tools-powertools-batch-processor-ddb/example.js
+            - description: Processing &DDB; Stream records with Powertools Batch Processor using TypeScript.
+              snippet_files:
+                - tools-powertools-batch-processor-ddb/example.ts
+    Python:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/tools-powertools-batch-processor-ddb
+          excerpts:
+            - description: Processing &DDB; Stream records with Powertools Batch Processor using Python.
+              snippet_files:
+                - tools-powertools-batch-processor-ddb/example.py
+    Java:
+      versions:
+        - sdk_version: 2
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/tools-powertools-batch-processor-ddb
+          excerpts:
+            - description: Processing &DDB; Stream records with Powertools Batch Processor using Java.
+              snippet_files:
+                - tools-powertools-batch-processor-ddb/example.java
+    .NET:
+      versions:
+        - sdk_version: 3
+          github: https://github.com/aws-samples/serverless-snippets/tree/main/tools-powertools-batch-processor-ddb
+          excerpts:
+            - description: Processing &DDB; Stream records with Powertools Batch Processor using .NET.
+              snippet_files:
+                - tools-powertools-batch-processor-ddb/Function.cs
+  services:
+    lambda:
+    dynamodb:
