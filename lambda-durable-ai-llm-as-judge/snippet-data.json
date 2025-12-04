@@ -1,0 +1,66 @@
+{
+  "title": "LLM as Judge with Lambda Durable Functions",
+  "description": "Get multiple AI responses in parallel, then use another LLM to pick the best one using AWS Lambda durable functions",
+  "type": "Integration",
+  "services": ["lambda", "bedrock"],
+  "languages": ["Python", "TypeScript"],
+  "tags": ["ai", "durable-functions", "bedrock", "genai", "llm-as-judge", "evaluation"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This pattern demonstrates the LLM-as-judge pattern with AWS Lambda durable functions. Multiple models answer a question in parallel, then another LLM evaluates and selects the best response.",
+      "All candidate answers and the final judgment are checkpointed for deterministic replay.",
+      "Benefits: Parallel execution reduces total workflow time. Checkpointing prevents re-running expensive LLM calls on retry. Deterministic replay ensures consistent results."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/sample-ai-workflows-in-aws-lambda-durable-functions"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Runtimes",
+      "codeTabs": [
+        {
+          "id": "Python",
+          "title": "Usage Example with Python:",
+          "description": "LLM as judge with Lambda durable functions using Python.",
+          "snippets": [
+            {
+              "snippetPath": "example.py",
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "id": "TypeScript",
+          "title": "Usage Example with TypeScript:",
+          "description": "LLM as judge with Lambda durable functions using TypeScript.",
+          "snippets": [
+            {
+              "snippetPath": "example.ts",
+              "language": "ts"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resources": {
+    "bullets": [
+      {
+        "text": "AWS Lambda durable functions",
+        "link": "https://aws.amazon.com/lambda/lambda-durable-functions/"
+      }
+    ]
+  },
+  "authors": [
+    {
+      "headline": "Presented by Connor Kirkpatrick",
+      "name": "Connor Kirkpatrick",
+      "bio": "Solution Engineer at AWS",
+      "linkedin": "connorkirkpatrick"
+    }
+  ]
+}

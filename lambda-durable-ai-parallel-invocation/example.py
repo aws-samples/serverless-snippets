@@ -1,0 +1,27 @@
+from aws_durable_execution_sdk_python import DurableContext, durable_execution
+
+from utils.converse import converse
+
+MODEL_ID = "us.amazon.nova-lite-v1:0"
+
+PROMPTS = [
+    "Explain the benefits of",
+    "Describe the challenges of",
+    "Summarize the future of",
+]
+
+
+@durable_execution
+def handler(event: dict, context: DurableContext):
+    topic = event.get("topic", "artificial intelligence")
+
+    result = context.map(
+        PROMPTS,
+        lambda ctx, prompt, idx, items: {
+            "prompt": prompt,
+            "response": converse(MODEL_ID, f"{prompt} {topic}"),
+        },
+        "Get perspectives",
+    )
+
+    return {"topic": topic, "perspectives": result.get_results()}
