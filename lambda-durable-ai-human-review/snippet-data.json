@@ -1,5 +1,5 @@
 {
-  "title": "Human Review with Lambda Durable Functions",
+  "title": "Human Review with AWS Lambda durable functions",
   "description": "Pause AI workflow for human approval before continuing using AWS Lambda durable functions",
   "type": "Integration",
   "services": ["lambda", "bedrock"],

@@ -1,5 +1,5 @@
 {
-  "title": "Prompt Chaining with Lambda Durable Functions",
+  "title": "Prompt Chaining with AWS Lambda durable functions",
   "description": "Sequential LLM calls where each step builds on the previous one using AWS Lambda durable functions",
   "type": "Integration",
   "services": ["lambda", "bedrock"],

@@ -1,5 +1,5 @@
 {
-  "title": "LLM as Judge with Lambda Durable Functions",
+  "title": "LLM as Judge with AWS Lambda durable functions",
   "description": "Get multiple AI responses in parallel, then use another LLM to pick the best one using AWS Lambda durable functions",
   "type": "Integration",
   "services": ["lambda", "bedrock"],

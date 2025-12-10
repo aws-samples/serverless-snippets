@@ -1,5 +1,5 @@
 {
-  "title": "Parallel Invocation with Lambda Durable Functions",
+  "title": "Parallel Invocation with AWS Lambda durable functions",
   "description": "Run multiple LLM prompts simultaneously with individual checkpointing using AWS Lambda durable functions",
   "type": "Integration",
   "services": ["lambda", "bedrock"],

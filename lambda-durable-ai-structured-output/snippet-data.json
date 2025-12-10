@@ -1,5 +1,5 @@
 {
-  "title": "Generating Structured Output from LLMs with Lambda Durable Functions",
+  "title": "Generating Structured Output from LLMs with AWS Lambda durable functions",
   "description": "Get JSON output from an LLM and validate it against a schema using AWS Lambda durable functions",
   "type": "Integration",
   "services": ["lambda", "bedrock"],
