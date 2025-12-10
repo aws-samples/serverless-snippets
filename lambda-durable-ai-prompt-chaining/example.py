@@ -1,8 +1,16 @@
+import boto3
 from aws_durable_execution_sdk_python import DurableContext, durable_execution
 
-from utils.converse import converse
-
 MODEL_ID = "us.amazon.nova-lite-v1:0"
+bedrock = boto3.client("bedrock-runtime")
+
+
+def converse(model_id: str, prompt: str) -> str:
+    response = bedrock.converse(
+        modelId=model_id,
+        messages=[{"role": "user", "content": [{"text": prompt}]}],
+    )
+    return response["output"]["message"]["content"][0]["text"]
 
 
 @durable_execution
