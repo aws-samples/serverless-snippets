@@ -10,7 +10,7 @@
     "text": [
       "This pattern demonstrates prompt chaining with AWS Lambda durable functions. Each LLM call is checkpointed, enabling automatic retry on failure and deterministic replay.",
       "The example generates a joke about a topic, then uses a second LLM call to review and rate the joke.",
-      "Benefits: Expensive retries are avoided by resuming from the last checkpoint. Non-deterministic LLM outputs become deterministic through replay. Failed workflows don't restart from scratch."
+      "Benefits: Expensive retries are avoided by resuming from the last checkpoint. Replayed LLM calls return the same response each time. Failed workflows don't restart from scratch."
     ]
   },
   "gitHub": {
