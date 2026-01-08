@@ -1,0 +1,66 @@
+{
+  "title": "Parallel Invocation with AWS Lambda durable functions",
+  "description": "Run multiple LLM prompts simultaneously with individual checkpointing using AWS Lambda durable functions",
+  "type": "Integration",
+  "services": ["lambda", "bedrock"],
+  "languages": ["Python", "TypeScript"],
+  "tags": ["ai", "durable-functions", "bedrock", "genai", "parallel"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This pattern demonstrates parallel invocation with AWS Lambda durable functions. Multiple LLM calls execute concurrently, with each response checkpointed independently.",
+      "The example sends multiple prompts about a topic in parallel, gathering different perspectives simultaneously.",
+      "Benefits: Faster execution through concurrent LLM calls. Individual checkpointing means partial failures don't require re-running successful calls. Automatic retry handling for each parallel operation."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/sample-ai-workflows-in-aws-lambda-durable-functions"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Runtimes",
+      "codeTabs": [
+        {
+          "id": "Python",
+          "title": "Usage Example with Python:",
+          "description": "Parallel invocation with Lambda durable functions using Python.",
+          "snippets": [
+            {
+              "snippetPath": "example.py",
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "id": "TypeScript",
+          "title": "Usage Example with TypeScript:",
+          "description": "Parallel invocation with Lambda durable functions using TypeScript.",
+          "snippets": [
+            {
+              "snippetPath": "example.ts",
+              "language": "ts"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resources": {
+    "bullets": [
+      {
+        "text": "AWS Lambda durable functions",
+        "link": "https://aws.amazon.com/lambda/lambda-durable-functions/"
+      }
+    ]
+  },
+  "authors": [
+    {
+      "headline": "Presented by Connor Kirkpatrick",
+      "name": "Connor Kirkpatrick",
+      "bio": "Solution Engineer at AWS",
+      "linkedin": "connorkirkpatrick"
+    }
+  ]
+}
