@@ -1,0 +1,1 @@
+Action=ReceiveMessage&MaxNumberOfMessages=10&WaitTimeSeconds=10
