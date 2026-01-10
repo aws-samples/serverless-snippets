@@ -1,0 +1,6 @@
+fields @timestamp, @message
+| parse @message '"requestId":"*"' as requestId
+| parse @message '"IntegrationLatency":"*"' as IntegrationLatency
+| filter ispresent(IntegrationLatency)
+| sort by @timestamp desc
+| display @timestamp, requestId, IntegrationLatency
