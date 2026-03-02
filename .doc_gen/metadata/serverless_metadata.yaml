@@ -29,6 +29,7 @@ serverless_S3_Lambda:
       versions:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-s3-to-lambda
+          caveat: This example requires the addition of the <code>aws-lambda-java-core</code> and <code>aws-lambda-java-events</code> libraries. See the <ulink url="https://github.com/aws/aws-lambda-java-libs">GitHub repo</ulink> for more details.
           excerpts:
             - description: Consuming an S3 event with &LAM; using Java.
               snippet_files:
@@ -139,6 +140,7 @@ serverless_SNS_Lambda:
       versions:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sns-to-lambda
+          caveat: This example requires the addition of the <code>aws-lambda-java-core</code> and <code>aws-lambda-java-events</code> libraries. See the <ulink url="https://github.com/aws/aws-lambda-java-libs">GitHub repo</ulink> for more details.
           excerpts:
             - description: Consuming an SNS event with &LAM; using Java.
               snippet_files:
@@ -185,6 +187,7 @@ serverless_SQS_Lambda:
       versions:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-sqs-to-lambda
+          caveat: This example requires the addition of the <code>aws-lambda-java-core</code> and <code>aws-lambda-java-events</code> libraries. See the <ulink url="https://github.com/aws/aws-lambda-java-libs">GitHub repo</ulink> for more details.
           excerpts:
             - description: Consuming an SQS event with &LAM; using Java.
               snippet_files:
@@ -252,6 +255,7 @@ serverless_SQS_Lambda_batch_item_failures:
       versions:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-sqs-report-batch-item-failures
+          caveat: This example requires the addition of the <code>aws-lambda-java-core</code> and <code>aws-lambda-java-events</code> libraries. See the <ulink url="https://github.com/aws/aws-lambda-java-libs">GitHub repo</ulink> for more details.
           excerpts:
             - description: Reporting SQS batch item failures with &LAM; using Java.
               snippet_files:
@@ -341,6 +345,7 @@ serverless_Kinesis_Lambda:
       versions:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda
+          caveat: This example requires the addition of the <code>aws-lambda-java-core</code> and <code>aws-lambda-java-events</code> libraries. See the <ulink url="https://github.com/aws/aws-lambda-java-libs">GitHub repo</ulink> for more details.
           excerpts:
             - description: Consuming a &AK; event with &LAM; using Java.
               snippet_files:
@@ -427,6 +432,7 @@ serverless_Kinesis_Lambda_batch_item_failures:
       versions:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-kinesis-to-lambda-with-batch-item-handling
+          caveat: This example requires the addition of the <code>aws-lambda-java-core</code> and <code>aws-lambda-java-events</code> libraries. See the <ulink url="https://github.com/aws/aws-lambda-java-libs">GitHub repo</ulink> for more details.
           excerpts:
             - description: Reporting &AK; batch item failures with &LAM; using Java.
               snippet_files:
@@ -536,6 +542,7 @@ serverless_DynamoDB_Lambda:
       versions:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda
+          caveat: This example requires the addition of the <code>aws-lambda-java-core</code> and <code>aws-lambda-java-events</code> libraries. See the <ulink url="https://github.com/aws/aws-lambda-java-libs">GitHub repo</ulink> for more details.
           excerpts:
             - description: Consuming a &DDB; event with &LAM; using Java.
               snippet_files:
@@ -563,6 +570,7 @@ serverless_DynamoDB_Lambda_batch_item_failures:
       versions:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-ddb-to-lambda-with-batch-item-handling
+          caveat: This example requires the addition of the <code>aws-lambda-java-core</code> and <code>aws-lambda-java-events</code> libraries. See the <ulink url="https://github.com/aws/aws-lambda-java-libs">GitHub repo</ulink> for more details.
           excerpts:
             - description: Reporting &DDB; batch item failures with &LAM; using Java.
               snippet_files:
@@ -691,6 +699,7 @@ serverless_DocumentDB_Lambda:
       versions:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-docdb-to-lambda
+          caveat: This example requires the addition of the <code>aws-lambda-java-core</code> library. See the <ulink url="https://github.com/aws/aws-lambda-java-libs">GitHub repo</ulink> for more details.
           excerpts:
             - description: Consuming a &DocDB; event with &LAM; using Java.
               snippet_files:
@@ -728,6 +737,7 @@ serverless_connect_RDS_Lambda:
       versions:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-connect-rds-iam
+          caveat: This example requires the addition of the <code>aws-lambda-java-core</code> and <code>aws-lambda-java-events</code> libraries. See the <ulink url="https://github.com/aws/aws-lambda-java-libs">GitHub repo</ulink> for more details.
           excerpts:
             - description: Connecting to an &RDS; database in a &LAM; function using Java.
               snippet_files:
@@ -797,6 +807,7 @@ serverless_MSK_Lambda:
       versions:
         - sdk_version: 2
           github: https://github.com/aws-samples/serverless-snippets/tree/main/integration-msk-to-lambda
+          caveat: This example requires the addition of the <code>aws-lambda-java-core</code> and <code>aws-lambda-java-events</code> libraries. See the <ulink url="https://github.com/aws/aws-lambda-java-libs">GitHub repo</ulink> for more details.
           excerpts:
             - description: Consuming an &MSK; event with &LAM; using Java.
               snippet_files:
