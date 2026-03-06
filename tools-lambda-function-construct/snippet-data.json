@@ -1,0 +1,59 @@
+{
+  "title": "Standardize AWS Lambda definitions with CDK Construct",
+  "description": "Use a CDK Construct to standardize and simplify Lambda function definition",
+  "type": "Tools",
+  "services": ["lambda"],
+  "languages": ["Python"],
+  "tags": ["CDK", "Lambda"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "The CDK Construct provides a standardized blueprint for creating Lambda functions (similar to the Global section of an AWS SAM template). This enables standardization of function definitions and centralized updates, e.g., runtime updates. All parameters can be overridden as necessary for individual functions."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/tools-lambda-function-construct"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Python Lambda Construct Example",
+      "description": "A reusable CDK Construct that standardizes Lambda function creation with built-in CloudWatch Log Groups, Powertools for AWS Lambda, X-Ray tracing, and automatic dependency bundling. Supports per-function overrides for runtime, architecture, memory, timeout, etc. The construct can be easily tailored for your own needs. See the repo for a deployable example.",
+      "snippetPath": "cdk/constructs/standard_lambda_construct.py",
+      "language": "py"
+    },
+    {
+      "title": "Usage Example",
+      "description": "Demonstrates three patterns for consuming the StandardLambda construct: a minimal function with all defaults, a function with overridden runtime and environment variables, and a function with external dependencies, additional layers, and custom IAM permissions.",
+      "snippetPath": "cdk/cdk_stack.py",
+      "language": "py"
+    }
+  ],
+  "resources": {
+    "bullets": [
+      {
+        "text": "AWS CDK Constructs",
+        "link": "https://docs.aws.amazon.com/cdk/v2/guide/constructs.html"
+      },
+      {
+        "text": "Working with the AWS CDK in Python",
+        "link": "https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-python.html"
+      },
+      {
+        "text": "Python CDK API Reference (constructs module)",
+        "link": "https://docs.aws.amazon.com/cdk/api/v2/python/constructs.html"
+      }
+    ]
+  },
+  "authors": [
+    {
+      "headline": "Presented by Pete Davis",
+      "name": "Pete Davis",
+      "image": "https://github.com/pjdavis-aws.png",
+      "bio": "Senior Partner Solution Architect at AWS",
+      "linkedin": "https://www.linkedin.com/in/peter-davis-2676585",
+      "twitter": ""
+    }
+  ]
+}
