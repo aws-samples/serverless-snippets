@@ -1,3 +1,6 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+
 from pathlib import Path
 from aws_cdk import (
     aws_lambda as lambda_,
