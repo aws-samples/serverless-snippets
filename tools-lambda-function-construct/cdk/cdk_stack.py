@@ -1,6 +1,3 @@
-# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# SPDX-License-Identifier: Apache-2.0
-
 from aws_cdk import (
     aws_iam as iam,
     aws_lambda as lambda_,
