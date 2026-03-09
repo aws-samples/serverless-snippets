@@ -1,5 +1,5 @@
 {
-  "title": "Standardize AWS Lambda definitions with CDK Construct",
+  "title": "Standardize AWS Lambda definitions with AWS CDK Construct",
   "description": "Use a CDK Construct to standardize and simplify Lambda function definition",
   "type": "Tools",
   "services": ["lambda"],
