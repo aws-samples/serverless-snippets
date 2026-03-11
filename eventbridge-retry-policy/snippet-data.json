@@ -18,7 +18,7 @@
   },
   "snippets": [
     {
-      "title": "Create a EventBridge scheduled rule with retry policy targeting Lambda",
+      "title": "Copy the commands on your CLI and replace the LAMBDA_ARN. Modidy the schedule expressions and retry policy values as desired",
       "snippetPath": "retry-policy.txt",
       "language": "AWS CLI"
     }
