@@ -1,0 +1,35 @@
+{
+  "title": "Create One-time schedule with timezone support",
+  "description": "CLI command that creates a one-time EventBridge schedule which has timezone support",
+  "type": "AWS EventBridge Scheduler",
+  "services": ["eventbridge"],
+  "tags": [],
+  "languages": ["AWS CLI"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "CLI Command executes the EventBridge Scheduler API call which creates the one-time scheduler"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/eventbridge-onetime-scheduler-with-timezone"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Create One-time schedule with timezone support",
+      "snippetPath": "snippet.txt",
+      "language": "AWS CLI"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Rajil Paloth",
+      "name": "Rajil Paloth",
+      "image": "https://i.ibb.co/r2TsqGf6/Passport-size.jpg",
+      "bio": "ProServe Delivery Consultant at AWS",
+      "linkedin": "paloth"
+    }
+  ]
+}
