@@ -1,0 +1,15 @@
+aws scheduler update-schedule \
+  --name "<NAME-OF-THE-SCHEDULE>" \
+  --schedule-expression "<THE SCHEDULE EXPRESSION; EX: rate(1 hour)" \
+  --flexible-time-window '{"Mode": "OFF"}' \
+  --target '{
+    "Arn": "<TARGET ARN; FOR EXAMPLE - LAMBDA FUNCTION ARN>",
+    "RoleArn": "<ARN FOR THE ROLE WHICH HAS A TRUST RELATIONSHIP WITH scheduler.amazonaws.com AND HAS TARGET PERMISSIONS>",
+    "RetryPolicy": {
+      "MaximumRetryAttempts": 3,
+      "MaximumEventAgeInSeconds": 3600
+    },
+    "DeadLetterConfig": {
+      "Arn": "<ARN OF THE SQS QUEUE - MAKE SURE THE RoleArn HAS sqs:SendMessage PERMISSIONS ON THE QUEUE>"
+    }
+  }'
