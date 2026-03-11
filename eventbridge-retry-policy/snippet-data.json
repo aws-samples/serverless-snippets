@@ -1,0 +1,35 @@
+{
+  "title": "Create EventBridge Rule with Retry Policy Using AWS CLI",
+  "description": "Use AWS CLI to create Amazon EventBridge Rules with schedule expressions and configure retry policies (MaximumRetryAttempts & MaximumEventAgeInSeconds) targeting AWS Lambda",
+  "type": "AWS CLI",
+  "services": ["eventbridge", "lambda"],
+  "tags": [],
+  "languages": ["AWS CLI"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This snippet demonstrates how to create Amazon EventBridge scheduled rules with retry policies using the AWS CLI, leveraging `aws events put-rule` to create a scheduled rule and `aws events put-targets` to attach a Lambda target with a configured retry policy that controls MaximumRetryAttempts (0-185) and MaximumEventAgeInSeconds (60-86400) to handle failed invocations."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/eventbridge-retry-policy"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Create a EventBridge scheduled rule with retry policy targeting Lambda",
+      "snippetPath": "retry-policy.txt",
+      "language": "AWS CLI"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Archana V",
+      "name": "Archana V",
+      "image": "https://media.licdn.com/dms/image/v2/D5603AQGhkVtEhllFEw/profile-displayphoto-shrink_400_400/B56ZZH3LL6H0Ag-/0/1744962369913?e=1774483200&v=beta&t=wAhvwq-jEIWnyQwDfIkK_-Sq16Z4RvpjWtYmDkc3eg4",
+      "bio": "Solutions Architect at AWS",
+      "linkedin": "archanavenkat"
+    }
+  ]
+}
