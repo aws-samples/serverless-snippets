@@ -1,0 +1,35 @@
+{
+  "title": "Bulk Create EventBridge Scheduler Schedules Using AWS CLI",
+  "description": "Use AWS CLI to bulk create multiple Amazon EventBridge Scheduler schedules in a loop with dynamic naming and rate expressions targeting AWS Lambda",
+  "type": "AWS CLI",
+  "services": ["eventbridge-scheduler", "lambda"],
+  "tags": [],
+  "languages": ["AWS CLI"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This snippet demonstrates how to bulk create multiple Amazon EventBridge Scheduler schedules using the AWS CLI in a shell loop. It uses `aws scheduler create-schedule` inside a `for` loop to create multiple schedules with dynamic names and varying rate expressions, all targeting the same AWS Lambda function. This is useful when you need to provision many schedules at once for batch processing, multi-tenant workloads, or automated provisioning scenarios."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/eventbridge-bulk-schedule-creating"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Copy the commands on your CLI and replace the LAMBDA_ARN and the EVENTBRIDGE_ROLE_ARN. Modify the loop count and rate expressions as desired",
+      "snippetPath": "bulk-create-schedules.txt",
+      "language": "AWS CLI"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Sahithi Ginjupalli",
+      "name": "Sahithi Ginjupalli",
+      "image": "https://drive.google.com/file/d/1YcKYuGz3LfzSxiwb2lWJfpyi49SbvOSr/view?usp=sharing",
+      "bio": "Cloud Engineer at AWS specializing in Serverless and Gen AI services, empowering customers to build innovative GenAI serverless solutions.",
+      "linkedin": "ginjupalli-sahithi-37460a18b"
+    }
+  ]
+}
