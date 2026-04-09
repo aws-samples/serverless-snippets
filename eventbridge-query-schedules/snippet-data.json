@@ -1,0 +1,35 @@
+{
+  "title": "EventBridge Schedule Finder",
+  "description": "An interactive CLI command that prompts user inputs to query and find existing EventBridge Scheduler schedules. Supports filtering by schedule name, name prefix, state, group name, and AWS region",
+  "type": "AWS CLI",
+  "services": ["eventbridge"],
+  "tags": [],
+  "languages": ["bash"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This interactive CLI script prompts the user for optional inputs like Schedule Name, Prefix, State, Group and Region. It dynamically builds the appropriate AWS CLI command using 'get-schedule' for exact lookups or 'list-schedules' for filtered searches. If no filters are provided, it lists all schedules in the specified region."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/eventbridge-query-schedules"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Copy and paste the snippet into your terminal and enter the optional inputs",
+      "snippetPath": "snippet.txt",
+      "language": "bash"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Archana V",
+      "name": "Archana V",
+      "image": "https://media.licdn.com/dms/image/v2/D5603AQGhkVtEhllFEw/profile-displayphoto-shrink_400_400/B56ZZH3LL6H0Ag-/0/1744962369913?e=1774483200&v=beta&t=wAhvwq-jEIWnyQwDfIkK_-Sq16Z4RvpjWtYmDkc3eg4",
+      "bio": "Solutions Architect at AWS",
+      "linkedin": "archanavenkat"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "title": "Agent with Tools using AWS Lambda durable functions",
+  "description": "Agentic loop where the LLM can call tools, including tools that suspend for human input, using AWS Lambda durable functions",
+  "type": "Integration",
+  "services": ["lambda", "bedrock"],
+  "languages": ["Python", "TypeScript"],
+  "tags": ["ai", "durable-functions", "bedrock", "genai", "agent", "tools", "function-calling"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This pattern demonstrates an agentic loop with AWS Lambda durable functions. The LLM can call tools, and each model call and tool execution is checkpointed for deterministic replay.",
+      "Tools can use durable context features like waitForCallback to suspend the agent while awaiting external input.",
+      "Benefits: Complex agent loops are expressed as simple sequential code. Each tool call is checkpointed for resilient execution. Tools can suspend for human input without consuming compute resources."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/sample-ai-workflows-in-aws-lambda-durable-functions"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Runtimes",
+      "codeTabs": [
+        {
+          "id": "Python",
+          "title": "Usage Example with Python:",
+          "description": "Agent with tools using Lambda durable functions in Python.",
+          "snippets": [
+            {
+              "snippetPath": "example.py",
+              "language": "py"
+            }
+          ]
+        },
+        {
+          "id": "TypeScript",
+          "title": "Usage Example with TypeScript:",
+          "description": "Agent with tools using Lambda durable functions in TypeScript.",
+          "snippets": [
+            {
+              "snippetPath": "example.ts",
+              "language": "ts"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resources": {
+    "bullets": [
+      {
+        "text": "AWS Lambda durable functions",
+        "link": "https://aws.amazon.com/lambda/lambda-durable-functions/"
+      }
+    ]
+  },
+  "authors": [
+    {
+      "headline": "Presented by Connor Kirkpatrick",
+      "name": "Connor Kirkpatrick",
+      "bio": "Solution Engineer at AWS",
+      "linkedin": "connorkirkpatrick"
+    }
+  ]
+}

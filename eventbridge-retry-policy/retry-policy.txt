@@ -1,0 +1,22 @@
+aws events put-rule \
+  --name "retry-rule-test" \
+  --schedule-expression "rate(5 minutes)" \
+  --state ENABLED \
+  --description "Runs every 5 minutes with retry policy" \
+&& \
+aws events put-targets \
+  --rule "retry-rule-test" \
+  --event-bus-name "default" \
+  --targets "$(cat <<EOF
+[
+  {
+    "Id": "my-target-id",
+    "Arn": "<LAMBDA_ARN>",
+    "RetryPolicy": {
+      "MaximumRetryAttempts": 3,
+      "MaximumEventAgeInSeconds": 3600
+    }
+  }
+]
+EOF
+)"

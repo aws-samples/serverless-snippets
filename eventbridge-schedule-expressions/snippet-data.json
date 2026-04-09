@@ -1,0 +1,35 @@
+{
+  "title": "Create EventBridge Scheduler Schedules Using AWS CLI",
+  "description": "Use AWS CLI to create Amazon EventBridge Scheduler schedules with rate and cron expressions targeting AWS Lambda",
+  "type": "AWS CLI",
+  "services": ["eventbridge-scheduler", "lambda"],
+  "tags": [],
+  "languages": ["AWS CLI"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This snippet demonstrates how to create Amazon EventBridge Scheduler schedules using the AWS CLI `aws scheduler create-schedule` command with rate and cron expressions, targeting AWS Lambda"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/eventbridge-schedule-expressions"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Copy the commands on your CLI and replace the LAMBDA_ARN and the EVENTBRIDGE_ROLE_ARN. Modidy the rate/cron expressions as desired",
+      "snippetPath": ["cron-expression.txt","rate-expression.txt"],
+      "language": "AWS CLI"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Archana V",
+      "name": "Archana V",
+      "image": "https://media.licdn.com/dms/image/v2/D5603AQGhkVtEhllFEw/profile-displayphoto-shrink_400_400/B56ZZH3LL6H0Ag-/0/1744962369913?e=1774483200&v=beta&t=wAhvwq-jEIWnyQwDfIkK_-Sq16Z4RvpjWtYmDkc3eg4",
+      "bio": "Solutions Architect at AWS",
+      "linkedin": "archanavenkat"
+    }
+  ]
+}
