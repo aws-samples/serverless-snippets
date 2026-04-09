@@ -1,0 +1,10 @@
+aws scheduler create-schedule \
+  --name "one-time-schedule" \
+  --schedule-expression "at(<TIME IN ISO 8601; EX - 2026-03-11T10:21:00>)" \
+  --schedule-expression-timezone "<EXACT TIMEZONE VALUE; EX - Asia/Kolkata>" \
+  --flexible-time-window '{"Mode": "OFF"}' \
+  --target '{
+    "Arn": "<TARGET ARN; EX - LAMBDA FUNCTION ARN>",
+    "RoleArn": "<ARN FOR THE IAM ROLE WHICH HAS A TRUST RELATIONSHIP WITH scheduler.amazonaws.com AND HAS TARGET PERMISSIONS>"
+  }' \
+  --action-after-completion "NONE"
