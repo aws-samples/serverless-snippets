@@ -1,0 +1,35 @@
+{
+  "title": "Schedule with dead-letter queue - Adding DLQ for failed executions",
+  "description": "Adding an Amazon SQS DLQ on an existing EventBridge Schedule to capture failed executions",
+  "type": "AWS EventBridge Scheduler",
+  "services": ["eventbridge"],
+  "tags": [],
+  "languages": ["AWS CLI"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "CLI Command executes the EventBridge Scheduler API call which adds the DLQ to the scheduler"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/eventbridge-scheduler-dlq"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Add a DLQ to an existing Schedule",
+      "snippetPath": "snippet.txt",
+      "language": "AWS CLI" 
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Rajil Paloth",
+      "name": "Rajil Paloth",
+      "image": "https://i.ibb.co/r2TsqGf6/Passport-size.jpg",
+      "bio": "ProServe Delivery Consultant at AWS",
+      "linkedin": "paloth"
+    }
+  ]
+}
