@@ -1,0 +1,1 @@
+Action=SendMessage&MessageBody=$util.urlEncode($input.body)
