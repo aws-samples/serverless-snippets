@@ -1,0 +1,12 @@
+for i in $(seq 1 5); do
+  aws scheduler create-schedule \
+    --name "bulk-schedule-$i" \
+    --group-name "default" \
+    --schedule-expression "rate($((i * 5)) minutes)" \
+    --target '{
+      "Arn": "<LAMBDA_ARN>",
+      "RoleArn": "<EVENTBRIDGE_ROLE_ARN>"
+    }' \
+    --flexible-time-window '{"Mode": "OFF"}' \
+  && echo "Created schedule: bulk-schedule-$i"
+done
