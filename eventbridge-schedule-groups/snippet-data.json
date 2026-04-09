@@ -1,0 +1,35 @@
+{
+  "title": "Create and Organize Schedules Using Schedule Groups with AWS CLI",
+  "description": "Use AWS CLI to create Amazon EventBridge Scheduler schedule groups to organize and manage schedules, including creating groups with tags, adding schedules to groups, listing, and cleaning up",
+  "type": "AWS CLI",
+  "services": ["eventbridge-scheduler", "lambda"],
+  "tags": [],
+  "languages": ["AWS CLI"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This snippet demonstrates how to create and organize Amazon EventBridge Scheduler schedules using schedule groups via the AWS CLI. Schedule groups allow you to organize schedules by project, environment, or team using `aws scheduler create-schedule-group` with tags, then associate schedules to groups using the `--group-name` parameter. You can list groups and their schedules, and clean up by deleting schedules and groups."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/eventbridge-schedule-groups"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Create a schedule group with tags and add a schedule to it. Replace LAMBDA_ARN and EVENTBRIDGE_ROLE_ARN with your values",
+      "snippetPath": "create-schedule-group.txt",
+      "language": "AWS CLI"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Sahithi Ginjupalli",
+      "name": "Sahithi Ginjupalli",
+      "image": "https://drive.google.com/file/d/1YcKYuGz3LfzSxiwb2lWJfpyi49SbvOSr/view?usp=sharing",
+      "bio": "Cloud Engineer at AWS specializing in Serverless and Gen AI services, empowering customers to build innovative GenAI serverless solutions.",
+      "linkedin": "ginjupalli-sahithi-37460a18b"
+    }
+  ]
+}

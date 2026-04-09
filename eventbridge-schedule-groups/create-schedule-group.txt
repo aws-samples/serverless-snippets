@@ -1,0 +1,13 @@
+aws scheduler create-schedule-group \
+  --name "my-schedule-group" \
+  --tags Key=Environment,Value=Production Key=Team,Value=Backend
+
+aws scheduler create-schedule \
+  --name "my-grouped-schedule" \
+  --group-name "my-schedule-group" \
+  --schedule-expression "rate(10 minutes)" \
+  --target '{
+    "Arn": "<LAMBDA_ARN>",
+    "RoleArn": "<EVENTBRIDGE_ROLE_ARN>"
+  }' \
+  --flexible-time-window '{"Mode": "OFF"}'
