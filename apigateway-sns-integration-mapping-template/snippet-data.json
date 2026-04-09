@@ -1,0 +1,40 @@
+{
+  "title": "Mapping template for API Gateway with SNS integration",
+  "description": "Provides a mapping template for API Gateway and SNS integration",
+  "type": "Integration",
+  "services": ["apigw", "sns"],
+  "tags": [],
+  "languages": ["vtl"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "This snippet can be used to publish messages to an existing SNS topic.",
+      "When creating the integration, ensure to have the below configuration to use the mapping template:"
+      "1. For Path override the value must be given as '/' ",
+      "2. The header 'Content-Type' should have the value 'application/x-www-form-urlencoded' (include the single quotes in the value)",
+      "3. IAM role with appropriate sns:publish IAM permission"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/apigateway-sns-integration-mapping-template"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Use the following mapping template",
+      "snippetPath": "snippet.txt",
+      "language": "vtl"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Pallavi Bhat",
+      "name": "Pallavi Bhat",
+      "image": "https://drive.google.com/file/d/1xYr8HfVnLZOMmhAc9hSsyj_O85yyznF7/view?usp=sharing",
+      "bio": "Pallavi is a Cloud Support Enginner focusing on serverless at Amazon Web Services.",
+      "linkedin": "https://www.linkedin.com/in/pallavi-bhat11/",
+      "twitter": ""
+    }
+  ]
+}
