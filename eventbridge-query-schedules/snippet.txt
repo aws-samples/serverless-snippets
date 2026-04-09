@@ -1,0 +1,24 @@
+echo -n "Schedule Name (or Enter to skip): " && read NAME && \
+echo -n "Name Prefix (or Enter to skip): " && read PREFIX && \
+echo -n "State [ENABLED/DISABLED/Enter to skip]: " && read STATE && \
+echo -n "Group Name (or Enter to skip): " && read GROUP && \
+echo -n "Region [us-east-1]: " && read REGION && \
+REGION=${REGION:-us-east-1} && \
+CMD="" && \
+if [ -n "$NAME" ] && [ -z "$STATE" ]; then \
+  CMD="aws scheduler get-schedule --name $NAME --region $REGION"; \
+  [ -n "$GROUP" ] && CMD="$CMD --group-name $GROUP"; \
+  CMD="$CMD --query '{Name:Name,State:State,Expression:ScheduleExpression,Group:GroupName,TargetArn:Target.Arn,Description:Description}' --output table"; \
+elif [ -n "$NAME" ] && [ -n "$STATE" ]; then \
+  CMD="aws scheduler list-schedules --region $REGION --name-prefix $NAME --state $STATE"; \
+  [ -n "$GROUP" ] && CMD="$CMD --group-name $GROUP"; \
+  CMD="$CMD --query 'Schedules[?Name==\`$NAME\`].[Name,State,ScheduleExpression,GroupName,Target.Arn]' --output table"; \
+else \
+  CMD="aws scheduler list-schedules --region $REGION"; \
+  [ -n "$PREFIX" ] && CMD="$CMD --name-prefix $PREFIX"; \
+  [ -n "$STATE" ] && CMD="$CMD --state $STATE"; \
+  [ -n "$GROUP" ] && CMD="$CMD --group-name $GROUP"; \
+  CMD="$CMD --query 'Schedules[].[Name,State,ScheduleExpression,GroupName,Target.Arn]' --output table"; \
+fi && \
+echo "Running: $CMD" && \
+eval $CMD
