@@ -1,0 +1,8 @@
+aws scheduler create-schedule \
+  --name "my-rate-schedule" \
+  --schedule-expression "rate(5 minutes)" \
+  --target '{
+    "Arn": "<LAMBDA_ARN>",
+    "RoleArn": "<EVENTBRIDGE_ROLE_ARN>"
+  }' \
+  --flexible-time-window '{"Mode": "OFF"}'

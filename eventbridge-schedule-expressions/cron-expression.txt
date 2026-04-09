@@ -1,0 +1,8 @@
+aws scheduler create-schedule \
+  --name "my-cron-schedule" \
+  --schedule-expression "cron(0 9 * * ? *)" \
+  --target '{
+    "Arn": "<LAMBDA_ARN>",
+    "RoleArn": "<EVENTBRIDGE_ROLE_ARN>"
+  }' \
+  --flexible-time-window '{"Mode": "OFF"}'
