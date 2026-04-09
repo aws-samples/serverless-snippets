@@ -1,0 +1,28 @@
+[env]
+_.python.venv = { path = ".venv", create = true }
+CDK_DOCKER = "finch"
+AWS_REGION = "eu-west-1"
+
+[tools]
+node = "22"
+python = "3.14"
+uv = "latest"
+
+[tasks.init]
+description = "Initialise the environment"
+run = [
+    "uv pip install -r requirements.txt",
+    "cdk bootstrap"
+]
+
+[tasks."cdk:synth"]
+description = "Deploy CDK Stack"
+run = "cdk synth"
+
+[tasks."cdk:deploy"]
+description = "Deploy CDK Stack"
+run = "cdk deploy --require-approval never"
+
+[tasks."cdk:destroy"]
+description = "Destroy CDK Stack"
+run = "cdk destroy"
