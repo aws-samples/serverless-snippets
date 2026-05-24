@@ -1,0 +1,42 @@
+{
+  "title": "Using CloudTrail LookupEvents to Identify the Source of Lambda Rate Exceeded Errors",
+  "description": "Use AWS CloudTrail LookupEvents to identify which IAM identity or service is triggering 'Rate exceeded' throttling errors on Lambda management API calls.",
+  "type": "AWS CLI",
+  "services": ["lambda"],
+  "tags": ["debugging"],
+  "languages": ["bash","aws cli"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "You might receive a 'Rate exceeded' error when your environment exceeds Lambda function quota limits for API requests. Before you can resolve a 'Rate exceeded' error, review your CloudTrail event logs using the following commands"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/aws-cli-lambda-rate-exceeded-source"
+    }
+  },
+  "snippets": [
+    {
+      "title": ["Run the CloudTrail lookup-events AWS Command Line Interface (AWS CLI) command to view the total count of management event API calls.",
+               "Note- Set the start-time, the end-time, and the time zone for each value to match the problematic timeframe."],
+      "snippetPath": "snippet-total.txt",
+      "language": "cli"
+    },
+    {
+      "title": ["Run the CloudTrail lookup-events command to view the total count of API calls made by each user.",
+                "Note: Set the start-time, the end-time, and the time zone for each value to match the problematic timeframe."],
+      "snippetPath": "snippet-users.txt",
+      "language": "cli"
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Annangarachari R",
+      "name": "Annangarachari R",
+      "image": "https://media.licdn.com/dms/image/v2/D5603AQGJ4TjBa44wFg/profile-displayphoto-scale_400_400/B56Z5Y28nWGgAo-/0/1779607260719?e=1781136000&v=beta&t=pou5fuFAMTmw7PuyTc2Jli6aYkWqnLhqHgzw-Bn9pDI",
+      "bio": "Serverless Enthusiast",
+      "linkedin": "https://www.linkedin.com/in/annangarachari-r/"
+    }
+  ]
+}
