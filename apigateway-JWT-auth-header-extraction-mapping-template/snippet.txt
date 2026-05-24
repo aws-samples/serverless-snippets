@@ -1,3 +1,0 @@
-filter @message like /Exception/ 
-  | stats count(*) as exceptionCount by bin(1h)
-  | sort exceptionCount desc

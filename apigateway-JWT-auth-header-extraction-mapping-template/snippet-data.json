@@ -1,36 +1,52 @@
 {
-  "title": "[[your title]]",
-  "description": "[[ your description ]]",
-  "type": "CloudWatch Logs Insights",
-  "services": ["lambda"],
+  "title": "Extract a JWT token from the auth header into a new backend header",
+  "description": "Extract a part of JWT token from the Authorization header and pass it on to the backend integrations as a separate header",
+  "type": "Integration",
+  "services": ["apigw"],
   "tags": [],
-  "languages": [],
+  "languages": ["vtl"],
   "introBox": {
     "headline": "How it works",
     "text": [
-      "[[description of how the snippet works]]"
+      "This snippet can be used to extract a part of JWT token from the Authorization header and pass it on to the backend integrations as a separate header using Mapping template.",
+      "Integration request parameters, in the form of headers, can be mapped from any defined method request parameters and the payload.",
+      "One can make use of Method request header along with the mapping expression method.request.header.PARAM_NAME to achieve this use case.",
+      "1. Set up a Method Request by configuring an HTTP method (ANY, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT) for your API Gateway resource with a backend integration.",
+      "2. In the Method Request tab, click edit and add a new HTTP request header name (e.g., clientId) that will be sent to the backend. Avoid restricted header names per AWS documentation.",
+      "3. After adding the header in Method Request settings, navigate to the Integration Request section where your backend integration endpoint is configured.",
+      "4. Expand URL request headers parameters and add a mapping entry using the expression method.request.header.clientId to forward the header to the integration.",
+      "5. This maps the incoming method request header value and passes it as a separate header to the backend integration endpoint."
     ]
   },
   "gitHub": {
     "template": {
-      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/cloudwatch-insight-exception-per-hour"
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/apigateway-JWT-auth-header-extraction-mapping-template"
     }
   },
   "snippets": [
     {
-      "title": "Copy the code into CloudWatch Logs Insights",
-      "snippetPath": "snippet.txt",
-      "language": "css" // use css for cloudwatch (looks good), or find your language from https://prismjs.com/#languages-list
+      "title": "To pass only a new header to the backend: Add the following mapping template body that fetches the header named Authorization from the request, validates if the header value starts with ‘Bearer’ and extracts a part of the value for the new clientId header. Then context.responseOverride.header.<header_name> is used for overriding the header. Use the content types as application/json.",
+      "snippetPath": "snippet-only-new-header.txt",
+      "language": "vtl"
+    },
+    {
+      "title": "To append the new header to the list of headers and send it along with all the headers to the backend, use the following template.",
+      "snippetPath": "snippet-all-headers.txt",
+      "language": "vtl"
+    },
+    {
+      "title": "Invoke the API using the invoke URL along with an Authorization header. For example “Authorization: Bearer a1b2c3d4e5f6g7.h8i9j0k1l2m3n4o5p6.q7r8s9t0u1v2w3x4y5z” is being passed as the token header. Please ensure to use your API Gateway’s invoke URL.",
+      "snippetPath": "snippet-test.txt",
+      "language": "cli"
     }
   ],
   "authors": [
     {
-      "headline": "Presented by [[your name]]",
-      "name": "[[your name]]",
-      "image": "link-to-your-photo.jpg",
-      "bio": "Your bio",
-      "linkedin": "linked-in-ID",
-      "twitter": "twitter-handle"
+      "headline": "Presented by Annangarachari R",
+      "name": "Annangarachari R",
+      "image": "https://media.licdn.com/dms/image/v2/D5603AQGJ4TjBa44wFg/profile-displayphoto-scale_400_400/B56Z5Y28nWGgAo-/0/1779607260719?e=1781136000&v=beta&t=pou5fuFAMTmw7PuyTc2Jli6aYkWqnLhqHgzw-Bn9pDI",
+      "bio": "Serverless Enthusiast",
+      "linkedin": "https://www.linkedin.com/in/annangarachari-r/"
     }
   ]
 }

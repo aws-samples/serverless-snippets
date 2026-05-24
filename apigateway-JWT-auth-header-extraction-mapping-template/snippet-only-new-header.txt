@@ -1,0 +1,16 @@
+#set($authHeaderValue = $input.params().header.get('Authorization'))
+#if($authHeaderValue.startsWith('Bearer '))
+  #set($clientId = $authHeaderValue.substring(7))
+  #set($context.requestOverrideConfiguration.headers.clientId = $clientId)
+$util.toJson($input.json('$'))
+#else
+$util.badRequest("Missing or invalid 'Authorization' header")
+#end
+
+{ 
+  "method": "$context.httpMethod",
+  "body" : $input.json('$'),
+  "headers": { 
+       "clientId": "$util.escapeJavaScript($clientId)"
+  }
+}
