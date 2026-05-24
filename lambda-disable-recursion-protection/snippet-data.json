@@ -1,0 +1,36 @@
+{
+  "title": "Disabling Function Code Recursion Protection",
+  "description": "Configures a Lambda function to automatically terminate recursive invocation loops, preventing infinite call chains and runaway costs.",
+  "type": "Integration",
+  "services": ["lambda"],
+  "tags": ["lambda"],
+  "languages": ["AWS Cli"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "AWS Lambda features built-in recursion detection for loops between Lambda and Amazon SQS or AWS DynamoDB. If your architecture relies on intentional multi-cycle patterns, this guardrail will loop-terminate your function automatically. To turn this safeguard off, you can override it directly via the CLI:"
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-disable-recursion-protection"
+    }
+  },
+  "snippets": [
+    {
+      "title": ["Lambda can detect certain types of recursive loops shortly after they occur. When Lambda detects a recursive loop and your function’s recursive loop detection configuration is set to Terminate , it stops your function being invoked and notifies you.",
+               "The possible values are 'Allow' & 'Terminate'. When this value is set to 'Allow' and Lambda detects your function being invoked as part of a recursive loop, it doesn’t take any action. When this value is set to 'Terminate' and Lambda detects your function being invoked as part of a recursive loop, it stops your function being invoked and notifies you."],
+      "snippetPath": "snippet.txt",
+      "language": "cli" 
+    }
+  ],
+  "authors": [
+    {
+      "headline": "Presented by Annangarachari R",
+      "name": "Annangarachari R",
+      "image": "https://media.licdn.com/dms/image/v2/D5603AQGJ4TjBa44wFg/profile-displayphoto-scale_400_400/B56Z5Y28nWGgAo-/0/1779607260719?e=1781136000&v=beta&t=pou5fuFAMTmw7PuyTc2Jli6aYkWqnLhqHgzw-Bn9pDI",
+      "bio": "Serverless Enthusiast",
+      "linkedin": "https://www.linkedin.com/in/annangarachari-r/"
+    }
+  ]
+}
