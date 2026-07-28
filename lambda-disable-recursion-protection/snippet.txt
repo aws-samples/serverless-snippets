@@ -1,0 +1,3 @@
+aws lambda put-function-recursion-config \
+    --function-name <your-function-name> \
+    --recursive-loop Terminate

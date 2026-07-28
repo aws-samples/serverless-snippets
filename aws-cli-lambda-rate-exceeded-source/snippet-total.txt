@@ -1,0 +1,1 @@
+aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventSource,AttributeValue=lambda.amazonaws.com --start-time YYYY-MM-DDTHH:MM:SS+00:00 --end-time YYYY-MM-DDTHH:MM:SS+00:00 | grep -i EventName | grep -v CloudTrailEvent | sort | uniq -c | sort -r
