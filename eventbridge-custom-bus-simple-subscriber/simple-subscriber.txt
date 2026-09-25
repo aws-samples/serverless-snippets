@@ -1,0 +1,11 @@
+BUS_ARN="<EVENT_BUS_ARN>"
+QUEUE_ARN="<TARGET_QUEUE_ARN>"
+ROLE_ARN="<DELIVERY_ROLE_ARN>"
+
+aws eventsv2 create-subscriber \
+  --name "all-events" \
+  --event-bus-arn "$BUS_ARN" \
+  --invoke-configuration "$(cat <<EOF
+{"TargetArn":"$QUEUE_ARN","RoleArn":"$ROLE_ARN"}
+EOF
+)"

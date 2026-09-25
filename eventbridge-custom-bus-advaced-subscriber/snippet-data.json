@@ -1,0 +1,71 @@
+{
+  "title": "Advanced Custom Event Bus Subscriber Configuration",
+  "description": "Create three EventBridge custom event bus subscribers, each using more features: filter, then retry and dead-letter queue, then a JSONata transform.",
+  "type": "AWS CLI",
+  "services": ["eventbridge"],
+  "tags": [],
+  "languages": ["AWS CLI"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "A subscriber on an Amazon EventBridge custom event bus delivers matching events to a target, and can filter, retry, dead-letter, and transform along the way. This snippet creates three subscribers, each using more of those features than the last, so you can see what each one adds.",
+      "Subscriber 1 filters only. Subscriber 2 adds a retry policy and a dead-letter queue for delivery resilience. Subscriber 3 adds a JSONata transform that reshapes the payload before delivery.",
+      "The three subscribers use different comparison operators in their filters, and a final block lists more reusable filter values you can swap in. The target, delivery role, and dead-letter queue must belong to the account creating the subscriber."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/eventbridge-custom-bus-advaced-subscriber"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Subscriber 1: Filter only",
+      "description": "Replace the placeholders with your own ARNs. The most basic subscriber: a DATA-scoped filter that delivers only events whose detail.status equals PLACED, and drops everything else.",
+      "snippetPath": "subscriber1-filter.txt",
+      "language": "bash"
+    },
+    {
+      "title": "Subscriber 2: Filter + retry + dead-letter queue",
+      "description": "A more resilient subscriber. Adds --retry-policy to retry failed deliveries and --on-failure-configuration to send events that exhaust their retries to an SQS dead-letter queue. Uses a numeric-range filter.",
+      "snippetPath": "subscriber2-filter-retry-dlq.txt",
+      "language": "bash"
+    },
+    {
+      "title": "Subscriber 3: Filter + retry + dead-letter queue + JSONata transform",
+      "description": "The fully featured subscriber. Adds --transformer with Type JSONATA to reshape the payload before delivery, on top of the filter, retry, and dead-letter queue. Uses an $or filter across fields.",
+      "snippetPath": "subscriber3-filter-retry-dlq-transform.txt",
+      "language": "bash"
+    },
+    {
+      "title": "Filtering with comparison operators",
+      "description": "Five DATA-scoped filter values using EventBridge comparison operators: numeric range, anything-but, begins-with (prefix), exists, and $or across fields. Swap any one into the --filter-configuration of a subscriber above.",
+      "snippetPath": "filter-comparison-operators.txt",
+      "language": "bash"
+    }
+  ],
+  "resources": {
+    "bullets": [
+      {
+        "text": "Subscribing to events on a custom event bus",
+        "link": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-custom-bus-subscribers.html"
+      },
+      {
+        "text": "create-subscriber AWS CLI reference",
+        "link": "https://docs.aws.amazon.com/cli/latest/reference/eventsv2/create-subscriber.html"
+      },
+      {
+        "text": "Comparison operators for event patterns",
+        "link": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-pattern-operators.html"
+      }
+    ]
+  },
+  "authors": [
+    {
+      "headline": "Presented by [[your name]]",
+      "name": "[[your name]]",
+      "bio": "Your bio",
+      "linkedin": "linked-in-ID"
+    }
+  ]
+}

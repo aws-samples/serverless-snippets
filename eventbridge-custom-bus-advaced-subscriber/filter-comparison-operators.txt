@@ -1,0 +1,14 @@
+# Numeric (range): total > 100 and <= 500.
+FILTER='{"Filters":[{"Scope":"DATA","Pattern":"{\"detail\":{\"total\":[{\"numeric\":[\">\",100,\"<=\",500]}]}}"}]}'
+
+# Anything-but: status is any value except "CANCELLED".
+FILTER='{"Filters":[{"Scope":"DATA","Pattern":"{\"detail\":{\"status\":[{\"anything-but\":\"CANCELLED\"}]}}"}]}'
+
+# Begins with (prefix): region starts with "us-".
+FILTER='{"Filters":[{"Scope":"DATA","Pattern":"{\"detail\":{\"region\":[{\"prefix\":\"us-\"}]}}"}]}'
+
+# Exists: the couponCode field is present.
+FILTER='{"Filters":[{"Scope":"DATA","Pattern":"{\"detail\":{\"couponCode\":[{\"exists\":true}]}}"}]}'
+
+# Or across fields ($or): priority is "HIGH" OR total is >= 1000.
+FILTER='{"Filters":[{"Scope":"DATA","Pattern":"{\"detail\":{\"$or\":[{\"priority\":[\"HIGH\"]},{\"total\":[{\"numeric\":[\">=\",1000]}]}]}}"}]}'

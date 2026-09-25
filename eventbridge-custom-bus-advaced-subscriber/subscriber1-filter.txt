@@ -1,0 +1,15 @@
+BUS_ARN="<EVENT_BUS_ARN>"
+QUEUE_ARN="<TARGET_QUEUE_ARN>"
+ROLE_ARN="<DELIVERY_ROLE_ARN>"
+
+aws eventsv2 create-subscriber \
+  --name "orders-basic" \
+  --event-bus-arn "$BUS_ARN" \
+  --filter-configuration "$(cat <<EOF
+{"Filters":[{"Scope":"DATA","Pattern":"{\"detail\":{\"status\":[\"PLACED\"]}}"}]}
+EOF
+)" \
+  --invoke-configuration "$(cat <<EOF
+{"TargetArn":"$QUEUE_ARN","RoleArn":"$ROLE_ARN"}
+EOF
+)"
