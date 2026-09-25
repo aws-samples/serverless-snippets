@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Share an existing EventBridge enhanced custom event bus with an AWS account.
+
+Parameters:
+  EventBusArn:
+    Type: String
+    Description: ARN of the enhanced custom event bus to share.
+  ConsumerAccountId:
+    Type: String
+    AllowedPattern: '^[0-9]{12}$'
+    Description: AWS account ID that will receive access to the event bus.
+
+Resources:
+  EventBusShare:
+    Type: AWS::RAM::ResourceShare
+    Properties:
+      Name: !Sub '${AWS::StackName}-share'
+      ResourceArns:
+        - !Ref EventBusArn
+      Principals:
+        - !Ref ConsumerAccountId
+      PermissionArns:
+        - !Sub 'arn:${AWS::Partition}:ram::aws:permission/AWSRAMEventBridgeEventBusV2SubscribeOnly'
+      AllowExternalPrincipals: true
+
+Outputs:
+  ResourceShareArn:
+    Description: ARN of the AWS RAM resource share.
+    Value: !GetAtt EventBusShare.Arn
