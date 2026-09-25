@@ -1,17 +1,18 @@
 {
   "title": "Share a Custom Event Bus with a Consumer Account Using AWS RAM",
   "description": "Share an Amazon EventBridge custom event bus with another AWS account using AWS RAM, then attach a subscriber from the consumer account.",
-  "type": "AWS CLI",
+  "type": "Integration",
   "services": ["eventbridge", "ram", "sqs"],
-  "tags": [],
-  "languages": ["AWS CLI"],
+  "tags": ["AWS RAM", "AWS CDK", "AWS SAM", "Cross-account"],
+  "languages": ["AWS CLI", "TypeScript", "YAML"],
   "introBox": {
     "headline": "How it works",
     "text": [
       "This snippet shares an Amazon EventBridge custom event bus with another AWS account using AWS Resource Access Manager. The bus owner calls `aws ram create-resource-share` with the event bus ARN as the resource, the consumer account as the principal, and one of four AWS managed permissions: `AWSRAMEventBridgeEventBusV2PublishOnly` for publishing, `AWSRAMEventBridgeEventBusV2SubscribeOnly` for attaching subscribers, `AWSRAMEventBridgeEventBusV2EventSourceAccess` for event sources, or `AWSRAMEventBridgeEventBusV2FullAccess` for all three. `SubscribeOnly` is the default for the resource type, but naming the permission explicitly keeps the grant obvious. Use `aws ram get-permission` to read the exact actions a permission grants rather than assuming them.",
       "Because the consumer is outside the owner's AWS Organization, `--allow-external-principals` is required and the consumer must accept an invitation within 12 hours. Run `aws ram get-resource-share-invitations` with the consumer's credentials in the same Region as the share; it returns invitations the calling account has received, so it returns nothing when run by the bus owner. Once accepted, the principal association reaches ASSOCIATED and RAM writes the grant into the bus's `AWS_RAM` resource policy. The owner can read that policy with `get-resource-policy --policy-name AWS_RAM` but cannot edit it, because RAM owns it. For an account principal, RAM writes an explicit `Principal` naming the consumer account root ARN, which delegates to that account: its administrator decides which of its own IAM principals may use the bus.",
       "Subscribers cannot be created centrally. The subscriber target, delivery role, and dead-letter queue must belong to the account creating the subscriber; a target ARN belonging to another account is rejected during `CreateSubscriber`. Each consumer therefore builds its own subscriber and delivery resources against the shared bus ARN. The consumer also needs `events:CreateSubscriber` and `iam:PassRole` in its own IAM policy. The AWS CLI service name is `eventsv2`, while IAM actions use the `events:` namespace. `eventsv2:` is not a valid IAM namespace. Grants take a moment to propagate, so retry a `create-subscriber` that is denied immediately after acceptance before concluding the share is wrong.",
-      "To revoke, delete the resource share. That retracts the grant but does not remove subscribers the consumer already created: they stop being reachable through the grant, still exist, and are still owned by the consumer, and `DeleteSubscriber` authorizes against the subscriber so the owner cannot delete them. To cut off one subscriber without touching the share, the owner uses `RevokeResource`, which is terminal and has no undo. Note also that sharing exposes history, not just new events. A subscriber defaults to `StartingPosition` LATEST, but a consumer can set POINT_IN_TIME and read events published before the share existed, bounded by the bus retention window, so decide retention before granting access."
+      "To revoke, delete the resource share. That retracts the grant but does not remove subscribers the consumer already created: they stop being reachable through the grant, still exist, and are still owned by the consumer, and `DeleteSubscriber` authorizes against the subscriber so the owner cannot delete them. To cut off one subscriber without touching the share, the owner uses `RevokeResource`, which is terminal and has no undo. Note also that sharing exposes history, not just new events. A subscriber defaults to `StartingPosition` LATEST, but a consumer can set POINT_IN_TIME and read events published before the share existed, bounded by the bus retention window, so decide retention before granting access.",
+      "The AWS CDK and AWS SAM options deploy the owner-side AWS RAM share for an existing enhanced custom event bus. After deployment, an external consumer still accepts the RAM invitation and creates its Subscriber and delivery resources in its own account."
     ]
   },
   "gitHub": {
@@ -21,9 +22,42 @@
   },
   "snippets": [
     {
-      "title": "Replace the placeholders, then run each block with the credentials of the account named in the comment above it. The OWNER blocks run in the account that owns the bus; the CONSUMER blocks run in the account receiving access.",
-      "snippetPath": "share-with-account.txt",
-      "language": "AWS CLI"
+      "title": "Choose an implementation",
+      "codeTabs": [
+        {
+          "id": "AWS CLI",
+          "title": "AWS CLI",
+          "description": "Run each block with the credentials of the account named in its comment. Replace the event bus, account, queue, role, and dead-letter queue placeholders.",
+          "snippets": [
+            {
+              "snippetPath": "share-with-account.txt",
+              "language": "bash"
+            }
+          ]
+        },
+        {
+          "id": "AWS CDK",
+          "title": "AWS CDK with TypeScript",
+          "description": "Install `aws-cdk-lib`, `constructs`, `aws-cdk`, `typescript`, and `ts-node`. Deploy from the bus owner account with `npx cdk deploy EventBridgeV2AccountShare --app 'npx ts-node share-with-account-cdk.ts' -c eventBusArn=<EVENT_BUS_ARN> -c consumerAccountId=<CONSUMER_ACCOUNT_ID>`.",
+          "snippets": [
+            {
+              "snippetPath": "share-with-account-cdk.ts",
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "id": "AWS SAM",
+          "title": "AWS SAM",
+          "description": "Deploy from the bus owner account with `sam deploy --template-file share-with-account-sam.yaml --stack-name event-bus-account-share --parameter-overrides EventBusArn=<EVENT_BUS_ARN> ConsumerAccountId=<CONSUMER_ACCOUNT_ID> --no-confirm-changeset --no-fail-on-empty-changeset`.",
+          "snippets": [
+            {
+              "snippetPath": "share-with-account-sam.yaml",
+              "language": "css"
+            }
+          ]
+        }
+      ]
     }
   ],
   "authors": [
