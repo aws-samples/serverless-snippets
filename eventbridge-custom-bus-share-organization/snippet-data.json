@@ -49,7 +49,7 @@
         {
           "id": "AWS SAM",
           "title": "AWS SAM",
-          "description": "Deploy from the bus owner account with `sam deploy --template-file share-with-organization-sam.yaml --stack-name event-bus-organization-share --parameter-overrides EventBusArn=<EVENT_BUS_ARN> OrganizationPrincipalArn=<ORGANIZATION_OR_OU_ARN> --no-confirm-changeset --no-fail-on-empty-changeset`.",
+          "description": "Deploy from the bus owner account with `sam deploy --template-file share-with-organization-sam.yaml --stack-name event-bus-organization-share --region <EVENT_BUS_REGION> --parameter-overrides EventBusArn=<EVENT_BUS_ARN> OrganizationPrincipalArn=<ORGANIZATION_OR_OU_ARN> --no-confirm-changeset --no-fail-on-empty-changeset`.",
           "snippets": [
             {
               "snippetPath": "share-with-organization-sam.yaml",
