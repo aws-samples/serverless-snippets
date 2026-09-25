@@ -1,17 +1,18 @@
 {
   "title": "Share a Custom Event Bus with an Organization or OU Using AWS RAM",
   "description": "Share an Amazon EventBridge custom event bus with an AWS Organization or organizational unit using AWS RAM.",
-  "type": "AWS CLI",
-  "services": ["eventbridge", "ram", "organizations"],
-  "tags": [],
-  "languages": ["AWS CLI"],
+  "type": "Integration",
+  "services": ["eventbridge", "ram", "organizations", "sqs"],
+  "tags": ["AWS RAM", "AWS CDK", "AWS SAM", "AWS Organizations"],
+  "languages": ["AWS CLI", "TypeScript", "YAML"],
   "introBox": {
     "headline": "How it works",
     "text": [
       "This snippet shares an Amazon EventBridge custom event bus with an AWS Organization or a single organizational unit using AWS Resource Access Manager. Run `aws ram enable-sharing-with-aws-organization` once from the management account, then create a resource share whose principal is either an organization ARN or an OU ARN. Pick one of four AWS managed permissions: `AWSRAMEventBridgeEventBusV2PublishOnly`, `AWSRAMEventBridgeEventBusV2SubscribeOnly`, `AWSRAMEventBridgeEventBusV2EventSourceAccess`, or `AWSRAMEventBridgeEventBusV2FullAccess`. Create one share per grant scope, so a consumer OU can receive `SubscribeOnly` while a producer OU receives `PublishOnly` on the same bus; the grants coexist as separate statements.",
       "In-Organization principals associate automatically, so no invitation is involved and the association reaches ASSOCIATED on its own. RAM then writes the grant into the bus's `AWS_RAM` resource policy, which the owner can read with `get-resource-policy --policy-name AWS_RAM` but cannot edit. The two scopes render differently: an organization share resolves to an `aws:PrincipalOrgID` condition, while an OU share resolves to a path match on `aws:PrincipalOrgPaths`. That path match is why an OU share is dynamic, an account moved into the OU gains access with no change to the resource share. Both forms exclude the owner account. Swapping the managed permission with `associate-resource-share-permission --replace` rewrites the statement in place.",
       "Subscribers cannot be created centrally. The subscriber target, delivery role, and dead-letter queue must belong to the member account creating the subscriber; a target ARN belonging to another account is rejected during `CreateSubscriber`. Each member account therefore builds its own subscriber and delivery resources against the shared bus ARN. The member account also needs `events:CreateSubscriber` and `iam:PassRole` in its own IAM policy. The AWS CLI service name is `eventsv2`, while IAM actions use the `events:` namespace. `eventsv2:` is not a valid IAM namespace. Grants take a moment to propagate, so retry a `create-subscriber` that is denied immediately after sharing.",
-      "Deleting the resource share retracts the grant but does not remove subscribers member accounts already created, which matters at Organization scale because one deletion can leave many orphaned subscribers. `DeleteSubscriber` authorizes against the subscriber, so the bus owner cannot delete them. To cut off a single misbehaving member account without disturbing the rest of the OU, the owner uses `RevokeResource`, which is terminal and has no undo. Note also that sharing exposes history, not just new events: a subscriber defaults to `StartingPosition` LATEST, but a member account can set POINT_IN_TIME and read events published before the share existed, bounded by the bus retention window. Every current and future member account in scope inherits that reach, so decide retention and permission scope before sharing broadly."
+      "Deleting the resource share retracts the grant but does not remove subscribers member accounts already created, which matters at Organization scale because one deletion can leave many orphaned subscribers. `DeleteSubscriber` authorizes against the subscriber, so the bus owner cannot delete them. To cut off a single misbehaving member account without disturbing the rest of the OU, the owner uses `RevokeResource`, which is terminal and has no undo. Note also that sharing exposes history, not just new events: a subscriber defaults to `StartingPosition` LATEST, but a member account can set POINT_IN_TIME and read events published before the share existed, bounded by the bus retention window. Every current and future member account in scope inherits that reach, so decide retention and permission scope before sharing broadly.",
+      "The AWS CDK and AWS SAM options deploy the owner-side AWS RAM share for an existing enhanced custom event bus. Supply either an AWS Organization ARN or an organizational unit ARN. Member accounts then create their own Subscribers and delivery resources."
     ]
   },
   "gitHub": {
@@ -21,9 +22,42 @@
   },
   "snippets": [
     {
-      "title": "Replace the placeholders, then run each block with the credentials of the account named in the comment above it. Choose either the OU share or the organization share, not both, unless you intend two grants on the same bus.",
-      "snippetPath": "share-with-organization.txt",
-      "language": "AWS CLI"
+      "title": "Choose an implementation",
+      "codeTabs": [
+        {
+          "id": "AWS CLI",
+          "title": "AWS CLI",
+          "description": "Run each block with the credentials of the account named in its comment. Set `PRINCIPAL_ARN` to either the Organization ARN or the OU ARN.",
+          "snippets": [
+            {
+              "snippetPath": "share-with-organization.txt",
+              "language": "bash"
+            }
+          ]
+        },
+        {
+          "id": "AWS CDK",
+          "title": "AWS CDK with TypeScript",
+          "description": "Install `aws-cdk-lib`, `constructs`, `aws-cdk`, `typescript`, and `ts-node`. Deploy from the bus owner account with `npx cdk deploy EventBridgeV2OrganizationShare --app 'npx ts-node share-with-organization-cdk.ts' -c eventBusArn=<EVENT_BUS_ARN> -c organizationPrincipalArn=<ORGANIZATION_OR_OU_ARN>`.",
+          "snippets": [
+            {
+              "snippetPath": "share-with-organization-cdk.ts",
+              "language": "ts"
+            }
+          ]
+        },
+        {
+          "id": "AWS SAM",
+          "title": "AWS SAM",
+          "description": "Deploy from the bus owner account with `sam deploy --template-file share-with-organization-sam.yaml --stack-name event-bus-organization-share --parameter-overrides EventBusArn=<EVENT_BUS_ARN> OrganizationPrincipalArn=<ORGANIZATION_OR_OU_ARN> --no-confirm-changeset --no-fail-on-empty-changeset`.",
+          "snippets": [
+            {
+              "snippetPath": "share-with-organization-sam.yaml",
+              "language": "css"
+            }
+          ]
+        }
+      ]
     }
   ],
   "authors": [
