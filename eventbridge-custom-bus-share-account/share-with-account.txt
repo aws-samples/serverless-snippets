@@ -1,0 +1,54 @@
+BUS_ARN="<EVENT_BUS_ARN>"
+CONSUMER_ACCOUNT="<CONSUMER_ACCOUNT_ID>"
+PERMISSION="arn:aws:ram::aws:permission/AWSRAMEventBridgeEventBusV2SubscribeOnly"
+
+# OWNER ACCOUNT
+SHARE_ARN=$(aws ram create-resource-share \
+  --name "custom-bus-consumer-share" \
+  --resource-arns "$BUS_ARN" \
+  --principals "$CONSUMER_ACCOUNT" \
+  --permission-arns "$PERMISSION" \
+  --allow-external-principals \
+  --query 'resourceShare.resourceShareArn' --output text)
+
+# CONSUMER ACCOUNT
+INVITATION_ARN=$(aws ram get-resource-share-invitations \
+  --query 'resourceShareInvitations[?status==`PENDING`]|[0].resourceShareInvitationArn' \
+  --output text) \
+&& \
+aws ram accept-resource-share-invitation \
+  --resource-share-invitation-arn "$INVITATION_ARN"
+
+# CONSUMER ACCOUNT
+aws ram list-resources --resource-owner OTHER-ACCOUNTS
+
+# OWNER ACCOUNT
+aws ram get-resource-share-associations \
+  --association-type PRINCIPAL \
+  --resource-share-arns "$SHARE_ARN" \
+  --query 'resourceShareAssociations[].[associatedEntity,status]' --output text
+
+# OWNER ACCOUNT
+aws eventbridgev2 get-resource-policy \
+  --resource-arn "$BUS_ARN" \
+  --policy-name AWS_RAM
+
+# CONSUMER ACCOUNT: TARGET, DELIVERY ROLE, AND DLQ MUST BE IN THIS ACCOUNT
+aws eventbridgev2 create-subscriber \
+  --name "fulfillment-order-placed" \
+  --event-bus-arn "$BUS_ARN" \
+  --filter-configuration "$(cat <<EOF
+{"Filters":[{"Scope":"METADATA","Pattern":"{\"domain\":[\"orders\"]}"}]}
+EOF
+)" \
+  --invoke-configuration "$(cat <<EOF
+{"TargetArn":"<CONSUMER_QUEUE_ARN>","RoleArn":"<CONSUMER_DELIVERY_ROLE_ARN>"}
+EOF
+)" \
+  --on-failure-configuration "$(cat <<EOF
+{"Arn":"<CONSUMER_DLQ_ARN>"}
+EOF
+)"
+
+# OWNER ACCOUNT
+aws ram delete-resource-share --resource-share-arn "$SHARE_ARN"
