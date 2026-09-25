@@ -1,0 +1,61 @@
+BUS_ARN="<EVENT_BUS_ARN>"
+MGMT_ACCOUNT="<MANAGEMENT_ACCOUNT_ID>"
+ORG_ID="<ORGANIZATION_ID>"
+OU_ID="<OU_ID>"
+PERMISSION="arn:aws:ram::aws:permission/AWSRAMEventBridgeEventBusV2SubscribeOnly"
+
+# CHOOSE ONE PRINCIPAL
+PRINCIPAL_ARN="arn:aws:organizations::$MGMT_ACCOUNT:ou/$ORG_ID/$OU_ID"
+# PRINCIPAL_ARN="arn:aws:organizations::$MGMT_ACCOUNT:organization/$ORG_ID"
+
+# MANAGEMENT ACCOUNT, ONE TIME
+aws ram enable-sharing-with-aws-organization
+
+# OWNER ACCOUNT
+SHARE_ARN=$(aws ram create-resource-share \
+  --name "custom-bus-organization-share" \
+  --resource-arns "$BUS_ARN" \
+  --principals "$PRINCIPAL_ARN" \
+  --permission-arns "$PERMISSION" \
+  --no-allow-external-principals \
+  --query 'resourceShare.resourceShareArn' --output text)
+
+# OWNER ACCOUNT
+aws ram get-resource-share-associations \
+  --association-type PRINCIPAL \
+  --resource-share-arns "$SHARE_ARN" \
+  --query 'resourceShareAssociations[].[associatedEntity,status]' --output text
+
+# MEMBER ACCOUNT
+aws ram list-resources --resource-owner OTHER-ACCOUNTS
+
+# OWNER ACCOUNT
+aws eventbridgev2 get-resource-policy \
+  --resource-arn "$BUS_ARN" \
+  --policy-name AWS_RAM
+
+# MEMBER ACCOUNT: TARGET, DELIVERY ROLE, AND DLQ MUST BE IN THIS ACCOUNT
+aws eventbridgev2 create-subscriber \
+  --name "fulfillment-order-placed" \
+  --event-bus-arn "$BUS_ARN" \
+  --filter-configuration "$(cat <<EOF
+{"Filters":[{"Scope":"METADATA","Pattern":"{\"domain\":[\"orders\"]}"}]}
+EOF
+)" \
+  --invoke-configuration "$(cat <<EOF
+{"TargetArn":"<MEMBER_QUEUE_ARN>","RoleArn":"<MEMBER_DELIVERY_ROLE_ARN>"}
+EOF
+)" \
+  --on-failure-configuration "$(cat <<EOF
+{"Arn":"<MEMBER_DLQ_ARN>"}
+EOF
+)"
+
+# OWNER ACCOUNT, NARROW OR WIDEN THE GRANT
+aws ram associate-resource-share-permission \
+  --resource-share-arn "$SHARE_ARN" \
+  --permission-arn "arn:aws:ram::aws:permission/AWSRAMEventBridgeEventBusV2PublishOnly" \
+  --replace
+
+# OWNER ACCOUNT
+aws ram delete-resource-share --resource-share-arn "$SHARE_ARN"
