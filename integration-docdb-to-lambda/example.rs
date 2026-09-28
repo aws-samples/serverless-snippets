@@ -28,7 +28,7 @@ async fn function_handler(event: LambdaEvent<DocumentDbEvent>) ->Result<(), Erro
     }
 
     for record in records{
-        log_document_db_event(record);
+        log_document_db_event(record)?;
     }
 
     tracing::info!("Document db records processed");

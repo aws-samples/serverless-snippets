@@ -56,7 +56,7 @@
         {
           "id": "Javascript",
           "title": "Copy the code into your Lambda function",
-          "description": "Follow the AWS Lambda instructions for packaging with dependencies and uploading in .zip format. This snippet uses the mysql2/promise library.",
+          "description": "Follow the AWS Lambda instructions for packaging with dependencies and uploading in .zip format.",
           "snippets": [
             {
               "snippetPath": "example.js",
