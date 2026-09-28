@@ -4,10 +4,8 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
-import software.amazon.awssdk.services.rdsdata.RdsDataClient;
-import software.amazon.awssdk.services.rdsdata.model.ExecuteStatementRequest;
-import software.amazon.awssdk.services.rdsdata.model.ExecuteStatementResponse;
-import software.amazon.awssdk.services.rdsdata.model.Field;
+import software.amazon.awssdk.services.rds.RdsUtilities;
+import software.amazon.awssdk.services.rds.model.GenerateAuthenticationTokenRequest;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,18 +18,24 @@ public class RdsLambdaHandler implements RequestHandler<APIGatewayProxyRequestEv
     public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent event, Context context) {
         APIGatewayProxyResponseEvent response = new APIGatewayProxyResponseEvent();
 
+        // DBHostName is the RDS instance/cluster endpoint. An RDS Proxy is not
+        // required for IAM authentication; point this directly at your DB endpoint.
+        String dbHostName = System.getenv("DBHostName");
+        int port = Integer.parseInt(System.getenv("Port"));
+        String dbName = System.getenv("DBName");
+        String dbUserName = System.getenv("DBUserName");
+        String region = System.getenv("AWS_REGION");
+
         try {
             // Obtain auth token
-            String token = createAuthToken();
+            String token = createAuthToken(dbHostName, port, dbUserName, region);
 
             // Define connection configuration
-            String connectionString = String.format("jdbc:mysql://%s:%s/%s?useSSL=true&requireSSL=true",
-                    System.getenv("ProxyHostName"),
-                    System.getenv("Port"),
-                    System.getenv("DBName"));
+            String connectionString = String.format("jdbc:mysql://%s:%d/%s?useSSL=true&requireSSL=true",
+                    dbHostName, port, dbName);
 
             // Establish a connection to the database
-            try (Connection connection = DriverManager.getConnection(connectionString, System.getenv("DBUserName"), token);
+            try (Connection connection = DriverManager.getConnection(connectionString, dbUserName, token);
                  PreparedStatement statement = connection.prepareStatement("SELECT ? + ? AS sum")) {
 
                 statement.setInt(1, 3);
@@ -54,25 +58,19 @@ public class RdsLambdaHandler implements RequestHandler<APIGatewayProxyRequestEv
         return response;
     }
 
-    private String createAuthToken() {
-        // Create RDS Data Service client
-        RdsDataClient rdsDataClient = RdsDataClient.builder()
-                .region(Region.of(System.getenv("AWS_REGION")))
+    // Generate an IAM authentication token for the RDS DB endpoint.
+    private String createAuthToken(String hostName, int port, String userName, String region) {
+        RdsUtilities rdsUtilities = RdsUtilities.builder()
+                .region(Region.of(region))
                 .credentialsProvider(DefaultCredentialsProvider.create())
                 .build();
 
-        // Define authentication request
-        ExecuteStatementRequest request = ExecuteStatementRequest.builder()
-                .resourceArn(System.getenv("ProxyHostName"))
-                .secretArn(System.getenv("DBUserName"))
-                .database(System.getenv("DBName"))
-                .sql("SELECT 'RDS IAM Authentication'")
+        GenerateAuthenticationTokenRequest tokenRequest = GenerateAuthenticationTokenRequest.builder()
+                .hostname(hostName)
+                .port(port)
+                .username(userName)
                 .build();
 
-        // Execute request and obtain authentication token
-        ExecuteStatementResponse response = rdsDataClient.executeStatement(request);
-        Field tokenField = response.records().get(0).get(0);
-
-        return tokenField.stringValue();
+        return rdsUtilities.generateAuthenticationToken(tokenRequest);
     }
 }
