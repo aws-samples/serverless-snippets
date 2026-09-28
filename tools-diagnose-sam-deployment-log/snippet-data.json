@@ -1,0 +1,62 @@
+{
+  "title": "Diagnose a failed AWS SAM deployment log",
+  "description": "Analyze a saved AWS SAM or CloudFormation deployment log locally and produce a redacted report with targeted verification steps.",
+  "type": "Tools",
+  "services": ["cloudformation", "iam", "lambda"],
+  "languages": ["Bash", "Python"],
+  "tags": ["AWS SAM", "CloudFormation", "Deployment", "Debugging"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "SAM Doctor recognizes common AWS SAM, CloudFormation, IAM, CDK, and GitHub Actions deployment failures. It produces a first-pass diagnosis with matched evidence and targeted, safe verification steps.",
+      "The tool reads a saved log locally. It does not require AWS credentials or upload log data; review the redacted report before sharing it."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/jakegold1647/sam-doctor"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Install SAM Doctor",
+      "description": "Install the command-line tool in the Python environment you use for deployment troubleshooting.",
+      "code": "python -m pip install sam-doctor",
+      "language": "bash"
+    },
+    {
+      "title": "Diagnose the saved deployment log",
+      "description": "Run a local analysis and print a Markdown report suitable for a ticket or review thread.",
+      "snippetPath": "snippet.txt",
+      "language": "bash"
+    },
+    {
+      "title": "Prepare a redacted support packet",
+      "description": "Create a redacted excerpt and the context needed to report an unsupported failure without sharing the complete log.",
+      "code": "sam-doctor request-packet deployment.log",
+      "language": "bash"
+    }
+  ],
+  "resources": {
+    "bullets": [
+      {
+        "text": "SAM Doctor quickstart and output guide",
+        "link": "https://sam-doctor.jacobgoldstein.dev/quickstart.html"
+      },
+      {
+        "text": "AWS SAM troubleshooting documentation",
+        "link": "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-troubleshooting.html"
+      }
+    ]
+  },
+  "authors": [
+    {
+      "headline": "Presented by Jacob Goldstein",
+      "name": "Jacob Goldstein",
+      "image": "https://github.com/jakegold1647.png",
+      "bio": "Builds practical tooling for dependable AWS deployments.",
+      "linkedin": "",
+      "twitter": ""
+    }
+  ]
+}
