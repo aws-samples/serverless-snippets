@@ -13,7 +13,7 @@
   },
   "gitHub": {
     "template": {
-      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-connect-opensearch"
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/lambda-function-connect-opensearch-iam"
     }
   },
   "snippets": [

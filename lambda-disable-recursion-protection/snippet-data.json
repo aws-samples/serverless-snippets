@@ -8,7 +8,9 @@
   "introBox": {
     "headline": "How it works",
     "text": [
-      "AWS Lambda features built-in recursion detection for loops between Lambda and Amazon SQS or AWS DynamoDB. If your architecture relies on intentional multi-cycle patterns, this guardrail will loop-terminate your function automatically. To turn this safeguard off, you can override it directly via the CLI:"
+      "AWS Lambda features built-in recursion detection for loops between Lambda and Amazon SQS or AWS DynamoDB. If your architecture relies on intentional multi-cycle patterns, this guardrail will loop-terminate your function automatically. To turn this safeguard off, you can override it directly via the CLI:",
+      "Lambda can detect certain types of recursive loops shortly after they occur. When Lambda detects a recursive loop and your function's recursive loop detection configuration is set to Terminate, it stops your function being invoked and notifies you.",
+      "The possible values are Allow and Terminate. When this value is set to Allow and Lambda detects your function being invoked as part of a recursive loop, it doesn't take any action. When this value is set to Terminate and Lambda detects your function being invoked as part of a recursive loop, it stops your function being invoked and notifies you."
     ]
   },
   "gitHub": {
@@ -18,8 +20,7 @@
   },
   "snippets": [
     {
-      "title": ["Lambda can detect certain types of recursive loops shortly after they occur. When Lambda detects a recursive loop and your function’s recursive loop detection configuration is set to Terminate , it stops your function being invoked and notifies you.",
-               "The possible values are 'Allow' & 'Terminate'. When this value is set to 'Allow' and Lambda detects your function being invoked as part of a recursive loop, it doesn’t take any action. When this value is set to 'Terminate' and Lambda detects your function being invoked as part of a recursive loop, it stops your function being invoked and notifies you."],
+      "title": "Set the recursive loop detection configuration",
       "snippetPath": "snippet.txt",
       "language": "cli" 
     }

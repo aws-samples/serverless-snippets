@@ -18,14 +18,14 @@
   },
   "snippets": [
     {
-      "title": ["Run the CloudTrail lookup-events AWS Command Line Interface (AWS CLI) command to view the total count of management event API calls.",
-               "Note- Set the start-time, the end-time, and the time zone for each value to match the problematic timeframe."],
+      "title": "View the total count of management event API calls",
+      "description": "Run the CloudTrail lookup-events AWS CLI command. Set the start-time, the end-time, and the time zone for each value to match the problematic timeframe.",
       "snippetPath": "snippet-total.txt",
       "language": "cli"
     },
     {
-      "title": ["Run the CloudTrail lookup-events command to view the total count of API calls made by each user.",
-                "Note: Set the start-time, the end-time, and the time zone for each value to match the problematic timeframe."],
+      "title": "View the total count of API calls made by each user",
+      "description": "Run the CloudTrail lookup-events command. Set the start-time, the end-time, and the time zone for each value to match the problematic timeframe.",
       "snippetPath": "snippet-users.txt",
       "language": "cli"
     }
