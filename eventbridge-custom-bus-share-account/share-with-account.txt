@@ -29,12 +29,12 @@ aws ram get-resource-share-associations \
   --query 'resourceShareAssociations[].[associatedEntity,status]' --output text
 
 # OWNER ACCOUNT
-aws eventbridgev2 get-resource-policy \
+aws eventsv2 get-resource-policy \
   --resource-arn "$BUS_ARN" \
   --policy-name AWS_RAM
 
 # CONSUMER ACCOUNT: TARGET, DELIVERY ROLE, AND DLQ MUST BE IN THIS ACCOUNT
-aws eventbridgev2 create-subscriber \
+aws eventsv2 create-subscriber \
   --name "fulfillment-order-placed" \
   --event-bus-arn "$BUS_ARN" \
   --filter-configuration "$(cat <<EOF
