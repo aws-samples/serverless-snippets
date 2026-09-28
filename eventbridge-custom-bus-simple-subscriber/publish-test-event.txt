@@ -1,0 +1,10 @@
+BUS_ARN="<EVENT_BUS_ARN>"
+
+DATA_B64=$(printf '{"detail":{"orderId":"A-1001","status":"PLACED","total":42}}' | base64)
+
+aws eventsv2 put-raw-events \
+  --event-bus-arn "$BUS_ARN" \
+  --entries "$(cat <<EOF
+[{"Data":"$DATA_B64","SystemMetadata":{"ContentType":"application/json"}}]
+EOF
+)"

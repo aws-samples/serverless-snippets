@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Create the simplest subscriber on an EventBridge enhanced custom event bus.
+
+Parameters:
+  EventBusArn:
+    Type: String
+    Description: ARN of the enhanced custom event bus to subscribe to.
+  TargetArn:
+    Type: String
+    Description: ARN of the target that receives the events (for example an SQS queue).
+  RoleArn:
+    Type: String
+    Description: ARN of the IAM role EventBridge assumes to invoke the target.
+
+Resources:
+  SimpleSubscriber:
+    Type: AWS::EventsV2::Subscriber
+    Properties:
+      Name: !Sub '${AWS::StackName}-all-events'
+      EventBusArn: !Ref EventBusArn
+      InvokeConfiguration:
+        TargetArn: !Ref TargetArn
+        RoleArn: !Ref RoleArn
+
+Outputs:
+  SubscriberArn:
+    Description: ARN of the created subscriber.
+    Value: !GetAtt SimpleSubscriber.SubscriberArn

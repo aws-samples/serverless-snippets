@@ -1,0 +1,67 @@
+{
+  "title": "Subscribe to a Custom Event Bus",
+  "description": "Create the simplest EventBridge custom event bus subscriber, then publish a test event to it.",
+  "type": "AWS CLI",
+  "services": ["eventbridge"],
+  "tags": [],
+  "languages": ["AWS CLI", "TypeScript", "YAML"],
+  "introBox": {
+    "headline": "How it works",
+    "text": [
+      "A subscriber on an Amazon EventBridge custom event bus delivers events to a single target. This snippet creates the simplest one: with no filter it receives every event on the bus and delivers the payload unchanged, then publishes a test event to it.",
+      "A successful publish only means the bus stored the event, so confirm delivery at the target queue. To filter events, add retries and a dead-letter queue, or transform the payload, see the eventbridge-custom-bus-advaced-subscriber snippet."
+    ]
+  },
+  "gitHub": {
+    "template": {
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/eventbridge-custom-bus-simple-subscriber"
+    }
+  },
+  "snippets": [
+    {
+      "title": "Create the subscriber",
+      "codeTabs": [
+        {
+          "title": "AWS CLI",
+          "id": "AWS CLI",
+          "language": "bash",
+          "description": "Replace the placeholders with your own ARNs. With no filter, this subscriber receives every event on the bus and delivers the raw payload to the target.",
+          "snippetPath": "simple-subscriber.txt"
+        },
+        {
+          "id": "AWS SAM",
+          "title": "AWS SAM",
+          "description": "Deploy with `sam deploy --template-file simple-subscriber-sam.yaml --stack-name simple-subscriber-sam --region <EVENT_BUS_REGION> --parameter-overrides EventBusArn=<EVENT_BUS_ARN> TargetArn=<TARGET_QUEUE_ARN> RoleArn=<DELIVERY_ROLE_ARN> --no-confirm-changeset --no-fail-on-empty-changeset`.",
+          "snippets": [
+            {
+              "snippetPath": "simple-subscriber-sam.yaml",
+              "language": "css"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Publish a test event",
+      "description": "Send an event to the bus with put-raw-events and confirm it reaches the target.",
+      "snippetPath": "publish-test-event.txt",
+      "language": "bash"
+    }
+  ],
+  "resources": {
+    "bullets": [
+      {
+        "text": "Subscribing to events on a custom event bus",
+        "link": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-custom-bus-subscribers.html"
+      }
+    ]
+  },
+  "authors": [
+    {
+      "headline": "Presented by Marco Buss",
+      "name": "Marco Buss",
+      "bio": "Senior Solutions Architect at AWS",
+      "linkedin": "marcobuss"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+BUS_ARN="<EVENT_BUS_ARN>"
+QUEUE_ARN="<TARGET_QUEUE_ARN>"
+ROLE_ARN="<DELIVERY_ROLE_ARN>"
+DLQ_ARN="<DEAD_LETTER_QUEUE_ARN>"
+
+aws eventsv2 create-subscriber \
+  --name "orders-resilient" \
+  --event-bus-arn "$BUS_ARN" \
+  --filter-configuration "$(cat <<EOF
+{"Filters":[{"Scope":"DATA","Pattern":"{\"detail\":{\"total\":[{\"numeric\":[\">\",100,\"<=\",500]}]}}"}]}
+EOF
+)" \
+  --invoke-configuration "$(cat <<EOF
+{"TargetArn":"$QUEUE_ARN","RoleArn":"$ROLE_ARN"}
+EOF
+)" \
+  --retry-policy "$(cat <<EOF
+{"MaxRetryAttempts":10,"MaxEventAgeInSeconds":3600}
+EOF
+)" \
+  --on-failure-configuration "$(cat <<EOF
+{"Arn":"$DLQ_ARN"}
+EOF
+)"
