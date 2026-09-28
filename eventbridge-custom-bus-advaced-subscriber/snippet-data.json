@@ -4,7 +4,7 @@
   "type": "AWS CLI",
   "services": ["eventbridge"],
   "tags": [],
-  "languages": ["AWS CLI"],
+  "languages": ["AWS CLI", "YAML"],
   "introBox": {
     "headline": "How it works",
     "text": [
@@ -21,21 +21,72 @@
   "snippets": [
     {
       "title": "Subscriber 1: Filter only",
-      "description": "Replace the placeholders with your own ARNs. The most basic subscriber: a DATA-scoped filter that delivers only events whose detail.status equals PLACED, and drops everything else.",
-      "snippetPath": "subscriber1-filter.txt",
-      "language": "bash"
+      "codeTabs": [
+        {
+          "id": "AWS CLI",
+          "title": "AWS CLI",
+          "language": "bash",
+          "description": "Replace the placeholders with your own ARNs. The most basic subscriber: a DATA-scoped filter that delivers only events whose detail.status equals PLACED, and drops everything else.",
+          "snippetPath": "subscriber1-filter.txt"
+        },
+        {
+          "id": "AWS SAM",
+          "title": "AWS SAM",
+          "description": "Deploy with `sam deploy --template-file subscriber1-filter-sam.yaml --stack-name orders-basic-sam --region <EVENT_BUS_REGION> --parameter-overrides EventBusArn=<EVENT_BUS_ARN> TargetArn=<TARGET_QUEUE_ARN> RoleArn=<DELIVERY_ROLE_ARN> --no-confirm-changeset --no-fail-on-empty-changeset`.",
+          "snippets": [
+            {
+              "snippetPath": "subscriber1-filter-sam.yaml",
+              "language": "css"
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "Subscriber 2: Filter + retry + dead-letter queue",
-      "description": "A more resilient subscriber. Adds --retry-policy to retry failed deliveries and --on-failure-configuration to send events that exhaust their retries to an SQS dead-letter queue. Uses a numeric-range filter.",
-      "snippetPath": "subscriber2-filter-retry-dlq.txt",
-      "language": "bash"
+      "codeTabs": [
+        {
+          "id": "AWS CLI",
+          "title": "AWS CLI",
+          "language": "bash",
+          "description": "A more resilient subscriber. Adds --retry-policy to retry failed deliveries and --on-failure-configuration to send events that exhaust their retries to an SQS dead-letter queue. Uses a numeric-range filter.",
+          "snippetPath": "subscriber2-filter-retry-dlq.txt"
+        },
+        {
+          "id": "AWS SAM",
+          "title": "AWS SAM",
+          "description": "Deploy with `sam deploy --template-file subscriber2-filter-retry-dlq-sam.yaml --stack-name orders-resilient-sam --region <EVENT_BUS_REGION> --parameter-overrides EventBusArn=<EVENT_BUS_ARN> TargetArn=<TARGET_QUEUE_ARN> RoleArn=<DELIVERY_ROLE_ARN> DeadLetterQueueArn=<DEAD_LETTER_QUEUE_ARN> --no-confirm-changeset --no-fail-on-empty-changeset`.",
+          "snippets": [
+            {
+              "snippetPath": "subscriber2-filter-retry-dlq-sam.yaml",
+              "language": "css"
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "Subscriber 3: Filter + retry + dead-letter queue + JSONata transform",
-      "description": "The fully featured subscriber. Adds --transformer with Type JSONATA to reshape the payload before delivery, on top of the filter, retry, and dead-letter queue. Uses an $or filter across fields.",
-      "snippetPath": "subscriber3-filter-retry-dlq-transform.txt",
-      "language": "bash"
+      "codeTabs": [
+        {
+          "id": "AWS CLI",
+          "title": "AWS CLI",
+          "language": "bash",
+          "description": "The fully featured subscriber. Adds --transformer with Type JSONATA to reshape the payload before delivery, on top of the filter, retry, and dead-letter queue. Uses an $or filter across fields.",
+          "snippetPath": "subscriber3-filter-retry-dlq-transform.txt"
+        },
+        {
+          "id": "AWS SAM",
+          "title": "AWS SAM",
+          "description": "Deploy with `sam deploy --template-file subscriber3-filter-retry-dlq-transform-sam.yaml --stack-name orders-full-sam --region <EVENT_BUS_REGION> --parameter-overrides EventBusArn=<EVENT_BUS_ARN> TargetArn=<TARGET_QUEUE_ARN> RoleArn=<DELIVERY_ROLE_ARN> DeadLetterQueueArn=<DEAD_LETTER_QUEUE_ARN> --no-confirm-changeset --no-fail-on-empty-changeset`.",
+          "snippets": [
+            {
+              "snippetPath": "subscriber3-filter-retry-dlq-transform-sam.yaml",
+              "language": "css"
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "Filtering with comparison operators",
@@ -62,10 +113,10 @@
   },
   "authors": [
     {
-      "headline": "Presented by [[your name]]",
-      "name": "[[your name]]",
-      "bio": "Your bio",
-      "linkedin": "linked-in-ID"
+      "headline": "Presented by Marco Buss",
+      "name": "Marco Buss",
+      "bio": "Senior Solutions Architect at AWS",
+      "linkedin": "marcobuss"
     }
   ]
 }

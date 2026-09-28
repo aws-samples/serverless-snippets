@@ -8,11 +8,11 @@ Important: this application could use various AWS services and there are costs a
 
 ## How it works
 
-Each block creates a separate `aws eventsv2 create-subscriber`, using more of the features a subscriber supports than the one before:
+Each block creates a separate subscriber, using more of the features a subscriber supports than the one before. Every block has an AWS CLI tab (`aws eventsv2 create-subscriber`) and an AWS SAM tab (`AWS::EventsV2::Subscriber`):
 
 1. Subscriber 1 (orders-basic): a DATA-scoped filter only, delivering events whose `detail.status` equals `PLACED`.
-2. Subscriber 2 (orders-resilient): adds `--retry-policy` (retries failed deliveries; 10 attempts within 3600 seconds in the example, defaults 5 within 300) and `--on-failure-configuration` (sends events that exhaust their retries to an SQS dead-letter queue).
-3. Subscriber 3 (orders-full): adds `--transformer` with `Type` JSONATA to reshape the payload before delivery, using the event available as `$events` inside `{% %}` delimiters.
+2. Subscriber 2 (orders-resilient): adds a retry policy (10 attempts within 3600 seconds in the example, defaults 5 within 300) and a dead-letter queue (sends events that exhaust their retries to an SQS queue).
+3. Subscriber 3 (orders-full): adds a `JSONATA` transformer to reshape the payload before delivery, using the event available as `$events` inside `{% %}` delimiters.
 
 The three subscribers use three different comparison operators (equals, numeric range, and `$or`). A final block lists five reusable DATA-scoped filter values covering more operators (numeric range, anything-but, prefix, exists, and `$or`), which you can swap into any subscriber's `--filter-configuration`. See [Comparison operators for event patterns](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-pattern-operators.html).
 

@@ -4,7 +4,7 @@
   "type": "AWS CLI",
   "services": ["eventbridge"],
   "tags": [],
-  "languages": ["AWS CLI"],
+  "languages": ["AWS CLI", "TypeScript", "YAML"],
   "introBox": {
     "headline": "How it works",
     "text": [
@@ -20,9 +20,26 @@
   "snippets": [
     {
       "title": "Create the subscriber",
-      "description": "Replace the placeholders with your own ARNs. With no filter, this subscriber receives every event on the bus and delivers the raw payload to the target.",
-      "snippetPath": "simple-subscriber.txt",
-      "language": "bash"
+      "codeTabs": [
+        {
+          "title": "AWS CLI",
+          "id": "AWS CLI",
+          "language": "bash",
+          "description": "Replace the placeholders with your own ARNs. With no filter, this subscriber receives every event on the bus and delivers the raw payload to the target.",
+          "snippetPath": "simple-subscriber.txt"
+        },
+        {
+          "id": "AWS SAM",
+          "title": "AWS SAM",
+          "description": "Deploy with `sam deploy --template-file simple-subscriber-sam.yaml --stack-name simple-subscriber-sam --region <EVENT_BUS_REGION> --parameter-overrides EventBusArn=<EVENT_BUS_ARN> TargetArn=<TARGET_QUEUE_ARN> RoleArn=<DELIVERY_ROLE_ARN> --no-confirm-changeset --no-fail-on-empty-changeset`.",
+          "snippets": [
+            {
+              "snippetPath": "simple-subscriber-sam.yaml",
+              "language": "css"
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "Publish a test event",
@@ -41,10 +58,10 @@
   },
   "authors": [
     {
-      "headline": "Presented by [[your name]]",
-      "name": "[[your name]]",
-      "bio": "Your bio",
-      "linkedin": "linked-in-ID"
+      "headline": "Presented by Marco Buss",
+      "name": "Marco Buss",
+      "bio": "Senior Solutions Architect at AWS",
+      "linkedin": "marcobuss"
     }
   ]
 }
