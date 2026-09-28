@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Share an existing EventBridge enhanced custom event bus with an AWS Organization or OU.
+
+Parameters:
+  EventBusArn:
+    Type: String
+    Description: ARN of the enhanced custom event bus to share.
+  OrganizationPrincipalArn:
+    Type: String
+    Description: ARN of the AWS Organization or organizational unit that will receive access.
+
+Resources:
+  EventBusShare:
+    Type: AWS::RAM::ResourceShare
+    Properties:
+      Name: !Sub '${AWS::StackName}-share'
+      ResourceArns:
+        - !Ref EventBusArn
+      Principals:
+        - !Ref OrganizationPrincipalArn
+      PermissionArns:
+        - !Sub 'arn:${AWS::Partition}:ram::aws:permission/AWSRAMEventBridgeEventBusV2SubscribeOnly'
+      AllowExternalPrincipals: false
+
+Outputs:
+  ResourceShareArn:
+    Description: ARN of the AWS RAM resource share.
+    Value: !GetAtt EventBusShare.Arn
