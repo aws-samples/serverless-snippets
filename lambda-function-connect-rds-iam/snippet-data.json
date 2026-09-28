@@ -1,6 +1,6 @@
 {
   "title": "Connect to Amazon RDS from AWS Lambda",
-  "description": "This snippet demonstrates how to connect to an  Amazon RDS database from an AWS Lambda function with IAM authentication. This snippet is valid for MariaDB/MySQL or Aurora for MySQL",
+  "description": "This snippet demonstrates how to connect to an Amazon RDS database from an AWS Lambda function with IAM authentication. It connects directly to the RDS instance or cluster endpoint and does not require an RDS Proxy. This snippet is valid for MariaDB/MySQL or Aurora for MySQL",
   "type": "Integration",
   "services": ["lambda", "rds"],
   "tags": [],

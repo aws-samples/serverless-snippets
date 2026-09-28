@@ -12,6 +12,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strconv"
 
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/aws/aws-sdk-go-v2/config"
@@ -27,8 +28,13 @@ func HandleRequest(event *MyEvent) (map[string]interface{}, error) {
 
 	var dbName string = os.Getenv("DatabaseName")
 	var dbUser string = os.Getenv("DatabaseUser")
-	var dbHost string = os.Getenv("DBHost") // Add hostname without https
-	var dbPort int = os.Getenv("Port")      // Add port number
+	// DBHost is the RDS instance/cluster endpoint (hostname without https).
+	// An RDS Proxy is not required for IAM authentication.
+	var dbHost string = os.Getenv("DBHost")
+	dbPort, err := strconv.Atoi(os.Getenv("Port")) // Add port number
+	if err != nil {
+		panic("invalid port number: " + err.Error())
+	}
 	var dbEndpoint string = fmt.Sprintf("%s:%d", dbHost, dbPort)
 	var region string = os.Getenv("AWS_REGION")
 

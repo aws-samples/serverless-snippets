@@ -10,8 +10,9 @@ import mysql from 'mysql2/promise';
 async function createAuthToken() {
   // Define connection authentication parameters
   const dbinfo = {
-
-    hostname: process.env.ProxyHostName,
+    // The RDS instance/cluster endpoint. An RDS Proxy is not required for IAM
+    // authentication; you can point this directly at your DB endpoint.
+    hostname: process.env.DBHostName,
     port: process.env.Port,
     username: process.env.DBUserName,
     region: process.env.AWS_REGION,
@@ -32,7 +33,7 @@ async function dbOps() {
   const token = await createAuthToken();
   // Define connection configuration
   let connectionConfig = {
-    host: process.env.ProxyHostName,
+    host: process.env.DBHostName,
     user: process.env.DBUserName,
     password: token,
     database: process.env.DBName,

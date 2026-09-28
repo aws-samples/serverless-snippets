@@ -6,7 +6,9 @@ import mysql from 'mysql2/promise';
 
 // RDS settings
 // Using '!' (non-null assertion operator) to tell the TypeScript compiler that the DB settings are not null or undefined,
-const proxy_host_name = process.env.PROXY_HOST_NAME!
+// DB_HOST_NAME is the RDS instance/cluster endpoint. An RDS Proxy is not
+// required for IAM authentication; point this directly at your DB endpoint.
+const db_host_name = process.env.DB_HOST_NAME!
 const port = parseInt(process.env.PORT!)
 const db_name = process.env.DB_NAME!
 const db_user_name = process.env.DB_USER_NAME!
@@ -17,7 +19,7 @@ async function createAuthToken(): Promise<string> {
 
     // Create RDS Signer object
     const signer = new Signer({
-        hostname: proxy_host_name,
+        hostname: db_host_name,
         port: port,
         region: aws_region,
         username: db_user_name
@@ -33,7 +35,7 @@ async function dbOps(): Promise<mysql.QueryResult | undefined> {
         // Obtain auth token
         const token = await createAuthToken();
         const conn = await mysql.createConnection({
-            host: proxy_host_name,
+            host: db_host_name,
             user: db_user_name,
             password: token,
             database: db_name,

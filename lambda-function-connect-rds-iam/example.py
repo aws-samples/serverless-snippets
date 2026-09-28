@@ -4,7 +4,9 @@ import boto3
 import pymysql
 
 # RDS settings
-proxy_host_name = os.environ['PROXY_HOST_NAME']
+# DB_HOST_NAME is the RDS instance/cluster endpoint. An RDS Proxy is not
+# required for IAM authentication; point this directly at your DB endpoint.
+db_host_name = os.environ['DB_HOST_NAME']
 port = int(os.environ['PORT'])
 db_name = os.environ['DB_NAME']
 db_user_name = os.environ['DB_USER_NAME']
@@ -15,9 +17,9 @@ aws_region = os.environ['AWS_REGION']
 def get_auth_token():
     client = boto3.client('rds')
     token = client.generate_db_auth_token(
-        DBHostname=proxy_host_name,
-        Port=port
-        DBUsername=db_user_name
+        DBHostname=db_host_name,
+        Port=port,
+        DBUsername=db_user_name,
         Region=aws_region
     )
     return token
@@ -26,7 +28,7 @@ def lambda_handler(event, context):
     token = get_auth_token()
     try:
         connection = pymysql.connect(
-            host=proxy_host_name,
+            host=db_host_name,
             user=db_user_name,
             password=token,
             db=db_name,
