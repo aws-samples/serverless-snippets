@@ -1,22 +1,35 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: Share an existing EventBridge enhanced custom event bus with an AWS Organization or OU.
+Description: Create an EventBridge enhanced custom event bus and share it with an AWS Organization or OU.
 
 Parameters:
-  EventBusArn:
+  EventBusName:
     Type: String
-    Description: ARN of the enhanced custom event bus to share.
+    Description: Name of the enhanced custom event bus to create.
+  RetentionPeriodInDays:
+    Type: Number
+    Default: 7
+    MinValue: 1
+    MaxValue: 365
+    Description: Number of days the bus retains events for replay.
   OrganizationPrincipalArn:
     Type: String
     Description: ARN of the AWS Organization or organizational unit that will receive access.
 
 Resources:
+  EventBus:
+    Type: AWS::EventsV2::EventBus
+    Properties:
+      Name: !Ref EventBusName
+      StorageConfiguration:
+        RetentionPeriodInDays: !Ref RetentionPeriodInDays
+
   EventBusShare:
     Type: AWS::RAM::ResourceShare
     Properties:
       Name: !Sub '${AWS::StackName}-share'
       ResourceArns:
-        - !Ref EventBusArn
+        - !GetAtt EventBus.EventBusArn
       Principals:
         - !Ref OrganizationPrincipalArn
       PermissionArns:
@@ -24,6 +37,9 @@ Resources:
       AllowExternalPrincipals: false
 
 Outputs:
+  EventBusArn:
+    Description: ARN of the enhanced custom event bus.
+    Value: !GetAtt EventBus.EventBusArn
   ResourceShareArn:
     Description: ARN of the AWS RAM resource share.
     Value: !GetAtt EventBusShare.Arn

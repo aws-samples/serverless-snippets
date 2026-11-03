@@ -1,4 +1,4 @@
-BUS_ARN="<EVENT_BUS_ARN>"
+BUS_NAME="<EVENT_BUS_NAME>"
 MGMT_ACCOUNT="<MANAGEMENT_ACCOUNT_ID>"
 ORG_ID="<ORGANIZATION_ID>"
 OU_ID="<OU_ID>"
@@ -10,6 +10,12 @@ PRINCIPAL_ARN="arn:aws:organizations::$MGMT_ACCOUNT:ou/$ORG_ID/$OU_ID"
 
 # MANAGEMENT ACCOUNT, ONE TIME
 aws ram enable-sharing-with-aws-organization
+
+# OWNER ACCOUNT
+BUS_ARN=$(aws eventsv2 create-event-bus \
+  --name "$BUS_NAME" \
+  --storage-configuration RetentionPeriodInDays=7 \
+  --query 'EventBusArn' --output text)
 
 # OWNER ACCOUNT
 SHARE_ARN=$(aws ram create-resource-share \
@@ -35,6 +41,7 @@ aws eventsv2 get-resource-policy \
   --policy-name AWS_RAM
 
 # MEMBER ACCOUNT: TARGET, DELIVERY ROLE, AND DLQ MUST BE IN THIS ACCOUNT
+# A NEW DELIVERY ROLE CAN TAKE A FEW MINUTES TO PROPAGATE; EVENTS PUBLISHED BEFORE THEN ARE RETRIED
 aws eventsv2 create-subscriber \
   --name "fulfillment-order-placed" \
   --event-bus-arn "$BUS_ARN" \
@@ -43,7 +50,7 @@ aws eventsv2 create-subscriber \
 EOF
 )" \
   --invoke-configuration "$(cat <<EOF
-{"TargetArn":"<MEMBER_QUEUE_ARN>","RoleArn":"<MEMBER_DELIVERY_ROLE_ARN>"}
+{"TargetArn":"<MEMBER_TARGET_ARN>","RoleArn":"<MEMBER_DELIVERY_ROLE_ARN>"}
 EOF
 )" \
   --on-failure-configuration "$(cat <<EOF
@@ -52,10 +59,17 @@ EOF
 )"
 
 # OWNER ACCOUNT, NARROW OR WIDEN THE GRANT
+# PUBLISHONLY BLOCKS NEW SUBSCRIBERS; EXISTING ONES KEEP RECEIVING EVENTS UNTIL REVOKED
 aws ram associate-resource-share-permission \
   --resource-share-arn "$SHARE_ARN" \
   --permission-arn "arn:aws:ram::aws:permission/AWSRAMEventBridgeEventBusV2PublishOnly" \
   --replace
 
-# OWNER ACCOUNT
+# OWNER ACCOUNT, CLEAN UP: REVOKE MEMBER SUBSCRIBERS, THEN DELETE THE SHARE AND BUS
+for SUBSCRIBER_ARN in $(aws eventsv2 list-subscribers \
+  --event-bus-arn "$BUS_ARN" \
+  --query 'Subscribers[].SubscriberArn' --output text); do
+  aws eventsv2 revoke-resource --arn "$SUBSCRIBER_ARN"
+done
 aws ram delete-resource-share --resource-share-arn "$SHARE_ARN"
+aws eventsv2 delete-event-bus --event-bus-arn "$BUS_ARN"
