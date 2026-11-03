@@ -2,7 +2,7 @@
   "title": "Share a Custom Event Bus with a Consumer Account Using AWS RAM",
   "description": "Share an Amazon EventBridge custom event bus with another AWS account using AWS RAM, then attach a subscriber from the consumer account.",
   "type": "Integration",
-  "services": ["eventbridge", "ram", "sqs"],
+  "services": ["eventbridge", "ram"],
   "tags": ["AWS RAM", "AWS CDK", "AWS SAM", "Cross-account"],
   "languages": ["AWS CLI", "TypeScript", "YAML"],
   "introBox": {
@@ -35,7 +35,7 @@
         {
           "id": "AWS CDK",
           "title": "AWS CDK with TypeScript",
-          "description": "Install `aws-cdk-lib`, `constructs`, `aws-cdk`, `typescript`, and `ts-node`. Deploy from the bus owner account with `npx cdk deploy EventBridgeV2AccountShare --app 'npx ts-node share-with-account-cdk.ts' -c eventBusArn=<EVENT_BUS_ARN> -c consumerAccountId=<CONSUMER_ACCOUNT_ID>`.",
+          "description": "Install `aws-cdk-lib`, `constructs`, `aws-cdk`, and `tsx`. Deploy from the bus owner account with `npx cdk deploy EventBridgeV2AccountShare --app 'npx tsx share-with-account-cdk.ts' -c eventBusArn=<EVENT_BUS_ARN> -c consumerAccountId=<CONSUMER_ACCOUNT_ID>`.",
           "snippets": [
             {
               "snippetPath": "share-with-account-cdk.ts",
