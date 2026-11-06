@@ -2,7 +2,7 @@
 
 Create three EventBridge custom event bus subscribers, each using more of the features a subscriber supports: filter, then retry and dead-letter queue, then a JSONata transform.
 
-Learn more about this snippet at Serverless Land Snippets: https://serverlessland.com/snippets/eventbridge-custom-bus-advaced-subscriber
+Learn more about this snippet at Serverless Land Snippets: https://serverlessland.com/snippets/eventbridge-custom-bus-advanced-subscriber
 
 Important: this application could use various AWS services and there are costs associated with these services after the Free Tier usage - please see the [AWS Pricing page](https://aws.amazon.com/pricing/) for details. You are responsible for any AWS costs incurred. No warranty is implied in this example.
 
