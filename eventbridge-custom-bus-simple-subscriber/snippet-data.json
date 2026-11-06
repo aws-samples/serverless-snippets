@@ -2,9 +2,15 @@
   "title": "Subscribe to a Custom Event Bus",
   "description": "Create the simplest EventBridge custom event bus subscriber, then publish a test event to it.",
   "type": "AWS CLI",
-  "services": ["eventbridge"],
+  "services": [
+    "eventbridge"
+  ],
   "tags": [],
-  "languages": ["AWS CLI", "TypeScript", "YAML"],
+  "languages": [
+    "AWS CLI",
+    "TypeScript",
+    "YAML"
+  ],
   "introBox": {
     "headline": "How it works",
     "text": [
@@ -24,9 +30,13 @@
         {
           "title": "AWS CLI",
           "id": "AWS CLI",
-          "language": "bash",
           "description": "Replace the placeholders with your own ARNs. With no filter, this subscriber receives every event on the bus and delivers the raw payload to the target.",
-          "snippetPath": "simple-subscriber.txt"
+          "snippets": [
+            {
+              "snippetPath": "simple-subscriber.txt",
+              "language": "bash"
+            }
+          ]
         },
         {
           "id": "AWS SAM",
