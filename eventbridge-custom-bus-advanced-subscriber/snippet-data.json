@@ -15,7 +15,7 @@
   },
   "gitHub": {
     "template": {
-      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/eventbridge-custom-bus-advaced-subscriber"
+      "repoURL": "https://github.com/aws-samples/serverless-snippets/tree/main/eventbridge-custom-bus-advanced-subscriber"
     }
   },
   "snippets": [
