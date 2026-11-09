@@ -1,15 +1,15 @@
 {
-  "title": "Share a Custom Event Bus with an Organization or OU Using AWS RAM",
-  "description": "Share an Amazon EventBridge custom event bus with an AWS Organization or organizational unit using AWS RAM.",
+  "title": "Create and Share a Custom Event Bus with an Organization or OU Using AWS RAM",
+  "description": "Create an Amazon EventBridge custom event bus and share it with an AWS Organization or organizational unit using AWS RAM.",
   "type": "Integration",
-  "services": ["eventbridge", "ram", "organizations", "sqs"],
+  "services": ["eventbridge", "ram", "organizations"],
   "tags": ["AWS RAM", "AWS CDK", "AWS SAM", "AWS Organizations", "Cross-account"],
   "languages": ["AWS CLI", "TypeScript", "YAML"],
   "introBox": {
     "headline": "How it works",
     "text": [
-      "This snippet shares an Amazon EventBridge enhanced custom event bus with an AWS Organization or organizational unit using AWS Resource Access Manager. Enable RAM sharing with AWS Organizations once from the management account. An Organization principal covers all member accounts, while an OU principal limits access to accounts in that OU; in-Organization principals associate automatically without an invitation. The examples grant the explicit `SubscribeOnly` managed permission.",
-      "Choose the AWS CLI, AWS CDK, or AWS SAM tab, replace its placeholders, and run it with the credentials indicated. Each member account must create and own its Subscriber, target, delivery role, and dead-letter queue against the shared bus ARN; a target in another account is rejected during `CreateSubscriber`. The CDK and SAM options deploy the owner-side RAM share, while member-account delivery resources remain separate."
+      "This snippet creates an Amazon EventBridge enhanced custom event bus and shares it with an AWS Organization or organizational unit using AWS Resource Access Manager. Enable RAM sharing with AWS Organizations once from the management account. An Organization principal covers all member accounts, while an OU principal limits access to accounts in that OU; in-Organization principals associate automatically without an invitation. The examples grant the explicit `SubscribeOnly` managed permission.",
+      "Choose the AWS CLI, AWS CDK, or AWS SAM tab, replace its placeholders, and run it with the credentials indicated. Each member account must create and own its Subscriber, target, delivery role, and dead-letter queue against the shared bus ARN; a target in another account is rejected during `CreateSubscriber`. The CDK and SAM options deploy the owner-side event bus and RAM share in one stack, while member-account delivery resources remain separate."
     ]
   },
   "gitHub": {
@@ -24,7 +24,7 @@
         {
           "id": "AWS CLI",
           "title": "AWS CLI",
-          "description": "Run each block with the credentials of the account named in its comment. Set `PRINCIPAL_ARN` to either the Organization ARN or the OU ARN.",
+          "description": "Run each block with the credentials of the account named in its comment. Set `BUS_NAME`, and set `PRINCIPAL_ARN` to either the Organization ARN or the OU ARN.",
           "snippets": [
             {
               "snippetPath": "share-with-organization.txt",
@@ -35,7 +35,7 @@
         {
           "id": "AWS CDK",
           "title": "AWS CDK with TypeScript",
-          "description": "Install `aws-cdk-lib`, `constructs`, `aws-cdk`, `typescript`, and `ts-node`. Deploy from the bus owner account with `npx cdk deploy EventBridgeV2OrganizationShare --app 'npx ts-node share-with-organization-cdk.ts' -c eventBusArn=<EVENT_BUS_ARN> -c organizationPrincipalArn=<ORGANIZATION_OR_OU_ARN>`.",
+          "description": "Install `aws-cdk-lib`, `constructs`, `aws-cdk`, and `tsx`. Deploy from the bus owner account and Region with `npx cdk deploy EventBridgeV2OrganizationShare --app 'npx tsx share-with-organization-cdk.ts' -c eventBusName=<EVENT_BUS_NAME> -c organizationPrincipalArn=<ORGANIZATION_OR_OU_ARN>`.",
           "snippets": [
             {
               "snippetPath": "share-with-organization-cdk.ts",
@@ -46,7 +46,7 @@
         {
           "id": "AWS SAM",
           "title": "AWS SAM",
-          "description": "Deploy from the bus owner account with `sam deploy --template-file share-with-organization-sam.yaml --stack-name event-bus-organization-share --region <EVENT_BUS_REGION> --parameter-overrides EventBusArn=<EVENT_BUS_ARN> OrganizationPrincipalArn=<ORGANIZATION_OR_OU_ARN> --no-confirm-changeset --no-fail-on-empty-changeset`.",
+          "description": "Deploy from the bus owner account with `sam deploy --template-file share-with-organization-sam.yaml --stack-name event-bus-organization-share --region <EVENT_BUS_REGION> --parameter-overrides EventBusName=<EVENT_BUS_NAME> OrganizationPrincipalArn=<ORGANIZATION_OR_OU_ARN> --no-confirm-changeset --no-fail-on-empty-changeset`.",
           "snippets": [
             {
               "snippetPath": "share-with-organization-sam.yaml",
